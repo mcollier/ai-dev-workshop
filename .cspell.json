@@ -17,5 +17,5 @@
   "words": ["megalinter", "oxsecurity", "marp", "betterleaks", "jsonlint"],
   "version": "0.2",
   "caseSensitive": false,
-  "dictionaries": ["cpp-refined", "dotnet"]
+  "dictionaries": ["cpp-refined", "dotnet", "fullstack"]
 }
