@@ -47,5 +47,6 @@
       }
     }
   },
+  "postCreateCommand": "npm install && npm install --global cspell && npm install --global prettier",
   "postStartCommand": "dotnet dev-certs https --trust"
 }
