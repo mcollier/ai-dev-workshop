@@ -4,13 +4,18 @@
     "**/vscode-extension/**",
     "**/.git/**",
     "**/.pnpm-lock.json",
+    "**/.github/workflows/**",
     ".vscode",
     "megalinter",
     "package-lock.json",
-    "report"
+    "report",
+    "**/.gitignore",
+    "**/.devcontainer/**"
   ],
   "language": "en",
   "noConfigSearch": true,
   "words": ["megalinter", "oxsecurity"],
-  "version": "0.2"
+  "version": "0.2",
+  "caseSensitive": false,
+  "dictionaries": ["cpp-refined"]
 }
