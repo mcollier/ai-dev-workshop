@@ -1,16 +1,16 @@
 {
   "ignorePaths": [
+    "**/.devcontainer/**",
+    "**/.git/**",
+    "**/.github/workflows/**",
+    "**/.gitignore",
+    "**/.pnpm-lock.json",
     "**/node_modules/**",
     "**/vscode-extension/**",
-    "**/.git/**",
-    "**/.pnpm-lock.json",
-    "**/.github/workflows/**",
     ".vscode",
     "megalinter",
     "package-lock.json",
-    "report",
-    "**/.gitignore",
-    "**/.devcontainer/**"
+    "report"
   ],
   "language": "en",
   "noConfigSearch": true,
