@@ -17,5 +17,5 @@
   "words": ["megalinter", "oxsecurity"],
   "version": "0.2",
   "caseSensitive": false,
-  "dictionaries": ["cpp-refined"]
+  "dictionaries": ["cpp-refined", "dotnet"]
 }
