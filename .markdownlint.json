@@ -13,5 +13,8 @@
   "blank_lines": false,
   "single-h1": {
     "front_matter_title": ""
+  },
+  "no-duplicate-heading": {
+    "siblings_only": true
   }
 }

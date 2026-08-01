@@ -2,6 +2,7 @@
   "name": "ai-dev-workshop",
   "version": "0.1.0",
   "devDependencies": {
+    "cspell": "10.0.1",
     "prettier": "3.9.6"
   }
 }
