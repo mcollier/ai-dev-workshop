@@ -14,7 +14,7 @@
   ],
   "language": "en",
   "noConfigSearch": true,
-  "words": ["megalinter", "oxsecurity"],
+  "words": ["megalinter", "oxsecurity", "marp", "betterleaks", "jsonlint"],
   "version": "0.2",
   "caseSensitive": false,
   "dictionaries": ["cpp-refined", "dotnet"]
