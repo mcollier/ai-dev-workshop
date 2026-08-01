@@ -1,0 +1,9 @@
+{
+    "ignorePaths": [
+        "**/node_modules/**",
+        ".vscode",
+    ],
+    "language": "en",
+    "words": [],
+    "version": "0.2"
+}
