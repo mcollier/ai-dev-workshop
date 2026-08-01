@@ -12,13 +12,25 @@ APPLY_FIXES: none
 
 # If you use ENABLE_LINTERS variable, all other linters will be disabled by
 # default
-# ENABLE_LINTERS:
+ENABLE_LINTERS:
+  - ACTION_ACTIONLINT
+  - MARKDOWN_MARKDOWNLINT
+  - MARKDOWN_MARKDOWN_TABLE_FORMATTER
+  - SPELL_CSPELL
+  - YAML_PRETTIER
+  - YAML_YAMLLINT
+  - SPELL_LYCHEE
+  - REPOSITORY_SECRETLINT
+  - REPOSITORY_BETTERLEAKS
+  - JSON_PRETTIER
+  - JSON_JSONLINT
 
 DISABLE:
   - COPYPASTE # Comment to enable checks of excessive copy-pastes
   # - SPELL # Uncomment to disable checks of spelling mistakes
 
 SHOW_ELAPSED_TIME: true
+GITHUB_STATUS_REPORTER: true
 
 # Uncomment if you want MegaLinter to detect errors but not block CI to pass
 # DISABLE_ERRORS: true
