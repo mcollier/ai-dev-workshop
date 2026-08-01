@@ -2,8 +2,13 @@
     "ignorePaths": [
         "**/node_modules/**",
         ".vscode",
+        "**/.gitignore",
+        ".devcontainer/devcontainer.json",
+        ".github/copilot/settings.json",
+        "**/.github/workflows/**"
     ],
     "language": "en",
     "words": [],
-    "version": "0.2"
+    "version": "0.2",
+    "caseSensitive": false
 }
