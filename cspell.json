@@ -3,7 +3,7 @@
     "**/node_modules/**",
     ".vscode",
     "**/.gitignore",
-    ".devcontainer/devcontainer.json",
+    "**/.devcontainer/**",
     ".github/copilot/settings.json",
     "**/.github/workflows/**"
   ],
