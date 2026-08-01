@@ -1,4 +1,6 @@
 {
+  "name": "ai-dev-workshop",
+  "version": "0.1",
   "devDependencies": {
     "prettier": "3.9.6"
   }
