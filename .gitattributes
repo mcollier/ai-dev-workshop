@@ -1,0 +1,29 @@
+# Normalize all text files to LF in the repo; Git converts on checkout per OS
+* text=auto eol=lf
+
+# Explicitly declare text files
+*.cs     text eol=lf
+*.json   text eol=lf
+*.yaml   text eol=lf
+*.yml    text eol=lf
+*.md     text eol=lf
+*.bicep  text eol=lf
+*.http   text eol=lf
+*.props  text eol=lf
+*.csproj text eol=lf
+*.sln    text eol=lf
+
+# Windows-only scripts must use CRLF
+*.cmd    text eol=crlf
+*.bat    text eol=crlf
+
+# Shell scripts must use LF (they break with CRLF)
+*.sh     text eol=lf
+
+# Binary files — no line ending conversion
+*.png    binary
+*.jpg    binary
+*.gif    binary
+*.ico    binary
+*.zip    binary
+*.nupkg  binary
