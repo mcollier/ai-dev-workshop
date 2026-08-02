@@ -5,8 +5,6 @@ paginate: true
 backgroundColor: #fff
 ---
 
-<!-- _class: lead -->
-
 # Module 7
 
 ## Wrap-Up & Next Steps
@@ -16,7 +14,7 @@ backgroundColor: #fff
 
 ---
 
-# Discussion Questions
+## Discussion Questions
 
 1. Which workflows benefit most from agents?
 2. What should be standardized at team vs org level?
@@ -25,7 +23,7 @@ backgroundColor: #fff
 
 ---
 
-# Best Practices for Teams
+## Best Practices for Teams
 
 ## Start Small
 - Begin with **reviewer agents**, not executors
@@ -44,7 +42,7 @@ backgroundColor: #fff
 
 ---
 
-# Keep Humans Accountable
+## Keep Humans Accountable
 
 > Agents advise, humans decide
 
@@ -55,7 +53,7 @@ backgroundColor: #fff
 
 ---
 
-# Taking Agents to Production
+## Taking Agents to Production
 
 **Before sharing:**
 1. Test with real scenarios
@@ -74,7 +72,7 @@ backgroundColor: #fff
 
 ---
 
-# Adoption Roadmap
+## Adoption Roadmap
 
 **Week 1:** Use existing agents in daily work  
 **Week 2:** Identify repetitive workflow → draft agent  
@@ -83,7 +81,7 @@ backgroundColor: #fff
 
 ---
 
-# Key Takeaways
+## Key Takeaways
 
 ✅ **Ask, Plan, Agent** - Use the right interaction mode  
 ✅ **Customization hierarchy** - Prompts → Instructions → Skills → Agents  
@@ -98,10 +96,10 @@ backgroundColor: #fff
 
 ---
 
-# Resources
+## Resources
 
 📚 **Documentation**
-- [Customization Decision Guide](../../guides/customization-decision-guide.md) ⭐ NEW
+- [Customization Decision Guide](../../guides/customization-decision-guide.md)
 - [Custom Agent Catalog](../../guides/custom-agent-catalog.md)
 - [Agent Design Guide](../../guides/agent-design-guide.md)
 - [Agent Governance](../../guides/agent-governance.md)
@@ -112,21 +110,12 @@ backgroundColor: #fff
 
 ---
 
-<!-- _class: lead -->
-
-# Thank You!
+<!-- markdownlint-disable-next-line MD025 -->
+# Thank You
 
 ## Questions?
 
-**Feedback and contributions:**  
-[CONTRIBUTING.md](../../../CONTRIBUTING.md)
-
-**Workshop repository:**  
-GitHub: ai-code-workshop
-
----
-
-# Next Steps
+## Next Steps
 
 1. **Practice** with existing agents
 2. **Build** your own agent
@@ -138,23 +127,7 @@ GitHub: ai-code-workshop
 
 ---
 
-# Contact & Resources
-
-**Workshop Materials:**
-- Slides: `docs/presentations/modules/`
-- Labs: `docs/labs/`
-- Agents: `.github/agents/`
-
-**GitHub Copilot Documentation:**
-- [Custom Agents Guide](https://docs.github.com/copilot)
-- [VS Code Extension](https://code.visualstudio.com/docs/copilot)
-
-**Questions?** Open an issue or contact facilitators
-
----
-
-<!-- _class: lead -->
-
+<!-- markdownlint-disable-next-line MD025 -->
 # Part 2 Complete
 
 **Previous Module:** [Capstone Lab](06-capstone-lab.md)
