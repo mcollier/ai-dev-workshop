@@ -160,11 +160,6 @@ git checkout solutions
 
 ## Thank You
 
-### Questions?
-
-**Feedback and contributions:**  
-[CONTRIBUTING.md](../../../CONTRIBUTING.md)
-
 **See you in Part 2:**  
 Advanced GitHub Copilot with Custom Agents
 
