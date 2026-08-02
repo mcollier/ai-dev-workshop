@@ -5,8 +5,6 @@ paginate: true
 backgroundColor: #fff
 ---
 
-<!-- _class: lead -->
-
 # Module 6
 
 ## Capstone Lab
@@ -16,7 +14,7 @@ backgroundColor: #fff
 
 ---
 
-# Capstone Overview
+## Capstone Overview
 
 **You will:**
 
@@ -30,7 +28,7 @@ backgroundColor: #fff
 
 ---
 
-# Agent Role Options
+## Agent Role Options
 
 - **Code Reviewer** - Quality and standards
 - **Documentation Writer** - API docs, READMEs
@@ -40,7 +38,7 @@ backgroundColor: #fff
 
 ---
 
-# Success Criteria Template
+## Success Criteria Template
 
 **My agent is successful when:**
 
@@ -54,7 +52,7 @@ backgroundColor: #fff
 
 ---
 
-# Agent Definition Template
+## Agent Definition Template
 
 ```markdown
 ---
@@ -78,7 +76,7 @@ model: Claude Sonnet 4.5
 
 ---
 
-# Test, Iterate, Refine
+## Test, Iterate, Refine
 
 1. **Test** with defined scenarios
 2. **Observe** behavior and outputs
@@ -90,7 +88,7 @@ model: Claude Sonnet 4.5
 
 ---
 
-# Deliverables
+## Deliverables
 
 By the end of this lab:
 
@@ -102,8 +100,7 @@ By the end of this lab:
 
 ---
 
-<!-- _class: lead -->
-
+<!-- markdownlint-disable-next-line MD025 -->
 # Hands-On Time
 
 **Lab Guide:** [Lab 10: Build Your Own Agent](../../../labs/lab-10-capstone-build-agent.md)
