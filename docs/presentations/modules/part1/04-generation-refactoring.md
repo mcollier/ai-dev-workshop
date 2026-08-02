@@ -5,8 +5,6 @@ paginate: true
 backgroundColor: #fff
 ---
 
-<!-- _class: lead -->
-
 # Module 4
 
 ## Code Generation & Refactoring
@@ -16,21 +14,21 @@ backgroundColor: #fff
 
 ---
 
-# Two Workflows
+## Two Workflows
 
-## 1. Generate from Scratch
+### 1. Generate from Scratch
 - Complete CRUD endpoints
 - Following Clean Architecture
 - With query handlers (CQRS)
 
-## 2. Refactor Legacy Code
+### 2. Refactor Legacy Code
 - Modernize old patterns
 - Apply Object Calisthenics
 - Improve testability
 
 ---
 
-# Lab 03: Part A - Generation
+## Lab 03: Part A - Generation
 
 **Generate:**
 - `GET /tasks/{id}` - Retrieve single task
@@ -38,7 +36,7 @@ backgroundColor: #fff
 - `DELETE /tasks/{id}` - Delete task
 
 **Using:**
-- `@workspace` for context
+- `#codebase` for context
 - Minimal API patterns
 - CQRS queries
 - Integration tests
@@ -47,7 +45,7 @@ backgroundColor: #fff
 
 ---
 
-# CQRS Pattern
+## CQRS Pattern
 
 **Command-Query Responsibility Segregation**
 
@@ -63,11 +61,10 @@ backgroundColor: #fff
 
 ---
 
-# Lab 03: Part B - Refactoring
+## Lab 03: Part B - Refactoring
 
 **Legacy code:**
-- 🔷 .NET: `LegacyTaskProcessor.cs`
-- 🟩 Java: `LegacyTaskProcessor.java`
+- `LegacyTaskProcessor.cs`
 
 **Problems:**
 - Nested if statements
@@ -81,7 +78,7 @@ backgroundColor: #fff
 
 ---
 
-# Object Calisthenics (Light)
+## Object Calisthenics (Light)
 
 **Key rules:**
 - One level of indentation per method
@@ -109,29 +106,11 @@ if (task.Status != "Active") return;
 
 ---
 
-# Using @workspace
-
-**Why it matters:**
-- Copilot sees your entire codebase
-- Suggests patterns already in use
-- Maintains consistency
-
----
-
-**Example prompts:**
-- `@workspace Show me all domain entities`
-- `@workspace How are minimal APIs structured in this project?`
-- `@workspace Generate GET endpoint following existing pattern`
-
----
-
-<!-- _class: lead -->
-
+<!-- markdownlint-disable-next-line MD025 -->
 # Hands-On Time
 
 **Lab Guide:**
-- 🔷 [Lab 03: Generation & Refactoring (.NET)](../../../labs/lab-03-generation-and-refactoring.md)
-- 🟩 [Lab 03: Generation & Refactoring (Java)](../../../labs/lab-03-generation-and-refactoring-java.md)
+- [Lab 03: Generation & Refactoring (.NET)](../../../labs/lab-03-generation-and-refactoring.md)
 
 **Next Module:** [Testing & Documentation](05-testing-documentation.md)
 
