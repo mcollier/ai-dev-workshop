@@ -277,7 +277,7 @@ Test summary: total: 11, failed: 11, succeeded: 0
 
 Run these commands to verify everything still works:
 
-** .NET Track:**
+**.NET Track:**
 ```bash
 # 1. Check .NET
 dotnet --version
