@@ -5,8 +5,6 @@ paginate: true
 backgroundColor: #fff
 ---
 
-<!-- _class: lead -->
-
 # Module 5
 
 ## Designing Effective Agents
@@ -16,7 +14,7 @@ backgroundColor: #fff
 
 ---
 
-# Core Principle
+## Core Principle
 
 > Agents are products, not prompts
 
@@ -24,15 +22,9 @@ Design, test, and maintain them **like code**
 
 ---
 
-<!-- _class: small -->
-<style scoped>
-section { font-size: 1.00em; }
-h1 { font-size: 1.8em; }
-</style>
+## Agent Components
 
-# Agent Components
-
-## Core Instructions:
+## Core Instructions
 1. **Identity & Role** - Who is this agent?
 2. **Responsibilities** - What does it do?
 3. **Context** - What does it need to know?
@@ -44,13 +36,13 @@ h1 { font-size: 1.8em; }
 6. **Output Format** - Structured results
 7. **Tone** - Communication style
 
-## YAML Frontmatter (NEW):
+## YAML Frontmatter
 - `user-invocable`, `disable-model-invocation`
 - `agents`, `argument-hint`, `handoffs`
 
 ---
 
-# Design Pattern: Role-Based Scope
+## Design Pattern: Role-Based Scope
 
 ✅ **Do:** "You are a code reviewer specializing in security"
 
@@ -60,7 +52,7 @@ h1 { font-size: 1.8em; }
 
 ---
 
-# Design Pattern: Explicit Constraints
+## Design Pattern: Explicit Constraints
 
 ✅ **Do:**
 ```markdown
@@ -73,7 +65,7 @@ h1 { font-size: 1.8em; }
 
 ---
 
-# Design Pattern: Structured Outputs
+## Design Pattern: Structured Outputs
 
 ✅ **Do:** Define sections and format
 
@@ -92,9 +84,9 @@ h1 { font-size: 1.8em; }
 
 ---
 
-# Iteration Loop
+## Iteration Loop
 
-```
+```text
 Define → Test → Observe → Refine → Repeat
 ```
 
@@ -106,32 +98,24 @@ Define → Test → Observe → Refine → Repeat
 
 ---
 
-<!-- _class: small -->
-<style scoped>
-section { font-size: 0.95em; }
-h1 { font-size: 1.8em; }
-</style>
+## Advanced Agent Properties
 
-# Advanced Agent Properties
-
-## user-invocable
+### user-invocable
 - `true`: Visible in dropdown (default)
 - `false`: Hidden, only for subagents
 
-## disable-model-invocation
+### disable-model-invocation
 - `true`: Prevents auto-invocation by other agents
 - `false`: Callable as subagent (default)
 
----
-
-## handoffs
+### handoffs
 - Sequential workflow buttons
 - Guide users through processes
 - Human-in-the-loop between steps
 
 ---
 
-# Handoffs: Orchestrated Workflows
+## Handoffs: Orchestrated Workflows
 
 ```yaml
 handoffs:
@@ -150,25 +134,23 @@ handoffs:
 
 ---
 
-# Governance Considerations
+## Governance Considerations
 
-## Versioning
+### Versioning
 - Track changes in git
 - Semantic versioning for major updates
 
-## Review Process
+### Review Process
 - Agent **and skill** changes require PR review
 - Test before merging
 
----
-
-## Team Alignment
+### Team Alignment
 - Agents/Skills encode **team decisions**
 - Update as practices evolve
 
 ---
 
-# Common Pitfalls
+## Common Pitfalls
 
 ❌ **Task-based agents** → Use role-based  
 ❌ **Vague instructions** → Be explicit  
@@ -178,8 +160,7 @@ handoffs:
 
 ---
 
-<!-- _class: lead -->
-
+<!-- markdownlint-disable-next-line MD025 -->
 # Hands-On Time
 
 **Lab Guide:** [Lab 09: Agent Design](../../../labs/lab-09-agent-design.md)
