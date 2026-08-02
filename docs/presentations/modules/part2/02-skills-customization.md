@@ -5,20 +5,18 @@ paginate: true
 backgroundColor: #fff
 ---
 
-<!-- _class: lead -->
-
 # Module 2
 
 ## Skills & Customization Hierarchy
 ### Four Ways to Customize Copilot
 
-**Duration:** 30 minutes ⭐ NEW
+**Duration:** 30 minutes
 
 ---
 
-# The Customization Hierarchy
+## The Customization Hierarchy
 
-```
+```text
 4 Types (Specific → General)
 
 1. Prompts      → One-off, in-chat
@@ -31,7 +29,7 @@ backgroundColor: #fff
 
 ---
 
-# What Are Skills?
+## What Are Skills?
 
 **Skills = Domain Expertise Without Tool Access**
 
@@ -45,10 +43,10 @@ backgroundColor: #fff
 
 ---
 
-# Skills vs Agents
+## Skills vs Agents
 
 | Aspect | Skills | Agents |
-|--------|--------|--------|
+| -------- | -------- | -------- |
 | **Purpose** | Knowledge & templates | Workflows & actions |
 | **Tool Access** | ❌ None | ✅ Read/write files |
 | **Invocation** | `/skill-name` | `@agent-name` |
@@ -57,7 +55,7 @@ backgroundColor: #fff
 
 ---
 
-# When to Use Each Type
+## When to Use Each Type
 
 **Prompts:** One-time question  
 **Instructions:** Team coding standards  
@@ -72,7 +70,7 @@ backgroundColor: #fff
 
 ---
 
-# Slash Commands for Discovery
+## Slash Commands for Discovery
 
 ```bash
 /help              # Show all commands
@@ -84,11 +82,11 @@ backgroundColor: #fff
 /create-file       # Create file with AI
 ```
 
-**Try it:** Type `/skills` in Copilot Chat now
+**Try it:** Type `/skills` in Copilot now
 
 ---
 
-# Key Takeaway
+## Key Takeaway
 
 > Skills provide **knowledge**  
 > Agents provide **action**  
@@ -101,8 +99,7 @@ backgroundColor: #fff
 
 ---
 
-<!-- _class: lead -->
-
+<!-- markdownlint-disable-next-line MD025 -->
 # Hands-On Time
 
 **Lab Guide:** [Lab 06: Skills & Customization](../../../labs/lab-06-skills-and-customization.md)
