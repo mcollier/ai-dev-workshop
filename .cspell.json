@@ -15,16 +15,17 @@
   "language": "en",
   "noConfigSearch": true,
   "words": [
-    "megalinter",
-    "oxsecurity",
-    "marp",
-    "betterleaks",
-    "jsonlint",
-    "mattpocock",
     "addyosmani",
-    "lifecycles"
+    "betterleaks",
+    "csdevkit",
+    "jsonlint",
+    "lifecycles",
+    "marp",
+    "mattpocock",
+    "megalinter",
+    "oxsecurity"
   ],
   "version": "0.2",
   "caseSensitive": false,
-  "dictionaries": ["cpp-refined", "dotnet", "fullstack", "data-science"]
+  "dictionaries": ["cpp", "cpp-refined", "dotnet", "fullstack", "data-science"]
 }
