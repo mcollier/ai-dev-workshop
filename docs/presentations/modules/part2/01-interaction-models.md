@@ -5,34 +5,32 @@ paginate: true
 backgroundColor: #fff
 ---
 
-<!-- _class: lead -->
-
 # Module 1
 
-## Copilot Interaction Models
+## Interaction Models
 ### Ask, Plan, Agent
 
 **Duration:** 25 minutes
 
 ---
 
-# Three Ways to Interact with Copilot
+## Three Ways to Interact with Copilot
 
-## Ask Mode
+## ❓ Ask Mode
 **Purpose:** Learning, exploration, explanation  
 **Result:** Answers, guidance (no changes)
 
-## Plan Mode
+## 📑 Plan Mode
 **Purpose:** Design approach + gather requirements before code generation  
 **Result:** Structured plan awaiting your approval
 
-## Agent Mode
+## 🤖 Agent Mode
 **Purpose:** Multi-step, repository-level workflows  
 **Result:** Planned changes with human checkpoints
 
 ---
 
-# Ask Mode: When to Use
+## Ask Mode: When to Use
 
 ✅ **Use when:**
 - Understanding code or concepts
@@ -47,7 +45,7 @@ backgroundColor: #fff
 
 ---
 
-# Plan Mode: When to Use
+## Plan Mode: When to Use
 
 ✅ **Use when:**
 - You want to understand the approach before any code is written

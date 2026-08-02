@@ -15,35 +15,35 @@ backgroundColor: #fff
 
 ---
 
-# Welcome to Part 2
+## Welcome to Part 2
 
-## What You'll Learn
+### What You'll Learn
 
 - Understand **Ask, Plan, and Agent** interaction models
 - Master the **customization hierarchy**: Prompts → Instructions → Skills → Agents
 - Discover capabilities with **slash commands** (/agents, /skills, /help)
 - Differentiate **Skills** (knowledge) from **Agents** (workflows)
-- Use **Custom Copilot Agents** for repeatable workflows
+- Use **Custom Agents** for repeatable workflows
 - **Design effective agents** with handoffs and advanced properties
 - Apply **governance** to AI usage
 - **Build a production-ready agent** from scratch
 
 ---
 
-# Prerequisites
+## Prerequisites
 
-✅ Completion of Part 1 (or equivalent Copilot experience)  
-✅ VS Code with GitHub Copilot extension  
+✅ Completion of Part 1
+✅ VS Code with GitHub Copilot or Claude Code extension  
 ✅ Access to workshop repository  
 ✅ Familiarity with code generation and refactoring workflows
 
 ---
 
-# Part 1 Recap (5 minutes)
+## Part 1 Recap (5 minutes)
 
 **In Part 1, you learned:**
 
-- Using Copilot for TDD and refactoring
+- Using Copilot / Claude Code for TDD and refactoring
 - Copilot Instructions for guardrails
 - Documentation automation
 - Requirements-to-code workflows
@@ -54,9 +54,9 @@ Shaping **how teams work** using AI
 
 ---
 
-# Today's Journey
+## Today's Journey
 
-```
+```text
 Module 0: Kickoff & Context Reset (10 min)
 Module 1: Interaction Models (25 min)
 Module 2: Skills & Customization (30 min)
@@ -69,9 +69,7 @@ Module 7: Wrap-Up & Governance (10 min)
 
 ---
 
-<!-- _class: lead -->
-
-# Let's Begin
+## Let's Begin
 
 **Next Module:** [Interaction Models](01-interaction-models.md)
 
