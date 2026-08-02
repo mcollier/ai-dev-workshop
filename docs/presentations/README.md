@@ -195,7 +195,5 @@ jobs:
 - **Marp Documentation**: <https://marp.app/>
 - **VS Code Extension**: <https://marketplace.visualstudio.com/items?itemName=marp-team.marp-vscode>
 - **Lab Guides**: [docs/labs/](../labs/)
-- **Facilitator Guides**: [docs/FACILITATOR_GUIDE.md](../FACILITATOR_GUIDE.md)
-- **Workshop Index**: [index.md](index.md)
 
 ---
