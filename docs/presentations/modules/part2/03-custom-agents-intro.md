@@ -5,22 +5,20 @@ paginate: true
 backgroundColor: #fff
 ---
 
-<!-- _class: lead -->
-
 # Module 3
 
-## Custom Copilot Agents
+## Custom Agents
 ### Workflows with Tool Access
 
 **Duration:** 25 minutes
 
 ---
 
-# What Are Custom Agents?
+## What Are Custom Agents?
 
 **Named chat participants** with specific roles
 
-- Selectable from agent dropdown
+- Selectable from agent dropdown (IDE) or `/agent` (CLI)
 - Role-based AI personas (e.g., Architecture Reviewer)
 - Defined scope and constraints
 - Structured, consistent outputs
@@ -28,9 +26,9 @@ backgroundColor: #fff
 
 ---
 
-# Mental Model: The Specialist
+## Mental Model: The Specialist
 
-```
+```text
 Standard Copilot Chat = General AI Assistant
 
 Custom Agent = Domain Expert Consultant
@@ -45,10 +43,10 @@ You wouldn't ask a general assistant to:
 
 ---
 
-# The Complete Hierarchy
+## The Complete Hierarchy
 
 | Feature | Prompts | Instructions | Skills | Agents |
-|---------|---------|--------------|--------|--------|
+| --------- | --------- | -------------- | -------- | -------- |
 | **Scope** | One-off | Always-on | On-demand | On-demand |
 | **Invocation** | Chat | Automatic | `#name` | `@name` |
 | **Tool Access** | ❌ | ❌ | ❌ | ✅ |
@@ -73,7 +71,7 @@ You wouldn't ask a general assistant to:
 
 ---
 
-# Workshop Agents
+## Workshop Agents
 
 ## Architecture Reviewer
 Reviews code for Clean Architecture & DDD compliance
@@ -86,14 +84,14 @@ Proposes comprehensive test strategies
 
 ---
 
-# Guided Exercise
+## Guided Exercise
 
 **Try the Architecture Reviewer agent:**
 
-1. Open Copilot Chat in Agent Mode
-2. Select "Architecture Reviewer" from dropdown
+1. Open Copilot in Agent mode
+2. Select "Architecture Reviewer" from dropdown or CLI
 3. Prompt: "Review the Task domain model"
-4. Compare to standard Copilot Chat output
+4. Compare to standard Copilot output
 
 **Observe:**
 - Structured format
@@ -102,7 +100,7 @@ Proposes comprehensive test strategies
 
 ---
 
-# Key Insight
+## Key Insight
 
 > **Instructions** = Guardrails  
 > **Skills** = Knowledge base  
@@ -112,8 +110,7 @@ All three work together!
 
 ---
 
-<!-- _class: lead -->
-
+<!-- markdownlint-disable-next-line MD025 -->
 # Hands-On Time
 
 **Lab Guide:** [Lab 07: Custom Agents Intro](../../../labs/lab-07-custom-agents-intro.md)
