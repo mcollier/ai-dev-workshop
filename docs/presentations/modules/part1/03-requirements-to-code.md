@@ -5,8 +5,6 @@ paginate: true
 backgroundColor: #fff
 ---
 
-<!-- _class: lead -->
-
 # Module 3
 
 ## Requirements → Backlog → Code
@@ -16,7 +14,7 @@ backgroundColor: #fff
 
 ---
 
-# The Challenge
+## The Challenge
 
 **What you get:**
 > "As a user, I want to prioritize my tasks"
@@ -28,16 +26,16 @@ backgroundColor: #fff
 - API endpoints
 - Comprehensive tests
 
-**With Copilot:** Generate all of this systematically
+**With GitHub Copilot / Claude Code:** Generate all of this systematically
 
 ---
 
-# Our Approach
+## Our Approach
 
-```
+```text
 User Story
   ↓
-Backlog Item with Acceptance Criteria (Copilot)
+Backlog Item with Acceptance Criteria (Copilot / Claude Code)
   ↓
 Domain Model (TDD: Tests first)
   ↓
@@ -50,7 +48,7 @@ Integration Tests
 
 ---
 
-# Lab 02 Overview
+## Lab 02 Overview
 
 **Build:** Task Priority feature
 
@@ -65,21 +63,21 @@ Integration Tests
 
 ---
 
-# Domain-Driven Design Patterns
+## Domain-Driven Design Patterns
 
-## Value Objects
+### Value Objects
 - Immutable
 - Value equality
 - Example: `Priority`, `Address`
 
-## Entities
+### Entities
 - Identity-based equality
 - Lifecycles
 - Example: `Task`, `User`
 
 ---
 
-## Aggregates
+### Aggregates
 - Consistency boundaries
 - Example: `Task` (aggregate root)
 
@@ -87,9 +85,9 @@ Integration Tests
 
 ---
 
-# Key Technique: Context Variables
+## Key Technique: Context Variables
 
-```
+```text
 Instead of:
 "Create a task entity"
 
@@ -101,8 +99,7 @@ Use:
 
 ---
 
-<!-- _class: lead -->
-
+<!-- markdownlint-disable-next-line MD025 -->
 # Hands-On Time
 
 **Lab Guide:** [Lab 02: Requirements to Code](../../../labs/lab-02-requirements-to-code.md)
