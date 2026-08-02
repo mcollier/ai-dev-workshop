@@ -14,8 +14,16 @@
   ],
   "language": "en",
   "noConfigSearch": true,
-  "words": ["megalinter", "oxsecurity", "marp", "betterleaks", "jsonlint"],
+  "words": [
+    "megalinter",
+    "oxsecurity",
+    "marp",
+    "betterleaks",
+    "jsonlint",
+    "mattpocock",
+    "addyosmani"
+  ],
   "version": "0.2",
   "caseSensitive": false,
-  "dictionaries": ["cpp-refined", "dotnet", "fullstack"]
+  "dictionaries": ["cpp-refined", "dotnet", "fullstack", "data-science"]
 }
