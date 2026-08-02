@@ -1,10 +1,26 @@
 # To Do List
 
 - [ ] Support GitHub Copilot App
+- [ ] Add intro slide(s) on pricing?
+- [ ] Support for VSCode Agents window
 - [ ] Section on file locations for each tool (GitHub Copilot CLI, VS Code GitHub Copilot, Claude Code)
 - [ ] Section on using a plugin marketplace
 - [ ] Account for newer skills and patterns
-- [ ] Account for Squad or similar?
-- [ ] Account for prompt cache details
-- [ ] Account for model selection guidance
+  - [ ] Recommended skills or plugins ([mattpocock/skills](https://github.com/mattpocock/skills), [skills.sh](https://skills.sh), [anthropics/skills](https://github.com/anthropics/skills), [addyosmani/agent-skills](https://github.com/addyosmani/agent-skills), [HVE](https://microsoft.github.io/hve-core/docs/))?
+  - [ ] Research --> Plan --> Implement
+  - [ ] Rubber Ducking
+- [ ] Account for Squad or similar? Advanced topic?
+- [ ] Add guidance for sharing assets (plugin marketplace, organizational settings (GitHub), personal vs. repo level skills, etc.)
+- [ ] Update .NET code to .NET 10 (current LTS version; v9 end of support in November 2026)
 - [ ] Review workshop checklist to ensure guidance on using GitHub Copilot CLI
+- [ ] Seems that `@workspace` has been removed and to use `#codebase` instead
+- [ ] When to use `AGENTS.md` vs. `copilot-instructions.md`
+  - [ ] Also `CLAUDE.md`
+- [ ] Should we lean more towards CLI tools (GitHub Copilot CLI and Claude Code) instead of pure VSCode IDE?
+- [ ] Account for prompt cache details
+  - [ ] Add section on costs and subsequently optimization
+  - [ ] Account for model selection guidance
+- [ ] Add support for GitHub (remote) coding agent?
+- [ ] Add to pre-req details on ensuring having budget/credits to do the labs. This does cost real money!
+- [ ] Pull in docs/guides as a reference
+- [ ] Add Claude Code (VS Code extension and CLI) to dev container
