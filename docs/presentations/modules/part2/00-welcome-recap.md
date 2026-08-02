@@ -69,7 +69,8 @@ Module 7: Wrap-Up & Governance (10 min)
 
 ---
 
-## Let's Begin
+<!-- markdownlint-disable-next-line MD025 -->
+# Let's Begin
 
 **Next Module:** [Interaction Models](01-interaction-models.md)
 

@@ -76,7 +76,7 @@ backgroundColor: #fff
 
 ---
 
-# Demo: Same Task, Three Ways
+## Demo: Same Task, Three Ways
 
 **Task:** Add Priority property to Task entity
 
@@ -92,7 +92,7 @@ backgroundColor: #fff
 
 ---
 
-# Key Takeaway
+## Key Takeaway
 
 > Agent Mode is not "better chat"  
 > It's a **different execution model**
@@ -101,8 +101,7 @@ Use the **right mode** for the **right job**
 
 ---
 
-<!-- _class: lead -->
-
+<!-- markdownlint-disable-next-line MD025 -->
 # Hands-On Time
 
 **Lab Guide:** [Lab 05: Interaction Models](../../../labs/lab-05-interaction-models.md)
