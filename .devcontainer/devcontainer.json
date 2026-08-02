@@ -3,7 +3,8 @@
   "image": "mcr.microsoft.com/devcontainers/dotnet:dev-10.0-noble",
   "features": {
     "ghcr.io/devcontainers/features/node:2": {
-      "version": "lts"
+      "version": "24",
+      "npmVersion": "11.16.0"
     },
     "ghcr.io/devcontainers/features/azure-cli:1": {
       "version": "2.87.0",
@@ -14,7 +15,7 @@
       "extensions": ["github/gh-aw"]
     },
     "ghcr.io/azure/azure-dev/azd:latest": {
-      "version": "latest"
+      "version": "1.29.0"
     },
     "ghcr.io/devcontainers/features/copilot-cli:1": {
       "version": "latest"
@@ -47,6 +48,6 @@
       }
     }
   },
-  "postCreateCommand": "npm install && npm install --global cspell && npm install --global prettier",
+  "postCreateCommand": "npm ci",
   "postStartCommand": "dotnet dev-certs https --trust"
 }
