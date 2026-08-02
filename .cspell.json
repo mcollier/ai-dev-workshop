@@ -8,7 +8,7 @@
     "**/node_modules/**",
     "**/vscode-extension/**",
     ".vscode",
-    "megalinter",
+    "megalinter-reports",
     "package-lock.json",
     "report"
   ],
