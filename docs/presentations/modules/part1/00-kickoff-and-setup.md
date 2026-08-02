@@ -9,17 +9,17 @@ backgroundColor: #fff
 
 ## AI-Assisted Development Fundamentals
 
-**Duration:** 3 Hours  
+**Duration:** ~3 Hours  
 **Format:** Instructor-led, hands-on  
 **Part:** 1 of 2
 
 ---
 
-# Welcome to AI-Assisted Development
+## Welcome to AI-Assisted Development
 
-## What You'll Learn Today
+### What You'll Learn Today
 
-- Use **Copilot Instructions** for team-wide consistency
+- Use **instructions** for team-wide consistency
 - Apply **Test-Driven Development** with AI assistance
 - Transform **requirements into working code**
 - Generate and **refactor APIs** following Clean Architecture
@@ -30,8 +30,9 @@ backgroundColor: #fff
 
 ## The only constant is change
 
-- Copilot is available in multiple IDEs, GitHub.com, CLI, and mobile — features vary by tool
-- What you see in Visual Studio 2022 or 2026 may differ from VS Code or other tools
+- GitHub Copilot is available in multiple IDEs, [github.com/copilot](https://github.com/copilot) , CLI, and mobile
+- Claude Code is available in VS Code and JetBrains, CLI, Claude desktop, or [claude.ai/code](https://claude.ai/code)
+- What you see in Visual Studio may differ from VS Code or other tools
   - See [Copilot feature matrix](https://docs.github.com/en/copilot/reference/copilot-feature-matrix) for version details
 - AI-assisted software engineering tools and practices are evolving quickly — expect changes and differences
 - Training content reflects current features; some may vary by tool
@@ -39,7 +40,7 @@ backgroundColor: #fff
 
 ---
 
-# Why This Workshop Matters
+## Why This Workshop Matters
 
 **Traditional Development:**
 - Manual test writing
@@ -47,60 +48,44 @@ backgroundColor: #fff
 - Documentation debt
 - Inconsistent patterns across team
 
-**With GitHub Copilot:**
+**With AI-assisted development:**
 - AI generates tests from specifications
 - Accelerated implementation
 - Documentation alongside code
-- Encoded team standards via Copilot Instructions
+- Encoded team standards
 
 ---
 
-<!-- _class: small -->
-<style scoped>
-section { font-size: 0.95em; }
-h1 { font-size: 1.8em; }
-</style>
+## Prerequisites Check
 
-# Prerequisites Check
-
-✅ **GitHub Copilot** - Active subscription  
+✅ **GitHub Copilot** - Active subscription  _or_
+✅ **Claude Code** - Active subscription  
 ✅ **VS Code** - Latest stable version  
 ✅ **Git** - Basic familiarity  
-
-**🔷 .NET Track:**  
-✅ **.NET 9 SDK** - `dotnet --version`  
+✅ **.NET 10 SDK** - `dotnet --version`  
 ✅ **C# Experience** - Comfortable with syntax
 
-**🟩 Spring Boot Track:**  
-✅ **Java 21** - `java -version`  
-✅ **Maven 3.9+** - `mvn --version`  
-✅ **Java/Spring Experience** - Comfortable with syntax
-
-**Environment Check:**
 ```bash
 # Common
 git --version
 code --version
+claude --version
 
-# .NET Track
-dotnet --version    # Should show 9.x.x
-
-# Spring Boot Track
-java -version       # Should show 21.x.x
-mvn --version       # Should show 3.9+
+# .NET
+dotnet --version    # Should show 10.x.x
 ```
 
 ---
 
-# Repository Structure
+## Repository Structure
 
-```
+```bash
 TaskManager.sln
 ├── src/
-│   ├── TaskManager.Domain/        # Business logic
-│   ├── TaskManager.Application/   # Use cases
+│   ├── TaskManager.Domain/         # Business logic
+│   ├── TaskManager.Application/    # Use cases
 │   ├── TaskManager.Infrastructure/ # Data access
-│   └── TaskManager.Api/           # Minimal API
+│   └── TaskManager.Api/            # Minimal API
 └── tests/
     ├── TaskManager.UnitTests/
     └── TaskManager.IntegrationTests/
@@ -108,48 +93,29 @@ TaskManager.sln
 
 **Architecture:** Clean Architecture + DDD  
 **Testing:** xUnit + FakeItEasy  
-**API:** .NET 9 Minimal APIs
+**API:** .NET 10 Minimal APIs
 
 ---
 
-# Repository Structure (Spring Boot)
+## Today's Journey
 
-```
-src-springboot/
-├── taskmanager-domain/            # Business logic & entities
-├── taskmanager-application/       # Use cases & services
-├── taskmanager-infrastructure/    # Data access & persistence
-└── taskmanager-api/               # Spring Boot REST API
-    └── src/main/java/.../api/
-        ├── controllers/           # REST controllers
-        ├── dto/                   # Request/Response models
-        └── config/                # App configuration
-```
-
-**Architecture:** Clean Architecture + DDD  
-**Testing:** JUnit 5 + Mockito  
-**API:** Spring Boot 3 + Java 21
-
----
-
-# Today's Journey
-
-```
+```text
 0. Kickoff & Setup (15 min)
-1. Copilot Features Tour (15 min)
-2. Copilot Instructions & TDD (30 min)
+1. Copilot / Claude Code Features Tour (15 min)
+2. Instructions & TDD (30 min)
 3. Requirements → Code (45 min)
 4. Code Generation & Refactoring (45 min)
 5. Testing & Documentation (15 min)
 6. Wrap-Up & Discussion (15 min)
 ```
 
-**Total:** 3 hours with hands-on labs
+**Total:** ~3 hours with hands-on labs
 
 ---
 
 <!-- _class: lead -->
 
+<!-- markdownlint-disable-next-line MD025 -->
 # Module 0: Setup & Environment
 
 ## Getting Ready
@@ -158,11 +124,11 @@ src-springboot/
 
 ---
 
-# Clone and Branch
+## Clone and Branch
 
 ```bash
-git clone https://github.com/centricconsulting/ai-coding-workshop.git
-cd ai-coding-workshop
+git clone https://github.com/mcollier/ai-dev-workshop.git
+cd ai-dev-workshop
 
 # Create your personal branch
 git checkout main
@@ -174,27 +140,19 @@ git checkout -b your-name-workshop
 
 ---
 
-# Verify Environment
+## Verify Environment
 
-**🔷 .NET Track:**
 ```bash
 dotnet --version
 dotnet build
 dotnet test
 ```
 
-**🟩 Spring Boot Track:**
-```bash
-java -version
-cd src-springboot && mvn clean install
-mvn test -f src-springboot/pom.xml
-```
-
 **Expected:** All should succeed
 
 ---
 
-# Copilot Instructions Preview
+## Copilot Instructions Preview
 
 This repository includes **`.github/instructions/`** with context-aware instruction files
 
@@ -202,15 +160,13 @@ This repository includes **`.github/instructions/`** with context-aware instruct
 - Automatically applied to all Copilot interactions
 - Encodes Clean Architecture rules
 - Enforces DDD patterns
-- Specifies .NET 9 conventions
+- Specifies .NET 10 conventions
 
 **No setup needed** - It just works!
 
 ---
 
-<!-- _class: lead -->
-
-# Ready to Begin
+## Ready to Begin
 
 **Next Module:** [Copilot Features Tour](01-copilot-features-tour.md)
 
