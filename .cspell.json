@@ -21,7 +21,8 @@
     "betterleaks",
     "jsonlint",
     "mattpocock",
-    "addyosmani"
+    "addyosmani",
+    "lifecycles"
   ],
   "version": "0.2",
   "caseSensitive": false,
