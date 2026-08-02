@@ -5,8 +5,6 @@ paginate: true
 backgroundColor: #fff
 ---
 
-<!-- _class: lead -->
-
 # Module 4
 
 ## Workflow Agents in Action
@@ -16,7 +14,7 @@ backgroundColor: #fff
 
 ---
 
-# Lab Overview
+## Lab Overview
 
 You'll apply agents to **3 real workflows:**
 
@@ -31,7 +29,7 @@ You'll apply agents to **3 real workflows:**
 
 ---
 
-# Workflow 1: Backlog Generation
+## Workflow 1: Backlog Generation
 
 **Scenario:** Add notification system to TaskManager
 
@@ -43,7 +41,7 @@ You'll apply agents to **3 real workflows:**
 
 ---
 
-# Workflow 2: Architecture Review
+## Workflow 2: Architecture Review
 
 **Scenario:** Review NotificationService for Clean Architecture
 
@@ -55,7 +53,7 @@ You'll apply agents to **3 real workflows:**
 
 ---
 
-# Workflow 3: Test Strategy
+## Workflow 3: Test Strategy
 
 **Scenario:** Propose tests for task assignment feature
 
@@ -67,7 +65,7 @@ You'll apply agents to **3 real workflows:**
 
 ---
 
-# Discussion Questions
+## Discussion Questions
 
 1. Which agent provided the most value?
 2. Did agents catch issues standard chat missed?
@@ -76,7 +74,7 @@ You'll apply agents to **3 real workflows:**
 
 ---
 
-# Agents Excel At
+## Agents Excel At
 
 ✅ Structured, repeatable workflows  
 ✅ Consistency across team members  
@@ -91,8 +89,7 @@ You'll apply agents to **3 real workflows:**
 
 ---
 
-<!-- _class: lead -->
-
+<!-- markdownlint-disable-next-line MD025 -->
 # Hands-On Time
 
 **Lab Guide:** [Lab 08: Workflow Agents](../../../labs/lab-08-workflow-agents.md)
