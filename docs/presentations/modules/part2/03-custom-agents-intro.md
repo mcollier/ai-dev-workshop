@@ -55,7 +55,7 @@ You wouldn't ask a general assistant to:
 
 ---
 
-# When to Use Custom Agents
+## When to Use Custom Agents
 
 ✅ **Use agents for:**
 - Repeated **workflows** (reviews, planning)

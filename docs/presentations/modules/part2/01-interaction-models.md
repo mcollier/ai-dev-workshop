@@ -59,7 +59,7 @@ backgroundColor: #fff
 
 ---
 
-# Agent Mode: When to Use
+## Agent Mode: When to Use
 
 ✅ **Use when:**
 - Multi-file workflows
