@@ -10,7 +10,8 @@
     ".vscode",
     "megalinter-reports",
     "package-lock.json",
-    "report"
+    "report",
+    "lychee.toml"
   ],
   "language": "en",
   "noConfigSearch": true,
