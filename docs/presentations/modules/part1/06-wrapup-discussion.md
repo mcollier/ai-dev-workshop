@@ -5,8 +5,6 @@ paginate: true
 backgroundColor: #fff
 ---
 
-<!-- _class: lead -->
-
 # Module 6
 
 ## Wrap-Up & Discussion
@@ -16,9 +14,9 @@ backgroundColor: #fff
 
 ---
 
-# What We Covered
+## What We Covered
 
-✅ **Copilot Instructions** - Team-wide consistency  
+✅ **Instructions** - Team-wide consistency  
 ✅ **TDD with AI** - Tests first, always  
 ✅ **Requirements → Code** - Systematic transformation  
 ✅ **Clean Architecture** - Maintained via AI  
@@ -27,28 +25,28 @@ backgroundColor: #fff
 
 ---
 
-# Key Takeaways
+## Key Takeaways
 
-## 1. AI Amplifies Good Practices
+### 1. AI Amplifies Good Practices
 - TDD becomes faster
 - Architecture patterns enforced
 - Documentation debt reduced
 
-## 2. Context Matters
-- Use `@workspace`, `#file`, `#selection`
+### 2. Context Matters
+- Use `#codebase`, `#file`, `#selection`
 - Copilot Instructions encode team knowledge
 - Better prompts = better results
 
 ---
 
-## 3. Human Accountability
+### 3. Human Accountability
 - Review all AI suggestions
 - Tests validate correctness
 - You own the code
 
 ---
 
-# Common Pitfalls to Avoid
+## Common Pitfalls to Avoid
 
 ❌ **Accepting suggestions blindly**  
 ✅ Review, understand, test
@@ -64,14 +62,14 @@ backgroundColor: #fff
 
 ---
 
-# Anti-Patterns
+## Anti-Patterns
 
 ## Over-reliance
 - AI is a tool, not a replacement for thinking
 - Understand what code does
 
 ## Under-leveraging
-- Use Copilot for repetitive tasks
+- Use Copilot / Claude Code for repetitive tasks
 - Don't type boilerplate manually
 
 ## Inconsistent standards
@@ -80,28 +78,28 @@ backgroundColor: #fff
 
 ---
 
-# Best Practices
+## Best Practices
 
 ✅ **Start with plan** - Ask Copilot for approach first  
 ✅ **Tests first** - TDD even with AI  
 ✅ **Review iteratively** - Don't wait until the end  
-✅ **Use chat participants** - @workspace is powerful  
+✅ **Use chat participants** - Extensions may add additional options  
 ✅ **Leverage instructions** - Team knowledge encoded  
 ✅ **Commit frequently** - Small, focused changes
 
 ---
 
-# Discussion Questions
+## Discussion Questions
 
 1. **What surprised you most** about AI-assisted development?
-2. **Where did Copilot excel?** Where did it struggle?
+2. **Where did GitHub Copilot / Claude Code excel?** Where did it struggle?
 3. **How would you use this** in your daily work?
 4. **What team standards** should you encode in instructions?
 5. **What concerns** do you still have?
 
 ---
 
-# Next Steps: Part 2
+## Next Steps: Part 2
 
 **Advanced GitHub Copilot (Part 2):**
 - Interaction models (Ask, Plan, Agent)
@@ -115,10 +113,10 @@ backgroundColor: #fff
 
 ---
 
-# Additional Practice
+## Additional Practice
 
 **Reference Implementation:**
-- Branch: `test-lab-walkthrough`
+- Branch: `solutions`
 - All labs completed
 - Best practices demonstrated
 
@@ -128,27 +126,28 @@ backgroundColor: #fff
 - Continue learning
 
 ```bash
-git checkout test-lab-walkthrough
+git checkout solutions
 ```
 
 ---
 
-# Resources
+## Resources
 
 📚 **Lab Guides:** `docs/labs/`  
 📝 **Copilot Instructions:** `.github/instructions/` (context-aware)  
-👥 **Facilitator Guide:** `docs/FACILITATOR_GUIDE.md`  
-🎨 **Architecture:** `docs/design/architecture.md`
 
 **GitHub Copilot Docs:**  
-https://docs.github.com/copilot
+[https://docs.github.com/copilot](https://docs.github.com/copilot)
+
+**Claude Code Docs**
+[https://code.claude.com/docs](https://code.claude.com/docs)
 
 ---
 
-# Immediate Actions
+## Immediate Actions
 
 **This week:**
-1. Try Copilot for **one TDD task**
+1. Try Copilot or Claude Code for **one TDD task**
 2. Create **Copilot Instructions** for your repo
 3. Use `/tests` and `/doc` in daily work
 
@@ -159,11 +158,9 @@ https://docs.github.com/copilot
 
 ---
 
-<!-- _class: lead -->
+## Thank You
 
-# Thank You!
-
-## Questions?
+### Questions?
 
 **Feedback and contributions:**  
 [CONTRIBUTING.md](../../../CONTRIBUTING.md)
@@ -173,18 +170,17 @@ Advanced GitHub Copilot with Custom Agents
 
 ---
 
-# Remember
+## Remember
 
 > AI is a force multiplier  
-> Good practices + Copilot = Great results  
+> Good practices + Copilot/Claude Code = Great results  
 > You are accountable for the code
 
 **Keep learning, keep improving!**
 
 ---
 
-<!-- _class: lead -->
-
+<!-- markdownlint-disable-next-line MD025 -->
 # Part 1 Complete
 
 **Previous Module:** [Testing & Documentation](05-testing-documentation.md)
