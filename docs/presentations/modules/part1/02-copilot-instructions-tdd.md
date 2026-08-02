@@ -45,7 +45,7 @@ Key rules encoded:
 
 ## Test-Driven Development (TDD)
 
-```
+```text
 🔴 RED → ✅ GREEN → ♻️ REFACTOR
 ```
 
