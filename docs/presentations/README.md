@@ -2,6 +2,41 @@
 
 This directory contains modular Marp presentations for the workshop.
 
+## 📚 Module Catalog
+
+### Part 1: Fundamentals (3 hours)
+
+| Module | Topic | Duration | File |
+| -------- | ------- | ---------- | ------ |
+| 00 | Kickoff & Setup | 15 min | [00-kickoff-and-setup.md](modules/part1/00-kickoff-and-setup.md) |
+| 01 | Copilot Features Tour | 15 min | [01-copilot-features-tour.md](modules/part1/01-copilot-features-tour.md) |
+| 02 | Copilot Instructions & TDD | 30 min | [02-copilot-instructions-tdd.md](modules/part1/02-copilot-instructions-tdd.md) |
+| 03 | Requirements to Code | 45 min | [03-requirements-to-code.md](modules/part1/03-requirements-to-code.md) |
+| 04 | Generation & Refactoring | 45 min | [04-generation-refactoring.md](modules/part1/04-generation-refactoring.md) |
+| 05 | Testing & Documentation | 15 min | [05-testing-documentation.md](modules/part1/05-testing-documentation.md) |
+| 06 | Wrap-Up & Discussion | 15 min | [06-wrapup-discussion.md](modules/part1/06-wrapup-discussion.md) |
+
+**Total:** ~3 hours
+
+---
+
+### Part 2: Advanced Copilot (3 hours)
+
+| Module | Topic | Duration | File |
+| -------- | ------- | ---------- | ------ |
+| 00 | Welcome & Recap | 10 min | [00-welcome-recap.md](modules/part2/00-welcome-recap.md) |
+| 01 | Interaction Models | 25 min | [01-interaction-models.md](modules/part2/01-interaction-models.md) |
+| 02 | Skills & Customization | 30 min | [02-skills-customization.md](modules/part2/02-skills-customization.md) ⭐ NEW |
+| 03 | Custom Agents Intro | 25 min | [03-custom-agents-intro.md](modules/part2/03-custom-agents-intro.md) |
+| 04 | Workflow Agents | 30 min | [04-workflow-agents.md](modules/part2/04-workflow-agents.md) |
+| 05 | Agent Design | 30 min | [05-agent-design.md](modules/part2/05-agent-design.md) |
+| 06 | Capstone Lab | 35 min | [06-capstone-lab.md](modules/part2/06-capstone-lab.md) |
+| 07 | Wrap-Up & Next Steps | 10 min | [07-wrapup-next-steps.md](modules/part2/07-wrapup-next-steps.md) |
+
+**Total:** ~3 hours
+
+---
+
 ## Quick Start
 
 ### Option 1: View in VS Code (Recommended)
@@ -34,16 +69,6 @@ npx @marp-team/marp-cli modules/part1/*.md --pdf --pdf-notes --output part1-with
 # Export to HTML (interactive)
 npx @marp-team/marp-cli modules/part2/*.md --html --output part2-interactive.html
 ```
-
----
-
-## Module Catalog
-
-See [index.md](index.md) for complete catalog of available modules.
-
-**Quick Links:**
-- [Part 1: Fundamentals](modules/part1/) (7 modules)
-- [Part 2: Advanced](modules/part2/) (8 modules)
 
 ---
 
