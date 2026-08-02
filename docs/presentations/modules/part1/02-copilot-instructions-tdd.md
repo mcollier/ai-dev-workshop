@@ -5,8 +5,6 @@ paginate: true
 backgroundColor: #fff
 ---
 
-<!-- _class: lead -->
-
 # Module 2
 
 ## Copilot Instructions & TDD
@@ -16,10 +14,9 @@ backgroundColor: #fff
 
 ---
 
-# What Are Copilot Instructions?
+## What Are Copilot Instructions?
 
-**🔷 .NET:** `.github/instructions/dotnet.instructions.md` (auto-loads for C# files)  
-**🟩 Spring Boot:** `.github/instructions/springboot.instructions.md` (auto-loads for `src-springboot/**`)
+`.github/instructions/dotnet.instructions.md` (auto-loads for C# files)  
 
 **Purpose:**
 - Repository-wide AI behavior
@@ -31,22 +28,22 @@ backgroundColor: #fff
 
 ---
 
-# Our Copilot Instructions
+## Our Copilot Instructions
 
 Key rules encoded:
 
-| Rule | 🔷 .NET | 🟩 Spring Boot |
-|------|---------|----------------|
-| **TDD first** | ✅ Tests before code | ✅ Tests before code |
-| **Clean Architecture** | ✅ Domain has no deps | ✅ Domain has no deps |
-| **DDD patterns** | ✅ Aggregates, VOs | ✅ Aggregates, VOs |
-| **Stack** | ✅ .NET 9, Minimal APIs | ✅ Spring Boot 3, Java 21 |
-| **Testing** | ✅ xUnit + FakeItEasy | ✅ JUnit 5 + Mockito |
-| **Naming** | ✅ PascalCase / camelCase | ✅ camelCase / PascalCase |
+| Rule | 🔷 .NET |
+| ------ | --------- |
+| **TDD first** | ✅ Tests before code |
+| **Clean Architecture** | ✅ Domain has no deps |
+| **DDD patterns** | ✅ Aggregates, VOs |
+| **Stack** | ✅ .NET 10, Minimal APIs |
+| **Testing** | ✅ xUnit + FakeItEasy |
+| **Naming** | ✅ PascalCase / camelCase |
 
 ---
 
-# Test-Driven Development (TDD)
+## Test-Driven Development (TDD)
 
 ```
 🔴 RED → ✅ GREEN → ♻️ REFACTOR
@@ -63,12 +60,12 @@ Write **minimal code** to make the test pass
 
 ---
 
-# Why TDD with Copilot?
+## Why TDD with Copilot?
 
 **Traditional concern:** "AI writes code without tests"
 
 **Our approach:**
-- Copilot Instructions **enforce tests first**
+- Instructions **enforce tests first**
 - AI generates test cases from requirements
 - Tests are easier to review than implementations
 - Validates AI-generated code immediately
@@ -77,20 +74,14 @@ Write **minimal code** to make the test pass
 
 ---
 
+<!-- markdownlint-disable-next-line MD025 -->
 # Lab 01 Overview
 
-**🔷 .NET Track — Build:** `NotificationService` with TDD
+**Build:** `NotificationService` with TDD
 
 1. Define `INotificationService` interface (RED)
 2. Generate comprehensive test suite (RED)
 3. Implement `NotificationService` (GREEN)
-4. Refactor for quality (REFACTOR)
-
-**🟩 Spring Boot Track — Build:** `NotificationService` with TDD
-
-1. Define `NotificationService` interface (RED)
-2. Generate comprehensive JUnit 5 test suite (RED)
-3. Implement `NotificationServiceImpl` (GREEN)
 4. Refactor for quality (REFACTOR)
 
 **Time:** 25 minutes  
@@ -98,6 +89,7 @@ Write **minimal code** to make the test pass
 
 ---
 
+<!-- markdownlint-disable-next-line MD025 -->
 # Demo: TDD Workflow
 
 **Watch for:**
@@ -111,8 +103,7 @@ Write **minimal code** to make the test pass
 
 ---
 
-<!-- _class: lead -->
-
+<!-- markdownlint-disable-next-line MD025 -->
 # Hands-On Time
 
 **Lab Guide:** [Lab 01: TDD with Copilot](../../../labs/lab-01-tdd-with-copilot.md)
