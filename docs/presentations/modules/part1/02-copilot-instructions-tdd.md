@@ -108,6 +108,6 @@ Write **minimal code** to make the test pass
 
 **Lab Guide:** [Lab 01: TDD with Copilot](../../../labs/lab-01-tdd-with-copilot.md)
 
-**Next Module:** [Requirements to Code](02-requirements-to-code.md)
+**Next Module:** [Requirements to Code](03-requirements-to-code.md)
 
 **Previous Module:** [Copilot Features Tour](01-copilot-features-tour.md)
