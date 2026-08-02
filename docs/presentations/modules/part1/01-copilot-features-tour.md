@@ -5,8 +5,6 @@ paginate: true
 backgroundColor: #fff
 ---
 
-<!-- _class: lead -->
-
 # Module 1
 
 ## GitHub Copilot Features Tour
@@ -16,35 +14,41 @@ backgroundColor: #fff
 
 ---
 
-<style scoped>
-section { font-size: 0.95em; }
-h1, h2 { font-size: 1.8em; }
-</style>
+## GitHub Copilot Pricing
 
-# Three Ways to Interact
+_Coming soon_
 
-## 1. Inline Completions
-- Active while typing
-- Suggests next lines
+---
+
+## Claude Code Pricing
+
+_Coming soon_
+
+---
+
+## Three Ways to Interact
+
+### 1. Inline Completions
+- Active while typing. Suggests next lines.
 - **Trigger:** Start typing or use `Alt+\` (Windows/Linux) or `Option+\` (Mac)
 
-## 2. Chat Panel
+### 2. Chat Panel
 - Ask questions, explain code
 - Get suggestions without editing
 - **Trigger:** Click Copilot icon in sidebar
 
-## 3. Inline Chat
+### 3. Inline Chat
 - Edit code in-place
 - **Trigger:** `Ctrl+I` (Windows/Linux) or `Cmd+I` (Mac)
 
 ---
 
-# Slash Commands
+## Slash Commands
 
 Quick shortcuts for common tasks:
 
 | Command | Purpose | Example |
-|---------|---------|---------|
+| --------- | --------- | --------- |
 | `/explain` | Explain code | `/explain this function` |
 | `/fix` | Suggest fixes | `/fix this error` |
 | `/tests` | Generate tests | `/tests for this class` |
@@ -53,10 +57,10 @@ Quick shortcuts for common tasks:
 
 ---
 
-# More Slash Commands
+## More Slash Commands
 
 | Command | Purpose | Example |
-|---------|---------|---------|
+| --------- | --------- | --------- |
 | `/help` | Show all commands | `/help` |
 | `/agents` | List custom agents | `/agents` |
 | `/skills` | List skills | `/skills` |
@@ -66,18 +70,10 @@ Quick shortcuts for common tasks:
 **Try it now:** Type `/help` in Copilot Chat
 
 ---
-<style scoped>
-section { font-size: 0.95em; }
-h1, h2 { font-size: 1.8em; }
-</style>
 
-# Chat Participants
+## Chat Participants
 
 Provide context for better results:
-
-## @workspace
-- Questions about your codebase
-- "Where is the Task entity?"
 
 ## @vscode
 - VS Code features and commands
@@ -87,58 +83,42 @@ Provide context for better results:
 - CLI commands and troubleshooting
 - "How to restore packages?"
 
----
-<style scoped>
-section { font-size: 0.95em; }
-h1, h2 { font-size: 1.8em; }
-</style>
+_Extensions may add additional chat participants._
 
-# Context Variables
+---
+
+## Context Variables
 
 Reference specific context:
 
-## #file
+### #file
 - Reference a specific file
 - Example: `Explain #file:Task.cs`
 
-## #selection
+### #selection
 - Current editor selection
 - Example: `Refactor #selection`
 
-## #editor
+### #editor
 - Current active file
 - Example: `Add tests for #editor`
 
-
 ---
 
-# Quick Practice (5 min)
-<style scoped>
-section { font-size: 0.95em; }
-h1, h2 { font-size: 1.8em; }
-</style>
+## Quick Practice (5 min)
 
-**🔷 .NET Track — Try these:**
+**Try these:**
 
 1. Open `TaskManager.Domain/Tasks/Task.cs`
 2. Use `/explain` on the Task class
-3. Try `@workspace` with: "What's the architecture pattern?"
+3. Try `#codebase` with: "What's the architecture pattern?"
 4. Use `#file` with: "Suggest improvements for #file:Task.cs"
-
-**🟩 Spring Boot Track — Try these:**
-
-1. Open `src-springboot/taskmanager-domain/src/main/java/com/example/taskmanager/domain/tasks/Task.java`
-2. Use `/explain` on the Task class
-3. Try `@workspace` with: "What's the architecture pattern?"
-4. Use `#file` with: "Suggest improvements for #file:Task.java"
 
 **Goal:** Get comfortable with Copilot's features
 
 ---
 
-<!-- _class: lead -->
-
-# Ready for TDD
+## Ready for TDD
 
 **Next Module:** [Copilot Instructions & TDD](02-copilot-instructions-tdd.md)
 
