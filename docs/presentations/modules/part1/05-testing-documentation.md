@@ -5,8 +5,6 @@ paginate: true
 backgroundColor: #fff
 ---
 
-<!-- _class: lead -->
-
 # Module 5
 
 ## Testing, Documentation & Workflow
@@ -16,7 +14,7 @@ backgroundColor: #fff
 
 ---
 
-# Lab 04 Overview
+## Lab 04 Overview
 
 **Complete the development lifecycle:**
 
@@ -31,9 +29,9 @@ backgroundColor: #fff
 
 ---
 
-# Generate Tests with /tests
+## Generate Tests with /tests
 
-```
+```text
 # In Copilot Chat
 /tests for CreateTaskCommand
 ```
@@ -48,9 +46,9 @@ backgroundColor: #fff
 
 ---
 
-# Documentation with /doc
+## Documentation with /doc
 
-```
+```text
 # In Copilot Chat
 /doc for ITaskService
 ```
@@ -65,7 +63,7 @@ backgroundColor: #fff
 
 ---
 
-# Conventional Commits
+## Conventional Commits
 
 **Format:** `<type>(<scope>): <description>`
 
@@ -81,10 +79,10 @@ backgroundColor: #fff
 
 ---
 
-# PR Description with @workspace
+## PR Description
 
-```
-@workspace Generate a PR description for my changes
+```text
+#codebase Generate a PR description for my changes
 ```
 
 **Copilot provides:**
@@ -97,8 +95,7 @@ backgroundColor: #fff
 
 ---
 
-<!-- _class: lead -->
-
+<!-- markdownlint-disable-next-line MD025 -->
 # Hands-On Time
 
 **Lab Guide:** [Lab 04: Testing & Documentation](../../../labs/lab-04-testing-documentation-workflow.md)
