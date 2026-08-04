@@ -5,13 +5,57 @@ paginate: true
 backgroundColor: #fff
 ---
 
-# GitHub Copilot for .NET Development
+# A Whirlwind Tour of AI Development Tooling
 
 ## AI-Assisted Development Fundamentals
 
-**Duration:** ~3 Hours  
+**Duration:** ~7 Hours  
 **Format:** Instructor-led, hands-on  
 **Part:** 1 of 2
+
+---
+
+## Who Are We?
+
+### Shawn Wallace
+
+- Principal Architect @ Centric Consulting
+
+### Michael Collier
+
+- Husband, father, golfer, BBQ, Ford Mustangs
+- Principal Architect @ Centric Consulting
+
+---
+
+## Today's Agenda
+
+### Part 1: Fundamentals (~3 hours)
+
+| Module | Topic                      | Duration |
+| ------ | -------------------------- | -------- |
+| 00     | Kickoff & Setup            | 15 min   |
+| 01     | Copilot Features Tour      | 15 min   |
+| 02     | Copilot Instructions & TDD | 30 min   |
+| 03     | Requirements to Code       | 45 min   |
+| 04     | Generation & Refactoring   | 45 min   |
+| 05     | Testing & Documentation    | 15 min   |
+| 06     | Wrap-Up & Discussion       | 15 min   |
+
+---
+
+### Part 2: Advanced Copilot (~3 hours)
+
+| Module | Topic                  | Duration |
+| ------ | ---------------------- | -------- |
+| 00     | Recap                  | 10 min   |
+| 01     | Interaction Models     | 25 min   |
+| 02     | Skills & Customization | 30 min   |
+| 03     | Custom Agents Intro    | 25 min   |
+| 04     | Workflow Agents        | 30 min   |
+| 05     | Agent Design           | 30 min   |
+| 06     | Capstone Lab           | 35 min   |
+| 07     | Wrap-Up & Next Steps   | 10 min   |
 
 ---
 
@@ -97,24 +141,6 @@ TaskManager.sln
 
 ---
 
-## Today's Journey
-
-```text
-0. Kickoff & Setup (15 min)
-1. Copilot / Claude Code Features Tour (15 min)
-2. Instructions & TDD (30 min)
-3. Requirements → Code (45 min)
-4. Code Generation & Refactoring (45 min)
-5. Testing & Documentation (15 min)
-6. Wrap-Up & Discussion (15 min)
-```
-
-**Total:** ~3 hours with hands-on labs
-
----
-
-<!-- _class: lead -->
-
 <!-- markdownlint-disable-next-line MD025 -->
 # Module 0: Setup & Environment
 
@@ -152,7 +178,7 @@ dotnet test
 
 ---
 
-## Copilot Instructions Preview
+## Custom Instructions
 
 This repository includes **`.github/instructions/`** with context-aware instruction files
 
@@ -163,6 +189,8 @@ This repository includes **`.github/instructions/`** with context-aware instruct
 - Specifies .NET 10 conventions
 
 **No setup needed** - It just works!
+
+_AGENTS.md could have been used as well._
 
 ---
 
