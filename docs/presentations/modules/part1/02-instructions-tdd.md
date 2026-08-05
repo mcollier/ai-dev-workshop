@@ -14,34 +14,61 @@ backgroundColor: #fff
 
 ---
 
-## What Are Copilot Instructions?
+## What Are Instructions Files?
 
-`.github/instructions/dotnet.instructions.md` (auto-loads for C# files)  
+<style scoped>
+section {
+  font-size: 20px;
+}
+</style>
 
-**Purpose:**
+Each tool has a **repo-wide** layer and a **scoped** layer:
+
+|                         | Repo-wide (always loaded)                                                                                                             | Scoped (path/subdirectory)                                                |
+| ----------------------- | ------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------- |
+| **GitHub Copilot**      | `.github/copilot-instructions.md`                                                                                                     | `.github/instructions/*.instructions.md` (`applyTo` glob, e.g. `**/*.cs`) |
+| **Claude Code**         | `CLAUDE.md` (repo root)                                                                                                               | Nested `CLAUDE.md` per subdirectory                                       |
+| **Cross-tool standard** | `AGENTS.md` — read natively by Claude Code, and by Copilot CLI/coding agent as an alternative/supplement to `copilot-instructions.md` | —                                                                         |
+
+### Purpose (all tools)
 - Repository-wide AI behavior
 - Always active (no manual activation)
 - Team standards enforcement
-- Consistent across all team members
 
-**Think of it as:** A senior developer reviewing every suggestion
+👉 [GitHub Copilot custom instruction support matrix](https://docs.github.com/en/copilot/reference/custom-instructions-support)
+
+---
+
+<style scoped>
+section {
+  font-size: 24px;
+}
+</style>
+
+## Our AI Instructions
+
+Key rules encoded — same rules, different file depending on tool:
+
+| Rule                   | 🔷 .NET                   |
+| ---------------------- | ------------------------- |
+| **TDD first**          | ✅ Tests before code      |
+| **Clean Architecture** | ✅ Domain has no deps     |
+| **DDD patterns**       | ✅ Aggregates, VOs        |
+| **Stack**              | ✅ .NET 10, Minimal APIs  |
+| **Testing**            | ✅ xUnit + FakeItEasy     |
+| **Naming**             | ✅ PascalCase / camelCase |
+
+- Copilot: `copilot-instructions.md` + `dotnet.instructions.md`
+- Claude Code: `CLAUDE.md` (or `AGENTS.md`)
+- The content is portable, only the file/loading mechanism differs.
 
 ---
 
-## Our Copilot Instructions
-
-Key rules encoded:
-
-| Rule | 🔷 .NET |
-| ------ | --------- |
-| **TDD first** | ✅ Tests before code |
-| **Clean Architecture** | ✅ Domain has no deps |
-| **DDD patterns** | ✅ Aggregates, VOs |
-| **Stack** | ✅ .NET 10, Minimal APIs |
-| **Testing** | ✅ xUnit + FakeItEasy |
-| **Naming** | ✅ PascalCase / camelCase |
-
----
+<style scoped>
+section {
+  font-size: 24px;
+}
+</style>
 
 ## Test-Driven Development (TDD)
 
@@ -58,19 +85,36 @@ Write **minimal code** to make the test pass
 ## Refactor Phase
 **Improve code quality** while keeping tests green
 
+_Same cycle regardless of which AI tool drives it — Copilot or Claude Code._
+
 ---
 
-## Why TDD with Copilot?
+## Why TDD with AI?
 
 **Traditional concern:** "AI writes code without tests"
 
 **Our approach:**
-- Instructions **enforce tests first**
+- Instructions file **enforces tests first** (`copilot-instructions.md`/`dotnet.instructions.md` or `CLAUDE.md`/`AGENTS.md`)
 - AI generates test cases from requirements
 - Tests are easier to review than implementations
 - Validates AI-generated code immediately
 
 **Result:** Higher quality, verified code
+
+---
+
+<!-- markdownlint-disable-next-line MD025 -->
+# Demo: TDD Workflow
+
+**Watch for:**
+- How the instructions file (`copilot-instructions.md`/`dotnet.instructions.md` or `CLAUDE.md`/`AGENTS.md`) is picked up automatically, no matter which tool is used
+- How Copilot or Claude Code suggests test scenarios
+- Interface-first design
+- Test structure (Arrange-Act-Assert)
+- Implementation simplicity
+- Refactoring suggestions
+
+**Then:** You'll do it hands-on in Lab 01
 
 ---
 
@@ -87,19 +131,7 @@ Write **minimal code** to make the test pass
 **Time:** 25 minutes  
 **Key learning:** AI accelerates TDD, doesn't bypass it
 
----
-
-<!-- markdownlint-disable-next-line MD025 -->
-# Demo: TDD Workflow
-
-**Watch for:**
-- How Copilot suggests test scenarios
-- Interface-first design
-- Test structure (Arrange-Act-Assert)
-- Implementation simplicity
-- Refactoring suggestions
-
-**Then:** You'll do it hands-on in Lab 01
+_Use GitHub Copilot or Claude Code — same lab steps._
 
 ---
 
@@ -110,4 +142,4 @@ Write **minimal code** to make the test pass
 
 **Next Module:** [Requirements to Code](03-requirements-to-code.md)
 
-**Previous Module:** [Copilot Features Tour](01-copilot-features-tour.md)
+**Previous Module:** [Features Tour](01-features-tour.md)
