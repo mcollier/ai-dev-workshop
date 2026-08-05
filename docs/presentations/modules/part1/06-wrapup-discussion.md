@@ -33,8 +33,9 @@ backgroundColor: #fff
 - Documentation debt reduced
 
 ### 2. Context Matters
-- Use `#codebase`, `#file`, `#selection`
-- Copilot Instructions encode team knowledge
+- VS Code: `#codebase`, `#file`, `#selection`
+- Copilot CLI / Claude Code: `@file-or-directory` + agent auto-discovery
+- Instructions files encode team knowledge (`copilot-instructions.md`/`.instructions.md` or `CLAUDE.md`/`AGENTS.md`)
 - Better prompts = better results
 
 ---
@@ -58,7 +59,7 @@ backgroundColor: #fff
 ✅ Use context variables and be specific
 
 ❌ **Ignoring architecture**  
-✅ Copilot Instructions enforce patterns
+✅ Instructions enforce patterns
 
 ---
 
@@ -73,17 +74,16 @@ backgroundColor: #fff
 - Don't type boilerplate manually
 
 ## Inconsistent standards
-- Use Copilot Instructions
+- Use instructions
 - Encode team decisions
 
 ---
 
 ## Best Practices
 
-✅ **Start with plan** - Ask Copilot for approach first  
+✅ **Start with plan** - Ask for an approach first  
 ✅ **Tests first** - TDD even with AI  
 ✅ **Review iteratively** - Don't wait until the end  
-✅ **Use chat participants** - Extensions may add additional options  
 ✅ **Leverage instructions** - Team knowledge encoded  
 ✅ **Commit frequently** - Small, focused changes
 
@@ -101,10 +101,10 @@ backgroundColor: #fff
 
 ## Next Steps: Part 2
 
-**Advanced GitHub Copilot (Part 2):**
+**Advanced GitHub Copilot & Claude Code (Part 2):**
 - Interaction models (Ask, Plan, Agent)
 - Skills & Customization Hierarchy
-- Custom Copilot Agents
+- Custom Agents
 - Agent design and handoffs
 - Build your own production agent
 
@@ -148,8 +148,8 @@ git checkout solutions
 
 **This week:**
 1. Try Copilot or Claude Code for **one TDD task**
-2. Create **Copilot Instructions** for your repo
-3. Use `/tests` and `/doc` in daily work
+2. Create **instructions** for your repo (Copilot: `copilot-instructions.md`; Claude Code: `CLAUDE.md`/`AGENTS.md`)
+3. Use `/tests` and `/doc` (VS Code) or the natural-language equivalent (Copilot CLI / Claude Code) in daily work
 
 **Next month:**
 1. Encode **team standards** in instructions
@@ -161,7 +161,7 @@ git checkout solutions
 ## Thank You
 
 **See you in Part 2:**  
-Advanced GitHub Copilot with Custom Agents
+Customizing your Agentic Engineering Workflow
 
 ---
 
@@ -180,4 +180,4 @@ Advanced GitHub Copilot with Custom Agents
 
 **Previous Module:** [Testing & Documentation](05-testing-documentation.md)
 
-**Continue to Part 2:** [Advanced GitHub Copilot](../part2/00-welcome-recap.md)
+**Continue to Part 2:** [Customizing your Agentic Engineering Workflow](../part2/00-welcome-recap.md)
