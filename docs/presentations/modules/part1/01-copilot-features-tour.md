@@ -47,7 +47,6 @@ _AI integrated into the everyday editing experience._
 - Slash (`/`) commands to invoke direct the session or invoke skills
 - Connect to VS Code to editor selection, visual diffs, and session sharing.
 - More feature rich than IDE extension
-- Strong GitHub integration
 
 _Copilot agent mode centered in the terminal, with strong GitHub integration._
 
@@ -67,7 +66,7 @@ _A coding agent displayed inside the IDE._
 
 `claude`
 
-- Powerfull, terminal-ang-agent-first experience
+- Powerfull, terminal-and-agent-first experience
 - Slash (`/`) commands to invoke direct the session or invoke skills
 - More features than IDE extension
 
@@ -96,36 +95,13 @@ _A terminal-first software engineering agent._
 
 GitHub Copilot and Claude Code make extensive use of slash (`/`) commands
 
-- **Copilot IDE** slash commands are primarily prompt shortcuts (`/tests`, `/explain`)
-- **Copilot CLI** slash commands are agent-control and development-workflow commands (`/research`, `/pr`, `/review`)
-- **Claude Code** slash commands are a mixture of agent controls and reusable skills (`/compact`, `/model`, `/skill-name`)
+- **Copilot IDE**: primarily prompt shortcuts (`/tests`, `/explain`)
+- **Copilot CLI**: agent-control and development-workflow commands (`/research`, `/pr`, `/review`)
+- **Claude Code**: mixture of agent controls and reusable skills (`/compact`, `/model`, `/skill-name`)
 
 _Note: slash commands vary by tool and available extensions_
 
 **Try it now:** Type `/help` in GitHub Copilot or Claude Code
-
-<!-- Quick shortcuts for common tasks:
-
-| Command     | Purpose           | Example                          |
-| ----------- | ----------------- | -------------------------------- |
-| `/explain`  | Explain code      | `/explain this function`         |
-| `/fix`      | Suggest fixes     | `/fix this error`                |
-| `/tests`    | Generate tests    | `/tests for this class`          |
-| `/doc`      | Add documentation | `/doc this API`                  |
-| `/refactor` | Improve code      | `/refactor to use guard clauses` |
-
----
-
-## More Slash Commands
-
-| Command        | Purpose            | Example                  |
-| -------------- | ------------------ | ------------------------ |
-| `/help`        | Show all commands  | `/help`                  |
-| `/agents`      | List custom agents | `/agents`                |
-| `/skills`      | List skills        | `/skills`                |
-| `/init`        | Start new project  | `/init dotnet webapi`    |
-| `/create-file` | Create with AI     | `/create-file readme.md` | --> |
-
 
 ---
 
@@ -136,14 +112,6 @@ Copilot Chat in VS Code provides _participants_ which provide specialized extens
 
 Claude Code automatically routes tasks to a subagent, skill, or MCP server based on installed plugins.
 
-<!-- ## @vscode
-- VS Code features and commands
-- "How do I debug tests?"
-
-## @terminal
-- CLI commands and troubleshooting
-- "How to restore packages?" -->
-
 _Extensions may add additional chat participants._
 
 ---
@@ -152,25 +120,48 @@ _Extensions may add additional chat participants._
 
 Reference specific context:
 
-### #file
-- Reference a specific file
-- Example: `Explain #file:Task.cs`
+### GitHub Copilot IDE
+- `@participant`, `/command`, #context (`#file`, `#codebase`, `#selection`)
+- Attach screenshots or VS Code integrated browser
 
-### #selection
-- Current editor selection
-- Example: `Refactor #selection`
+### GitHub Copilot CLI or Claude Code
+- `/skill`, `@file-or-directory` plus agent discovered context
 
-### #editor
-- Current active file
-- Example: `Add tests for #editor`
+---
+
+## Tokens
+
+A token is the basic chunk of text an AI model uses to understand and generate language.
+
+- **Input tokens**: your prompt, instructions, history, etc.
+- **Output tokens**: the model's response
+
+One token is ~4 characters of English text (3/4th of a word; 100 tokens ~= 75 words).
 
 ---
 
 ## Context Window
 
+- All the text the model can reference when generating a response.
+- Always-on instructions, your prompt, additional context, MCP tools, skills, it's own responses, etc. contribute.
+- Size varies by model
+
+_Keep context window as small as possible. The larger the window, the "dumber" responses._
+
+_Use `/context` in Claude Code or GitHub Copilot to check tokens in session context window._
+
 ---
 
-## Tokens
+## Cache
+
+- Prompt caching avoids repeatedly processing the same instructions and context, reducing response time and token cost.
+- Stable context should appear first with changes at the end.
+- TTL varies by model and provider
+
+### Breaking the cache
+- Switching models mid-session
+- Adding new tools
+- Going beyond the TTL
 
 ---
 
