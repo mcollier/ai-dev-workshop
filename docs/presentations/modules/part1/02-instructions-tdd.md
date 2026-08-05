@@ -7,7 +7,7 @@ backgroundColor: #fff
 
 # Module 2
 
-## Copilot Instructions & TDD
+## Instructions for GitHub Copilot and Claude Code
 ### Red-Green-Refactor with AI
 
 **Duration:** 30 minutes
