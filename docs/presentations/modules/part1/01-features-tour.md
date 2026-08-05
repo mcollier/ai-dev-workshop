@@ -53,10 +53,10 @@ section {
 
 ### Individuals
 
-| Free           | Pro | Max 5x           | Max 20x           |
-| -------------- | --- | ---------------- | ----------------- |
-| $0             | $17 | $100             | $200              |
-| No Claude Code | d   | 5x more than Pro | 20x more than Pro |
+| Free           | Pro                                         | Max 5x           | Max 20x           |
+| -------------- | ------------------------------------------- | ---------------- | ----------------- |
+| $0             | $17                                         | $100             | $200              |
+| No Claude Code | Access to Claude Code, Cowork, Design, etc. | 5x more than Pro | 20x more than Pro |
 
 ### Business
 
@@ -90,12 +90,12 @@ _5 hour rolling usage limit window_
 
 `copilot`
 
-- Agent or Plan mode support
+- Interactive, Plan, or Autopilot (experimental) mode support
 - Slash (`/`) commands to invoke direct the session or invoke skills
 - Connect to VS Code to editor selection, visual diffs, and session sharing.
-- More feature rich than IDE extension
+- More feature rich than GitHub Copilot IDE extension
 
-💡_Copilot agent mode centered in the terminal, with strong GitHub integration._
+💡_Copilot agent centered in the terminal, with strong GitHub integration._
 
 ---
 
@@ -113,7 +113,9 @@ _5 hour rolling usage limit window_
 
 - Chat panel with editor selection context
 - Primarily agent-first workflows
-- VS Code and JetBrains. No Visual Studio extension.
+- VS Code, Cursor (other VS Code forks), and JetBrains. No Visual Studio extension.
+- Subset of Claude Code CLI features (limited commands & skills & no tab completion)
+- Bundles own copy of CLI, but need standalone CLI to run in terminal.
 
 💡_A coding agent displayed inside the IDE._
 
@@ -126,6 +128,7 @@ _5 hour rolling usage limit window_
 - Powerfull, terminal-and-agent-first experience
 - Slash (`/`) commands to invoke direct the session or invoke skills
 - More features than IDE extension
+- Started here and added IDE support.
 
 💡_A terminal-first software engineering agent._
 
