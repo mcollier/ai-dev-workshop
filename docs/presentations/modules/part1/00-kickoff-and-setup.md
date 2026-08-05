@@ -102,8 +102,7 @@ backgroundColor: #fff
 
 ## Prerequisites Check
 
-✅ **GitHub Copilot** - Active subscription  _or_
-✅ **Claude Code** - Active subscription  
+✅ **GitHub Copilot** _or_ ✅ **Claude Code** - Active subscription  
 ✅ **VS Code** - Latest stable version  
 ✅ **Git** - Basic familiarity  
 ✅ **.NET 10 SDK** - `dotnet --version`  
@@ -113,6 +112,9 @@ backgroundColor: #fff
 # Common
 git --version
 code --version
+
+# AI assistants
+copilot --version
 claude --version
 
 # .NET
@@ -190,7 +192,7 @@ This repository includes **`.github/instructions/`** with context-aware instruct
 
 **No setup needed** - It just works!
 
-_AGENTS.md could have been used as well._
+_CLAUDE.md could have been used as well . . . more on that later._
 
 ---
 
