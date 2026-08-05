@@ -81,7 +81,7 @@ Integration Tests
 - Consistency boundaries
 - Example: `Task` (aggregate root)
 
-**Copilot knows these patterns** via Instructions
+**Copilot / Claude Code knows these patterns** via Instructions
 
 ---
 
@@ -106,4 +106,4 @@ Use:
 
 **Next Module:** [Generation & Refactoring](04-generation-refactoring.md)
 
-**Previous Module:** [Copilot Instructions & TDD](02-copilot-instructions-tdd.md)
+**Previous Module:** [Instructions & TDD](02-instructions-tdd.md)
