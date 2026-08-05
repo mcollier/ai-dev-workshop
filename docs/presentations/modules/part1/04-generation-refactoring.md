@@ -36,7 +36,7 @@ backgroundColor: #fff
 - `DELETE /tasks/{id}` - Delete task
 
 **Using:**
-- `#codebase` for context
+- Appropriate context helpers (e.g, `#codebase` for Copilot in VS Code)
 - Minimal API patterns
 - CQRS queries
 - Integration tests
@@ -72,7 +72,7 @@ backgroundColor: #fff
 - No guard clauses
 - Poor testability
 
-**Your task:** Use `/refactor` to modernize
+**Your task:** Analyze, plan and implement improvements to the code.
 
 **Principles:** Object Calisthenics
 

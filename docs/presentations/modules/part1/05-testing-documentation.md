@@ -18,8 +18,8 @@ backgroundColor: #fff
 
 **Complete the development lifecycle:**
 
-1. Generate comprehensive tests (`/tests`)
-2. Add XML documentation (`/doc`)
+1. Generate comprehensive tests
+2. Add XML documentation
 3. Update API documentation
 4. Write conventional commit messages
 5. Generate PR description
