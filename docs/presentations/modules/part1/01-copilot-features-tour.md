@@ -131,15 +131,18 @@ _Note: slash commands vary by tool and available extensions_
 
 ## Chat Participants
 
-Provide context for better results:
+Copilot Chat in VS Code provides _participants_ which provide specialized extension-provided assistance.
+`@vscode`, `@terminal`, `@github`
 
-## @vscode
+Claude Code automatically routes tasks to a subagent, skill, or MCP server based on installed plugins.
+
+<!-- ## @vscode
 - VS Code features and commands
 - "How do I debug tests?"
 
 ## @terminal
 - CLI commands and troubleshooting
-- "How to restore packages?"
+- "How to restore packages?" -->
 
 _Extensions may add additional chat participants._
 
@@ -163,6 +166,14 @@ Reference specific context:
 
 ---
 
+## Context Window
+
+---
+
+## Tokens
+
+---
+
 ## Quick Practice (5 min)
 
 **Try these:**
@@ -172,7 +183,7 @@ Reference specific context:
 3. Try `#codebase` with: "What's the architecture pattern?"
 4. Use `#file` with: "Suggest improvements for #file:Task.cs"
 
-**Goal:** Get comfortable with Copilot's features
+**Goal:** Get comfortable with your assistant's features
 
 ---
 
