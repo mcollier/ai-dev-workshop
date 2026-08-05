@@ -244,6 +244,6 @@ _Use `/context` in Claude Code or GitHub Copilot to check tokens in session cont
 
 ## Ready for TDD
 
-**Next Module:** [Copilot Instructions & TDD](02-copilot-instructions-tdd.md)
+**Next Module:** [Instructions & TDD](02-instructions-tdd.md)
 
 **Previous Module:** [Kickoff & Setup](00-kickoff-and-setup.md)
