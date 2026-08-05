@@ -26,7 +26,15 @@ backgroundColor: #fff
 - Apply Object Calisthenics
 - Improve testability
 
+**Pick your tool:** VS Code Copilot Chat, Copilot CLI (`copilot`), or Claude Code CLI (`claude`) — same workflows, different interface.
+
 ---
+
+<style scoped>
+section {
+  font-size: 24px;
+}
+</style>
 
 ## Lab 03: Part A - Generation
 
@@ -36,7 +44,8 @@ backgroundColor: #fff
 - `DELETE /tasks/{id}` - Delete task
 
 **Using:**
-- Appropriate context helpers (e.g, `#codebase` for Copilot in VS Code)
+- VS Code Copilot Chat: `#codebase`, `#file`
+- Copilot CLI or Claude Code CLI: `@file-or-directory` + agent auto-discovery
 - Minimal API patterns
 - CQRS queries
 - Integration tests
@@ -61,6 +70,12 @@ backgroundColor: #fff
 
 ---
 
+<style scoped>
+section {
+  font-size: 24px;
+}
+</style>
+
 ## Lab 03: Part B - Refactoring
 
 **Legacy code:**
@@ -75,6 +90,8 @@ backgroundColor: #fff
 **Your task:** Analyze, plan and implement improvements to the code.
 
 **Principles:** Object Calisthenics
+
+💡 _Planning workflow are built for exactly this "analyze → plan → implement" flow — ask for a plan first, review it, then have the agent execute it._
 
 ---
 
