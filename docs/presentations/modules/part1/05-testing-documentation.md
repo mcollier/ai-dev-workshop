@@ -29,14 +29,26 @@ backgroundColor: #fff
 
 ---
 
+<style scoped>
+section {
+  font-size: 24px;
+}
+</style>
+
 ## Generate Tests with /tests
 
 ```text
-# In Copilot Chat
+# In Copilot Chat (VS Code)
 /tests for CreateTaskCommand
 ```
 
-**Copilot generates:**
+**Copilot CLI or Claude Code CLI** (no `/tests` shortcut — just ask):
+
+```text
+Generate comprehensive tests for CreateTaskCommand
+```
+
+**Generates:**
 - Happy path tests
 - Edge cases
 - Boundary conditions
@@ -49,8 +61,14 @@ backgroundColor: #fff
 ## Documentation with /doc
 
 ```text
-# In Copilot Chat
+# In Copilot Chat (VS Code)
 /doc for ITaskService
+```
+
+**Copilot CLI or Claude Code CLI** (no `/doc` shortcut — just ask):
+
+```text
+Add XML documentation comments for ITaskService
 ```
 
 **Generates:**
@@ -62,6 +80,12 @@ backgroundColor: #fff
 **Result:** IntelliSense-ready documentation
 
 ---
+
+<style scoped>
+section {
+  font-size: 24px;
+}
+</style>
 
 ## Conventional Commits
 
@@ -77,21 +101,42 @@ backgroundColor: #fff
 
 **Example:** `feat(domain): add Priority value object`
 
+**Enforced via instructions, not memory:** This repo already encodes the convention in
+`.github/instructions/.copilot-commit-message-instructions.md` for Copilot. Document
+the same convention in Claude Code using `CLAUDE.md`/`AGENTS.md` instead.
+
 ---
+
+<style scoped>
+section {
+  font-size: 20px;
+}
+</style>
 
 ## PR Description
 
+**VS Code Copilot Chat** — Ask mode drafts text only; **Agent mode** (with GitHub CLI (`gh`) or
+GitHub MCP) can create the PR itself:
+
 ```text
-#codebase Generate a PR description for my changes
+#codebase Generate a PR description for my changes and open the PR
 ```
 
-**Copilot provides:**
+**Copilot CLI** (`/pr` — drafts *and* opens the PR via GitHub integration):
+
+**Claude Code CLI** (drafts a description, then runs the GitHub CLI itself):
+
+```text
+Draft a PR description for my changes, then create the PR with gh pr create
+```
+
+**All three provide:**
 - Summary of changes
 - Files modified
 - Testing notes
 - Breaking changes (if any)
 
-**Then:** Review and adjust before creating PR
+💡_Try `/review` (Copilot CLI) or `/code-review` (Claude Code) to review changes. Also `/security-review`._
 
 ---
 
