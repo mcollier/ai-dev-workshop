@@ -8,6 +8,7 @@ backgroundColor: #fff
 # Module 1
 
 ## Features Tour
+
 ### Capabilities Overview
 
 **Duration:** 15 minutes
@@ -16,17 +17,63 @@ backgroundColor: #fff
 
 ## GitHub Copilot Pricing
 
-_Coming soon_
+<style scoped>
+section {
+  font-size: 20px;
+}
+</style>
+
+### Individuals
+
+| Free                    | Pro                    | Pro+                   | Max                     |
+| ----------------------- | ---------------------- | ---------------------- | ----------------------- |
+| $0                      | $10                    | $39                    | $100                    |
+| 2,000 completions/month | 1,500 AI credits/month | 7,000 AI credits/month | 20,000 AI credits/month |
+
+### Business
+
+| Business                                        | Enterprise                        |
+| ----------------------------------------------- | --------------------------------- |
+| $19                                             | $39                               |
+| 1,900 AI credits/month                          | 3,900 AI credits/month            |
+| Broad governance, IP indemnity and data privacy | Broad model access & higher usage |
+
+_Business and Enterprise use pooled credits._
+_Credit usage varies by model (1 AI credit = $0.01 USD)._
 
 ---
 
 ## Claude Code Pricing
 
-_Coming soon_
+<style scoped>
+section {
+  font-size: 20px;
+}
+</style>
+
+### Individuals
+
+| Free           | Pro | Max 5x           | Max 20x           |
+| -------------- | --- | ---------------- | ----------------- |
+| $0             | $17 | $100             | $200              |
+| No Claude Code | d   | 5x more than Pro | 20x more than Pro |
+
+### Business
+
+| Team - Standard | Team - Premium              | Enterprise     |
+| --------------- | --------------------------- | -------------- |
+| $20             | $100                        | $20 + API rate |
+|                 | 5x more usage than Standard |                |
+
+_5 hour rolling usage limit window_
+
+### API
+- Rates vary by model
+- Input, Output, and Prompt caching per million tokens (e.g., $5/MTok)
 
 ---
 
-## Four AI-assisted development experiences
+## Five AI-assisted development experiences
 
 ### GitHub Copilot in the IDE: AI layer throughout the editor
 
@@ -35,7 +82,7 @@ _Coming soon_
 - **Inline chat**: ask for a change directly at the cursor or selected code
 - **Plan, Ask, and Agent modes**: Determine approach, topic discussion, and multi-step task execution
 
-_AI integrated into the everyday editing experience._
+💡_AI integrated into the everyday editing experience._
 
 ---
 
@@ -48,7 +95,17 @@ _AI integrated into the everyday editing experience._
 - Connect to VS Code to editor selection, visual diffs, and session sharing.
 - More feature rich than IDE extension
 
-_Copilot agent mode centered in the terminal, with strong GitHub integration._
+💡_Copilot agent mode centered in the terminal, with strong GitHub integration._
+
+---
+
+### GitHub Copilot App: agent-driven development with strong GitHub integration
+
+- Parallel agent workstreams (each session in its own git worktree)
+- End-to-end GitHub integration (issues, PRs, repo search, CI results) without switching tools
+- Use canvases to create custom interfaces to collaborate or view info
+
+💡_A platform for supervising AI-powered software delivery._
 
 ---
 
@@ -58,7 +115,7 @@ _Copilot agent mode centered in the terminal, with strong GitHub integration._
 - Primarily agent-first workflows
 - VS Code and JetBrains. No Visual Studio extension.
 
-_A coding agent displayed inside the IDE._
+💡_A coding agent displayed inside the IDE._
 
 ---
 
@@ -70,7 +127,7 @@ _A coding agent displayed inside the IDE._
 - Slash (`/`) commands to invoke direct the session or invoke skills
 - More features than IDE extension
 
-_A terminal-first software engineering agent._
+💡_A terminal-first software engineering agent._
 
 ---
 
@@ -97,11 +154,12 @@ GitHub Copilot and Claude Code make extensive use of slash (`/`) commands
 
 - **Copilot IDE**: primarily prompt shortcuts (`/tests`, `/explain`)
 - **Copilot CLI**: agent-control and development-workflow commands (`/research`, `/pr`, `/review`)
+- **Copilot App**: agent, session and workflow management (`/af`, `/create-canvas`, `/orchestrate`)
 - **Claude Code**: mixture of agent controls and reusable skills (`/compact`, `/model`, `/skill-name`)
 
 _Note: slash commands vary by tool and available extensions_
 
-**Try it now:** Type `/help` in GitHub Copilot or Claude Code
+**Try it now:** Type `/help` or `/` in GitHub Copilot or Claude Code
 
 ---
 
@@ -121,10 +179,12 @@ _Extensions may add additional chat participants._
 Reference specific context:
 
 ### GitHub Copilot IDE
+
 - `@participant`, `/command`, #context (`#file`, `#codebase`, `#selection`)
 - Attach screenshots or VS Code integrated browser
 
 ### GitHub Copilot CLI or Claude Code
+
 - `/skill`, `@file-or-directory` plus agent discovered context
 
 ---
@@ -159,6 +219,7 @@ _Use `/context` in Claude Code or GitHub Copilot to check tokens in session cont
 - TTL varies by model and provider
 
 ### Breaking the cache
+
 - Switching models mid-session
 - Adding new tools
 - Going beyond the TTL

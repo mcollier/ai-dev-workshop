@@ -35,7 +35,7 @@ backgroundColor: #fff
 | Module | Topic                      | Duration |
 | ------ | -------------------------- | -------- |
 | 00     | Kickoff & Setup            | 15 min   |
-| 01     | Copilot Features Tour      | 15 min   |
+| 01     | Features Tour      | 15 min   |
 | 02     | Copilot Instructions & TDD | 30 min   |
 | 03     | Requirements to Code       | 45 min   |
 | 04     | Generation & Refactoring   | 45 min   |
@@ -74,12 +74,13 @@ backgroundColor: #fff
 
 ## The only constant is change
 
-- GitHub Copilot is available in multiple IDEs, [github.com/copilot](https://github.com/copilot) , CLI, and mobile
+- GitHub Copilot is available in multiple IDEs, [github.com/copilot](https://github.com/copilot) , CLI, GitHub Copilot App, and mobile
 - Claude Code is available in VS Code and JetBrains, CLI, Claude desktop, or [claude.ai/code](https://claude.ai/code)
 - What you see in Visual Studio may differ from VS Code or other tools
   - See [Copilot feature matrix](https://docs.github.com/en/copilot/reference/copilot-feature-matrix) for version details
 - AI-assisted software engineering tools and practices are evolving quickly — expect changes and differences
 - Training content reflects current features; some may vary by tool
+- Multiple instruction formats and locations; convergence likely.
 - Embrace a growth mindset and have fun!
 
 ---
@@ -198,6 +199,6 @@ _CLAUDE.md could have been used as well . . . more on that later._
 
 ## Ready to Begin
 
-**Next Module:** [Copilot Features Tour](01-copilot-features-tour.md)
+**Next Module:** [Features Tour](01-features-tour.md)
 
 Use the **Marp preview** to navigate between modules
