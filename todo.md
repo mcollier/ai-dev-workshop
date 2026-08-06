@@ -21,8 +21,8 @@
   - [ ] Add section on costs and optimization
   - [ ] Account for model selection guidance
 - [ ] Add support for GitHub (remote) coding agent?
-- [ ] Add to prerequisites details on ensuring you have budget/credits to do the labs. This does cost real money!
-- [ ] Pull in docs/guides as a reference
+- [x] Add to prerequisites details on ensuring you have budget/credits to do the labs. This does cost real money!
+- [x] Pull in docs/guides as a reference
 - [ ] Add Claude Code (VS Code extension and CLI) to dev container
 - [ ] Add helpful GitHub Copilot CLI features
   - [ ] `/research`, `/chronicle`, `/after`, /`every`, `/context`

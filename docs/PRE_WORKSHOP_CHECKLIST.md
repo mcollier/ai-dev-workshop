@@ -4,6 +4,10 @@ Use this checklist to verify your environment is ready **before** attending the 
 
 > **Can't run Docker/Dev Containers?** See the [Local Setup Guide](./LOCAL_SETUP.md) for manual installation instructions.
 
+## 💸 This workshop is not free
+
+>**This workshop uses GitHub Copilot and/or Claude Code.  You will need either a GitHub Copilot or Claude Code subscription with available AI credits or usage.**
+
 ## ✅ Required Setup (Complete Before Workshop)
 
 ### 1. GitHub Account & Copilot Subscription
