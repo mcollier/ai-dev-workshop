@@ -240,6 +240,8 @@ One token is ~4 characters of English text (3/4th of a word; 100 tokens ~= 75 wo
 - **Mid-tier model**: Clear plan - do the work _(Sonnet, GPT-5.6 Terra)_
 - **Lighter models**: Refactoring, docs, well-scoped changes _(Haiku, MAI-Code-1-Flash)_
 
+💡_GitHub Copilot: "Auto" model for intelligent model selection based on prompt and model health. 10% discount._
+
 ---
 
 ## Quick Practice (5 min)
