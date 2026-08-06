@@ -1,20 +1,21 @@
 # .NET Upgrade Plan — net9.0 → net10.0
 
-### Selected Strategy
+## Selected Strategy
+
 **All-At-Once** — All 7 projects upgraded simultaneously in a single operation.
 **Rationale**: 7 projects, all already on modern .NET (net9.0), SDK-style, shallow
 dependency graph (Domain → Application → Infrastructure → {Api, ConsoleApp} →
 {UnitTests, IntegrationTests}), no .NET Framework projects, no high-risk package
 migrations. Ideal fit for All-At-Once per strategy criteria.
 
-### Project List (single group — no tiers/phases)
+## Project List (single group — no tiers/phases)
 - **Libraries**: TaskManager.Domain, TaskManager.Application, TaskManager.Infrastructure
 - **Applications**: TaskManager.Api, TaskManager.ConsoleApp
 - **Tests**: TaskManager.UnitTests, TaskManager.IntegrationTests
 
 ---
 
-### 01-prerequisites: Verify SDK toolchain and global.json compatibility
+## 01-prerequisites: Verify SDK toolchain and global.json compatibility
 
 Confirm the .NET 10 SDK is installed and available on the build machine, and check
 whether a `global.json` file exists at the repo root or solution level pinning an
@@ -27,7 +28,7 @@ net9.0 as the pre-upgrade baseline.
 compatible with .NET 10, and the baseline solution build succeeds before any TFM
 changes are made.
 
-### 02-upgrade-all-projects: Upgrade all 7 projects to net10.0 in a single pass
+## 02-upgrade-all-projects: Upgrade all 7 projects to net10.0 in a single pass
 
 Update `TargetFramework` from `net9.0` to `net10.0` across all 7 projects
 (TaskManager.Domain, TaskManager.Application, TaskManager.Infrastructure,
@@ -48,7 +49,7 @@ upgrade. Only ensure the test projects themselves compile cleanly on net10.0.
 **Done when**: All 7 projects target net10.0, all package references are updated to
 supported net10.0 versions, and the solution builds with 0 errors.
 
-### 03-final-validation: Validate full build and test baseline, document follow-ups
+## 03-final-validation: Validate full build and test baseline, document follow-ups
 
 Run a full solution build to confirm 0 errors/warnings introduced by the upgrade.
 Run the test suite for TaskManager.UnitTests and TaskManager.IntegrationTests and
