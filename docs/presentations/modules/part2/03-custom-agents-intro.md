@@ -18,7 +18,8 @@ backgroundColor: #fff
 
 **Named chat participants** with specific roles
 
-- Selectable from agent dropdown (IDE) or `/agent` (CLI)
+- Selectable from agent dropdown (VS Code IDE) or `/agent` (Copilot CLI)
+- Claude Code: **subagents** are auto-routed by task description
 - Role-based AI personas (e.g., Architecture Reviewer)
 - Defined scope and constraints
 - Structured, consistent outputs
@@ -29,7 +30,7 @@ backgroundColor: #fff
 ## Mental Model: The Specialist
 
 ```text
-Standard Copilot Chat = General AI Assistant
+Standard Agent = General AI Assistant
 
 Custom Agent = Domain Expert Consultant
 ```
@@ -45,13 +46,12 @@ You wouldn't ask a general assistant to:
 
 ## The Complete Hierarchy
 
-| Feature | Prompts | Instructions | Skills | Agents |
-| --------- | --------- | -------------- | -------- | -------- |
-| **Scope** | One-off | Always-on | On-demand | On-demand |
-| **Invocation** | Chat | Automatic | `#name` | `@name` |
-| **Tool Access** | ❌ | ❌ | ❌ | ✅ |
-| **Purpose** | Question | Guardrails | Knowledge | Workflow |
-| **Discovery** | N/A | N/A | `/skills` | `/agents` |
+| Feature         | Prompts  | Instructions | Skills                         | Agents                                                                                |
+| --------------- | -------- | ------------ | ------------------------------ | ------------------------------------------------------------------------------------- |
+| **Scope**       | One-off  | Always-on    | On-demand                      | On-demand                                                                             |
+| **Invocation**  | Chat     | Automatic    | Slash command (varies by tool) | VS Code `@agent-name`; Copilot CLI `/agent`; Claude Code auto-routed |
+| **Tool Access** | ❌       | ❌           | ❌                             |   ✅                                                                                  |
+| **Purpose**     | Question | Guardrails   | Knowledge                      | Workflow                                                                              |
 
 ---
 
@@ -65,7 +65,7 @@ You wouldn't ask a general assistant to:
 
 ❌ **Don't use agents for:**
 - Template generation (use Skills)
-- Simple questions (use Prompts)
+- Simple questions
 - Always-on rules (use Instructions)
 - Knowledge without actions
 
@@ -88,10 +88,10 @@ Proposes comprehensive test strategies
 
 **Try the Architecture Reviewer agent:**
 
-1. Open Copilot in Agent mode
-2. Select "Architecture Reviewer" from dropdown or CLI
+1. Open Copilot or Claude Code
+2. Select "Architecture Reviewer" (dropdown or `/agent` in Copilot, or ask Claude Code to use it)
 3. Prompt: "Review the Task domain model"
-4. Compare to standard Copilot output
+4. Compare to the default agent's output
 
 **Observe:**
 - Structured format
