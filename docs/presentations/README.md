@@ -26,7 +26,7 @@ This directory contains modular Marp presentations for the workshop.
 | -------- | ------- | ---------- | ------ |
 | 00 | Welcome & Recap | 10 min | [00-welcome-recap.md](modules/part2/00-welcome-recap.md) |
 | 01 | Interaction Models | 25 min | [01-interaction-models.md](modules/part2/01-interaction-models.md) |
-| 02 | Skills & Customization | 30 min | [02-skills-customization.md](modules/part2/02-skills-customization.md) ⭐ NEW |
+| 02 | Skills & Customization | 30 min | [02-skills-customization.md](modules/part2/02-skills-customization.md) |
 | 03 | Custom Agents Intro | 25 min | [03-custom-agents-intro.md](modules/part2/03-custom-agents-intro.md) |
 | 04 | Workflow Agents | 30 min | [04-workflow-agents.md](modules/part2/04-workflow-agents.md) |
 | 05 | Agent Design | 30 min | [05-agent-design.md](modules/part2/05-agent-design.md) |
