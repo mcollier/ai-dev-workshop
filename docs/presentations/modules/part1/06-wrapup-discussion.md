@@ -101,7 +101,7 @@ backgroundColor: #fff
 
 ## Next Steps: Part 2
 
-**Advanced GitHub Copilot & Claude Code (Part 2):**
+**Customizing your Agentic Engineering Workflow (Part 2):**
 - Interaction models (Ask, Plan, Agent)
 - Skills & Customization Hierarchy
 - Custom Agents

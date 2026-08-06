@@ -14,7 +14,7 @@ backgroundColor: #fff
 
 ---
 
-## Three Ways to Interact with Copilot
+## Ways to Interact with AI Coding Tools
 
 ## ❓ Ask Mode
 **Purpose:** Learning, exploration, explanation  
@@ -27,6 +27,22 @@ backgroundColor: #fff
 ## 🤖 Agent Mode
 **Purpose:** Multi-step, repository-level workflows  
 **Result:** Planned changes with human checkpoints
+
+---
+
+<style scoped>
+section {
+  font-size: 24px;
+}
+</style>
+
+## Same Concepts, Different Tools
+
+|           | VS Code Copilot            | Copilot CLI                                                                                           | Claude Code                                                                                           |
+| --------- | -------------------------- | ----------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- |
+| **Ask**   | Ask mode (explicit toggle) | No toggle — default session answers. (`/ask` or `/btw` for quick side question w/o adding to history. | No toggle — default session answers. (`/ask` or `/btw` for quick side question w/o adding to history. |
+| **Plan**  | Plan mode                  | `/plan` or `Shift+Tab` — explicit plan-first mode                                                     | Plan Mode (`Shift+Tab` twice) — explicit                                                              |
+| **Agent** | Agent mode                 | Default session executes changes directly; `/autopilot` toggles full autonomy (experimental)          | Default agentic execution — asks permission per action unless auto-approved                           |
 
 ---
 
@@ -57,6 +73,8 @@ backgroundColor: #fff
 - You need a quick direct answer
 - You're ready to execute immediately
 
+💡_Try `/research` (GitHub Copilot CLI) or `/deep-research` (Claude Code) to execute a fan-out web search and create a report._
+
 ---
 
 ## Agent Mode: When to Use
@@ -67,10 +85,10 @@ backgroundColor: #fff
 - Complex refactoring
 - Need plan-execute-review cycle
 
-❌ **Don't use when:**
+<!-- ❌ **Don't use when:**
 - Simple, quick edits
 - Single file changes
-- Learning or exploring
+- Learning or exploring -->
 
 **Key:** Agent Mode = Human-in-the-loop by design
 

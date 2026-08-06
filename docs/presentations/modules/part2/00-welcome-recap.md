@@ -5,11 +5,11 @@ paginate: true
 backgroundColor: #fff
 ---
 
-# Advanced GitHub Copilot
+# Customizing your Agentic Engineering Workflow
 
-## Custom Agents & AI-Driven Development Workflows
+<!-- ## Custom Agents & AI-Driven Development Workflows -->
 
-**Duration:** 3 Hours  
+**Duration:** ~3 Hours  
 **Format:** Instructor-led, hands-on  
 **Part:** 2 of 2
 
@@ -33,7 +33,7 @@ backgroundColor: #fff
 ## Prerequisites
 
 ✅ Completion of Part 1
-✅ VS Code with GitHub Copilot or Claude Code extension  
+✅ GitHub Copilot or Claude Code
 ✅ Access to workshop repository  
 ✅ Familiarity with code generation and refactoring workflows
 
@@ -44,7 +44,7 @@ backgroundColor: #fff
 **In Part 1, you learned:**
 
 - Using Copilot / Claude Code for TDD and refactoring
-- Copilot Instructions for guardrails
+- Instructions for guardrails
 - Documentation automation
 - Requirements-to-code workflows
 
