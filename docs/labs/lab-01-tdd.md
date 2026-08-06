@@ -1,11 +1,12 @@
 # Lab 1: Test-Driven Development
 
 **Duration**: 30-40 minutes  
+**Tools**: GitHub Copilot or Claude Code (steps are shown side by side below)  
 **Learning Objectives**:
 
 - Master the Red-Green-Refactor TDD cycle with AI assistance
-- Use Copilot to generate tests before implementation
-- Apply repository Copilot Instructions for consistent code quality
+- Use your AI coding tool to generate tests before implementation
+- Apply repository-level instructions (`.github/copilot-instructions.md` or `CLAUDE.md`) for consistent code quality
 - Understand how TDD enforces better design decisions
 
 ---
@@ -26,7 +27,7 @@ In this lab, you'll create a `NotificationService` that sends task notifications
 ## Prerequisites
 
 - ✅ Repository cloned and `main` branch checked out
-- ✅ VS Code open with GitHub Copilot enabled
+- ✅ VS Code open with GitHub Copilot enabled, **or** the Claude Code CLI installed and authenticated
 - ✅ `.github/instructions/dotnet.instructions.md` and `.github/instructions/csharp.instructions.md` exist
 - ✅ Initial build successful: `dotnet build && dotnet test`
 - ✅ DevContainer: Use `.devcontainer/dotnet-participant` or `.devcontainer/maintainer`
@@ -37,14 +38,15 @@ In this lab, you'll create a `NotificationService` that sends task notifications
 
 > **Goal**: Define the API before writing any tests or implementation. This forces you to think about what clients of your service will need.
 
-### 1.1 Open Copilot Chat
+### 1.1 Open Your AI Coding Tool
 
-- Press `Ctrl+Alt+I` (Windows/Linux) or `Cmd+Shift+I` (Mac)
-- This opens the Copilot Chat panel
+| <img src="../images/githubcopilot.svg" width="20" alt="GitHub Copilot" /> GitHub Copilot | <img src="../images/claude-color.svg" width="20" alt="Claude Code" /> Claude Code |
+|---|---|
+| Press `Ctrl+Alt+I` (Windows/Linux) or `Cmd+Shift+I` (Mac) to open the Copilot Chat panel | Run `claude` in the integrated terminal from the repo root to start the interactive REPL |
 
 ### 1.2 Request Interface Generation
 
-In the chat panel, enter:
+In the chat panel (or the Claude Code REPL), enter:
 
 ```text
 Create an INotificationService interface in the Application layer for sending email and SMS notifications about tasks. Include methods for both individual and combined notifications.
@@ -52,7 +54,7 @@ Create an INotificationService interface in the Application layer for sending em
 
 ### 1.3 Review Generated Interface
 
-Copilot should generate something like:
+Your AI coding tool should generate something like:
 
 ```csharp
 namespace TaskManager.Application.Services;
@@ -91,7 +93,7 @@ If satisfied, accept the code. If not, refine your prompt.
 
 ### 2.1 Request Test Generation
 
-In Copilot Chat, enter:
+In your AI coding tool's chat/REPL, enter:
 
 ```text
 Create xUnit tests for NotificationService in the pattern specified in our .NET instructions. Organize tests by method with separate test classes. Use FakeItEasy for mocking ILogger. Test happy path and all guard clauses.
@@ -99,7 +101,7 @@ Create xUnit tests for NotificationService in the pattern specified in our .NET 
 
 ### 2.2 Review Test Structure
 
-Copilot should create a folder structure like:
+Your AI coding tool should create a folder structure like:
 
 ```text
 tests/TaskManager.UnitTests/Services/NotificationServiceTests/
@@ -233,7 +235,7 @@ Before implementing, review:
 
 ### 3.1 Request Implementation
 
-In Copilot Chat, enter:
+In your AI coding tool's chat/REPL, enter:
 
 ```text
 Implement NotificationService that passes all the tests. Follow our .NET coding style: sealed class, file-scoped namespace, ILogger dependency injection, async/await, guard clauses with nameof.
@@ -241,7 +243,7 @@ Implement NotificationService that passes all the tests. Follow our .NET coding 
 
 ### 3.2 Review Generated Implementation
 
-Copilot should generate `src/TaskManager.Application/Services/NotificationService.cs`:
+Your AI coding tool should generate `src/TaskManager.Application/Services/NotificationService.cs`:
 
 ```csharp
 namespace TaskManager.Application.Services;
@@ -398,15 +400,13 @@ Ask yourself:
 - ✅ **Test Independence**: Does each test run independently?
 - ✅ **Mocking Strategy**: Are mocks used appropriately (only for dependencies)?
 
-### 4.3 Ask Copilot for Improvements
+### 4.3 Ask for Improvements
 
-Use the `/check` slash command in Copilot Chat to get code review and improvement suggestions:
+| <img src="../images/githubcopilot.svg" width="20" alt="GitHub Copilot" /> GitHub Copilot | <img src="../images/claude-color.svg" width="20" alt="Claude Code" /> Claude Code |
+|---|---|
+| Use the `/check` slash command in Copilot Chat: `/check Review the NotificationService implementation and tests. Are there any improvements we could make while keeping the same behavior?` | Ask directly in the REPL: `Review the NotificationService implementation and tests. Are there any improvements we could make while keeping the same behavior?` |
 
-```text
-/check Review the NotificationService implementation and tests. Are there any improvements we could make while keeping the same behavior?
-```
-
-Copilot might suggest:
+Your AI coding tool might suggest:
 
 - **Extract validation logic** into a helper method (reduce duplication)
 - **Add more specific exception types** (e.g., `InvalidEmailException`)
@@ -447,9 +447,9 @@ ValidateParameter(message, nameof(message));
 4. **Refactoring Safety**: Can improve code structure without fear of breaking behavior
 5. **No Overengineering**: Only wrote code needed to pass tests
 
-### ✅ Copilot Instructions Impact
+### ✅ Repository Instructions Impact
 
-1. **Consistency**: All generated code follows the same conventions
+1. **Consistency**: All generated code follows the same conventions, whether you're using `.github/copilot-instructions.md` (GitHub Copilot) or `CLAUDE.md` (Claude Code)
 2. **Quality**: Guard clauses, async/await, structured logging automatically included
 3. **Best Practices**: Sealed classes, `nameof()`, file-scoped namespaces enforced
 4. **Test Patterns**: xUnit + FakeItEasy patterns consistently applied
@@ -493,7 +493,7 @@ You've completed this lab successfully when:
 
 - ✅ `INotificationService` interface created in Application layer
 - ✅ Test suite created with 12+ passing tests using xUnit + FakeItEasy
-- ✅ `NotificationService` implementation follows all Copilot Instructions conventions
+- ✅ `NotificationService` implementation follows all repository instruction conventions
 - ✅ You followed Red-Green-Refactor cycle (saw tests fail, then pass)
 - ✅ Code uses: sealed classes, file-scoped namespaces, guard clauses, `nameof()`
 - ✅ Tests run successfully with `dotnet test`
@@ -515,13 +515,13 @@ You've completed this lab successfully when:
 **Problem**: Tests pass even though no implementation exists  
 **Solution**: Your tests might be too lenient. Review test assertions.
 
-### Copilot Not Following Conventions
+### AI Tool Not Following Conventions
 
 **Problem**: Generated code doesn't use sealed classes, nameof, etc.  
 **Solution**:
 
-1. Verify `.github/instructions/` directory exists with instruction files
-2. Reload VS Code window: `F1` → "Developer: Reload Window"
+1. Verify `.github/instructions/` directory exists with instruction files (Copilot) or that `CLAUDE.md` documents the same conventions (Claude Code)
+2. GitHub Copilot: reload VS Code window: `F1` → "Developer: Reload Window"
 3. Be explicit in prompts: "Follow .NET conventions"
 
 ### FakeItEasy Not Working
@@ -548,7 +548,7 @@ You've completed this lab successfully when:
 
 Move on to [**Lab 2: Requirements → Backlog → Code**](lab-02-requirements-to-code.md) where you'll:
 
-- Convert user stories into backlog items with Copilot
+- Convert user stories into backlog items with AI assistance
 - Generate acceptance criteria
 - Build features from requirements
 - Practice the full development workflow
@@ -558,6 +558,7 @@ Move on to [**Lab 2: Requirements → Backlog → Code**](lab-02-requirements-to
 ## Additional Resources
 
 - [xUnit Documentation](https://xunit.net/)
+- [Claude Code Documentation](https://docs.claude.com/en/docs/claude-code/overview)
 - [FakeItEasy Documentation](https://fakeiteasy.github.io/)
 - [Clean Architecture in .NET](https://learn.microsoft.com/en-us/dotnet/architecture/modern-web-apps-azure/common-web-application-architectures)
 - [.NET Dependency Injection](https://learn.microsoft.com/en-us/dotnet/core/extensions/dependency-injection)
