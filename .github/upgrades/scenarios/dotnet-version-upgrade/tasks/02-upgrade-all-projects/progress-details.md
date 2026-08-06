@@ -14,24 +14,25 @@
 All 7 projects: `net9.0` → `net10.0`
 
 ## Package Version Changes
-| Project | Package | Old | New |
-|---|---|---|---|
-| Api | Microsoft.AspNetCore.OpenApi | 9.0.0 | 10.0.10 |
-| Api | Microsoft.OpenApi (new explicit direct ref) | (transitive 2.0.0) | 2.11.0 |
-| Api | OpenTelemetry.Exporter.Console | 1.12.0 | 1.17.0 |
-| Api | OpenTelemetry.Extensions.Hosting | 1.12.0 | 1.17.0 |
-| Api | OpenTelemetry.Instrumentation.AspNetCore | 1.12.0 | 1.17.0 |
-| Application | Microsoft.Extensions.Logging.Abstractions | 9.0.8 | 10.0.10 |
-| ConsoleApp | Microsoft.Extensions.Hosting | 9.0.8 | 10.0.10 |
-| UnitTests | Microsoft.NET.Test.Sdk | 17.11.1 | 18.8.1 |
-| UnitTests | xunit.v3 | 3.2.2 | 3.2.2 (unchanged, already latest) |
-| UnitTests | xunit.runner.visualstudio | 3.1.5 | 3.1.5 (unchanged, already latest) |
-| UnitTests | FakeItEasy | 8.3.0 | 9.0.1 |
-| UnitTests | coverlet.collector | 6.0.2 | 10.0.1 |
-| IntegrationTests | Microsoft.NET.Test.Sdk | 17.11.1 | 18.8.1 |
-| IntegrationTests | xunit.v3 | 3.2.2 | 3.2.2 (unchanged) |
-| IntegrationTests | xunit.runner.visualstudio | 3.1.5 | 3.1.5 (unchanged) |
-| IntegrationTests | coverlet.collector | 6.0.2 | 10.0.1 |
+
+| Project          | Package                                     | Old                | New                               |
+| ---------------- | ------------------------------------------- | ------------------ | --------------------------------- |
+| Api              | Microsoft.AspNetCore.OpenApi                | 9.0.0              | 10.0.10                           |
+| Api              | Microsoft.OpenApi (new explicit direct ref) | (transitive 2.0.0) | 2.11.0                            |
+| Api              | OpenTelemetry.Exporter.Console              | 1.12.0             | 1.17.0                            |
+| Api              | OpenTelemetry.Extensions.Hosting            | 1.12.0             | 1.17.0                            |
+| Api              | OpenTelemetry.Instrumentation.AspNetCore    | 1.12.0             | 1.17.0                            |
+| Application      | Microsoft.Extensions.Logging.Abstractions   | 9.0.8              | 10.0.10                           |
+| ConsoleApp       | Microsoft.Extensions.Hosting                | 9.0.8              | 10.0.10                           |
+| UnitTests        | Microsoft.NET.Test.Sdk                      | 17.11.1            | 18.8.1                            |
+| UnitTests        | xunit.v3                                    | 3.2.2              | 3.2.2 (unchanged, already latest) |
+| UnitTests        | xunit.runner.visualstudio                   | 3.1.5              | 3.1.5 (unchanged, already latest) |
+| UnitTests        | FakeItEasy                                  | 8.3.0              | 9.0.1                             |
+| UnitTests        | coverlet.collector                          | 6.0.2              | 10.0.1                            |
+| IntegrationTests | Microsoft.NET.Test.Sdk                      | 17.11.1            | 18.8.1                            |
+| IntegrationTests | xunit.v3                                    | 3.2.2              | 3.2.2 (unchanged)                 |
+| IntegrationTests | xunit.runner.visualstudio                   | 3.1.5              | 3.1.5 (unchanged)                 |
+| IntegrationTests | coverlet.collector                          | 6.0.2              | 10.0.1                            |
 
 Versions resolved via `get_supported_package_version` MCP tool for net10.0 target framework.
 

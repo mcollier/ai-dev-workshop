@@ -21,32 +21,32 @@ Verified via `dotnet sln TaskManager.sln list` — all 7 projects now resolve co
 
 ## Project Inventory (7 projects, verified)
 
-| Project | Path | Current TFM | Target TFM | Type |
-|---|---|---|---|---|
-| TaskManager.Domain | src/TaskManager.Domain/TaskManager.Domain.csproj | net9.0 | net10.0 | Class library (SDK-style) |
-| TaskManager.Application | src/TaskManager.Application/TaskManager.Application.csproj | net9.0 | net10.0 | Class library (SDK-style) |
-| TaskManager.Infrastructure | src/TaskManager.Infrastructure/TaskManager.Infrastructure.csproj | net9.0 | net10.0 | Class library (SDK-style) |
-| TaskManager.Api | src/TaskManager.Api/TaskManager.Api.csproj | net9.0 | net10.0 | ASP.NET Core Web API (Microsoft.NET.Sdk.Web) |
-| TaskManager.ConsoleApp | src/TaskManager.ConsoleApp/TaskManager.ConsoleApp.csproj | net9.0 | net10.0 | Console exe |
-| TaskManager.UnitTests | src/TaskManager.UnitTests/TaskManager.UnitTests.csproj | net9.0 | net10.0 | xUnit v3 test project |
-| TaskManager.IntegrationTests | src/TaskManager.IntegrationTests/TaskManager.IntegrationTests.csproj | net9.0 | net10.0 | xUnit v3 test project |
+| Project                      | Path                                                                 | Current TFM | Target TFM | Type                                         |
+| ---------------------------- | -------------------------------------------------------------------- | ----------- | ---------- | -------------------------------------------- |
+| TaskManager.Domain           | src/TaskManager.Domain/TaskManager.Domain.csproj                     | net9.0      | net10.0    | Class library (SDK-style)                    |
+| TaskManager.Application      | src/TaskManager.Application/TaskManager.Application.csproj           | net9.0      | net10.0    | Class library (SDK-style)                    |
+| TaskManager.Infrastructure   | src/TaskManager.Infrastructure/TaskManager.Infrastructure.csproj     | net9.0      | net10.0    | Class library (SDK-style)                    |
+| TaskManager.Api              | src/TaskManager.Api/TaskManager.Api.csproj                           | net9.0      | net10.0    | ASP.NET Core Web API (Microsoft.NET.Sdk.Web) |
+| TaskManager.ConsoleApp       | src/TaskManager.ConsoleApp/TaskManager.ConsoleApp.csproj             | net9.0      | net10.0    | Console exe                                  |
+| TaskManager.UnitTests        | src/TaskManager.UnitTests/TaskManager.UnitTests.csproj               | net9.0      | net10.0    | xUnit v3 test project                        |
+| TaskManager.IntegrationTests | src/TaskManager.IntegrationTests/TaskManager.IntegrationTests.csproj | net9.0      | net10.0    | xUnit v3 test project                        |
 
 Dependency order (leaf → root): Domain → Application → Infrastructure → {Api, ConsoleApp} → {UnitTests, IntegrationTests}
 
 ## Package Inventory
 
-| Package | Project(s) | Current | Notes |
-|---|---|---|---|
-| Microsoft.AspNetCore.OpenApi | Api | 9.0.0 | Bump to 10.0.x |
-| OpenTelemetry.Exporter.Console | Api | 1.12.0 | Check latest compatible with net10.0 |
-| OpenTelemetry.Extensions.Hosting | Api | 1.12.0 | Check latest compatible with net10.0 |
-| OpenTelemetry.Instrumentation.AspNetCore | Api | 1.12.0 | Check latest compatible with net10.0 |
-| Microsoft.Extensions.Logging.Abstractions | Application | 9.0.8 | Bump to 10.0.x |
-| Microsoft.Extensions.Hosting | ConsoleApp | 9.0.8 | Bump to 10.0.x |
-| Microsoft.NET.Test.Sdk | UnitTests, IntegrationTests | 17.11.1 | Check latest stable; not strictly net10.0-tied but recommend refresh |
-| xunit.v3 / xunit.runner.visualstudio | UnitTests, IntegrationTests | 3.2.2 / 3.1.5 | Check latest stable |
-| FakeItEasy | UnitTests | 8.3.0 | Check latest stable |
-| coverlet.collector | UnitTests, IntegrationTests | 6.0.2 | Check latest stable |
+| Package                                   | Project(s)                  | Current       | Notes                                                                |
+| ----------------------------------------- | --------------------------- | ------------- | -------------------------------------------------------------------- |
+| Microsoft.AspNetCore.OpenApi              | Api                         | 9.0.0         | Bump to 10.0.x                                                       |
+| OpenTelemetry.Exporter.Console            | Api                         | 1.12.0        | Check latest compatible with net10.0                                 |
+| OpenTelemetry.Extensions.Hosting          | Api                         | 1.12.0        | Check latest compatible with net10.0                                 |
+| OpenTelemetry.Instrumentation.AspNetCore  | Api                         | 1.12.0        | Check latest compatible with net10.0                                 |
+| Microsoft.Extensions.Logging.Abstractions | Application                 | 9.0.8         | Bump to 10.0.x                                                       |
+| Microsoft.Extensions.Hosting              | ConsoleApp                  | 9.0.8         | Bump to 10.0.x                                                       |
+| Microsoft.NET.Test.Sdk                    | UnitTests, IntegrationTests | 17.11.1       | Check latest stable; not strictly net10.0-tied but recommend refresh |
+| xunit.v3 / xunit.runner.visualstudio      | UnitTests, IntegrationTests | 3.2.2 / 3.1.5 | Check latest stable                                                  |
+| FakeItEasy                                | UnitTests                   | 8.3.0         | Check latest stable                                                  |
+| coverlet.collector                        | UnitTests, IntegrationTests | 6.0.2         | Check latest stable                                                  |
 
 No security vulnerabilities identified in a manual pass; re-verify via
 `dotnet list package --vulnerable` during execution.
