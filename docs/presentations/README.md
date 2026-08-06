@@ -9,8 +9,8 @@ This directory contains modular Marp presentations for the workshop.
 | Module | Topic | Duration | File |
 | -------- | ------- | ---------- | ------ |
 | 00 | Kickoff & Setup | 15 min | [00-kickoff-and-setup.md](modules/part1/00-kickoff-and-setup.md) |
-| 01 | Copilot Features Tour | 15 min | [01-copilot-features-tour.md](modules/part1/01-copilot-features-tour.md) |
-| 02 | Copilot Instructions & TDD | 30 min | [02-copilot-instructions-tdd.md](modules/part1/02-copilot-instructions-tdd.md) |
+| 01 | Features Tour | 15 min | [01-features-tour.md](modules/part1/01-features-tour.md) |
+| 02 | Instructions & TDD | 30 min | [02-instructions-tdd.md](modules/part1/02-instructions-tdd.md) |
 | 03 | Requirements to Code | 45 min | [03-requirements-to-code.md](modules/part1/03-requirements-to-code.md) |
 | 04 | Generation & Refactoring | 45 min | [04-generation-refactoring.md](modules/part1/04-generation-refactoring.md) |
 | 05 | Testing & Documentation | 15 min | [05-testing-documentation.md](modules/part1/05-testing-documentation.md) |
