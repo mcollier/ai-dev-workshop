@@ -60,5 +60,5 @@
     }
   },
   "postCreateCommand": "npm ci",
-  "postStartCommand": "dotnet build src/TaskManager.sln && dotnet dev-certs https --trust"
+  "postStartCommand": "dotnet build src/TaskManager.slnx && dotnet dev-certs https --trust"
 }
