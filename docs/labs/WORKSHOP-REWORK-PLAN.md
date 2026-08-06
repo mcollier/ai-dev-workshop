@@ -54,10 +54,26 @@ about lab content and structure only.
 | `@workspace` context | Automatic project context / `@file` mentions | Different context injection model |
 | Agent picker dropdown | `/agents` command or CLI flag | |
 
-**Decision needed**: should each lab present Copilot and Claude Code as two labeled
-tracks (like the old 🔷/🟩 stack markers, but for tool instead of language), or should we
-run the whole workshop once per tool (two half-days) instead of interleaving? Interleaving
-in one file risks the same duplication/merge mess we just cleaned up in lab-01/lab-10.
+**Decided**: present Copilot and Claude Code side by side as a two-column table per
+step/prompt (one column per tool), not interleaved prose or separate tracks. See
+"Per-Tool Table Format" below for the exact template.
+
+## Per-Tool Table Format
+
+Each step that differs by tool gets a two-column table, one column per tool, using the
+logos in `docs/images/` to make the columns visually scannable at a glance:
+
+```markdown
+| <img src="../images/githubcopilot.svg" width="20" alt="GitHub Copilot" /> GitHub Copilot | <img src="../images/claude-color.svg" width="20" alt="Claude Code" /> Claude Code |
+|---|---|
+| Prompt/step text for Copilot | Equivalent prompt/step text for Claude Code |
+```
+
+- Use this for prompts, slash/custom commands, and any tool-specific instructions.
+- Steps that are identical for both tools (e.g. TDD concepts, general explanations) stay
+  as normal prose above/below the table — no need to duplicate those into columns.
+- Logos live at `docs/images/githubcopilot.svg` and `docs/images/claude-color.svg`;
+  adjust the relative path per lab file's location.
 
 ## Per-Lab Action Items
 
@@ -78,12 +94,17 @@ in one file risks the same duplication/merge mess we just cleaned up in lab-01/l
 
 ## Open Questions for User
 
-1. Interleave Copilot + Claude Code per lab (like the old 🔷/🟩 stack markers, but for
-   tool instead of language), or keep them as separate labeled sections within each lab
-   to avoid the duplication/merge mess we just cleaned up in lab-01/lab-10?
+1. ~~Interleave Copilot + Claude Code per lab, or keep them as separate labeled
+   sections?~~ **Resolved**: side-by-side two-column tables (one column per tool) per
+   step, using the `docs/images/` logos to differentiate. See "Per-Tool Table Format"
+   above.
 2. ~~Does the sample `src/` application exist elsewhere and get added back, or do labs
    stay reference-only until an app is scaffolded?~~ **Resolved**: someone else is
    working on the sample app; it'll arrive via a separate PR. Tracked in `./todo.md`.
 3. ~~Should the stale `../guides/` and `../presentations/` links be fixed (content needs
    creating) or just removed for now?~~ **Resolved**: being addressed separately later.
    Tracked in `./todo.md`.
+4. ~~Do we scaffold real `.claude/` files (commands, skills, subagents) alongside
+   `.github/`?~~ **Resolved for now**: not yet — Claude Code steps are described in the
+   lab tables only. Real `.claude/` scaffolding is likely eventually but out of scope
+   for this rework pass. Tracked in `./todo.md`.
