@@ -1,9 +1,10 @@
-# Lab 2: From Requirements to Code with GitHub Copilot
+# Lab 2: From Requirements to Code
 
 **Duration**: 45 minutes  
+**Tools**: GitHub Copilot or Claude Code (steps are shown side by side below)  
 **Learning Objectives**:
 
-- Transform user stories into actionable backlog items using Copilot
+- Transform user stories into actionable backlog items using AI assistance
 - Generate acceptance criteria with AI assistance
 - Create test-driven implementations from requirements
 - Practice the full software development workflow with AI
@@ -12,7 +13,7 @@
 
 ## Overview
 
-In this lab, you'll experience the complete journey from a vague user requirement to working, tested code. You'll use GitHub Copilot to:
+In this lab, you'll experience the complete journey from a vague user requirement to working, tested code. You'll use your AI coding tool to:
 
 1. **Decompose** a user story into specific backlog items
 2. **Generate** acceptance criteria for each item
@@ -27,7 +28,7 @@ This simulates real-world Agile development where requirements are refined into 
 
 - ✅ Completed Lab 1 (TDD with NotificationService)
 - ✅ Understand Red-Green-Refactor cycle
-- ✅ Familiar with Copilot Chat and slash commands
+- ✅ Familiar with your AI coding tool's chat interface (Copilot Chat or the Claude Code REPL) and custom commands
 - ✅ Repository at clean state: `git status` shows no uncommitted changes
 
 ---
@@ -44,7 +45,11 @@ This is intentionally vague - typical of early requirements. Your job is to brea
 
 ### 1.1 Generate Backlog Items
 
-Open Copilot Chat (`Ctrl+Alt+I` / `Cmd+Shift+I`) and enter:
+| <img src="../images/githubcopilot.svg" width="20" alt="GitHub Copilot" /> GitHub Copilot | <img src="../images/claude-color.svg" width="20" alt="Claude Code" /> Claude Code |
+|---|---|
+| Open Copilot Chat (`Ctrl+Alt+I` / `Cmd+Shift+I`) | Run `claude` in the integrated terminal from the repo root |
+
+Then enter:
 
 ```text
 I have this user story: "As a user, I want to manage a list of tasks with priorities and due dates so I can track my work and focus on what's most important."
@@ -52,11 +57,11 @@ I have this user story: "As a user, I want to manage a list of tasks with priori
 Decompose this into a backlog of small, independently valuable items with acceptance criteria for implementing this feature in our Task Manager application. Consider the existing Domain/Application/Infrastructure/API architecture.
 ```
 
-> **Why not ask for a specific number?** Letting Copilot decide how many items the story splits into is a better prompting habit than dictating a count up front — you rarely know the right granularity before you see the decomposition. Review what it proposes and split, merge, or reject items as needed.
+> **Why not ask for a specific number?** Letting your AI coding tool decide how many items the story splits into is a better prompting habit than dictating a count up front — you rarely know the right granularity before you see the decomposition. Review what it proposes and split, merge, or reject items as needed.
 
 ### 1.2 Review Generated Backlog
 
-Copilot should generate something like the 5 items below. Your run may produce a different count, order, or naming — that's expected. The rest of this lab uses this specific set as a reference so everyone builds the same feature.
+Your AI coding tool should generate something like the 5 items below. Your run may produce a different count, order, or naming — that's expected. The rest of this lab uses this specific set as a reference so everyone builds the same feature.
 
 #### **Backlog Item 1: Add Priority to Task Entity**
 
@@ -193,7 +198,7 @@ Before we can create tasks with priority and due date, we need to add these prop
 
 ### 2.1 Add Priority Enum (Item 1)
 
-Ask Copilot Chat:
+Ask your AI coding tool:
 
 ```text
 Create a Priority enum as a value object in the Domain layer following DDD patterns. Include values: Low, Medium, High, Critical. Follow our .NET coding conventions.
@@ -260,7 +265,9 @@ public sealed record Priority
 
 **Following TDD**: Write tests FIRST before implementing!
 
-Use the `/tests` command or ask Copilot Chat:
+| <img src="../images/githubcopilot.svg" width="20" alt="GitHub Copilot" /> GitHub Copilot | <img src="../images/claude-color.svg" width="20" alt="Claude Code" /> Claude Code |
+|---|---|
+| Use the `/tests` custom command, or ask directly in chat | Ask directly in the REPL (no `/tests` command defined yet — see `todo.md`) |
 
 ```text
 Generate xUnit tests for the Task entity in tests/TaskManager.UnitTests/Domain/Entities/TaskTests.cs that verify:
@@ -289,16 +296,16 @@ Expected result: Tests fail with compilation errors or NotImplementedException. 
 
 Now that we have failing tests, implement the code to make them pass.
 
-Ask Copilot to find the Task entity (Copilot automatically searches your workspace, no special syntax needed):
+Ask your AI coding tool to find the Task entity (it automatically searches your workspace, no special syntax needed):
 
 ```text
 Where is the Task entity defined?
 ```
 
-Then ask Copilot to update it:
+Then ask it to update the entity (attach the file explicitly with `#file:` in Copilot Chat or `@` in Claude Code if it isn't picked up automatically):
 
 ```text
-Update the Task entity in #file:src/TaskManager.Domain/Entities/Task.cs to add:
+Update the Task entity in src/TaskManager.Domain/Entities/Task.cs to add:
 1. Priority property (required)
 2. DueDate property (nullable DateTime)
 3. Validation: DueDate must be in future if provided
@@ -413,7 +420,7 @@ Now implement the full feature: Create Task with Priority and Due Date through t
 
 #### Step 1: Create the Command
 
-Ask Copilot Chat:
+Ask your AI coding tool:
 
 ```text
 Create a CreateTaskCommand in the Application layer with properties:
@@ -441,7 +448,7 @@ public sealed record CreateTaskCommand
 
 #### Step 2: Write Command Handler Tests (RED)
 
-Ask Copilot:
+Ask your AI coding tool:
 
 ```text
 Create xUnit tests for CreateTaskCommandHandler in tests/TaskManager.UnitTests/Commands/CreateTaskCommandHandlerTests.cs. Test:
@@ -460,7 +467,7 @@ dotnet test
 
 #### Step 3: Implement Command Handler (GREEN)
 
-Ask Copilot:
+Ask your AI coding tool:
 
 ```text
 Implement CreateTaskCommandHandler in Application layer that:
@@ -534,7 +541,7 @@ dotnet test
 
 #### Step 1: Create Request/Response DTOs
 
-Ask Copilot:
+Ask your AI coding tool:
 
 ```text
 Create CreateTaskRequest and TaskResponse DTOs in API layer (src/TaskManager.Api/Models/) for the POST /tasks endpoint. Use records with required properties where appropriate.
@@ -546,7 +553,7 @@ Create CreateTaskRequest and TaskResponse DTOs in API layer (src/TaskManager.Api
 
 **Following TDD**: Write integration tests BEFORE implementing the endpoint!
 
-Ask Copilot to find the endpoint extensions (Copilot automatically searches your workspace):
+Ask your AI coding tool to find the endpoint extensions (it automatically searches your workspace):
 
 ```text
 Where are the API endpoints defined?
@@ -576,10 +583,10 @@ Expected result: All integration tests fail. This is the **RED** phase! ✅
 
 #### Step 3: Implement the Endpoint (GREEN Phase)
 
-Now implement the endpoint to make the tests pass:
+Now implement the endpoint to make the tests pass (attach the file explicitly with `#file:` in Copilot Chat or `@` in Claude Code if it isn't picked up automatically):
 
 ```text
-Implement POST /tasks endpoint in #file:src/TaskManager.Api/Extensions/EndpointExtensions.cs that:
+Implement POST /tasks endpoint in src/TaskManager.Api/Extensions/EndpointExtensions.cs that:
 1. Maps CreateTaskRequest DTO to CreateTaskCommand
 2. Calls CreateTaskCommandHandler to create the task
 3. Maps the domain Task entity to TaskResponse DTO
@@ -741,7 +748,7 @@ Confirm that:
 
 ### ✅ AI-Assisted Requirements Analysis
 
-1. **Decomposition**: Copilot helped break vague user story into concrete items
+1. **Decomposition**: Your AI coding tool helped break vague user story into concrete items
 2. **Acceptance Criteria**: Generated testable, specific criteria for each item
 3. **Technical Context**: Understood existing architecture and suggested appropriate patterns
 4. **Comprehensive Coverage**: Identified edge cases and validation rules
@@ -806,10 +813,10 @@ You've completed this lab successfully when:
 
 ## Troubleshooting
 
-### Copilot Generates Generic Backlog Items
+### AI Tool Generates Generic Backlog Items
 
 **Problem**: Backlog items don't consider existing architecture  
-**Solution**: Copilot automatically includes workspace context, but naming your architecture explicitly still helps: "Given our Clean Architecture structure..."
+**Solution**: Your AI coding tool automatically includes workspace context, but naming your architecture explicitly still helps: "Given our Clean Architecture structure..."
 
 ### Tests Don't Cover Edge Cases
 
@@ -832,10 +839,10 @@ You've completed this lab successfully when:
 
 Move on to [**Lab 3: Code Generation & Refactoring**](lab-03-generation-and-refactoring.md) where you'll:
 
-- Scaffold complete API endpoints with Copilot
-- Refactor legacy code using `/refactor` command
+- Scaffold complete API endpoints with AI assistance
+- Refactor legacy code using the `/refactor` command
 - Apply Object Calisthenics principles
-- Rely on Copilot's automatic workspace context for cross-file understanding
+- Rely on your AI coding tool's automatic workspace context for cross-file understanding
 
 ---
 
@@ -846,7 +853,7 @@ Move on to [**Lab 3: Code Generation & Refactoring**](lab-03-generation-and-refa
 > 
 > As you make key design or architectural choices (e.g., how to model priorities, validation, or API structure), it's best practice to capture your reasoning in an [Architecture Decision Record (ADR)](https://adr.github.io/). This helps your team understand why decisions were made and makes future changes easier to justify.
 
-**Sample Copilot Prompt:**
+**Sample Prompt:**
 ```text
 Write an Architecture Decision Record (ADR) for our approach to modeling task priorities as a value object in the Domain layer. Include:
 - Context and alternatives considered
