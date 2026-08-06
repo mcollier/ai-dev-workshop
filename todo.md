@@ -11,7 +11,7 @@
   - [ ] Rubber Ducking
 - [ ] Account for Squad or similar? Advanced topic?
 - [ ] Add guidance for sharing assets (plugin marketplace, organizational settings (GitHub), personal vs. repo level skills, etc.)
-- [ ] Update .NET code to .NET 10 (current LTS version; v9 end of support in November 2026)
+- [x] Update .NET code to .NET 10 (current LTS version; v9 end of support in November 2026)
 - [ ] Review workshop checklist to ensure guidance on using GitHub Copilot CLI
 - [ ] Seems that `@workspace` has been removed; use `#codebase` instead
 - [ ] When to use `AGENTS.md` vs. `copilot-instructions.md`
