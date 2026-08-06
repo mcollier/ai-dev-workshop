@@ -14,7 +14,18 @@
   ],
   "language": "en",
   "noConfigSearch": true,
-  "words": ["megalinter", "oxsecurity", "marp", "betterleaks", "jsonlint"],
+  "words": [
+    "aspnetcore",
+    "appsettings",
+    "betterleaks",
+    "globaljson",
+    "jsonlint",
+    "marp",
+    "megalinter",
+    "nologo",
+    "oxsecurity",
+    "xunit"
+  ],
   "version": "0.2",
   "caseSensitive": false,
   "dictionaries": ["cpp-refined", "dotnet", "fullstack"]
