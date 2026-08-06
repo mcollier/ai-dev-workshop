@@ -23,7 +23,7 @@ You'll apply agents to **3 real workflows:**
 3. **Test Strategy** (test planning)
 
 **For each:**
-- Use standard Chat first
+- Use standard agent first
 - Then use the custom agent
 - Compare quality and consistency
 
@@ -46,7 +46,7 @@ You'll apply agents to **3 real workflows:**
 **Scenario:** Review NotificationService for Clean Architecture
 
 **Compare:**
-- Standard Chat → General feedback
+- Standard Agent → General feedback
 - Architecture Reviewer → Structured analysis
 
 **Key question:** Which review is PR-ready?
@@ -58,7 +58,7 @@ You'll apply agents to **3 real workflows:**
 **Scenario:** Propose tests for task assignment feature
 
 **Compare:**
-- Standard Chat → Basic scenarios
+- Standard Agent → Basic scenarios
 - Test Strategist → Comprehensive coverage
 
 **Key question:** Which strategy is implementation-ready?
@@ -68,7 +68,7 @@ You'll apply agents to **3 real workflows:**
 ## Discussion Questions
 
 1. Which agent provided the most value?
-2. Did agents catch issues standard chat missed?
+2. Did custom agents catch issues the standard agent missed?
 3. Were structured outputs more useful?
 4. What are the limitations of agents?
 
