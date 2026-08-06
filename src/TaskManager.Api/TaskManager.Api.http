@@ -1,12 +1,13 @@
 @hostname = https://localhost
 @port = 7208
 
-GET {{hostname}}:{{port}}/weatherforecast/
+### Get all tasks
+GET {{hostname}}:{{port}}/tasks/
 Accept: application/json
 
-###
-
+### Get the health status of the API
 GET {{hostname}}:{{port}}/health
 Accept: application/json
 
-###
+### Get the OpenAPI specification
+GET {{hostname}}:{{port}}/openapi/v1.json
