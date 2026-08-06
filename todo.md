@@ -1,8 +1,8 @@
 # To Do List
 
-- [ ] Support GitHub Copilot App
+- [x] Support GitHub Copilot App
 - [x] Add intro slide(s) on pricing?
-- [ ] Support for VS Code Agents window
+- [x] Support for VS Code Agents window
 - [ ] Section on file locations for each tool (GitHub Copilot CLI, VS Code GitHub Copilot, Claude Code)
 - [ ] Section on using a plugin marketplace
 - [ ] Account for newer skills and patterns
@@ -17,9 +17,9 @@
 - [x] When to use `AGENTS.md` vs. `copilot-instructions.md`
   - [x] Also `CLAUDE.md`
 - [ ] Should we lean more towards CLI tools (GitHub Copilot CLI and Claude Code) instead of pure VS Code IDE?
-- [ ] Account for prompt cache details
-  - [ ] Add section on costs and optimization
-  - [ ] Account for model selection guidance
+- [x] Account for prompt cache details
+  - [x] Add section on costs and optimization
+  - [x] Account for model selection guidance
 - [ ] Add support for GitHub (remote) coding agent?
 - [x] Add to prerequisites details on ensuring you have budget/credits to do the labs. This does cost real money!
 - [x] Pull in docs/guides as a reference

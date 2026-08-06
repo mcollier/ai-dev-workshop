@@ -81,6 +81,8 @@ _5 hour rolling usage limit window_
 - **Next-edit suggestions**: predicts where and what you may edit next
 - **Inline chat**: ask for a change directly at the cursor or selected code
 - **Plan, Ask, and Agent modes**: Determine approach, topic discussion, and multi-step task execution
+- **Multi-harness support**: Copilot, Claude, Codex, or Cloud
+- **Agents window**: Agent-first workflow experience in VS Code _(preview)_
 
 💡_AI integrated into the everyday editing experience._
 
@@ -104,6 +106,7 @@ _5 hour rolling usage limit window_
 - Parallel agent workstreams (each session in its own git worktree)
 - End-to-end GitHub integration (issues, PRs, repo search, CI results) without switching tools
 - Use canvases to create custom interfaces to collaborate or view info
+- Relatively new (June 2026) and innovating quickly 👀
 
 💡_A platform for supervising AI-powered software delivery._
 
@@ -209,15 +212,15 @@ One token is ~4 characters of English text (3/4th of a word; 100 tokens ~= 75 wo
 - Always-on instructions, your prompt, additional context, MCP tools, skills, it's own responses, etc. contribute.
 - Size varies by model
 
-_Keep context window as small as possible. The larger the window, the "dumber" responses._
-
-_Use `/context` in Claude Code or GitHub Copilot to check tokens in session context window._
+💡_Keep context window small (~100K tokens). Larger window equals "dumber" responses._
+💡_Favor starting fresh instead of compacting._
+💡_Use `/context` in Claude Code or Copilot CLI to check tokens in session._
 
 ---
 
-## Cache
+## Prompt Cache
 
-- Prompt caching avoids repeatedly processing the same instructions and context, reducing response time and token cost.
+- Avoids repeatedly processing the same instructions and context, reducing response time and token cost.
 - Stable context should appear first with changes at the end.
 - TTL varies by model and provider
 
@@ -226,6 +229,16 @@ _Use `/context` in Claude Code or GitHub Copilot to check tokens in session cont
 - Switching models mid-session
 - Adding new tools
 - Going beyond the TTL
+
+---
+
+## Model Selection
+
+### Right Model for the Task
+
+- **Reasoning model**: ADRs, research & planning, deeper analysis _(Opus, GPT-5.6 Sol)_
+- **Mid-tier model**: Clear plan - do the work _(Sonnet, GPT-5.6 Terra)_
+- **Lighter models**: Refactoring, docs, well-scoped changes _(Haiku, MAI-Code-1-Flash)_
 
 ---
 
