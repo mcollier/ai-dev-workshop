@@ -99,10 +99,10 @@ backgroundColor: #fff
 ## Resources
 
 📚 **Documentation**
-- [Customization Decision Guide](../../guides/customization-decision-guide.md)
-- [Custom Agent Catalog](../../guides/custom-agent-catalog.md)
-- [Agent Design Guide](../../guides/agent-design-guide.md)
-- [Agent Governance](../../guides/agent-governance.md)
+- [Customization Decision Guide](../../../guides/customization-decision-guide.md)
+- [Custom Agent Catalog](../../../guides/custom-agent-catalog.md)
+- [Agent Design Guide](../../../guides/agent-design-guide.md)
+- [Agent Governance](../../../guides/agent-governance.md)
 
 🔗 **Labs**
 - All labs in `docs/labs/`
