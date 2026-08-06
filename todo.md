@@ -8,3 +8,4 @@
 - [ ] Account for prompt cache details
 - [ ] Account for model selection guidance
 - [ ] Review workshop checklist to ensure guidance on using GitHub Copilot CLI
+- [ ] `@workspace` is no longer current (superseded by automatic workspace context / `#codebase`) — updated the labs, but presentations, guidebooks, and other materials still need the same fix once integrated

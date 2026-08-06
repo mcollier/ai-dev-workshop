@@ -6,7 +6,7 @@
 - Generate comprehensive test suites using `/tests` command
 - Create documentation with `/doc` command
 - Write Conventional Commit messages with AI assistance
-- Draft PR descriptions using `@workspace` for full context
+- Draft PR descriptions using Copilot's full workspace context
 - Integrate Copilot into complete development workflow
 
 ---
@@ -746,12 +746,12 @@ EOF
 
 You've completed the workshop implementation. Create a comprehensive PR description for review.
 
-### 4.1 Generate PR Description with @workspace
+### 4.1 Generate PR Description
 
-In Copilot Chat:
+In Copilot Chat (Copilot automatically includes workspace context):
 
 ```text
-@workspace Draft a Pull Request description for all the changes made in this branch. Include:
+Draft a Pull Request description for all the changes made in this branch. Include:
 - Summary of changes
 - What was implemented (features, refactoring, tests)
 - Intent and motivation
@@ -919,7 +919,7 @@ Review the generated PR description and adjust:
 
 ### ✅ Code Review Preparation
 
-1. **@workspace Context**: Full codebase understanding for PR description
+1. **Automatic Workspace Context**: Full codebase understanding for PR description
 2. **Comprehensive PRs**: All changes documented and explained
 3. **Reviewer Checklist**: Clear acceptance criteria
 4. **Impact Analysis**: Breaking changes, migrations, deployment notes
@@ -967,7 +967,7 @@ You've completed this lab successfully when:
 - ✅ All public APIs have XML documentation via `/doc`
 - ✅ API documentation in README.md with examples
 - ✅ Conventional Commit messages written for all changes
-- ✅ Complete PR description drafted with `@workspace`
+- ✅ Complete PR description drafted using full workspace context
 - ✅ All tests passing
 - ✅ Documentation is clear and maintainable
 - ✅ Ready for code review
@@ -1027,7 +1027,7 @@ Congratulations! You've completed all four labs. You now know how to:
 ### PR Description Missing Details
 
 **Problem**: PR description is too high-level  
-**Solution**: Use @workspace and be specific: "Include testing details, breaking changes, and reviewer checklist"
+**Solution**: Be specific in your prompt: "Include testing details, breaking changes, and reviewer checklist"
 
 ---
 
@@ -1039,7 +1039,7 @@ Congratulations! You've completed all four labs. You now know how to:
 2. Establish Conventional Commits standard
 3. Use `/tests` for all new code
 4. Use `/doc` for public APIs
-5. Use `@workspace` in daily work
+5. Trust Copilot's automatic workspace context in daily work
 
 ### Advanced Copilot Usage
 

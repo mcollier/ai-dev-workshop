@@ -6,7 +6,7 @@
 - Generate complete API endpoints using Copilot and context variables
 - Refactor legacy code using `/refactor` command and Inline Chat
 - Apply Object Calisthenics principles with AI assistance
-- Use `@workspace` for understanding and modifying existing code
+- Use Copilot's automatic workspace context to understand and modify existing code
 - Leverage Copilot Edits for multi-file refactoring
 
 ---
@@ -65,12 +65,12 @@ Encourage participants to share their Agent Mode results and discuss when this a
 
 You have the POST /tasks endpoint from Lab 2. Now complete the REST API with GET, PUT, and DELETE operations.
 
-### 1.1 Understand Existing Structure with @workspace
+### 1.1 Understand Existing Structure
 
-Before generating new code, understand what exists:
+Before generating new code, understand what exists — Copilot automatically searches your workspace, so just ask directly:
 
 ```text
-@workspace Show me the API endpoint structure. Where are endpoints defined and how are they organized?
+Show me the API endpoint structure. Where are endpoints defined and how are they organized?
 ```
 
 Copilot should identify:
@@ -259,10 +259,10 @@ The repository contains `LegacyTaskProcessor.ProcessTask` - poorly written code 
 
 ### 2.1 Find the Legacy Code
 
-Use `@workspace`:
+Ask Copilot directly (it automatically searches your workspace):
 
 ```text
-@workspace Find the LegacyTaskProcessor class
+Find the LegacyTaskProcessor class
 ```
 
 **Location**: `src/TaskManager.Infrastructure/Legacy/LegacyTaskProcessor.cs`
@@ -628,7 +628,7 @@ Copilot will show:
 
 ### ✅ Context-Aware Code Generation
 
-1. **@workspace**: Understanding existing structure before generating
+1. **Automatic workspace context**: Understanding existing structure before generating
 2. **#file**: Referencing specific files for consistent patterns
 3. **#selection**: Refactoring specific code sections
 4. **Pattern Reuse**: Copilot learned patterns from existing endpoints
@@ -728,7 +728,7 @@ Move on to [**Lab 4: Testing, Documentation & Workflow**](lab-04-testing-documen
 - Generate comprehensive test suites with `/tests`
 - Create documentation with `/doc`
 - Write Conventional Commit messages
-- Draft PR descriptions with `@workspace`
+- Draft PR descriptions using full workspace context
 
 ---
 

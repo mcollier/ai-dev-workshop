@@ -109,7 +109,7 @@ Generate complete API endpoints and modernize legacy code.
 
 **Key Skills**:
 
-- Using `@workspace` for context awareness
+- Using Copilot's automatic workspace context for context awareness
 - Using `#file` and `#selection` context variables
 - Using `/refactor` command for legacy code
 - Applying Object Calisthenics (guard clauses, no abbreviations, wrap primitives)
@@ -141,7 +141,7 @@ Complete the development lifecycle with AI-assisted testing, docs, and PR prepar
 - Generating test coverage with `/tests` command
 - Creating documentation with `/doc` command
 - Writing Conventional Commits
-- Using `@workspace` for PR context
+- Using full workspace context for PR descriptions
 - Preparing code for review
 
 **Prerequisites**:

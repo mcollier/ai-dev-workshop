@@ -289,10 +289,10 @@ Expected result: Tests fail with compilation errors or NotImplementedException. 
 
 Now that we have failing tests, implement the code to make them pass.
 
-Use `@workspace` to find the Task entity:
+Ask Copilot to find the Task entity (Copilot automatically searches your workspace, no special syntax needed):
 
 ```text
-@workspace Where is the Task entity defined?
+Where is the Task entity defined?
 ```
 
 Then ask Copilot to update it:
@@ -546,10 +546,10 @@ Create CreateTaskRequest and TaskResponse DTOs in API layer (src/TaskManager.Api
 
 **Following TDD**: Write integration tests BEFORE implementing the endpoint!
 
-Use `@workspace` to find the endpoint extensions:
+Ask Copilot to find the endpoint extensions (Copilot automatically searches your workspace):
 
 ```text
-@workspace Where are the API endpoints defined?
+Where are the API endpoints defined?
 ```
 
 Then create integration tests FIRST:
@@ -809,7 +809,7 @@ You've completed this lab successfully when:
 ### Copilot Generates Generic Backlog Items
 
 **Problem**: Backlog items don't consider existing architecture  
-**Solution**: Use `@workspace` to give context: "Given our Clean Architecture structure..."
+**Solution**: Copilot automatically includes workspace context, but naming your architecture explicitly still helps: "Given our Clean Architecture structure..."
 
 ### Tests Don't Cover Edge Cases
 
@@ -835,7 +835,7 @@ Move on to [**Lab 3: Code Generation & Refactoring**](lab-03-generation-and-refa
 - Scaffold complete API endpoints with Copilot
 - Refactor legacy code using `/refactor` command
 - Apply Object Calisthenics principles
-- Use `@workspace` for cross-file understanding
+- Rely on Copilot's automatic workspace context for cross-file understanding
 
 ---
 
