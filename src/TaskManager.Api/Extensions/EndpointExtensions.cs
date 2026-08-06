@@ -14,8 +14,7 @@ public static class EndpointExtensions
     {
         // Health check endpoint
         app.MapGet("/health", () => new { Status = "Healthy", Message = "Task Manager API is ready for Lab 3!" })
-            .WithName("HealthCheck")
-            .WithOpenApi();
+            .WithName("HealthCheck");
 
         // TODO: Lab 3 - Participants will use Copilot to generate these task endpoints:
         
