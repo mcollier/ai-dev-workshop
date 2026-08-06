@@ -79,20 +79,23 @@ logos in `docs/images/` to make the columns visually scannable at a glance:
 
 ## Per-Lab Action Items
 
-| Lab | Action |
-|---|---|
-| Lab 1 – TDD | Add Claude Code prompts alongside existing Copilot prompts for interface/test/impl generation |
-| Lab 2 – Requirements to Code | Add Claude Code equivalents for backlog generation, full-stack TDD flow |
-| Lab 3 – Generation & Refactoring | Add Claude Code equivalents for `@workspace`, `/refactor`, multi-file edits |
-| Lab 4 – Testing/Docs/Workflow | Add Claude Code equivalents for `/tests`, `/doc`, commit workflow |
-| ~~Lab 5 – Interaction Models~~ | Deleted per user decision — no longer part of the lab set |
-| Lab 6 – Skills & Customization | Add Claude Code Skills + `CLAUDE.md` sections; compare hierarchy across tools |
-| Lab 7 – Custom Agents Intro | Add Claude Code subagents equivalent walkthrough |
-| Lab 8 – Workflow Agents | Extend scenarios to invoke both Copilot agents and Claude Code subagents |
-| Lab 9 – Agent Design | Keep tool-agnostic (design principles apply to both); add a short "authoring for both tools" note |
-| Lab 10 – Capstone | Update template so participants build one agent definition and adapt it for both tools |
-| Bonus – Test Planning | Add Claude Code equivalent prompt/workflow |
-| README.md | Update tech stack section (mention both tools), fix/remove broken `../guides/` and `../presentations/` links. Timing table left as-is for now. |
+> Mark **Reviewed** with ✅ (optionally add your initials, e.g. `✅ SW`) once you've
+> reviewed or completed a lab's rework, so the team can track progress at a glance.
+
+| Lab | Action | Reviewed |
+|---|---|---|
+| Lab 1 – TDD | Add Claude Code prompts alongside existing Copilot prompts for interface/test/impl generation | ✅ |
+| Lab 2 – Requirements to Code | Add Claude Code equivalents for backlog generation, full-stack TDD flow | ⬜ |
+| Lab 3 – Generation & Refactoring | Add Claude Code equivalents for `@workspace`, `/refactor`, multi-file edits | ⬜ |
+| Lab 4 – Testing/Docs/Workflow | Add Claude Code equivalents for `/tests`, `/doc`, commit workflow | ⬜ |
+| ~~Lab 5 – Interaction Models~~ | Deleted per user decision — no longer part of the lab set | \u2014 |
+| Lab 6 – Skills & Customization | Add Claude Code Skills + `CLAUDE.md` sections; compare hierarchy across tools | ⬜ |
+| Lab 7 – Custom Agents Intro | Add Claude Code subagents equivalent walkthrough | ⬜ |
+| Lab 8 – Workflow Agents | Extend scenarios to invoke both Copilot agents and Claude Code subagents | ⬜ |
+| Lab 9 – Agent Design | Keep tool-agnostic (design principles apply to both); add a short "authoring for both tools" note | ⬜ |
+| Lab 10 – Capstone | Update template so participants build one agent definition and adapt it for both tools | ⬜ |
+| ~~Bonus – Test Planning~~ | Deleted per user decision — no longer part of the lab set | \u2014 |
+| README.md | Update tech stack section (mention both tools), fix/remove broken `../guides/` and `../presentations/` links. Timing table left as-is for now. | ⬜ |
 
 ## Open Questions for User
 
