@@ -16,20 +16,22 @@
   "language": "en",
   "noConfigSearch": true,
   "words": [
+    "addyosmani",
     "aspnetcore",
     "appsettings",
     "betterleaks",
     "globaljson",
     "jsonlint",
     "marp",
+    "mattpocock",
     "megalinter",
     "nologo",
     "oxsecurity",
     "retarget",
     "retargeted",
-    "xunit"
+    "xunit"    
   ],
   "version": "0.2",
   "caseSensitive": false,
-  "dictionaries": ["cpp-refined", "dotnet", "fullstack"]
+  "dictionaries": ["cpp-refined", "dotnet", "fullstack", "data-science"]
 }
