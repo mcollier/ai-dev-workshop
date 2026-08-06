@@ -5,21 +5,21 @@ VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{7F3EF8D0-0A73-4883-A607-05FBF2E34552}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskManager.Domain", "src\TaskManager.Domain\TaskManager.Domain.csproj", "{87D3DFE6-7F6E-46FD-A9F0-F6CE881F35DE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskManager.Domain", "TaskManager.Domain\TaskManager.Domain.csproj", "{87D3DFE6-7F6E-46FD-A9F0-F6CE881F35DE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskManager.Application", "src\TaskManager.Application\TaskManager.Application.csproj", "{35097FA0-7923-4BDC-B837-809791328F02}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskManager.Application", "TaskManager.Application\TaskManager.Application.csproj", "{35097FA0-7923-4BDC-B837-809791328F02}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskManager.Infrastructure", "src\TaskManager.Infrastructure\TaskManager.Infrastructure.csproj", "{C9364ABE-CF65-4BAE-ADF0-E2B7528914AF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskManager.Infrastructure", "TaskManager.Infrastructure\TaskManager.Infrastructure.csproj", "{C9364ABE-CF65-4BAE-ADF0-E2B7528914AF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskManager.Api", "src\TaskManager.Api\TaskManager.Api.csproj", "{92BEB424-6162-4E4F-9DBC-73E0794F3918}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskManager.Api", "TaskManager.Api\TaskManager.Api.csproj", "{92BEB424-6162-4E4F-9DBC-73E0794F3918}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskManager.ConsoleApp", "src\TaskManager.ConsoleApp\TaskManager.ConsoleApp.csproj", "{0FA844A7-3CE2-434A-8932-01986A1B990E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskManager.ConsoleApp", "TaskManager.ConsoleApp\TaskManager.ConsoleApp.csproj", "{0FA844A7-3CE2-434A-8932-01986A1B990E}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{5F6A91CC-E5C1-4A94-9587-B62FB5CF924A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskManager.UnitTests", "tests\TaskManager.UnitTests\TaskManager.UnitTests.csproj", "{9DF61F21-F9CE-477D-9780-A26E1A626FBA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskManager.UnitTests", "TaskManager.UnitTests\TaskManager.UnitTests.csproj", "{9DF61F21-F9CE-477D-9780-A26E1A626FBA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskManager.IntegrationTests", "tests\TaskManager.IntegrationTests\TaskManager.IntegrationTests.csproj", "{98CEDAC6-CED0-4244-95CB-20C5CABB2795}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskManager.IntegrationTests", "TaskManager.IntegrationTests\TaskManager.IntegrationTests.csproj", "{98CEDAC6-CED0-4244-95CB-20C5CABB2795}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
