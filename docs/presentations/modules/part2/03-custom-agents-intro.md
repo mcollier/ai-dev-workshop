@@ -46,12 +46,12 @@ You wouldn't ask a general assistant to:
 
 ## The Complete Hierarchy
 
-| Feature         | Prompts  | Instructions | Skills                         | Agents                                                                                |
-| --------------- | -------- | ------------ | ------------------------------ | ------------------------------------------------------------------------------------- |
-| **Scope**       | One-off  | Always-on    | On-demand                      | On-demand                                                                             |
+| Feature         | Prompts  | Instructions | Skills                         | Agents                                                               |
+| --------------- | -------- | ------------ | ------------------------------ | -------------------------------------------------------------------- |
+| **Scope**       | One-off  | Always-on    | On-demand                      | On-demand                                                            |
 | **Invocation**  | Chat     | Automatic    | Slash command (varies by tool) | VS Code `@agent-name`; Copilot CLI `/agent`; Claude Code auto-routed |
-| **Tool Access** | ❌       | ❌           | ❌                             |   ✅                                                                                  |
-| **Purpose**     | Question | Guardrails   | Knowledge                      | Workflow                                                                              |
+| **Tool Access** | ❌       | ❌           | ❌                             | ✅                                                                   |
+| **Purpose**     | Question | Guardrails   | Knowledge                      | Workflow                                                             |
 
 ---
 

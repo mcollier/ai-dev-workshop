@@ -25,7 +25,8 @@
     "marp",
     "mattpocock",
     "megalinter",
-    "oxsecurity"
+    "oxsecurity",
+    "xunit"
   ],
   "version": "0.2",
   "caseSensitive": false,

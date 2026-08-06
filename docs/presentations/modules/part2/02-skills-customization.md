@@ -100,7 +100,7 @@ actually available in your session
 > An agent often invokes a skill along the way — they compose, not compete
 
 **Most confusion:** Treating skills and agents as either/or  
-**Remember:** Does *this specific step* need to read/write files?
+**Remember:** Does _this specific step_ need to read/write files?
 - Yes → Agent (which may invoke a skill internally)
 - No → Maybe a Skill (invoked directly)
 
