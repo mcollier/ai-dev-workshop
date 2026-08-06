@@ -85,7 +85,7 @@ logos in `docs/images/` to make the columns visually scannable at a glance:
 | Lab | Action | Reviewed |
 |---|---|---|
 | Lab 1 – TDD | Add Claude Code prompts alongside existing Copilot prompts for interface/test/impl generation | ✅ |
-| Lab 2 – Requirements to Code | Add Claude Code equivalents for backlog generation, full-stack TDD flow | ⬜ |
+| Lab 2 – Requirements to Code | Add Claude Code equivalents for backlog generation, full-stack TDD flow | ✅ |
 | Lab 3 – Generation & Refactoring | Add Claude Code equivalents for `@workspace`, `/refactor`, multi-file edits | ⬜ |
 | Lab 4 – Testing/Docs/Workflow | Add Claude Code equivalents for `/tests`, `/doc`, commit workflow | ⬜ |
 | ~~Lab 5 – Interaction Models~~ | Deleted per user decision — no longer part of the lab set | — |
