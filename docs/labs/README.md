@@ -153,31 +153,6 @@ Complete the development lifecycle with AI-assisted testing, docs, and PR prepar
 
 ## Part 2: Advanced GitHub Copilot
 
-### [Lab 5: Copilot Interaction Models](lab-05-interaction-models.md)
-
-**Duration**: 20 minutes
-
-Understand and practice the three modes of interaction with GitHub Copilot.
-
-**What You'll Learn**:
-
-- Ask Mode for quick questions and explanations
-- Plan Mode for designing approach and gathering requirements before code generation
-- Agent Mode for specialized, structured tasks
-- When to use each interaction model
-
-**Key Skills**:
-
-- Choosing the right interaction mode
-- Using each mode effectively
-- Combining modes in workflows
-
-**Prerequisites**:
-
-- Completed Part 1 (Labs 1-4) or familiar with basic Copilot usage
-
----
-
 ### [Lab 06: Skills & Customization Hierarchy](lab-06-skills-and-customization.md)
 
 **Duration**: 25-30 minutes
@@ -207,7 +182,7 @@ Understand the complete customization hierarchy and the new Skills system.
 
 **Prerequisites**:
 
-- Completed Lab 5 or understanding of interaction models
+- Completed Part 1 (Labs 1-4) or familiar with basic Copilot usage
 - Access to workshop repository with skills configured
 
 ---
@@ -234,8 +209,8 @@ Learn about custom agents and how they differ from standard Copilot interactions
 
 **Prerequisites**:
 
-- Completed Lab 5 or understanding of interaction models
-- **Recommended**: Lab 06 for full customization context
+- Completed Lab 06: Skills & Customization
+- **Recommended**: familiarity with the customization hierarchy from Lab 06
 
 ---
 
@@ -405,8 +380,6 @@ Lab 4 (Documentation & Workflow)
 #### Part 2: Advanced Topics
 
 ```text
-Lab 5 (Interaction Models)
-    ↓
 Lab 6 (Custom Agents Intro)
     ↓
 Lab 7 (Workflow Agents)
@@ -429,7 +402,6 @@ Apply to Real Projects! 🎉
 | Lab 4 | 10 min | 15 min | 25 min |
 | **Part 1 Total** | **90 min** | **135 min** | **185 min** |
 | **Part 2** | | | |
-| Lab 5 | 15 min | 20 min | 30 min |
 | Lab 6 | 20 min | 30 min | 40 min |
 | Lab 7 | 20 min | 30 min | 45 min |
 | Lab 8 | 15 min | 25 min | 35 min |
@@ -607,4 +579,4 @@ By completing Part 2 labs, you will:
 **Ready to start?**
 
 → **Part 1**: [Begin with Lab 1: TDD with GitHub Copilot](lab-01-tdd-with-copilot.md)  
-→ **Part 2**: [Begin with Lab 5: Copilot Interaction Models](lab-05-interaction-models.md)
+→ **Part 2**: [Begin with Lab 06: Skills & Customization](lab-06-skills-and-customization.md)

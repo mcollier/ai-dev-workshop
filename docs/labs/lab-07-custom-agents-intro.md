@@ -14,7 +14,7 @@ By the end of this lab, you will:
 
 ## Prerequisites
 
-- Completion of [Lab 05: Interaction Models](lab-05-interaction-models.md)
+- Completion of [Lab 06: Skills & Customization](lab-06-skills-and-customization.md)
 - VS Code with GitHub Copilot extension
 - Access to the TaskManager workshop repository
 

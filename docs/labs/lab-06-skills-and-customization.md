@@ -15,7 +15,7 @@ By the end of this lab, you will:
 
 ## Prerequisites
 
-- Completion of [Lab 05: Interaction Models](lab-05-interaction-models.md)
+- Completion of Part 1 labs (or equivalent Copilot experience)
 - VS Code with GitHub Copilot extension
 - Access to the TaskManager workshop repository
 
