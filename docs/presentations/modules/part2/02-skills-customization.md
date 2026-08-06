@@ -8,7 +8,7 @@ backgroundColor: #fff
 # Module 2
 
 ## Skills & Customization Hierarchy
-### Four Ways to Customize Copilot
+### Four Ways to Customize Your AI Coding Tool
 
 **Duration:** 30 minutes
 
@@ -16,14 +16,12 @@ backgroundColor: #fff
 
 ## The Customization Hierarchy
 
-```text
-4 Types (Specific → General)
+### 4 Types (Specific → General)
 
-1. Prompts      → One-off, in-chat
+1. Prompts      → One-off, in-chat (_move to skills_)
 2. Instructions → Always-on guardrails
-3. Skills       → Domain knowledge (/skill-name)
-4. Agents       → Workflows with tools (@agent-name)
-```
+3. Skills       → Domain knowledge (slash command)
+4. Agents       → Workflows with tools (invocation varies by tool, `@agent-name` or `/agent`)
 
 **Key principle:** Use the simplest level that solves your problem
 
@@ -34,55 +32,64 @@ backgroundColor: #fff
 **Skills = Domain Expertise Without Tool Access**
 
 - Portable knowledge modules
-- Invoked with `/skill-name` slash commands
-- Provide templates, patterns, examples
+- Invoked with a slash command (e.g. `/skill-name`)
+- Provide templates, patterns, workflows, conventions, reference material
 - **No file access** - pure knowledge
-- Discovered via `/skills` command
+- Executable helper scripts (e.g., `.sh`, `.py`)
 
 **Example:** `/test-data-generator`
 
+💡_Keep skills to under 500 lines._
+
 ---
 
-## Skills vs Agents
+<style scoped>
+section {
+  font-size: 24px;
+}
+</style>
+
+## Skills & Agents: How They Relate
+
+**Not either/or**: a skill can be invoked directly, _and_ an agent can invoke a skill
+mid-task as part of a larger workflow.
 
 | Aspect | Skills | Agents |
 | -------- | -------- | -------- |
 | **Purpose** | Knowledge & templates | Workflows & actions |
 | **Tool Access** | ❌ None | ✅ Read/write files |
-| **Invocation** | `/skill-name` | `@agent-name` |
-| **Best For** | Patterns, examples | Multi-step tasks |
-| **Discovery** | `/skills` | `/agents` |
+| **Invocation** | Slash command, or called by an agent | VS Code: `@agent-name`; Copilot CLI: `/agent`; Claude Code: auto-routed |
+| **Can invoke the other?** | ❌ No tool access, so a skill can't invoke an agent | ✅ Yes, an agent loads a skill for domain knowledge, then acts on it |
+| **Best For** | Patterns, examples | Multi-step tasks; codifying explicit context on how to carryout a process |
 
 ---
 
 ## When to Use Each Type
 
-**Prompts:** One-time question  
+**Prompts:** One-time question _(moving to skills)_
 **Instructions:** Team coding standards  
-**Skills:** Generate templates/patterns  
+**Skills:** Reusable knowledge, conventions, checklists, or multi-step procedure
 **Agents:** Orchestrate multi-step workflows
 
-**Decision tree:**
-1. Need to make changes? → Agent
-2. Need templates/knowledge? → Skill
+**Decision tree** (what do _you_ invoke directly?):
+1. Need to make changes? → Agent (it may invoke a skill along the way)
+2. Need templates/knowledge only, no changes? → Skill
 3. Always-on rule? → Instructions
-4. One-off question? → Prompt
+~~4. One-off question? → Prompt~~
 
 ---
 
 ## Slash Commands for Discovery
 
-```bash
-/help              # Show all commands
-/agents            # List available agents
-/skills            # List available skills
-/init              # Start new project
-/create-workspace  # Create workspace
-/create-notebook   # Create Jupyter notebook
-/create-file       # Create file with AI
-```
+Every tool has slash (`/`) commands
 
-**Try it:** Type `/skills` in Copilot now
+### Availability varies
+- By installed extensions or plugins
+- By how you access the tool (CLI vs. IDE)
+- By tool — Copilot and Claude Code don't expose identical command names
+
+**Try it:** Type `/` or `/help` in whichever tool you're using — discover what's
+actually available in your session
 
 ---
 
@@ -90,12 +97,12 @@ backgroundColor: #fff
 
 > Skills provide **knowledge**  
 > Agents provide **action**  
-> Choose based on what you need
+> An agent often invokes a skill along the way — they compose, not compete
 
-**Most confusion:** Skills vs Agents  
-**Remember:** Does it need to read/write files?
-- Yes → Agent
-- No → Maybe a Skill
+**Most confusion:** Treating skills and agents as either/or  
+**Remember:** Does *this specific step* need to read/write files?
+- Yes → Agent (which may invoke a skill internally)
+- No → Maybe a Skill (invoked directly)
 
 ---
 
