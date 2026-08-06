@@ -114,37 +114,11 @@ Provide your review in this structured format:
 
 ---
 
-## Exercise 1: Analyze Existing Agents (10 minutes)
+## 🎥 Demo: Analyze Existing Agents (10 minutes)
 
-### Instructions
-
-Open each of the three custom agents and map their components:
-
-#### Architecture Reviewer
-- **File:** `.github/agents/architecture-reviewer.agent.md`
-- **Role:** [Identify the role]
-- **Key Responsibilities:** [List 3]
-- **Critical Constraints:** [List 2-3]
-- **Output Structure:** [Describe the format]
-
-#### Backlog Generator
-- **File:** `.github/agents/backlog-generator.agent.md`
-- **Role:** [Identify the role]
-- **Key Responsibilities:** [List 3]
-- **Critical Constraints:** [List 2-3]
-- **Output Structure:** [Describe the format]
-
-#### Test Strategist
-- **File:** `.github/agents/test-strategist.agent.md`
-- **Role:** [Identify the role]
-- **Key Responsibilities:** [List 3]
-- **Critical Constraints:** [List 2-3]
-- **Output Structure:** [Describe the format]
-
-### Questions
-- What patterns do you notice across all three agents?
-- Which component seems most critical for consistency?
-- Are there any missing components you'd add?
+See [Lab 09 Demo: Analyze Existing Agents](lab-09-demo-analyze-existing-agents.md).
+The facilitator maps the three workshop agents onto the component model above
+while the group discusses patterns and gaps.
 
 ---
 
