@@ -11,28 +11,11 @@
 
 ---
 
-## 📝 Plan First with Agents: Safer, Smarter Refactoring
+## 🎥 Demo: Plan First with Agents (Custom Agents Demo)
 
-Before making major changes, try using Copilot (in Agent Mode) to generate a plan first. This helps you:
-- Understand the scope and impact of your changes
-- Catch misunderstandings or missing steps early
-- Collaborate and iterate on the approach before any code is changed
-
-**How to try it:**
-- In Copilot Chat (Agent Mode), ask: "Propose a step-by-step plan to refactor LegacyTaskProcessor to use async/await, add logging, and follow Object Calisthenics."
-- Review the plan. Edit or reorder steps as needed.
-- Only then, ask Copilot (or a custom agent like `@engineer`) to implement the plan, one step at a time or all at once.
-
-**Custom Agents Demo:**
-- Use `@planner` to generate/refine the plan
-- Use `@engineer` to execute the approved plan
-
-**Reflection:**
-- Did planning first catch any issues you would have missed?
-- Was the implementation smoother or more predictable?
-
-**Facilitator Tip:**
-Model this workflow live, and encourage participants to always ask for a plan before executing large or multi-file changes.
+See [Lab 03 Demo: Plan First with Agents](lab-03-demo-plan-first-with-agents.md).
+The facilitator models asking Copilot Agent Mode for a plan before making
+major changes, then using `@planner` and `@engineer` to refine and execute it.
 
 ---
 
