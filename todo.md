@@ -3,14 +3,14 @@
 - [x] Support GitHub Copilot App
 - [x] Add intro slide(s) on pricing?
 - [x] Support for VS Code Agents window
-- [ ] Section on file locations for each tool (GitHub Copilot CLI, VS Code GitHub Copilot, Claude Code)
-- [ ] Section on using a plugin marketplace
-- [ ] Account for newer skills and patterns
-  - [ ] Recommended skills or plugins ([mattpocock/skills](https://github.com/mattpocock/skills), [skills.sh](https://skills.sh), [anthropics/skills](https://github.com/anthropics/skills), [addyosmani/agent-skills](https://github.com/addyosmani/agent-skills), [HVE](https://microsoft.github.io/hve-core/docs/))?
+- [x] Section on file locations for each tool (GitHub Copilot CLI, VS Code GitHub Copilot, Claude Code)
+- [x] Section on using a plugin marketplace
+- [x] Account for newer skills and patterns
+  - [x] Recommended skills or plugins ([mattpocock/skills](https://github.com/mattpocock/skills), [skills.sh](https://skills.sh), [anthropics/skills](https://github.com/anthropics/skills), [addyosmani/agent-skills](https://github.com/addyosmani/agent-skills), [HVE](https://microsoft.github.io/hve-core/docs/))?
   - [ ] Research --> Plan --> Implement
   - [ ] Rubber Ducking
 - [ ] Account for Squad or similar? Advanced topic?
-- [ ] Add guidance for sharing assets (plugin marketplace, organizational settings (GitHub), personal vs. repo level skills, etc.)
+- [x] Add guidance for sharing assets (plugin marketplace, organizational settings (GitHub), personal vs. repo level skills, etc.)
 - [ ] Update .NET code to .NET 10 (current LTS version; v9 end of support in November 2026)
 - [x] Review workshop checklist to ensure guidance on using GitHub Copilot CLI
 - [x] Seems that `@workspace` has been removed; use `#codebase` instead

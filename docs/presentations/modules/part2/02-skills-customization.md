@@ -86,10 +86,46 @@ Every tool has slash (`/`) commands
 ### Availability varies
 - By installed extensions or plugins
 - By how you access the tool (CLI vs. IDE)
-- By tool — Copilot and Claude Code don't expose identical command names
+- By tool - Copilot and Claude Code don't expose identical command names
 
-**Try it:** Type `/` or `/help` in whichever tool you're using — discover what's
+**Try it:** Type `/` or `/help` in whichever tool you're using; discover what's
 actually available in your session
+
+---
+
+## Sharing
+
+Share with colleagues. Build on great work of others.
+
+### Personal
+Shared across your projects - create `~/.agents/skills` in your local home directory
+
+### With others
+
+- Use a plugin to share customizations (agents, skills, hooks, MCP server config)
+- Add plugins to a marketplace
+
+```bash
+# Add the marketplace
+/plugin marketplace add my-org/my-marketplace-repo
+
+# Install a specific plugin from the marketplace
+/plugin install my-plugin@my-marketplace
+```
+
+---
+
+## Recommended Skills
+
+- Lots available on [skills.sh](https://skills.sh)
+- Awesome Copilot at [https://awesome-copilot.github.com/](https://awesome-copilot.github.com/)
+- Matt Pocock's skills at [https://www.aihero.dev/skills](https://www.aihero.dev/skills/)
+- Addy Osmani's skills at [https://skills.addy.ie/](https://skills.addy.ie/)
+- Microsoft's HVE Core at [https://microsoft.github.io/hve-core](https://microsoft.github.io/hve-core/)
+- .NET skills at [https://github.com/dotnet/skills/](https://github.com/dotnet/skills/)
+- Azure Skills / Plugin at [https://github.com/microsoft/azure-skills](https://github.com/microsoft/azure-skills)
+
+💡_Verify safety before using!_
 
 ---
 
