@@ -37,7 +37,7 @@ Each lab is designed as a standalone guide with:
 
 ## 🎯 Labs Overview
 
-### [Lab 1: Test-Driven Development with GitHub Copilot](lab-01-tdd-with-copilot.md)
+### [Lab 1: Test-Driven Development](lab-01-tdd.md)
 
 **Duration**: 30 minutes
 
@@ -578,5 +578,5 @@ By completing Part 2 labs, you will:
 
 **Ready to start?**
 
-→ **Part 1**: [Begin with Lab 1: TDD with GitHub Copilot](lab-01-tdd-with-copilot.md)  
+→ **Part 1**: [Begin with Lab 1: TDD](lab-01-tdd.md)  
 → **Part 2**: [Begin with Lab 06: Skills & Customization](lab-06-skills-and-customization.md)

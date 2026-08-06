@@ -19,6 +19,8 @@ about lab content and structure only.
 - [x] Deleted `lab-02/03/04-java.md` variants
 - [x] Flattened `lab-01-tdd-with-copilot.md` and `lab-10-capstone-build-agent.md` from
       dual 🔷/🟩 stack paths to single .NET-only content
+- [x] Renamed `lab-01-tdd-with-copilot.md` → `lab-01-tdd.md` (dropping the tool-specific
+      suffix now that labs cover both GitHub Copilot and Claude Code)
 - [x] Cleaned "Also available: Java/Spring Boot" cross-links in lab-02, lab-03,
       `labs/README.md`
 - [x] Committed (`docs(labs): remove Spring Boot/Java content, .NET only`)

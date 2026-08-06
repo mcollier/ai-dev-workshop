@@ -1,4 +1,4 @@
-# Lab 1: Test-Driven Development with GitHub Copilot
+# Lab 1: Test-Driven Development
 
 **Duration**: 30-40 minutes  
 **Learning Objectives**:
