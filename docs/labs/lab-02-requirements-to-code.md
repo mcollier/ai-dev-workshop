@@ -49,12 +49,14 @@ Open Copilot Chat (`Ctrl+Alt+I` / `Cmd+Shift+I`) and enter:
 ```text
 I have this user story: "As a user, I want to manage a list of tasks with priorities and due dates so I can track my work and focus on what's most important."
 
-Generate 5 backlog items with acceptance criteria for implementing this feature in our Task Manager application. Consider the existing Domain/Application/Infrastructure/API architecture.
+Decompose this into a backlog of small, independently valuable items with acceptance criteria for implementing this feature in our Task Manager application. Consider the existing Domain/Application/Infrastructure/API architecture.
 ```
+
+> **Why not ask for a specific number?** Letting Copilot decide how many items the story splits into is a better prompting habit than dictating a count up front — you rarely know the right granularity before you see the decomposition. Review what it proposes and split, merge, or reject items as needed.
 
 ### 1.2 Review Generated Backlog
 
-Copilot should generate something like:
+Copilot should generate something like the 5 items below. Your run may produce a different count, order, or naming — that's expected. The rest of this lab uses this specific set as a reference so everyone builds the same feature.
 
 #### **Backlog Item 1: Add Priority to Task Entity**
 
@@ -791,7 +793,7 @@ Confirm that:
 
 You've completed this lab successfully when:
 
-- ✅ User story decomposed into 5 backlog items with acceptance criteria
+- ✅ User story decomposed into a backlog of independently valuable items with acceptance criteria
 - ✅ Priority value object created in Domain layer
 - ✅ Task entity updated with Priority and DueDate
 - ✅ CreateTaskCommand and handler implemented with tests
