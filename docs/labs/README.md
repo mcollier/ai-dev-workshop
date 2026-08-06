@@ -92,10 +92,6 @@ Transform vague user stories into working, tested features.
 - Completed Lab 1
 - Understanding of Red-Green-Refactor cycle
 
-**Available Versions**:
-- [.NET with C# and ASP.NET Core](lab-02-requirements-to-code.md)
-- [Java with Spring Boot](lab-02-requirements-to-code-java.md)
-
 ---
 
 ### [Lab 3: Code Generation & Refactoring](lab-03-generation-and-refactoring.md)
@@ -123,9 +119,6 @@ Generate complete API endpoints and modernize legacy code.
 
 - Completed Labs 1 and 2
 - Familiar with Copilot Chat and Inline Chat
-
-**Available Versions**:
-- [.NET with C# and ASP.NET Core](lab-03-generation-and-refactoring.md)
 
 ---
 
@@ -555,7 +548,7 @@ Automatically enforced via `.github/instructions/` (context-aware instruction fi
 1. Verify `.github/instructions/` directory exists with instruction files
 2. Check instruction files have correct `applyTo:` frontmatter in YAML
 3. Reload VS Code window: `F1` → "Developer: Reload Window"
-4. Be explicit in prompts: "Follow .NET conventions" or "Follow Spring Boot conventions"
+4. Be explicit in prompts: "Follow .NET conventions"
 
 ---
 
