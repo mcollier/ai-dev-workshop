@@ -1,7 +1,7 @@
 # To Do List
 
 - [ ] Support GitHub Copilot App
-- [ ] Add intro slide(s) on pricing?
+- [x] Add intro slide(s) on pricing?
 - [ ] Support for VS Code Agents window
 - [ ] Section on file locations for each tool (GitHub Copilot CLI, VS Code GitHub Copilot, Claude Code)
 - [ ] Section on using a plugin marketplace
@@ -12,10 +12,10 @@
 - [ ] Account for Squad or similar? Advanced topic?
 - [ ] Add guidance for sharing assets (plugin marketplace, organizational settings (GitHub), personal vs. repo level skills, etc.)
 - [ ] Update .NET code to .NET 10 (current LTS version; v9 end of support in November 2026)
-- [ ] Review workshop checklist to ensure guidance on using GitHub Copilot CLI
-- [ ] Seems that `@workspace` has been removed; use `#codebase` instead
-- [ ] When to use `AGENTS.md` vs. `copilot-instructions.md`
-  - [ ] Also `CLAUDE.md`
+- [x] Review workshop checklist to ensure guidance on using GitHub Copilot CLI
+- [x] Seems that `@workspace` has been removed; use `#codebase` instead
+- [x] When to use `AGENTS.md` vs. `copilot-instructions.md`
+  - [x] Also `CLAUDE.md`
 - [ ] Should we lean more towards CLI tools (GitHub Copilot CLI and Claude Code) instead of pure VS Code IDE?
 - [ ] Account for prompt cache details
   - [ ] Add section on costs and optimization
