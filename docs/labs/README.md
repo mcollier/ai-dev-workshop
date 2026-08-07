@@ -16,22 +16,10 @@ Each lab is designed as a standalone guide with:
 
 ## 🎥 Workshop Presentations
 
-**NEW: Modular Structure** - Presentations now split into standalone modules for flexible delivery
-
-**Part 1: Fundamentals (7 modules)**  
-[Browse Modules](../presentations/modules/part1/) - Individual modules for TDD, requirements-to-code, refactoring, and more
-
-**Part 2: Advanced (8 modules)**  
-[Browse Modules](../presentations/modules/part2/) - Modules for interaction models, Skills, custom agents, and agent design
-
-**Module Catalog:** [presentations/index.md](../presentations/index.md) - Complete list with delivery patterns
-
-**How to use:**
-1. **In VS Code:** Install [Marp extension](https://marketplace.visualstudio.com/items?itemName=marp-team.marp-vscode) → Open any module → Click preview
-2. **Self-paced:** Start with [Part 1, Module 00](../presentations/modules/part1/00-kickoff-and-setup.md), follow navigation links
-3. **Custom workshops:** Mix and match modules per [delivery patterns](../presentations/index.md#-workshop-delivery-patterns)
-4. **Export:** See [presentations/README.md](../presentations/README.md) for PDF/HTML export options
-5. **Archived:** Legacy monolithic presentations in [archive/presentations/](../../archive/presentations/)
+> **Note:** Slide-deck presentation modules referenced in earlier drafts of
+> this workshop (`docs/presentations/`) are not part of this repository yet.
+> This directory's lab walkthroughs are self-contained and don't require the
+> presentation modules to complete.
 
 ---
 
@@ -380,13 +368,15 @@ Lab 4 (Documentation & Workflow)
 #### Part 2: Advanced Topics
 
 ```text
-Lab 6 (Custom Agents Intro)
+Lab 6 (Skills & Customization)
     ↓
-Lab 7 (Workflow Agents)
+Lab 7 (Custom Agents Intro)
     ↓
-Lab 8 (Agent Design)
+Lab 8 (Workflow Agents)
     ↓
-Lab 9 (Build Your Own Agent)
+Lab 9 (Agent Design)
+    ↓
+Lab 10 (Build Your Own Agent)
     ↓
 Apply to Real Projects! 🎉
 ```
@@ -432,12 +422,17 @@ Apply to Real Projects! 🎉
 ### Development Tools
 
 - **VS Code** - Primary editor
-- **GitHub Copilot** - AI pair programmer
+- **GitHub Copilot** and/or **Claude Code** - AI pair programmer (labs cover both)
 - **Git** - Version control
 
 ### Coding Conventions
 
-Automatically enforced via `.github/instructions/` (context-aware instruction files):
+Automatically enforced context-aware guidance:
+
+- **GitHub Copilot:** `.github/copilot-instructions.md` (repo-wide) and `.github/instructions/*.instructions.md` (path-scoped)
+- **Claude Code:** `CLAUDE.md` (repo root)
+
+Both encode the same standards:
 
 - File-scoped namespaces
 - Sealed classes by default
