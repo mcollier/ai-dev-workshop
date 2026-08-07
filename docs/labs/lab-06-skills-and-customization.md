@@ -1,29 +1,30 @@
-# Lab 06: Copilot Skills & Customization Hierarchy
+# Lab 06: Skills & Customization Hierarchy
 
 **Module:** 1.5  
 **Duration:** 25-30 minutes  
-**Part:** Advanced GitHub Copilot (Part 2)
+**Part:** Advanced (Part 2)  
+**Tools**: GitHub Copilot or Claude Code (steps are shown side by side below)
 
 ## Objectives
 
 By the end of this lab, you will:
-- Understand the complete Copilot customization landscape (Skills, Agents, Instructions, Prompt Files)
+- Understand the complete AI customization landscape (Skills, Agents, Instructions, Prompt Files) across GitHub Copilot and Claude Code
 - Know when to use each customization type
 - Explore a pre-built skill and understand its structure
-- Use skills via slash commands and automatic invocation
+- Use skills via slash/custom commands and automatic invocation
 - Apply decision criteria to choose the right customization approach
 
 ## Prerequisites
 
-- Completion of Part 1 labs (or equivalent Copilot experience)
-- VS Code with GitHub Copilot extension
+- Completion of Part 1 labs (or equivalent Copilot/Claude Code experience)
+- VS Code with GitHub Copilot enabled, **or** the Claude Code CLI installed and authenticated
 - Access to the TaskManager workshop repository
 
 ## Background
 
-### The Copilot Customization Landscape
+### The AI Customization Landscape
 
-GitHub Copilot offers **four main ways** to customize AI behavior. Understanding when to use each is crucial for effective AI-assisted development.
+Both GitHub Copilot and Claude Code offer **four main ways** to customize AI behavior. The concepts map closely between the two tools, though the exact file names and portability differ. Understanding when to use each is crucial for effective AI-assisted development.
 
 #### The Four Customization Types
 
@@ -34,16 +35,16 @@ block-beta
         H["Customization Hierarchy"]
     end
     block:instr
-        I["1. Custom Instructions (.instructions.md)<br/>Always-on rules • Coding standards • Glob patterns"]
+        I["1. Custom Instructions<br/>Copilot: .instructions.md (glob-scoped) • Claude Code: CLAUDE.md<br/>Always-on rules • Coding standards"]
     end
     block:skills
-        S["2. Agent Skills (SKILL.md)<br/>Portable capabilities • Scripts + resources<br/>Task-specific • Loaded on-demand"]
+        S["2. Agent Skills<br/>Copilot: .github/skills/*/SKILL.md • Claude Code: .claude/skills/*/SKILL.md<br/>Portable capabilities • Scripts + resources • Loaded on-demand"]
     end
     block:agents
-        A["3. Custom Agents (.agent.md)<br/>Persistent personas • Tool restrictions<br/>Workflow orchestration • Handoffs"]
+        A["3. Custom Agents<br/>Copilot: .github/agents/*.agent.md • Claude Code: .claude/agents/*.md (subagents)<br/>Persistent personas • Tool restrictions • Workflow orchestration"]
     end
     block:prompts
-        P["4. Prompt Files (.prompt.md)<br/>One-off tasks • Quick automation<br/>No tool restrictions needed"]
+        P["4. Prompt Files / Custom Commands<br/>Copilot: .prompt.md • Claude Code: .claude/commands/*.md<br/>One-off tasks • Quick automation"]
     end
     
     style I fill:#e1f5ff,stroke:#01579b,stroke-width:2px
@@ -55,17 +56,21 @@ block-beta
 
 ### Deep Dive: Agent Skills
 
-**Agent Skills** are the newest addition to Copilot's customization toolkit. They represent **portable, reusable capabilities** that work across multiple environments.
+**Agent Skills** are a shared, open-standard customization mechanism — the `SKILL.md` format is compatible between GitHub Copilot and Claude Code. They represent **portable, reusable capabilities** that work across multiple environments and tools.
 
 #### What Makes Skills Special?
 
-- **Portable**: Work in VS Code, GitHub Copilot CLI, and GitHub Copilot coding agent
+- **Portable**: Work in VS Code, GitHub Copilot CLI, GitHub Copilot coding agent, and Claude Code
 - **Structured**: Directory-based with SKILL.md + optional scripts/resources
 - **Progressive Loading**: Only loads content when relevant (efficient context usage)
-- **Open Standard**: Based on agentskills.io specification
+- **Open Standard**: Based on the [agentskills.io](https://agentskills.io/) specification
 - **Composable**: Can be combined with agents and other skills
 
 #### Skill File Structure
+
+| <img src="../images/githubcopilot.svg" width="20" alt="GitHub Copilot" /> GitHub Copilot | <img src="../images/claude-color.svg" width="20" alt="Claude Code" /> Claude Code |
+|---|---|
+| `.github/skills/` | `.claude/skills/` (not yet scaffolded in this repo — see `todo.md`) |
 
 ```
 .github/skills/
@@ -77,6 +82,8 @@ block-beta
 ```
 
 #### SKILL.md Format
+
+The frontmatter and body format is the same regardless of which tool loads it:
 
 ```markdown
 ---
@@ -106,35 +113,35 @@ Invoke with: `/test-data-generator User 10`
 
 ### Decision Framework
 
-Use this decision tree to choose the right customization type:
+Use this decision tree to choose the right customization type (applies to both tools):
 
 ```
 ┌─ Need to enforce coding standards across all files?
-│  → Custom Instructions (.instructions.md)
+│  → Custom Instructions (.instructions.md in Copilot, CLAUDE.md in Claude Code)
 │     Example: "Always use sealed classes", "Follow Clean Architecture"
 │
 ┌─ Need a reusable capability with scripts or examples?
-│  → Agent Skill (SKILL.md)
+│  → Agent Skill (SKILL.md — same format in both tools)
 │     Example: Test data generation, deployment checklist, debugging workflow
 │
 ┌─ Need a persistent persona with tool restrictions?
-│  → Custom Agent (.agent.md)
+│  → Custom Agent (.agent.md in Copilot, subagent .md in Claude Code)
 │     Example: Architecture reviewer (read-only), Security auditor, Planner
 │
 └─ Need a quick one-off automated task?
-   → Prompt File (.prompt.md)
+   → Prompt File (.prompt.md in Copilot, custom command in Claude Code)
       Example: Generate PR description, Run pre-commit checks
 ```
 
 ### Comparison Table
 
-| Feature | Instructions | Skills | Agents | Prompt Files |
+| Feature | Instructions | Skills | Agents | Prompt Files / Commands |
 |---------|-------------|--------|--------|--------------|
 | **When Applied** | Always | On-demand | When selected | On-demand |
-| **Portability** | VS Code only | Multi-tool | VS Code + cloud | VS Code only |
+| **Portability** | Copilot: VS Code only. Claude Code: `CLAUDE.md` applies repo-wide | Multi-tool (Copilot + Claude Code + CLI) | VS Code/CLI + cloud | Tool-specific |
 | **Can Include Scripts** | ❌ No | ✅ Yes | ❌ No | ❌ No |
 | **Tool Restrictions** | ❌ No | ❌ No | ✅ Yes | ✅ Yes (optional) |
-| **Glob Patterns** | ✅ Yes | ❌ No | ❌ No | ❌ No |
+| **Glob Patterns** | ✅ Yes (Copilot `.instructions.md`); Claude Code has no direct equivalent | ❌ No | ❌ No | ❌ No |
 | **Best For** | Standards | Capabilities | Workflows | Quick tasks |
 
 ### Key Differences: Skills vs Agents
@@ -146,7 +153,7 @@ This is the most common confusion point. Here's how to differentiate:
 | **Purpose** | Teach specialized capabilities | Adopt specific personas |
 | **Contains** | Instructions + scripts + resources | Instructions + tool config |
 | **Usage** | Task-specific, loaded when needed | Role-specific, selected explicitly |
-| **Portability** | Works across VS Code, CLI, cloud | VS Code and cloud only |
+| **Portability** | Works across VS Code, CLI, cloud, and Claude Code | Copilot: VS Code and cloud. Claude Code: subagents run in the CLI |
 | **Example** | "Database migration skill" | "Database architect agent" |
 
 **Mental Model:**
@@ -159,7 +166,7 @@ This is the most common confusion point. Here's how to differentiate:
 
 ### Exercise 2.1: Locate and Examine a Skill
 
-If your repository has skills in `.github/skills/`, explore one. For this exercise, we'll conceptually explore a common pattern.
+If your repository has skills in `.github/skills/` (Copilot) or `.claude/skills/` (Claude Code — not yet scaffolded, see `todo.md`), explore one. For this exercise, we'll conceptually explore a common pattern.
 
 **Typical Skill: Integration Test Helper**
 
@@ -183,44 +190,34 @@ If your repository has skills in `.github/skills/`, explore one. For this exerci
 
 **Scenario**: You want to understand how skills work in practice.
 
-1. **Open Copilot Chat** (`Ctrl+Alt+I` / `Cmd+Shift+I`)
+| <img src="../images/githubcopilot.svg" width="20" alt="GitHub Copilot" /> GitHub Copilot | <img src="../images/claude-color.svg" width="20" alt="Claude Code" /> Claude Code |
+|---|---|
+| Open Copilot Chat (`Ctrl+Alt+I` / `Cmd+Shift+I`) | Run `claude` in the integrated terminal from the repo root |
+| Type `/` to see available commands — skills appear alongside other slash commands | Type `/` in the REPL to see available slash commands, including any user-invocable skills |
+| Try invoking a skill: `/test-data-generator User 5` | Try invoking a skill the same way: `/test-data-generator User 5` (once a matching skill exists — see `todo.md`) |
+| If no skills are available, try `/create-skill` and describe: "A skill for generating realistic test data" | If no skills are available, describe the need directly in the REPL: "Create a skill for generating realistic test data" |
 
-2. **Type `/` to see available commands**
-   - Skills appear alongside other slash commands
-   - Look for skills prefixed with the skill name
-
-3. **Try invoking a skill**:
-   ```
-   /test-data-generator User 5
-   ```
-   Or if no skills are available:
-   ```
-   /create-skill
-   ```
-   And describe: "A skill for generating realistic test data"
-
-4. **Observe the behavior**:
-   - Copilot loads the skill's instructions
-   - Applies the skill's procedures
-   - Can access referenced files/templates
+**Observe the behavior**:
+- Your AI coding tool loads the skill's instructions
+- Applies the skill's procedures
+- Can access referenced files/templates
 
 ### Exercise 2.3: Automatic Skill Loading
 
 **Scenario**: Skills can also be loaded automatically when relevant.
 
-1. **In Copilot Chat, ask**:
-   ```
-   I need to create test data for integration tests with User entities
-   ```
+| <img src="../images/githubcopilot.svg" width="20" alt="GitHub Copilot" /> GitHub Copilot | <img src="../images/claude-color.svg" width="20" alt="Claude Code" /> Claude Code |
+|---|---|
+| In Copilot Chat, ask: "I need to create test data for integration tests with User entities" | In the Claude Code REPL, ask the same question |
 
-2. **Observe**:
-   - Copilot may automatically detect and load relevant skills
-   - Check the response for skill-based guidance
-   - Note how it references skill templates or examples
+**Observe**:
+- Your AI coding tool may automatically detect and load relevant skills
+- Check the response for skill-based guidance
+- Note how it references skill templates or examples
 
-3. **Compare**:
-   - Manual invocation: `/skill-name` - You control when
-   - Automatic loading: Copilot decides based on context
+**Compare**:
+- Manual invocation: `/skill-name` - You control when
+- Automatic loading: Your AI coding tool decides based on context
 
 ---
 
@@ -228,7 +225,7 @@ If your repository has skills in `.github/skills/`, explore one. For this exerci
 
 ### Scenario-Based Questions
 
-For each scenario below, decide which customization type to use and why.
+For each scenario below, decide which customization type to use and why. The reasoning applies whether you implement it as a Copilot artifact or a Claude Code equivalent.
 
 #### Scenario 1: Enforce Code Review Standards
 
@@ -422,7 +419,7 @@ If time permits and you want to practice, outline a skill for your own use case:
 
 By the end of this lab, you should be able to:
 
-- [ ] Explain the four main Copilot customization types
+- [ ] Explain the four main customization types (across GitHub Copilot and Claude Code)
 - [ ] Differentiate between Skills, Agents, Instructions, and Prompts
 - [ ] Understand what makes Skills unique (portability + resources)
 - [ ] Make informed decisions about which customization to use
@@ -442,20 +439,20 @@ In the next lab ([Lab 07: Custom Agents Intro](lab-07-custom-agents-intro.md)), 
 ### Skills Don't Appear in `/` Menu
 
 **Possible Causes:**
-- Skills directory not in correct location (`.github/skills/`)
+- Skills directory not in correct location (`.github/skills/` for Copilot, `.claude/skills/` for Claude Code)
 - SKILL.md format incorrect (check YAML frontmatter)
 - `name` in frontmatter doesn't match directory name
 
 **Solution:**
-- Verify directory structure: `.github/skills/skill-name/SKILL.md`
+- Verify directory structure: `.github/skills/skill-name/SKILL.md` (Copilot) or `.claude/skills/skill-name/SKILL.md` (Claude Code)
 - Check that `name: skill-name` matches directory name
-- Reload VS Code window
+- Reload VS Code window (Copilot) or restart the `claude` REPL (Claude Code)
 
 ### Skill Not Loading Automatically
 
 **Possible Causes:**
 - `disable-model-invocation: true` in frontmatter
-- Description not specific enough for Copilot to match
+- Description not specific enough for your AI coding tool to match
 - Skill not relevant to current context
 
 **Solution:**
@@ -472,6 +469,7 @@ In the next lab ([Lab 07: Custom Agents Intro](lab-07-custom-agents-intro.md)), 
 - [Custom Instructions](https://code.visualstudio.com/docs/copilot/customization/custom-instructions)
 - [Custom Agents](https://code.visualstudio.com/docs/copilot/customization/custom-agents)
 - [Prompt Files](https://code.visualstudio.com/docs/copilot/customization/prompt-files)
+- [Claude Code Documentation](https://docs.claude.com/en/docs/claude-code/overview)
 
 ---
 
