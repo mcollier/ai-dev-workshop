@@ -11,7 +11,7 @@
 *.http   text eol=lf
 *.props  text eol=lf
 *.csproj text eol=lf
-*.sln    text eol=lf
+*.slnx    text eol=lf
 
 # Windows-only scripts must use CRLF
 *.cmd    text eol=crlf

@@ -11,7 +11,7 @@
   - [ ] Rubber Ducking
 - [ ] Account for Squad or similar? Advanced topic?
 - [x] Add guidance for sharing assets (plugin marketplace, organizational settings (GitHub), personal vs. repo level skills, etc.)
-- [ ] Update .NET code to .NET 10 (current LTS version; v9 end of support in November 2026)
+- [x] Update .NET code to .NET 10 (current LTS version; v9 end of support in November 2026)
 - [x] Review workshop checklist to ensure guidance on using GitHub Copilot CLI
 - [x] Seems that `@workspace` has been removed; use `#codebase` instead
 - [x] When to use `AGENTS.md` vs. `copilot-instructions.md`
@@ -31,3 +31,7 @@
   - [ ] `/pr`
   - [ ] `/review`, `/rubber-duck`, `/security-review`
   - [ ] `/sandbox`, `/voice`
+- [ ] Sample `src/` TaskManager app is being built by someone else in a separate PR — once merged, revisit labs to confirm file paths/structure referenced in prompts still match, and drop any "reference-only" caveats
+- [ ] Scaffold real `.claude/` files (commands, skills, subagents) mirroring the existing `.github/` ones — deferred; for now the labs only describe Claude Code steps in comparison tables
+- [ ] `@workspace` is no longer current (superseded by automatic workspace context / `#codebase`) — updated the labs, but presentations, guidebooks, and other materials still need the same fix once integrated
+- [ ] Fix or remove the stale `../guides/` and `../presentations/` links in docs/labs/README.md and lab files — being addressed later once that content is integrated

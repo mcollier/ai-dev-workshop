@@ -48,6 +48,17 @@
       }
     }
   },
+  "forwardPorts": [5215, 7208],
+  "portsAttributes": {
+    "5215": {
+      "label": ".NET HTTP",
+      "onAutoForward": "notify"
+    },
+    "7208": {
+      "label": ".NET HTTP",
+      "onAutoForward": "notify"
+    }
+  },
   "postCreateCommand": "npm ci",
-  "postStartCommand": "dotnet dev-certs https --trust"
+  "postStartCommand": "dotnet build src/TaskManager.slnx && dotnet dev-certs https --trust"
 }
