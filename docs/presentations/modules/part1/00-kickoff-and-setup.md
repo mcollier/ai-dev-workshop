@@ -177,7 +177,7 @@ dotnet build
 dotnet test
 ```
 
-**Expected:** All should succeed
+**Expected:** Build should succeed; tests may show 11 expected failures (placeholders).
 
 ---
 
