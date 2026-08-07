@@ -10,6 +10,14 @@
 > that lab's hands-on time focused on the core component model and iterating
 > on agent instructions.
 
+> <img src="../images/githubcopilot.svg" width="16" alt="GitHub Copilot" /> **This demo is Copilot-specific.** The advanced frontmatter properties
+> (`user-invocable`, `disable-model-invocation`, `agents`, `argument-hint`) and
+> the handoffs feature shown below are part of GitHub Copilot's custom agent
+> model. Claude Code subagents use a simpler frontmatter and don't have a
+> built-in handoffs equivalent — see
+> [Claude Code Note](#claude-code-note-approximating-handoffs) at the end of
+> this file for how to approximate a similar guided workflow.
+
 ## Part 1: Property Combination Examples
 
 You can combine the frontmatter properties covered in
@@ -253,6 +261,27 @@ handoffs:
 Human reviews ensure each step is correct before proceeding. No auto-proceed for code changes.
 
 </details>
+
+## Claude Code Note: Approximating Handoffs
+
+Claude Code subagents don't have a native `handoffs` frontmatter field or
+guided-button UI. To approximate the same "guided workflow with human review
+at each step" pattern:
+
+- **Chain subagents manually in the same conversation.** Ask
+  `@planner` to produce a plan, review it, then explicitly ask
+  `@engineer` (or Claude directly) to implement it — the human is the
+  "handoff button."
+- **Encode the suggested next step in the subagent's own output**, e.g. have
+  `.claude/agents/planner.md`'s Output Format end with a line like
+  "Suggested Next Step: ask `@engineer` to implement step 1" (this repo's
+  `planner.md` already does this).
+- **Use `.claude/commands/*.md` custom slash commands** (not yet scaffolded
+  in this repo — see `todo.md`) if you want a single command that always
+  chains the same sequence of subagents.
+
+This keeps the same human-in-the-loop principle as Copilot's `send: false`
+handoffs, just without a dedicated UI affordance.
 
 ## Next Steps
 

@@ -2,7 +2,7 @@
 
 **Module:** 4  
 **Duration:** 25 minutes  
-**Part:** Advanced GitHub Copilot (Part 2)
+**Part:** Advanced GitHub Copilot / Claude Code (Part 2)
 
 ## Objectives
 
@@ -15,14 +15,14 @@ By the end of this lab, you will:
 ## Prerequisites
 
 - Completion of [Lab 08: Workflow Agents](lab-08-workflow-agents.md)
-- VS Code with GitHub Copilot extension
+- VS Code with the GitHub Copilot extension, and/or Claude Code installed
 - Access to the TaskManager workshop repository
 
 ## Background
 
 ### Agents Are Products, Not Prompts
 
-Creating a custom agent isn't just writing a prompt. It's designing a **reusable product** that your team will rely on.
+Creating a custom agent isn't just writing a prompt. It's designing a **reusable product** that your team will rely on. The component model below applies **equally to GitHub Copilot's `.agent.md` files and Claude Code's `.claude/agents/*.md` subagents** — only the frontmatter and invocation mechanics differ (see [Authoring for Both Tools](#authoring-for-both-tools)).
 
 **Key Principle:** Design for roles (specialists), not tasks (one-off actions)
 
@@ -112,6 +112,28 @@ Provide your review in this structured format:
 - Acknowledge good practices when present
 ```
 
+You can see all seven components applied together in the real
+`.claude/agents/architecture-reviewer.md`, `backlog-generator.md`, and
+`test-strategist.md` subagent files in this repository.
+
+---
+
+## Authoring for Both Tools
+
+| <img src="../images/githubcopilot.svg" width="20" alt="GitHub Copilot" /> GitHub Copilot | <img src="../images/claude-color.svg" width="20" alt="Claude Code" /> Claude Code |
+|---|---|
+| File: `.github/agents/<name>.agent.md` | File: `.claude/agents/<name>.md` |
+| Frontmatter: `name`, `description`, `tools` (array), `model`, plus advanced properties covered below | Frontmatter: `name`, `description`, `tools` (comma-separated list), `model` — a deliberately smaller surface area |
+| Selected from the **Agent Mode dropdown**, or auto-invoked as a subagent depending on `user-invocable`/`disable-model-invocation` | Invoked by `@name` mention, or auto-delegated by Claude when the task matches the subagent's `description` |
+| Body: identical seven-component structure (Identity, Responsibilities, Context, Constraints, Process, Output Format, Tone) | Body: same seven-component structure |
+
+> **Known gap:** this repository's three workshop agents
+> (`architecture-reviewer`, `backlog-generator`, `test-strategist`) exist as
+> real files under `.claude/agents/`, but the corresponding
+> `.github/agents/*.agent.md` files are **not yet scaffolded** (tracked as a
+> bug in `todo.md`). Copilot users can still study the component model using
+> the `.claude/agents/*.md` files as reference.
+
 ---
 
 ## 🎥 Demo: Analyze Existing Agents (10 minutes)
@@ -124,7 +146,7 @@ while the group discusses patterns and gaps.
 
 ## Advanced Agent Configuration
 
-Now that you understand the core components, let's explore **advanced agent capabilities** that give you fine-grained control over agent behavior.
+Now that you understand the core components, let's explore **advanced agent capabilities** that give GitHub Copilot fine-grained control over agent behavior. Claude Code's subagent frontmatter is intentionally simpler and does not expose direct equivalents for these properties — see the note at the end of this section.
 
 ### Agent Frontmatter Properties
 
@@ -242,12 +264,36 @@ When user types `/code-reviewer`, they see hint: `[file or directory to review]`
 
 ---
 
+#### What About Claude Code?
+
+Claude Code subagents don't expose direct equivalents for `user-invocable`,
+`disable-model-invocation`, `agents`, `argument-hint`, or handoffs:
+
+- **Visibility/invocation control** — every subagent in `.claude/agents/` can
+  be `@mentioned` directly *and* auto-delegated to based on its
+  `description`. There's no flag to hide a subagent from direct invocation
+  the way `user-invocable: false` does in Copilot.
+- **Restricting which agents a subagent can call** — Claude Code doesn't
+  currently support a documented `agents` allow-list field; scoping which
+  subagents get invoked is done by keeping each subagent's `description`
+  narrow and specific.
+- **`argument-hint`** — not applicable, since subagents aren't exposed as
+  slash commands in the same way.
+
+If your workflow depends on these fine-grained controls, that's a reason to
+prefer Copilot's agent model for that specific use case — call this out
+explicitly when discussing tool choice with your team.
+
+---
+
 ## 🎥 Demo: Advanced Configuration Examples & Handoffs (15 minutes)
 
 See [Lab 09 Demo: Advanced Agent Configuration Examples & Handoffs](lab-09-demo-advanced-config-and-handoffs.md).
 The facilitator walks through property-combination examples and the handoffs
 workflow (definition, patterns, best practices, and a live design exercise)
-while the group discusses.
+while the group discusses. **Handoffs are a Copilot-specific capability** —
+see the demo file for how to approximate a similar guided workflow in Claude
+Code without a native handoffs feature.
 
 ---
 
@@ -259,9 +305,11 @@ The **Test Strategist** agent sometimes provides too many tests, including low-v
 
 ### Part A: Baseline Behavior
 
-1. Open Copilot Chat in Agent Mode
-2. Select **Test Strategist**
-3. Prompt: `Propose test scenarios for a simple getter method that returns a task's title`
+| <img src="../images/githubcopilot.svg" width="20" alt="GitHub Copilot" /> GitHub Copilot | <img src="../images/claude-color.svg" width="20" alt="Claude Code" /> Claude Code |
+|---|---|
+| Open Copilot Chat in Agent Mode and select **Test Strategist** *(pending — `.github/agents/test-strategist.agent.md` isn't scaffolded yet; see `todo.md`)* | In the Claude Code REPL, mention `@test-strategist` |
+
+Prompt: `Propose test scenarios for a simple getter method that returns a task's title`
 
 **Observe:** Does it over-test? Does it recommend unnecessary tests?
 
@@ -269,8 +317,11 @@ The **Test Strategist** agent sometimes provides too many tests, including low-v
 
 ### Part B: Refine the Agent
 
-1. Open `.github/agents/test-strategist.agent.md`
-2. Add this constraint to the **Constraints** section:
+| <img src="../images/githubcopilot.svg" width="20" alt="GitHub Copilot" /> GitHub Copilot | <img src="../images/claude-color.svg" width="20" alt="Claude Code" /> Claude Code |
+|---|---|
+| Open `.github/agents/test-strategist.agent.md` *(create it locally for this exercise if it doesn't exist yet)* | Open `.claude/agents/test-strategist.md` |
+
+Add this constraint to the **Constraints** section:
 
 ```markdown
 - Focus on HIGH-VALUE tests only (avoid trivial getters/setters)
@@ -278,15 +329,15 @@ The **Test Strategist** agent sometimes provides too many tests, including low-v
 - Prioritize tests that verify business logic, invariants, and edge cases
 ```
 
-3. **Save the file**
+**Save the file.**
 
 ---
 
 ### Part C: Re-test Behavior
 
-1. Return to Copilot Chat (Agent Mode)
-2. Select **Test Strategist** again
-3. Use the same prompt: `Propose test scenarios for a simple getter method that returns a task's title`
+Return to the same tool and re-invoke **Test Strategist** (`@test-strategist` in
+Claude Code, or the Agent Mode dropdown in Copilot once scaffolded) with the
+same prompt: `Propose test scenarios for a simple getter method that returns a task's title`
 
 **Observe:** Did the agent's behavior change? Did it decline or simplify the recommendation?
 
@@ -322,6 +373,9 @@ The **Test Strategist** agent sometimes provides too many tests, including low-v
 ✅ **Do:** "This agent reviews; humans decide"  
 ❌ **Don't:** Imply the agent is authoritative
 
+These patterns apply whether you're authoring a Copilot `.agent.md` file or a
+Claude Code `.claude/agents/*.md` subagent.
+
 ---
 
 ## Governance Considerations
@@ -343,7 +397,7 @@ The **Test Strategist** agent sometimes provides too many tests, including low-v
 
 ### Documentation
 - Maintain a **catalog of agents** ([docs/guides/custom-agent-catalog.md](../guides/custom-agent-catalog.md))
-- Document when to use each agent
+- Document when to use each agent, and whether it exists for Copilot, Claude Code, or both
 - Provide examples of good vs bad usage
 
 ---
@@ -384,7 +438,8 @@ Treating agents as "set and forget."
 ✅ **Explicit constraints** - State what the agent must/must not do  
 ✅ **Structured outputs** - Consistency requires format  
 ✅ **Iterate continuously** - Refine based on real usage  
-✅ **Govern as team assets** - Version, review, and document
+✅ **Govern as team assets** - Version, review, and document  
+✅ **The component model is tool-agnostic** - Copilot `.agent.md` files and Claude Code subagents share the same seven-part structure; only frontmatter and invocation mechanics differ
 
 ---
 
@@ -399,3 +454,4 @@ In [Lab 10: Capstone - Build Your Own Agent](lab-10-capstone-build-agent.md), yo
 - [Agent Design Guide](../guides/agent-design-guide.md)
 - [Agent Governance](../guides/agent-governance.md)
 - [Custom Agent Catalog](../guides/custom-agent-catalog.md)
+- [Claude Code Documentation: Subagents](https://docs.claude.com/en/docs/claude-code/sub-agents)
