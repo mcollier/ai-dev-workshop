@@ -42,6 +42,24 @@ backgroundColor: #fff
 
 ---
 
+## Define Your Approach
+
+- Research -> Plan -> Implement -> Review
+- Spec-Driven Development ([GitHub Spec Kit](https://github.com/github/spec-kit))
+- BMad Method ([https://docs.bmad-method.org/](https://docs.bmad-method.org/))
+
+---
+
+### Squad for GitHub Copilot
+- Human-led AI development team for GitHub Copilot.
+- Specialists agents (frontend, tester, designer, lead, scribe, lead.) in your repo.
+- Parallel execution.
+- Persists decisions in markdown files; reference for the future.
+
+Learn more at [https://bradygaster.github.io/squad/](https://bradygaster.github.io/squad/)
+
+---
+
 ## Keep Humans Accountable
 
 > Agents advise, humans decide

@@ -38,11 +38,11 @@ section {
 
 ## Same Concepts, Different Tools
 
-|           | VS Code Copilot            | Copilot CLI                                                                                           | Claude Code                                                                                           |
-| --------- | -------------------------- | ----------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- |
-| **Ask**   | Ask mode (explicit toggle) | No toggle — default session answers. (`/ask` or `/btw` for quick side question w/o adding to history. | No toggle — default session answers. (`/ask` or `/btw` for quick side question w/o adding to history. |
-| **Plan**  | Plan mode                  | `/plan` or `Shift+Tab` — explicit plan-first mode                                                     | Plan Mode (`Shift+Tab` twice) — explicit                                                              |
-| **Agent** | Agent mode                 | Default session executes changes directly; `/autopilot` toggles full autonomy (experimental)          | Default agentic execution — asks permission per action unless auto-approved                           |
+|           | VS Code Copilot            | Copilot CLI                                                                                           | Claude Code                                                                                            |
+| --------- | -------------------------- | ----------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------ |
+| **Ask**   | Ask mode (explicit toggle) | No toggle — default session answers. (`/ask` or `/btw` for quick side question w/o adding to history. | No toggle — default session answers. (`/ask` or `/btw` for quick side question w/o adding to history.) |
+| **Plan**  | Plan mode                  | `/plan` or `Shift+Tab` — explicit plan-first mode                                                     | Plan Mode (`Shift+Tab` twice) — explicit                                                               |
+| **Agent** | Agent mode                 | Default session executes changes directly; `/autopilot` toggles full autonomy (experimental)          | Default agentic execution — asks permission per action unless auto-approved                            |
 
 ---
 
@@ -61,6 +61,12 @@ section {
 
 ---
 
+<style scoped>
+section {
+  font-size: 26px;
+}
+</style>
+>
 ## Plan Mode: When to Use
 
 ✅ **Use when:**
@@ -73,7 +79,8 @@ section {
 - You need a quick direct answer
 - You're ready to execute immediately
 
-💡_Try `/research` (GitHub Copilot CLI) or `/deep-research` (Claude Code) to execute a fan-out web search and create a report._
+💡_Try `/research` (Copilot CLI) or `/deep-research` (Claude Code) to execute a fan-out web search and create a report._
+💡_Review the plan with another model family via `/rubber-duck` (Copilot)._
 
 ---
 

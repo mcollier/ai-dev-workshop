@@ -7,9 +7,9 @@
 - [x] Section on using a plugin marketplace
 - [x] Account for newer skills and patterns
   - [x] Recommended skills or plugins ([mattpocock/skills](https://github.com/mattpocock/skills), [skills.sh](https://skills.sh), [anthropics/skills](https://github.com/anthropics/skills), [addyosmani/agent-skills](https://github.com/addyosmani/agent-skills), [HVE](https://microsoft.github.io/hve-core/docs/))?
-  - [ ] Research --> Plan --> Implement
-  - [ ] Rubber Ducking
-- [ ] Account for Squad or similar? Advanced topic?
+  - [x] Research --> Plan --> Implement
+  - [x] Rubber Ducking
+- [x] Account for Squad or similar? Advanced topic?
 - [x] Add guidance for sharing assets (plugin marketplace, organizational settings (GitHub), personal vs. repo level skills, etc.)
 - [x] Update .NET code to .NET 10 (current LTS version; v9 end of support in November 2026)
 - [x] Review workshop checklist to ensure guidance on using GitHub Copilot CLI
