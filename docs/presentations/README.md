@@ -30,8 +30,7 @@ This directory contains modular Marp presentations for the workshop.
 | 03 | Custom Agents Intro | 25 min | [03-custom-agents-intro.md](modules/part2/03-custom-agents-intro.md) |
 | 04 | Workflow Agents | 30 min | [04-workflow-agents.md](modules/part2/04-workflow-agents.md) |
 | 05 | Agent Design | 30 min | [05-agent-design.md](modules/part2/05-agent-design.md) |
-| 06 | Capstone Lab | 35 min | [06-capstone-lab.md](modules/part2/06-capstone-lab.md) |
-| 07 | Wrap-Up & Next Steps | 10 min | [07-wrapup-next-steps.md](modules/part2/07-wrapup-next-steps.md) |
+| 06 | Wrap-Up & Next Steps | 10 min | [06-wrapup-next-steps.md](modules/part2/06-wrapup-next-steps.md) |
 
 **Total:** ~3 hours
 
