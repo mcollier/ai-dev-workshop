@@ -18,19 +18,25 @@
   "noConfigSearch": true,
   "words": [
     "addyosmani",
+    "Addy",
+    "agentskills",
     "aspnetcore",
     "appsettings",
     "betterleaks",
     "cowork",
     "csdevkit",
+    "gantt",
     "globaljson",
     "jsonlint",
     "lifecycles",
+    "Liskov",
     "marp",
     "mattpocock",
     "megalinter",
     "nologo",
     "oxsecurity",
+    "Osmani's",
+    "Pocock's",
     "retarget",
     "retargeted",
     "springboot",
@@ -44,6 +50,7 @@
     "cpp-compound-words",
     "dotnet",
     "fullstack",
-    "data-science"
+    "data-science",
+    "npm"
   ]
 }

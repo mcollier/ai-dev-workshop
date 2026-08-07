@@ -163,7 +163,7 @@ exclude = [
     # '^https://(www\.)?linkedin\.com',                 # optional subdomains
     # '^https://(.*\.)?github(usercontent)?\.(com|io)', # exclude common GitHub URLs
 
-    ## Private repo
+    '^https://claude\.ai/code$' # exclude claude code links
 ]
 
 # Exclude paths from getting checked. The values are treated as regular expressions

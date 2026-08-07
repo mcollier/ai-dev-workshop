@@ -1,6 +1,6 @@
 ---
 name: "quality-gate"
-description: 'Validates code quality standards using SOLID principles, code metrics, and testing requirements for .NET and Spring Boot projects'
+description: 'Validates code quality standards using SOLID principles, code metrics, and testing requirements for .NET projects'
 tools: ['read', 'search/changes']
 model: Claude Sonnet 4.5
 ---
@@ -50,21 +50,14 @@ Code must meet these criteria to pass the quality gate:
 
 ## Context
 
-This agent evaluates code quality across two technology stacks:
+This agent evaluates code quality for .NET projects:
 
-**.NET 9:**
+**.NET 10:**
 - Language: C# with modern features (records, file-scoped namespaces, nullable reference types)
 - Testing: xUnit + FakeItEasy for mocking
 - Architecture: Clean Architecture with Domain/Application/Infrastructure/Api layers
 - Patterns: Sealed classes, async/await, ILogger for logging
 - Framework: ASP.NET Core (Minimal APIs or Controllers)
-
-**Spring Boot 3.x:**
-- Language: Java 21 with modern features (records, pattern matching, sealed classes)
-- Testing: JUnit 5 + Mockito for mocking
-- Architecture: Clean Architecture with domain/application/infrastructure/api modules (Maven)
-- Patterns: Final classes, Optional for nullability, SLF4J for logging
-- Framework: Spring Web MVC with @RestController
 
 **Universal Quality Principles:**
 
@@ -88,19 +81,12 @@ Both stacks must adhere to:
 - ILogger dependency injection
 - Nullable reference type annotations
 
-Spring Boot code quality signals:
-- Final classes for value objects
-- Records for immutable data
-- @Transactional on application services
-- Constructor injection with @RequiredArgsConstructor
-- Proper use of Optional<T>
-
 ## Evaluation Process
 
 When evaluating code, follow this systematic approach:
 
 ### 1. Initial Assessment
-- Identify the technology stack (C# vs Java)
+- Identify the technology stack (C#)
 - Determine which layer(s) the code belongs to
 - Understand the code's purpose and scope
 
@@ -156,7 +142,7 @@ When evaluating code, follow this systematic approach:
 ### 4. Architecture Compliance
 
 Check for violations:
-- ❌ Domain layer depending on Infrastructure (EF Core, Spring Data)
+- ❌ Domain layer depending on Infrastructure (EF Core)
 - ❌ Application layer containing database queries directly
 - ❌ Primitive obsession (Guid/UUID instead of TaskId value object)
 - ⚠️ Anemic domain model (entities with only getters/setters, no behavior)
@@ -176,7 +162,7 @@ Provide a structured quality gate report in this format:
 ### Quality Gate Report
 
 **Scope:** [Files/components evaluated]
-**Technology Stack:** [.NET 9 | Spring Boot 3.x]
+**Technology Stack:** [.NET 10]
 **Overall Result:** [✅ PASS | ⚠️ PASS WITH WARNINGS | ❌ FAIL]
 
 ---
