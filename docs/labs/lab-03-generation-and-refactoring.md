@@ -1,13 +1,14 @@
-# Lab 3: Code Generation & Refactoring with GitHub Copilot
+# Lab 3: Code Generation & Refactoring
 
 **Duration**: 45 minutes  
+**Tools**: GitHub Copilot or Claude Code (steps are shown side by side below)  
 **Learning Objectives**:
 
-- Generate complete API endpoints using Copilot and context variables
-- Refactor legacy code using `/refactor` command and Inline Chat
+- Generate complete API endpoints using your AI coding tool's file-context references
+- Refactor legacy code using slash/custom commands and inline or REPL-based prompts
 - Apply Object Calisthenics principles with AI assistance
-- Use Copilot's automatic workspace context to understand and modify existing code
-- Leverage Copilot Edits for multi-file refactoring
+- Use your AI coding tool's automatic workspace context to understand and modify existing code
+- Leverage multi-file editing (Copilot Edits or Claude Code) for cross-cutting refactoring
 
 ---
 
@@ -23,37 +24,41 @@ major changes, then using `@planner` and `@engineer` to refine and execute it.
 
 In this lab, you'll work with both new and existing code:
 
-- **Part 1**: Generate new API endpoints efficiently using Copilot's context awareness
+- **Part 1**: Generate new API endpoints efficiently using your AI coding tool's context awareness
 - **Part 2**: Refactor legacy code (`LegacyTaskProcessor`) to modern standards
 - **Part 3**: Apply advanced refactoring patterns (Object Calisthenics)
+- **Part 4**: Apply a cross-cutting rename across multiple files (Copilot Edits or Claude Code)
 
 
 ---
 
 ## 🚀 Agent Mode Challenge: Go Beyond Ask/Plan
 
-For this lab, try using **Agent Mode** for at least one major task (such as refactoring `LegacyTaskProcessor` or generating all CRUD endpoints at once). Agent Mode lets Copilot plan and execute multi-step, multi-file changes, and can invoke advanced tools (like MCP evaluation or tracing) automatically.
+For this lab, try using your AI coding tool's autonomous agent mode for at least one major task (such as refactoring `LegacyTaskProcessor` or generating all CRUD endpoints at once). Agent mode plans and executes multi-step, multi-file changes, and can invoke additional tools automatically.
 
 **How to try it:**
-- Switch Copilot Chat to "Agent" mode (dropdown in chat panel)
-- Describe your goal in natural language (e.g., "Refactor LegacyTaskProcessor to use async/await, add logging, and follow Object Calisthenics")
-- Review the plan and results, iterate as needed
-- For advanced users: reference MCP tools directly (e.g., "Evaluate my API endpoints using aitk-evaluation_planner")
+
+| <img src="../images/githubcopilot.svg" width="20" alt="GitHub Copilot" /> GitHub Copilot | <img src="../images/claude-color.svg" width="20" alt="Claude Code" /> Claude Code |
+|---|---|
+| Switch Copilot Chat to "Agent" mode (dropdown in chat panel) | Run `claude` in the integrated terminal — the CLI operates agentically by default |
+| Describe your goal in natural language (e.g., "Refactor LegacyTaskProcessor to use async/await, add logging, and follow Object Calisthenics") | Enter the same goal as a prompt in the REPL |
+| Review the plan and results, iterate as needed | Review the plan and results, iterate as needed |
+| For advanced users: reference MCP tools directly (e.g., "Evaluate my API endpoints using aitk-evaluation_planner") | For advanced users: reference any configured MCP tools directly in your prompt |
 
 **Compare:**
-- What did Agent Mode do differently than Ask/Plan?
+- What did agent mode do differently than a single-shot Ask/Plan prompt?
 - Did it propose a plan, use multiple tools, or make changes across files?
 - Was the result more complete or did it need more review?
 
 **Facilitator Tip:**
-Encourage participants to share their Agent Mode results and discuss when this approach is most effective.
+Encourage participants to share their agent mode results (from either tool) and discuss when this approach is most effective.
 
 ---
 
 ## Prerequisites
 
 - ✅ Completed Lab 1 (TDD) and Lab 2 (Requirements to Code)
-- ✅ Familiar with Copilot Chat, Inline Chat, and slash commands
+- ✅ Familiar with your AI coding tool's chat interface (Copilot Chat or the Claude Code REPL), inline/ad-hoc prompts, and slash or custom commands
 - ✅ Understanding of Clean Architecture layers
 - ✅ Repository at clean state
 
@@ -67,13 +72,13 @@ You have the POST /tasks endpoint from Lab 2. Now complete the REST API with GET
 
 ### 1.1 Understand Existing Structure
 
-Before generating new code, understand what exists — Copilot automatically searches your workspace, so just ask directly:
+Before generating new code, understand what exists — both tools automatically search your workspace, so just ask directly:
 
 ```text
 Show me the API endpoint structure. Where are endpoints defined and how are they organized?
 ```
 
-Copilot should identify:
+Your AI coding tool should identify:
 
 - `src/TaskManager.Api/Extensions/EndpointExtensions.cs` - Endpoint definitions
 - Minimal API pattern with extension methods
@@ -84,7 +89,7 @@ Copilot should identify:
 
 #### Step 1: Design Query Handler
 
-Ask Copilot Chat:
+Ask your AI coding tool:
 
 ```text
 Create a GetTasksQuery handler in the Application layer following CQRS pattern. 
@@ -105,16 +110,22 @@ Include unit tests using xUnit and FakeItEasy
 
 #### Step 2: Implement Endpoint
 
-Use `#file` context variable:
+Reference the existing endpoint file explicitly so the new code matches its style:
+
+| <img src="../images/githubcopilot.svg" width="20" alt="GitHub Copilot" /> GitHub Copilot | <img src="../images/claude-color.svg" width="20" alt="Claude Code" /> Claude Code |
+|---|---|
+| Use the `#file` context variable: `#file:src/TaskManager.Api/Extensions/EndpointExtensions.cs` | Use an `@` file mention: `@src/TaskManager.Api/Extensions/EndpointExtensions.cs` |
 
 ```text
-Add a GET /tasks endpoint in #file:src/TaskManager.Api/Extensions/EndpointExtensions.cs that:
+Add a GET /tasks endpoint in <file-reference> that:
 - Accepts optional query parameter: status (string: "Todo", "InProgress", or "Done")
 - Calls GetTasksQueryHandler
 - Returns 200 OK with array of TaskResponse
 - Uses async/await and proper error handling
 Follow the existing endpoint pattern
 ```
+
+Replace `<file-reference>` with `#file:src/TaskManager.Api/Extensions/EndpointExtensions.cs` (Copilot) or `@src/TaskManager.Api/Extensions/EndpointExtensions.cs` (Claude Code).
 
 **Expected Addition**:
 
@@ -170,7 +181,7 @@ public static void MapTaskEndpoints(this IEndpointRouteBuilder app)
 
 ### 1.3 Generate Query: GET /tasks/{id} (Get by ID)
 
-Ask Copilot:
+Ask your AI coding tool:
 
 ```text
 Create a GetTaskByIdQuery handler in Application layer that:
@@ -182,16 +193,17 @@ Include unit tests with FakeItEasy
 Then add GET /tasks/{id} endpoint that returns 200 OK or 404 Not Found
 ```
 
-**Key Learning**: Notice how Copilot reuses patterns from existing code (error handling, response mapping, validation).
+**Key Learning**: Notice how your AI coding tool reuses patterns from existing code (error handling, response mapping, validation).
 
 ### 1.4 Generate Command: PUT /tasks/{id} (Update)
 
-Use Inline Chat (`Ctrl+I` / `Cmd+I`):
+Make an inline, in-context edit request instead of a full chat conversation:
 
-1. Open `EndpointExtensions.cs`
-2. Position cursor after the GET endpoints
-3. Press `Ctrl+I` / `Cmd+I`
-4. Enter:
+| <img src="../images/githubcopilot.svg" width="20" alt="GitHub Copilot" /> GitHub Copilot | <img src="../images/claude-color.svg" width="20" alt="Claude Code" /> Claude Code |
+|---|---|
+| Open `EndpointExtensions.cs`, position cursor after the GET endpoints, press `Ctrl+I` / `Cmd+I` (Inline Chat) | Open `EndpointExtensions.cs` in your editor, then in the Claude Code REPL reference the file and cursor location, e.g. `In EndpointExtensions.cs, after the GET endpoints, add...` |
+
+Enter:
 
 ```text
 Add PUT /tasks/{id} endpoint that:
@@ -204,7 +216,7 @@ Include command handler in Application layer with tests
 
 ### 1.5 Generate Command: DELETE /tasks/{id}
 
-Ask Copilot Chat:
+Ask your AI coding tool:
 
 ```text
 Create DeleteTaskCommand and handler that:
@@ -259,7 +271,7 @@ The repository contains `LegacyTaskProcessor.ProcessTask` - poorly written code 
 
 ### 2.1 Find the Legacy Code
 
-Ask Copilot directly (it automatically searches your workspace):
+Ask your AI coding tool directly (both automatically search your workspace):
 
 ```text
 Find the LegacyTaskProcessor class
@@ -269,13 +281,16 @@ Find the LegacyTaskProcessor class
 
 ### 2.2 Analyze Current Issues
 
-Use `/explain` on the problematic method:
+Analyze the problematic method before changing it:
 
 1. Navigate to the `ProcessTask` method (not `ProcessTaskBatch` - that's a typo in earlier drafts)
 2. Select the entire method
-3. Use Inline Chat (`Ctrl+I` or `Cmd+I`): `/explain`
 
-Copilot should identify issues:
+| <img src="../images/githubcopilot.svg" width="20" alt="GitHub Copilot" /> GitHub Copilot | <img src="../images/claude-color.svg" width="20" alt="Claude Code" /> Claude Code |
+|---|---|
+| Use Inline Chat (`Ctrl+I` or `Cmd+I`): `/explain` | Paste or reference the method in the REPL and ask: `Explain what this method does and identify any code quality issues` |
+
+Your AI coding tool should identify issues:
 
 - ❌ Nested if statements (6+ indentation levels)
 - ❌ Synchronous blocking code (`Thread.Sleep`)
@@ -288,12 +303,16 @@ Copilot should identify issues:
 - ❌ Mixed concerns (file I/O in processing logic)
 - ❌ Not following guard clause pattern
 
-### 2.3 Refactor with /refactor Command
+### 2.3 Refactor the Method
 
-Select the entire `ProcessTask` method and use Copilot Chat:
+Select the entire `ProcessTask` method:
+
+| <img src="../images/githubcopilot.svg" width="20" alt="GitHub Copilot" /> GitHub Copilot | <img src="../images/claude-color.svg" width="20" alt="Claude Code" /> Claude Code |
+|---|---|
+| Use the `/refactor` slash command in Copilot Chat | Ask directly in the REPL (no `/refactor` command defined yet — see `todo.md`) |
 
 ```text
-/refactor this method to follow Clean Code principles:
+Refactor this method to follow Clean Code principles:
 1. Use guard clauses (fail fast, no nested ifs)
 2. Convert to async/await
 3. Add structured logging with ILogger<LegacyTaskProcessor>
@@ -412,11 +431,11 @@ private async Task ExecuteTaskProcessingAsync(
 
 ### 2.4 Generate Tests for Refactored Code
 
-Select the refactored method and use `/tests`:
+Select the refactored method:
 
-```text
-/tests
-```
+| <img src="../images/githubcopilot.svg" width="20" alt="GitHub Copilot" /> GitHub Copilot | <img src="../images/claude-color.svg" width="20" alt="Claude Code" /> Claude Code |
+|---|---|
+| Use the `/tests` custom command | Ask directly in the REPL: `Generate xUnit tests for this method using FakeItEasy` (no `/tests` command defined yet — see `todo.md`) |
 
 Verify generated tests cover:
 
@@ -443,7 +462,7 @@ Apply Object Calisthenics rules from our .NET instructions (Section 7).
 
 ### 3.1 Review Object Calisthenics Rules
 
-Ask Copilot:
+Ask your AI coding tool:
 
 ```text
 What are the Object Calisthenics rules from our .NET coding instructions?
@@ -465,7 +484,7 @@ Key rules:
 
 Find places where primitive types are used directly for domain concepts.
 
-Ask Copilot:
+Ask your AI coding tool:
 
 ```text
 Review the TaskItem class. Are there primitive types that should be wrapped in value objects following DDD patterns? For example, should task status be an enum or value object instead of a string?
@@ -482,7 +501,7 @@ public class TaskItem
 }
 ```
 
-**After** (with Copilot assistance):
+**After** (with AI assistance):
 
 ```csharp
 public sealed class TaskItem
@@ -497,7 +516,7 @@ public sealed class TaskItem
 
 Find collections that are exposed directly and wrap them.
 
-Ask Copilot:
+Ask your AI coding tool:
 
 ```text
 If we have a class with a List<Task> property, how should we wrap it following Object Calisthenics and DDD patterns?
@@ -543,11 +562,14 @@ public sealed class TaskCollection
 
 ### 3.4 Apply: No Abbreviations
 
-Use Inline Chat to expand abbreviated names:
+Expand abbreviated names using a scoped, in-context request:
 
 1. Find abbreviated variable names (e.g., `var t`, `var res`, `int cnt`)
 2. Select the code
-3. Inline Chat: "Expand all abbreviated variable names to be fully descriptive"
+
+| <img src="../images/githubcopilot.svg" width="20" alt="GitHub Copilot" /> GitHub Copilot | <img src="../images/claude-color.svg" width="20" alt="Claude Code" /> Claude Code |
+|---|---|
+| Inline Chat: "Expand all abbreviated variable names to be fully descriptive" | Paste the selection into the REPL and ask: "Expand all abbreviated variable names to be fully descriptive" |
 
 **Before**:
 
@@ -573,21 +595,25 @@ if (result != null)
 
 ---
 
-## Part 4: Multi-File Refactoring with Copilot Edits (Optional, if time)
+## Part 4: Multi-File Refactoring (Optional, if time)
 
 ### Scenario: Rename Across Multiple Files
 
-Use Copilot Edits for cross-cutting changes.
+Use multi-file editing for cross-cutting changes.
 
-### 4.1 Open Copilot Edits
+### 4.1 Open Multi-File Editing
 
-1. Open Command Palette (`Ctrl+Shift+P` / `Cmd+Shift+P`)
-2. Search for "Copilot Edits: Open"
-3. Or use dedicated Copilot Edits panel in sidebar
+| <img src="../images/githubcopilot.svg" width="20" alt="GitHub Copilot" /> GitHub Copilot | <img src="../images/claude-color.svg" width="20" alt="Claude Code" /> Claude Code |
+|---|---|
+| Open Command Palette (`Ctrl+Shift+P` / `Cmd+Shift+P`), search for "Copilot Edits: Open", or use the dedicated Copilot Edits panel in the sidebar | Run `claude` in the integrated terminal — the REPL already operates across multiple files by default, no separate panel needed |
 
 ### 4.2 Add Files to Working Set
 
-Add related files:
+| <img src="../images/githubcopilot.svg" width="20" alt="GitHub Copilot" /> GitHub Copilot | <img src="../images/claude-color.svg" width="20" alt="Claude Code" /> Claude Code |
+|---|---|
+| Add related files to the Copilot Edits working set | Mention the related files in your prompt with `@` so Claude Code knows the scope |
+
+Related files for this change:
 
 - `src/TaskManager.Domain/Entities/Task.cs`
 - `src/TaskManager.Application/Commands/CreateTaskCommand.cs`
@@ -596,7 +622,7 @@ Add related files:
 
 ### 4.3 Describe Change
 
-In the Copilot Edits panel:
+Enter the same request in the Copilot Edits panel or the Claude Code REPL:
 
 ```text
 Rename the "Title" property to "Name" across all files in the working set. Update:
@@ -609,7 +635,7 @@ Ensure consistency across the entire codebase
 
 ### 4.4 Review Proposed Changes
 
-Copilot will show:
+Your AI coding tool will show:
 
 - All files that will be modified
 - Exact changes in each file
@@ -629,15 +655,15 @@ Copilot will show:
 ### ✅ Context-Aware Code Generation
 
 1. **Automatic workspace context**: Understanding existing structure before generating
-2. **#file**: Referencing specific files for consistent patterns
-3. **#selection**: Refactoring specific code sections
-4. **Pattern Reuse**: Copilot learned patterns from existing endpoints
+2. **`#file` (Copilot) / `@file` (Claude Code)**: Referencing specific files for consistent patterns
+3. **Selection-based prompts**: Refactoring specific code sections
+4. **Pattern Reuse**: Your AI coding tool learns patterns from existing endpoints
 
 ### ✅ Effective Refactoring Workflow
 
-1. **/explain**: Understand code before changing it
-2. **/refactor**: Automated refactoring with specific goals
-3. **/tests**: Generate tests for refactored code
+1. **Explain first**: Understand code before changing it (`/explain` in Copilot, a direct prompt in Claude Code)
+2. **Refactor with intent**: Automated refactoring with specific goals (`/refactor` in Copilot, a direct prompt in Claude Code)
+3. **Generate tests**: Cover refactored code (`/tests` in Copilot, a direct prompt in Claude Code)
 4. **Iterative**: Refactor in small steps, run tests frequently
 
 ### ✅ Code Quality Improvements
@@ -650,8 +676,8 @@ Copilot will show:
 
 ### ✅ Multi-File Editing
 
-1. **Copilot Edits**: Consistent changes across multiple files
-2. **Working Set**: Explicitly define scope of changes
+1. **Copilot Edits / Claude Code REPL**: Consistent changes across multiple files
+2. **Working Set**: Explicitly define scope of changes (Copilot Edits working set, or `@` file mentions in Claude Code)
 3. **Review Process**: Always review AI-proposed changes
 4. **Safe Refactoring**: Tests validate behavior preservation
 
@@ -662,7 +688,7 @@ Copilot will show:
 ### Exercise 1: Add Pagination
 
 Refactor GET /tasks to support pagination (page, pageSize query parameters).
-Use Copilot to:
+Use your AI coding tool to:
 
 1. Add pagination to repository
 2. Update query handler
@@ -677,7 +703,7 @@ Valid sort fields: title, priority, dueDate, createdAt
 ### Exercise 3: Extract API Response Builder
 
 Create a dedicated class for building TaskResponse from Task entity.
-Use Copilot Edits to update all endpoints to use the builder.
+Use Copilot Edits (or the Claude Code REPL) to update all endpoints to use the builder.
 
 ---
 
@@ -699,25 +725,25 @@ You've completed this lab successfully when:
 
 ## Troubleshooting
 
-### Copilot Generates Inconsistent Patterns
+### AI Tool Generates Inconsistent Patterns
 
 **Problem**: New endpoints don't match existing style  
-**Solution**: Use `#file` to reference existing endpoint file, explicitly state "Follow the existing pattern"
+**Solution**: Reference the existing endpoint file explicitly (`#file` in Copilot, `@file` in Claude Code) and state "Follow the existing pattern"
 
 ### Refactoring Breaks Tests
 
 **Problem**: Tests fail after refactoring  
-**Solution**: This is OK! Update tests to match new behavior. Use `/tests` to regenerate tests.
+**Solution**: This is OK! Update tests to match new behavior. Regenerate tests (`/tests` in Copilot, a direct prompt in Claude Code).
 
 ### Too Many Changes at Once
 
-**Problem**: Copilot suggests massive refactoring  
+**Problem**: Your AI coding tool suggests massive refactoring  
 **Solution**: Break into smaller steps. Refactor one method at a time. Run tests after each change.
 
 ### Multi-File Edit Misses Files
 
-**Problem**: Copilot Edits doesn't update all references  
-**Solution**: Use VS Code's built-in "Rename Symbol" (F2) for simple renames. Use Copilot Edits for semantic changes.
+**Problem**: Copilot Edits (or Claude Code) doesn't update all references  
+**Solution**: Use VS Code's built-in "Rename Symbol" (F2) for simple renames. Use Copilot Edits or Claude Code for semantic changes, and always review the diff.
 
 ---
 
@@ -725,8 +751,8 @@ You've completed this lab successfully when:
 
 Move on to [**Lab 4: Testing, Documentation & Workflow**](lab-04-testing-documentation-workflow.md) where you'll:
 
-- Generate comprehensive test suites with `/tests`
-- Create documentation with `/doc`
+- Generate comprehensive test suites (`/tests` in Copilot, a direct prompt in Claude Code)
+- Create documentation (`/doc` in Copilot, a direct prompt in Claude Code)
 - Write Conventional Commit messages
 - Draft PR descriptions using full workspace context
 
