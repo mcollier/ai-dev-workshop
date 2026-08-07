@@ -1,31 +1,33 @@
-# Lab 07: Introduction to Custom Copilot Agents
+# Lab 07: Introduction to Custom Agents
 
 **Module:** 2  
 **Duration:** 30 minutes  
-**Part:** Advanced GitHub Copilot (Part 2)
+**Part:** Advanced GitHub Copilot / Claude Code (Part 2)
 
 ## Objectives
 
 By the end of this lab, you will:
-- Understand what Custom Copilot Agents are and how they work
-- Differentiate between agents, prompts, and Copilot Instructions
-- Use a pre-built custom agent in Agent Mode
+- Understand what custom agents are and how they work in GitHub Copilot and Claude Code
+- Differentiate between agents, prompts, and repo-wide instructions
+- Use a pre-built custom agent
 - Recognize when custom agents improve consistency over ad-hoc prompting
 
 ## Prerequisites
 
 - Completion of [Lab 06: Skills & Customization](lab-06-skills-and-customization.md)
-- VS Code with GitHub Copilot extension
+- VS Code with the GitHub Copilot extension, and/or Claude Code installed
 - Access to the TaskManager workshop repository
 
 ## Background
 
-### What Are Custom Copilot Agents?
+### What Are Custom Agents?
 
-Custom Copilot Agents are **specialized AI assistants** that provide consistent, role-based guidance for specific workflows. Think of them as expert consultants you can invoke when needed.
+Custom agents are **specialized AI assistants** that provide consistent,
+role-based guidance for specific workflows. Think of them as expert
+consultants you can invoke when needed.
 
 **Key Characteristics:**
-- **Named entities** - Selectable from the agent dropdown
+- **Named entities** - Selectable from a dropdown (Copilot) or invoked by name (Claude Code)
 - **Role-based personas** - Architecture reviewer, test strategist, backlog generator, etc.
 - **Defined scope** - Clear responsibilities and constraints
 - **Structured outputs** - Consistent format for results
@@ -34,7 +36,7 @@ Custom Copilot Agents are **specialized AI assistants** that provide consistent,
 ### Mental Model: The Specialist Analogy
 
 ```
-Standard Copilot Chat = General AI Assistant
+Standard Chat = General AI Assistant
 Custom Agent = Domain Expert Consultant
 
 You wouldn't ask a general assistant to:
@@ -45,9 +47,27 @@ You wouldn't ask a general assistant to:
 Custom agents ARE those specialists.
 ```
 
+### Where Agents Live
+
+| <img src="../images/githubcopilot.svg" width="20" alt="GitHub Copilot" /> GitHub Copilot | <img src="../images/claude-color.svg" width="20" alt="Claude Code" /> Claude Code |
+|---|---|
+| `.github/agents/*.agent.md` — selected from the Agent Mode dropdown | `.claude/agents/*.md` — invoked by name (e.g. `@architecture-reviewer`) or auto-delegated by Claude when the task matches the agent's `description` |
+
+> **Known gap:** this repository's `.github/agents/` directory currently only
+> contains a `.gitkeep` placeholder — the three `.agent.md` files described
+> below (`architecture-reviewer`, `backlog-generator`, `test-strategist`)
+> **do not exist yet** on the Copilot side. This is tracked as a bug in
+> `todo.md`. The Claude Code equivalents **do exist** at
+> `.claude/agents/architecture-reviewer.md`, `.claude/agents/backlog-generator.md`,
+> and `.claude/agents/test-strategist.md`, so Claude Code users can complete
+> every exercise in this lab today. Copilot users should read the agent
+> descriptions below and, until the `.agent.md` files land, paste the
+> equivalent `.claude/agents/*.md` prompt body into standard Copilot Chat to
+> approximate the same behavior.
+
 ### How Agents Differ From...
 
-| Feature | Copilot Instructions | Ad-hoc Prompts | Custom Agents |
+| Feature | Repo-wide Instructions | Ad-hoc Prompts | Custom Agents |
 |---------|---------------------|----------------|---------------|
 | **Scope** | Always active | One-off | Invoked on demand |
 | **Purpose** | Global guardrails | Specific task | Repeatable workflow |
@@ -74,7 +94,9 @@ Custom agents ARE those specialists.
 
 ### Setup
 
-The repository includes a pre-built **Architecture Reviewer** agent at `.github/agents/architecture-reviewer.agent.md`.
+| <img src="../images/githubcopilot.svg" width="20" alt="GitHub Copilot" /> GitHub Copilot | <img src="../images/claude-color.svg" width="20" alt="Claude Code" /> Claude Code |
+|---|---|
+| Would use a pre-built **Architecture Reviewer** agent at `.github/agents/architecture-reviewer.agent.md` — **not yet scaffolded, see the callout above**. Read the equivalent Claude Code file to preview the intended behavior, then approximate it in standard Chat. | Uses the pre-built **Architecture Reviewer** subagent at `.claude/agents/architecture-reviewer.md` |
 
 ### Scenario
 
@@ -83,13 +105,21 @@ You suspect there might be architectural issues in the Task entity or the reposi
 ### Instructions
 
 1. **Locate the agent:**
-   - Navigate to `.github/agents/architecture-reviewer.agent.md`
+   - Claude Code: open `.claude/agents/architecture-reviewer.md`. Copilot: open `.claude/agents/architecture-reviewer.md` as a stand-in reference until `.github/agents/architecture-reviewer.agent.md` is authored.
    - Read the agent's responsibilities and constraints
    - Note the structured output format
 
-2. **Open Copilot Chat** and switch to **Agent Mode**
+2. **Open your AI coding tool:**
 
-3. **Select the Architecture Reviewer agent** from the dropdown
+   | <img src="../images/githubcopilot.svg" width="20" alt="GitHub Copilot" /> GitHub Copilot | <img src="../images/claude-color.svg" width="20" alt="Claude Code" /> Claude Code |
+   |---|---|
+   | Open Copilot Chat and switch to **Agent Mode** | Open the Claude Code REPL (`claude` in the integrated terminal) |
+
+3. **Select the Architecture Reviewer agent:**
+
+   | <img src="../images/githubcopilot.svg" width="20" alt="GitHub Copilot" /> GitHub Copilot | <img src="../images/claude-color.svg" width="20" alt="Claude Code" /> Claude Code |
+   |---|---|
+   | Select **Architecture Reviewer** from the agent dropdown *(unavailable until `.github/agents/architecture-reviewer.agent.md` is created — use standard Chat with the copied prompt body in the meantime)* | Mention `@architecture-reviewer` explicitly, or let Claude auto-delegate based on its `description` |
 
 4. **Use this prompt:**
    ```
@@ -101,8 +131,8 @@ You suspect there might be architectural issues in the Task entity or the reposi
    - Does it reference the layers (Domain, Application, Infrastructure, Api)?
    - Does it provide the expected sections (Strengths, Concerns, Violations, Recommendations)?
 
-6. **Compare to standard Copilot Chat:**
-   - Try the same prompt in regular Chat (without the agent)
+6. **Compare to standard chat:**
+   - Try the same prompt without the agent
    - Note the differences in depth, structure, and consistency
 
 ### Expected Outcome
@@ -116,7 +146,7 @@ The Architecture Reviewer agent should:
 
 ### Reflection Questions
 
-1. **How did the agent's response differ from standard Chat?**
+1. **How did the agent's response differ from standard chat?**
 2. **Did the agent follow its defined output format?**
 3. **Would this consistency be valuable for team code reviews?**
 4. **What happens if you ask the agent something outside its scope?**
@@ -129,14 +159,17 @@ The Architecture Reviewer agent should:
 
 Perform the same task twice:
 
-#### Round 1: Standard Copilot Chat
-1. Open Copilot Chat (no agent selected)
+#### Round 1: Standard Chat
+1. Open your AI tool's standard chat (no agent selected)
 2. Prompt: `Review the Task domain model for DDD compliance`
 3. Record the response structure and depth
 
 #### Round 2: Architecture Reviewer Agent
-1. Switch to Agent Mode
-2. Select **Architecture Reviewer** from dropdown
+
+| <img src="../images/githubcopilot.svg" width="20" alt="GitHub Copilot" /> GitHub Copilot | <img src="../images/claude-color.svg" width="20" alt="Claude Code" /> Claude Code |
+|---|---|
+| Switch to Agent Mode and select **Architecture Reviewer** *(pending scaffolding — see callout above)* | Mention `@architecture-reviewer` |
+
 3. Same prompt: `Review the Task domain model for DDD compliance`
 4. Record the response structure and depth
 
@@ -156,15 +189,23 @@ Fill in based on your observations:
 
 ## Exercise 3: Exploring Other Agents (5 minutes)
 
-The repository includes three custom agents. Briefly explore each:
+The repository includes definitions for three custom agents. Briefly explore each:
 
 ### 1. Backlog Generator
-- **Location:** `.github/agents/backlog-generator.agent.md`
+
+| <img src="../images/githubcopilot.svg" width="20" alt="GitHub Copilot" /> GitHub Copilot | <img src="../images/claude-color.svg" width="20" alt="Claude Code" /> Claude Code |
+|---|---|
+| **Location:** `.github/agents/backlog-generator.agent.md` *(not yet scaffolded — see callout above)* | **Location:** `.claude/agents/backlog-generator.md` |
+
 - **Try:** "Generate user stories for adding task comments feature"
 - **Observe:** Structured user stories with acceptance criteria
 
 ### 2. Test Strategist
-- **Location:** `.github/agents/test-strategist.agent.md`
+
+| <img src="../images/githubcopilot.svg" width="20" alt="GitHub Copilot" /> GitHub Copilot | <img src="../images/claude-color.svg" width="20" alt="Claude Code" /> Claude Code |
+|---|---|
+| **Location:** `.github/agents/test-strategist.agent.md` *(not yet scaffolded — see callout above)* | **Location:** `.claude/agents/test-strategist.md` |
+
 - **Try:** "Propose test scenarios for Task creation"
 - **Observe:** Categorized test scenarios (unit, integration, edge cases)
 
@@ -177,12 +218,12 @@ The repository includes three custom agents. Briefly explore each:
 
 ## Key Insights
 
-### If Copilot Instructions Are Guardrails...
+### If Repo-wide Instructions Are Guardrails...
 
-**Copilot Instructions** = Background rules always enforced  
+**Repo-wide Instructions** (`.github/copilot-instructions.md` / `CLAUDE.md`) = Background rules always enforced
 (e.g., "Use Clean Architecture, write tests first, follow DDD")
 
-**Custom Agents** = Specialists you consult on demand  
+**Custom Agents** = Specialists you consult on demand
 (e.g., "Architecture Reviewer, analyze this design")
 
 ### Agents Are Products, Not Prompts
@@ -196,26 +237,26 @@ The repository includes three custom agents. Briefly explore each:
 
 ## Key Takeaways
 
-✅ **Custom agents provide role-based expertise** on demand  
-✅ **Agents ensure consistency** across team members  
-✅ **Agents are reusable** - define once, use repeatedly  
-✅ **Agents complement Instructions** - not a replacement  
+✅ **Custom agents provide role-based expertise** on demand
+✅ **Agents ensure consistency** across team members
+✅ **Agents are reusable** - define once, use repeatedly
+✅ **Agents complement Instructions** - not a replacement
 ⚠️ **Agents require maintenance** - treat them as team assets
 
 ---
 
 ## Common Questions
 
-**Q: Can I use multiple agents in one session?**  
-A: Yes! Switch agents as needed for different workflow steps.
+**Q: Can I use multiple agents in one session?**
+A: Yes! Switch agents as needed for different workflow steps. Claude Code can also auto-delegate to the right subagent based on its `description`.
 
-**Q: Do agents replace Copilot Instructions?**  
-A: No. Instructions are always-on guardrails; agents are on-demand specialists.
+**Q: Do agents replace repo-wide Instructions?**
+A: No. Instructions/`CLAUDE.md` are always-on guardrails; agents are on-demand specialists.
 
-**Q: Can I create my own agent?**  
+**Q: Can I create my own agent?**
 A: Absolutely! That's covered in [Lab 09: Agent Design](lab-09-agent-design.md) and [Lab 10: Build Your Own](lab-10-capstone-build-agent.md).
 
-**Q: What if an agent gives incorrect advice?**  
+**Q: What if an agent gives incorrect advice?**
 A: Agents are assistants, not authorities. You're accountable for the final decision. Iterate on agent instructions to improve accuracy.
 
 ---
@@ -231,3 +272,4 @@ In [Lab 08: Workflow Agents in Action](lab-08-workflow-agents.md), you'll apply 
 - [Custom Agent Catalog](../guides/custom-agent-catalog.md)
 - [Agent vs Instructions vs Prompts Diagram](../design/diagrams/agent-vs-instructions-vs-prompts.md)
 - [GitHub Documentation: Custom Agents](https://docs.github.com/copilot)
+- [Claude Code Documentation: Subagents](https://docs.claude.com/en/docs/claude-code/sub-agents)

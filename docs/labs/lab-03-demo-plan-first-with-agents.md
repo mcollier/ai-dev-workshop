@@ -21,14 +21,14 @@ first. This helps you:
 |---|---|
 | In Copilot Chat (Agent Mode), ask: "Propose a step-by-step plan to refactor LegacyTaskProcessor to use async/await, add logging, and follow Object Calisthenics." | Run `claude` in the integrated terminal and ask the same question in the REPL |
 | Review the plan. Edit or reorder steps as needed. | Review the plan. Edit or reorder steps as needed. |
-| Only then, ask Copilot (or a custom agent like `@engineer`) to implement the plan, one step at a time or all at once. | Only then, ask Claude Code to implement the plan, one step at a time or all at once. |
+| Only then, ask Copilot (or a custom agent like `@engineer`) to implement the plan, one step at a time or all at once. | Only then, ask Claude Code (or the `engineer` subagent) to implement the plan, one step at a time or all at once. |
 
 ### Custom Agents Demo
 
 | <img src="../images/githubcopilot.svg" width="20" alt="GitHub Copilot" /> GitHub Copilot | <img src="../images/claude-color.svg" width="20" alt="Claude Code" /> Claude Code |
 |---|---|
-| Use `@planner` to generate/refine the plan | No subagent equivalent scaffolded yet in `.claude/agents/` — ask directly in the REPL (see `todo.md`) |
-| Use `@engineer` to execute the approved plan | No subagent equivalent scaffolded yet in `.claude/agents/` — ask directly in the REPL (see `todo.md`) |
+| Use `@planner` to generate/refine the plan — **not yet scaffolded** in `.github/agents/` (tracked as a bug, see `todo.md`); reference `.claude/agents/planner.md` for the intended behavior in the meantime | Use the `planner` subagent at `.claude/agents/planner.md` to generate/refine the plan |
+| Use `@engineer` to execute the approved plan — **not yet scaffolded** in `.github/agents/` (tracked as a bug, see `todo.md`); reference `.claude/agents/engineer.md` for the intended behavior in the meantime | Use the `engineer` subagent at `.claude/agents/engineer.md` to execute the approved plan |
 
 ## Discuss as a Group
 
