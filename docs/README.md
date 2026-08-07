@@ -350,7 +350,7 @@ code .
 **Solution:**
 1. Check internet connection
 2. If using SSH: Ensure SSH keys are configured on GitHub
-3. Try HTTPS instead: `git clone https://github.com/centricconsulting/ai-coding-workshop.git`
+3. Try HTTPS instead: `git clone https://github.com/mcollier/ai-dev-workshop.git`
 4. Check firewall/proxy settings
 
 ---
