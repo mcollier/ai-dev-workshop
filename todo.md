@@ -25,13 +25,13 @@
 - [x] Pull in docs/guides as a reference
 - [ ] Add Claude Code (VS Code extension and CLI) to dev container
 - [ ] Review the setup guide to ensure Claude Code is accounted for.
-- [ ] Add helpful GitHub Copilot CLI features
-  - [ ] `/research`, `/chronicle`, `/after`, `/every`, `/context`
-  - [ ] `/yolo` or `/autopilot`
-  - [ ] `/experimental`, `/fleet`
-  - [ ] `/pr`
-  - [ ] `/review`, `/rubber-duck`, `/security-review`
-  - [ ] `/sandbox`, `/voice`
+- [ ] ~~Add helpful GitHub Copilot CLI features~~
+  - [ ] ~~`/research`, `/chronicle`, `/after`, `/every`, `/context`~~
+  - [ ] ~~`/yolo` or `/autopilot`~~
+  - [ ] ~~`/experimental`, `/fleet`~~
+  - [ ] ~~`/pr`~~
+  - [ ] ~~`/review`, `/rubber-duck`, `/security-review`~~
+  - [ ] ~~`/sandbox`, `/voice`~~
 - [ ] Sample `src/` TaskManager app is being built by someone else in a separate PR — once merged, revisit labs to confirm file paths/structure referenced in prompts still match, and drop any "reference-only" caveats
 - [ ] Scaffold real `.claude/` files (commands, skills, subagents) mirroring the existing `.github/` ones — deferred; for now the labs only describe Claude Code steps in comparison tables
 - [x] `@workspace` is no longer current (superseded by automatic workspace context / `#codebase`) — updated the labs, but presentations, guidebooks, and other materials still need the same fix once integrated

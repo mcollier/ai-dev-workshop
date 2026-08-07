@@ -67,13 +67,13 @@ This governance applies to all files in `.github/agents/` and their associated d
 2. Create 3-5 test scenarios in `docs/requirements/agent-scenarios/`
 3. Test agent against all scenarios
 4. Iterate until success criteria met
-5. Document in [Custom Agent Catalog](./custom-agent-catalog.md)
+<!-- 5. Document in [Custom Agent Catalog](./custom-agent-catalog.md) -->
 
 **Exit Criteria:**
 - [ ] Agent definition complete
 - [ ] All test scenarios pass
-- [ ] Catalog updated with usage guide
 - [ ] Example invocations documented
+<!-- - [ ] Catalog updated with usage guide -->
 
 ### Stage 3: Review
 
@@ -581,7 +581,7 @@ Before merging a new agent:
 
 ## See Also
 
-- [Custom Agent Catalog](./custom-agent-catalog.md) - All available agents
+<!-- - [Custom Agent Catalog](./custom-agent-catalog.md) - All available agents -->
 - [Agent Design Guide](./agent-design-guide.md) - How to create agents
 - [Lab 09: Agent Design](../labs/lab-09-agent-design.md)
 - [Lab 10: Build Your Own Agent](../labs/lab-10-capstone-build-agent.md)

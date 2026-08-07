@@ -349,7 +349,6 @@ Project Customizations:
 ├── Instructions (Always-on standards)
 │   ├── .github/instructions/                  # Context-aware instruction files
 │   │   ├── dotnet.instructions.md         # .NET standards (applyTo: **/*.cs)
-│   │   └── springboot.instructions.md     # Spring Boot standards (applyTo: src-springboot/**)
 │   ├── .github/instructions/csharp.instructions.md   # C# conventions
 │   └── .github/instructions/test.instructions.md     # Test standards
 │
