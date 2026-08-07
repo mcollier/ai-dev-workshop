@@ -91,7 +91,7 @@ logos in `docs/images/` to make the columns visually scannable at a glance:
 | ~~Lab 5 – Interaction Models~~ | Deleted per user decision — no longer part of the lab set | — |
 | Lab 6 – Skills & Customization | Add Claude Code Skills + `CLAUDE.md` sections; compare hierarchy across tools | ✅ |
 | Lab 7 – Custom Agents Intro | Add Claude Code subagents equivalent walkthrough | ✅ |
-| Lab 8 – Workflow Agents | Extend scenarios to invoke both Copilot agents and Claude Code subagents | ⬜ |
+| Lab 8 – Workflow Agents | Extend scenarios to invoke both Copilot agents and Claude Code subagents | ✅ |
 | Lab 9 – Agent Design | Keep tool-agnostic (design principles apply to both); add a short "authoring for both tools" note | ⬜ |
 | Lab 10 – Capstone | Update template so participants build one agent definition and adapt it for both tools | ⬜ |
 | ~~Bonus – Test Planning~~ | Deleted per user decision — no longer part of the lab set | — |
