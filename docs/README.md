@@ -23,7 +23,7 @@ Use this checklist to verify your environment is ready **before** attending the 
 | Access       | GitHub Copilot license                             | Claude account / organizational access        |
 | Install      | VS Code extension and/or `copilot` CLI             | `claude` CLI and optionally VS Code extension |
 | Verify       | Sign-in -> run Copilot chat panel or `copilot` CLI | `claude` CLI                                  |
-| Troubleshoot | Verify login, license, and org policies            | `claude /doctor`                               |
+| Troubleshoot | Verify login, license, and org policies            | `claude /doctor`                              |
 
 #### Verify GitHub Copilot subscription status
 1. Go to [github.com/settings/copilot](https://github.com/settings/copilot)
