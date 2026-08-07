@@ -5,7 +5,7 @@ paginate: true
 backgroundColor: #fff
 ---
 
-# Module 7
+# Module 6
 
 ## Wrap-Up & Next Steps
 ### Governance and Continuous Improvement

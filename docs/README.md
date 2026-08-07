@@ -34,7 +34,7 @@ Use this checklist to verify your environment is ready **before** attending the 
 
 ### 2. Visual Studio Code Installation
 
-- [ ] **VS Code installed** (version 1.95 or later)
+- [ ] **VS Code installed** (version 1.98 or later)
   - Download: [code.visualstudio.com](https://code.visualstudio.com/)
   - Verify: Run `code --version` in terminal
   
@@ -259,11 +259,6 @@ Test summary: total: 11, failed: 11, succeeded: 0
   4. Should get a response mentioning xUnit and FakeItEasy
   5. ✅ Chat is working!
 
-- [ ] **Test @workspace participant**
-  1. In Copilot Chat, type: `@workspace Where is the Task entity defined?`
-  2. Should respond with file path: `src/TaskManager.Domain/Tasks/Task.cs`
-  3. ✅ Workspace context is working!
-
 **Copilot not working?**
 - Click Copilot icon in status bar → "Sign in to GitHub"
 - Check subscription at [github.com/settings/copilot](https://github.com/settings/copilot)
@@ -378,14 +373,14 @@ If you encounter issues completing this checklist:
 Before the workshop, confirm:
 
 **All attendees:**
-- [ ] GitHub Copilot subscription is active
-- [ ] Claude Code subscription is active
-- [ ] VS Code with GitHub Copilot and Claude Code extensions installed
+- [ ] Either GitHub Copilot or Claude Code subscription is active
+- [ ] VS Code with GitHub Copilot or Claude Code extensions installed
 - [ ] Git installed and configured
 - [ ] Workshop repository cloned and personal branch created from `main`
 - [ ] Copilot inline suggestions work
 - [ ] Copilot Chat responds to queries
 - [ ] C# Dev Kit extension installed
+- [ ] If using CLI, start either `copilot` or `claude` and successfully authenticate
 - [ ] .NET 10 SDK installed (`dotnet --version` shows 10.x.x)
 - [ ] Solution builds successfully (`dotnet build`)
 - [ ] Tests run and show 11 expected failures (`dotnet test`)

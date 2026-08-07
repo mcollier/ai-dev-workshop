@@ -54,8 +54,7 @@ backgroundColor: #fff
 | 03     | Custom Agents Intro    | 25 min   |
 | 04     | Workflow Agents        | 30 min   |
 | 05     | Agent Design           | 30 min   |
-| 06     | Capstone Lab           | 35 min   |
-| 07     | Wrap-Up & Next Steps   | 10 min   |
+| 06     | Wrap-Up & Next Steps   | 10 min   |
 
 ---
 

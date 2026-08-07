@@ -82,7 +82,7 @@ Day 1 Morning (Part 1):
   → modules/part1/00 through 06
 
 Day 1 Afternoon (Part 2):
-  → modules/part2/00 through 07
+  → modules/part2/00 through 06
 ```
 
 ### 2. Self-Paced Learning
