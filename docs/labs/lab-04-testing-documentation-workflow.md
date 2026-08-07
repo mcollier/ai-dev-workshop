@@ -1,13 +1,14 @@
-# Lab 4: Testing, Documentation & Workflow with GitHub Copilot
+# Lab 4: Testing, Documentation & Workflow
 
 **Duration**: 15 minutes  
+**Tools**: GitHub Copilot or Claude Code (steps are shown side by side below)  
 **Learning Objectives**:
 
-- Generate comprehensive test suites using `/tests` command
-- Create documentation with `/doc` command
+- Generate comprehensive test suites using slash/custom commands or direct prompts
+- Create documentation with slash/custom commands or direct prompts
 - Write Conventional Commit messages with AI assistance
-- Draft PR descriptions using Copilot's full workspace context
-- Integrate Copilot into complete development workflow
+- Draft PR descriptions using your AI coding tool's full workspace context
+- Integrate your AI coding tool into a complete development workflow
 
 ---
 
@@ -20,7 +21,7 @@ This lab brings together everything you've learned by focusing on the "glue" act
 3. **Version Control** - Write meaningful commit messages
 4. **Code Review** - Prepare thorough PR descriptions
 
-These activities are often rushed or skipped, but Copilot makes them fast and consistent.
+These activities are often rushed or skipped, but GitHub Copilot and Claude Code make them fast and consistent.
 
 ---
 
@@ -29,7 +30,7 @@ These activities are often rushed or skipped, but Copilot makes them fast and co
 - ✅ Completed Labs 1, 2, and 3
 - ✅ Working Task Manager API with CRUD operations
 - ✅ Git initialized with commits from previous labs
-- ✅ Familiar with all Copilot features (chat, inline chat, slash commands, context variables)
+- ✅ Familiar with your AI coding tool's chat interface (Copilot Chat or the Claude Code REPL), inline/ad-hoc prompts, and slash or custom commands
 
 ---
 
@@ -45,23 +46,17 @@ You have basic tests from TDD, but need comprehensive coverage including edge ca
 
 Open `src/TaskManager.Application/Commands/CreateTaskCommandHandler.cs` and select the `HandleAsync` method.
 
-#### Step 2: Use /tests Command
+#### Step 2: Generate Tests
 
-With the method selected, open Copilot Chat (`Ctrl+Alt+I` / `Cmd+Shift+I`) and enter:
+With the method selected:
 
-``` text
-/tests
-```
-
-Or use Inline Chat (`Ctrl+I` / `Cmd+I`):
-
-``` text
-/tests
-```
+| <img src="../images/githubcopilot.svg" width="20" alt="GitHub Copilot" /> GitHub Copilot | <img src="../images/claude-color.svg" width="20" alt="Claude Code" /> Claude Code |
+|---|---|
+| Open Copilot Chat (`Ctrl+Alt+I` / `Cmd+Shift+I`) or Inline Chat (`Ctrl+I` / `Cmd+I`) and enter `/tests` | Paste or reference the method in the REPL and ask: `Generate xUnit tests for this method using FakeItEasy` (no `/tests` command defined yet — see `todo.md`) |
 
 #### Step 3: Review Generated Tests
 
-Copilot should generate comprehensive tests covering:
+Your AI coding tool should generate comprehensive tests covering:
 
 ```csharp
 namespace TaskManager.UnitTests.Commands.CreateTaskCommandHandlerTests;
@@ -355,13 +350,13 @@ Create comprehensive documentation for the Task Manager API.
 
 Open `src/TaskManager.Application/Commands/CreateTaskCommandHandler.cs` and select the class declaration.
 
-#### Step 2: Use /doc Command
+#### Step 2: Generate Documentation Comments
 
-With the class selected, use Inline Chat (`Ctrl+I`):
+With the class selected:
 
-``` text
-/doc
-```
+| <img src="../images/githubcopilot.svg" width="20" alt="GitHub Copilot" /> GitHub Copilot | <img src="../images/claude-color.svg" width="20" alt="Claude Code" /> Claude Code |
+|---|---|
+| Use Inline Chat (`Ctrl+I`) and enter `/doc` | Paste or reference the class in the REPL and ask: `Add XML documentation comments to this class` (no `/doc` command defined yet — see `todo.md`) |
 
 **Expected Output**:
 
@@ -414,11 +409,14 @@ public sealed class CreateTaskCommandHandler
 
 ### 2.2 Generate API Documentation (README)
 
-Ask Copilot Chat:
+Reference the README file explicitly so the new section merges cleanly:
 
+| <img src="../images/githubcopilot.svg" width="20" alt="GitHub Copilot" /> GitHub Copilot | <img src="../images/claude-color.svg" width="20" alt="Claude Code" /> Claude Code |
+|---|---|
+| Ask Copilot Chat, using the `#file` context variable: `#file:README.md` | Ask in the REPL, using an `@` file mention: `@README.md` |
 
 ```
-Create an API documentation section for #file:README.md that documents all the Task Manager API endpoints (POST, GET, GET by ID, PUT, DELETE). Include:
+Create an API documentation section for <file-reference> that documents all the Task Manager API endpoints (POST, GET, GET by ID, PUT, DELETE). Include:
 - Endpoint URL
 - HTTP method
 - Request body examples
@@ -427,6 +425,8 @@ Create an API documentation section for #file:README.md that documents all the T
 - Error responses
 Format as Markdown
 ```
+
+Replace `<file-reference>` with `#file:README.md` (Copilot) or `@README.md` (Claude Code).
 
 **Expected Output** - Added to `README.md`:
 
@@ -622,7 +622,7 @@ All error responses follow [RFC 7807 Problem Details](https://datatracker.ietf.o
 
 ### 2.3 Generate Architecture Documentation (ADR)
 
-Ask Copilot:
+Ask your AI coding tool:
 
 ```text
 Create an Architecture Decision Record (ADR) in docs/adr/001-clean-architecture-choice.md documenting why we chose Clean Architecture for this Task Manager application. Include:
@@ -651,7 +651,7 @@ git add tests/TaskManager.IntegrationTests/
 
 ### 3.2 Generate Commit Message
 
-In Copilot Chat:
+In your AI coding tool's chat/REPL:
 
 ```text
 Write a Conventional Commit message for the staged changes. Include a concise subject line (<=72 chars) and a detailed body explaining what was added.
@@ -698,7 +698,7 @@ git add src/TaskManager.Infrastructure/Legacy/LegacyTaskProcessor.cs
 git add tests/TaskManager.UnitTests/Legacy/
 ```
 
-Ask Copilot:
+Ask your AI coding tool:
 
 ```text
 Write a Conventional Commit message for refactoring LegacyTaskProcessor. Include details about what was improved (async/await, guard clauses, logging, extracted methods).
@@ -748,7 +748,7 @@ You've completed the workshop implementation. Create a comprehensive PR descript
 
 ### 4.1 Generate PR Description
 
-In Copilot Chat (Copilot automatically includes workspace context):
+In your AI coding tool's chat/REPL (both automatically include workspace context):
 
 ```text
 Draft a Pull Request description for all the changes made in this branch. Include:
@@ -816,7 +816,7 @@ This PR implements a complete CRUD API for task management following Clean Archi
 
 ## Intent & Motivation
 This implementation serves as a reference for:
-- AI-assisted development workflow with GitHub Copilot
+- AI-assisted development workflow with GitHub Copilot and Claude Code
 - Clean Architecture in .NET 9
 - TDD practices (Red-Green-Refactor)
 - DDD patterns in practice
@@ -851,7 +851,7 @@ None - Uses in-memory repository for workshop purposes
 Please verify:
 - [ ] All tests pass (`dotnet test`)
 - [ ] Build succeeds with no warnings (`dotnet build`)
-- [ ] Code follows our .NET conventions (automatically loaded from `.github/instructions/`)
+- [ ] Code follows our .NET conventions (automatically loaded from `.github/instructions/` for Copilot, or `CLAUDE.md` for Claude Code)
 - [ ] Clean Architecture dependencies respected (no circular references)
 - [ ] Domain logic stays in Domain layer (no business logic in API/Infrastructure)
 - [ ] All public APIs have XML documentation
@@ -898,14 +898,14 @@ Review the generated PR description and adjust:
 
 ### ✅ Testing Best Practices
 
-1. **/tests Command**: Generates comprehensive test suites instantly
+1. **Test Generation**: `/tests` in Copilot, a direct prompt in Claude Code — generates comprehensive test suites instantly
 2. **Test Coverage**: Happy path, edge cases, error conditions, cancellation
 3. **Test Organization**: Feature-based folders, class-per-method files
 4. **Integration Tests**: WebApplicationFactory for full API testing
 
 ### ✅ Documentation Efficiency
 
-1. **/doc Command**: XML documentation generated from code context
+1. **Doc Generation**: `/doc` in Copilot, a direct prompt in Claude Code — XML documentation generated from code context
 2. **API Docs**: Clear examples with request/response formats
 3. **Architecture Docs**: ADRs document important decisions
 4. **Consistency**: AI ensures consistent documentation style
@@ -919,7 +919,7 @@ Review the generated PR description and adjust:
 
 ### ✅ Code Review Preparation
 
-1. **Automatic Workspace Context**: Full codebase understanding for PR description
+1. **Automatic Workspace Context**: Full codebase understanding for PR description (both Copilot and Claude Code)
 2. **Comprehensive PRs**: All changes documented and explained
 3. **Reviewer Checklist**: Clear acceptance criteria
 4. **Impact Analysis**: Breaking changes, migrations, deployment notes
@@ -930,7 +930,7 @@ Review the generated PR description and adjust:
 
 ### Exercise 1: Generate CHANGELOG.md
 
-Ask Copilot to generate a CHANGELOG.md file from your commit history:
+Ask your AI coding tool to generate a CHANGELOG.md file from your commit history:
 
 ```text
 Generate a CHANGELOG.md file based on the git commit history. Group by version, follow Keep a Changelog format.
@@ -943,7 +943,7 @@ Generate CONTRIBUTING.md with guidelines for contributors:
 ```text
 Create a CONTRIBUTING.md file that explains:
 - How to set up the development environment
-- Coding conventions (reference .github/instructions/ for context-aware standards)
+- Coding conventions (reference .github/instructions/ for Copilot, or CLAUDE.md for Claude Code, for context-aware standards)
 - Testing requirements
 - PR process
 - Commit message format
@@ -963,8 +963,8 @@ Create a quick start guide in docs/guides/api-quickstart.md for developers consu
 
 You've completed this lab successfully when:
 
-- ✅ Comprehensive test suite generated with `/tests` (unit + integration)
-- ✅ All public APIs have XML documentation via `/doc`
+- ✅ Comprehensive test suite generated (unit + integration) via `/tests` in Copilot or a direct prompt in Claude Code
+- ✅ All public APIs have XML documentation via `/doc` in Copilot or a direct prompt in Claude Code
 - ✅ API documentation in README.md with examples
 - ✅ Conventional Commit messages written for all changes
 - ✅ Complete PR description drafted using full workspace context
@@ -981,8 +981,8 @@ Congratulations! You've completed all four labs. You now know how to:
 ### ✅ Test-Driven Development (Lab 1)
 
 - Follow Red-Green-Refactor cycle
-- Use Copilot to generate tests before implementation
-- Apply Copilot Instructions for consistent code quality
+- Use GitHub Copilot or Claude Code to generate tests before implementation
+- Apply repo instructions (`.github/copilot-instructions.md` / `CLAUDE.md`) for consistent code quality
 
 ### ✅ Requirements to Code (Lab 2)
 
@@ -994,9 +994,9 @@ Congratulations! You've completed all four labs. You now know how to:
 ### ✅ Code Generation & Refactoring (Lab 3)
 
 - Generate complete API endpoints with context
-- Refactor legacy code with `/refactor`
+- Refactor legacy code (`/refactor` in Copilot, a direct prompt in Claude Code)
 - Apply Object Calisthenics principles
-- Use Copilot Edits for multi-file changes
+- Use Copilot Edits or the Claude Code REPL for multi-file changes
 
 ### ✅ Testing, Documentation & Workflow (Lab 4)
 
@@ -1009,19 +1009,19 @@ Congratulations! You've completed all four labs. You now know how to:
 
 ## Troubleshooting
 
-### /tests Generates Incomplete Tests
+### Generated Tests Are Incomplete
 
 **Problem**: Tests don't cover all edge cases  
-**Solution**: Be explicit: "/tests including edge cases, error handling, and cancellation"
+**Solution**: Be explicit: "Generate tests including edge cases, error handling, and cancellation" (or `/tests including edge cases, error handling, and cancellation` in Copilot)
 
-### /doc Generates Generic Comments
+### Generated Documentation Is Too Generic
 
 **Problem**: XML comments don't add value beyond method signature  
 **Solution**: Select more context (class + method), provide business context in prompt
 
 ### Commit Message Too Generic
 
-**Problem**: Copilot generates "Update files" type messages  
+**Problem**: Your AI coding tool generates "Update files" type messages  
 **Solution**: Stage related changes only, provide context: "Write commit for adding GET endpoints"
 
 ### PR Description Missing Details
@@ -1035,16 +1035,16 @@ Congratulations! You've completed all four labs. You now know how to:
 
 ### Apply to Real Projects
 
-1. Add context-aware instruction files (`.github/instructions/`) to your team's repositories
+1. Add always-loaded repo instructions (`.github/copilot-instructions.md` for Copilot, `CLAUDE.md` for Claude Code) to your team's repositories
 2. Establish Conventional Commits standard
-3. Use `/tests` for all new code
-4. Use `/doc` for public APIs
-5. Trust Copilot's automatic workspace context in daily work
+3. Use `/tests` (Copilot) or a direct prompt (Claude Code) for all new code
+4. Use `/doc` (Copilot) or a direct prompt (Claude Code) for public APIs
+5. Trust your AI coding tool's automatic workspace context in daily work
 
-### Advanced Copilot Usage
+### Advanced Usage
 
-1. Custom instructions for team-specific patterns
-2. Copilot for Business with organization policies
+1. Custom instructions for team-specific patterns (Copilot custom instructions, Claude Code `CLAUDE.md`)
+2. Organization-wide policies (Copilot for Business, Claude Code enterprise settings)
 3. Fine-tuned models for domain-specific code
 4. Integration with CI/CD pipelines
 
@@ -1064,4 +1064,5 @@ Congratulations! You've completed all four labs. You now know how to:
 - [Keep a Changelog](https://keepachangelog.com/)
 - [RFC 7807 Problem Details](https://tools.ietf.org/html/rfc7807)
 - [GitHub Copilot Best Practices](https://docs.github.com/en/copilot)
+- [Claude Code Documentation](https://docs.claude.com/en/docs/claude-code/overview)
 - [Clean Architecture by Uncle Bob](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html)
