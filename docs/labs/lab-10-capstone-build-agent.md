@@ -2,7 +2,7 @@
 
 **Module:** 5  
 **Duration:** 35 minutes  
-**Part:** Advanced GitHub Copilot (Part 2)
+**Part:** Advanced GitHub Copilot / Claude Code (Part 2)
 
 ## Objectives
 
@@ -15,12 +15,12 @@ By the end of this lab, you will:
 ## Prerequisites
 
 - Completion of [Lab 09: Agent Design](lab-09-agent-design.md)
-- VS Code with GitHub Copilot extension
+- VS Code with the GitHub Copilot extension, and/or Claude Code installed
 - Access to the TaskManager workshop repository (.NET)
 - Understanding of agent components and design patterns
 - Familiarity with .NET and C#
 
-> **Note**: Most of the lab is technology-agnostic, focusing on agent design principles. Where stack-specific context is helpful, examples use .NET.
+> **Note**: Most of the lab is technology-agnostic, focusing on agent design principles. Where stack-specific context is helpful, examples use .NET. You'll build a single agent definition and adapt it for whichever tool(s) you use — the seven-component model from Lab 09 is shared across both.
 
 ## Overview
 
@@ -96,7 +96,18 @@ Before writing instructions, define what "good" looks like for your agent.
 
 ## Step 3: Create the Agent Definition (15 minutes)
 
-Create a new file: `.github/agents/[your-agent-name].agent.md`
+Choose your file location and frontmatter based on the tool(s) you're targeting:
+
+| <img src="../images/githubcopilot.svg" width="20" alt="GitHub Copilot" /> GitHub Copilot | <img src="../images/claude-color.svg" width="20" alt="Claude Code" /> Claude Code |
+|---|---|
+| Create `.github/agents/[your-agent-name].agent.md` | Create `.claude/agents/[your-agent-name].md` |
+| `tools:` is an array (e.g. `['read', 'search']`) | `tools:` is a comma-separated list (e.g. `Read, Grep, Glob`) |
+| Optionally add `user-invocable`, `disable-model-invocation`, `agents`, `argument-hint`, or `handoffs` (see Lab 09) | These advanced properties aren't supported — keep the frontmatter to `name`, `description`, `tools`, `model` |
+
+The body — Identity, Responsibilities, Context, Constraints, Process, Output
+Format, Tone — is identical either way. If you're targeting both tools,
+write the body once and copy it into both files, adjusting only the
+frontmatter.
 
 Use this template and customize for your agent:
 
@@ -104,7 +115,7 @@ Use this template and customize for your agent:
 ---
 name: "[agent-name]"
 description: '[Brief description of what this agent does]'
-tools: [changes]  # or [] if no tools needed
+tools: [changes]  # Copilot: array, e.g. ['read', 'search']. Claude Code: comma list, e.g. Read, Grep
 model: Claude Sonnet 4
 ---
 
@@ -178,9 +189,13 @@ Provide your [review/analysis/report] in this structured format:
 - Missing `CancellationToken` parameters in async methods
 ```
 
+For reference, the workshop's own `.claude/agents/architecture-reviewer.md`,
+`backlog-generator.md`, and `test-strategist.md` follow this same structure —
+review them before writing your own.
+
 ### Instructions
 
-1. Create the file `.github/agents/[your-agent-name].agent.md`
+1. Create the file (`.github/agents/[your-agent-name].agent.md` and/or `.claude/agents/[your-agent-name].md`)
 2. Fill in all sections based on your chosen role
 3. Be specific in constraints and output format
 4. Include examples where helpful
@@ -191,10 +206,12 @@ Provide your [review/analysis/report] in this structured format:
 
 ### Test Procedure
 
-1. **Open Copilot Chat** in Agent Mode
-2. **Select your custom agent** from the dropdown
-3. **Run each test scenario** you defined in Step 2
-4. **Record the results:**
+| <img src="../images/githubcopilot.svg" width="20" alt="GitHub Copilot" /> GitHub Copilot | <img src="../images/claude-color.svg" width="20" alt="Claude Code" /> Claude Code |
+|---|---|
+| 1. Open Copilot Chat in Agent Mode<br>2. Select your custom agent from the dropdown | 1. Open the Claude Code REPL<br>2. Mention `@[your-agent-name]`, or let Claude auto-delegate based on the `description` |
+
+1. **Run each test scenario** you defined in Step 2
+2. **Record the results:**
    - Did the agent follow the output format?
    - Did it meet your success criteria?
    - Were there unexpected behaviors?
@@ -257,7 +274,7 @@ Based on your test results, refine your agent:
 ### Refinement Process
 
 1. Identify the top 2-3 issues from testing
-2. Update your agent's instructions
+2. Update your agent's instructions (in `.github/agents/` and/or `.claude/agents/`)
 3. **Re-test** with the same scenarios
 4. Repeat until success criteria are met
 
@@ -270,6 +287,8 @@ Create a brief usage guide for your agent:
 ### Agent Documentation Template
 
 **Agent Name:** [Your agent name]
+
+**Available In:** [ ] GitHub Copilot (`.github/agents/`)  [ ] Claude Code (`.claude/agents/`)
 
 **Purpose:** [One-sentence description]
 
@@ -308,7 +327,7 @@ Create a brief usage guide for your agent:
 
 At the end of this lab, you should have:
 
-✅ A custom agent definition file (`.github/agents/[name].agent.md`)  
+✅ A custom agent definition file (`.github/agents/[name].agent.md` and/or `.claude/agents/[name].md`)  
 ✅ Test results showing the agent meets success criteria  
 ✅ Usage documentation for team members  
 ✅ At least one iteration/refinement based on testing
@@ -318,7 +337,7 @@ At the end of this lab, you should have:
 ## Group Share (If in Workshop Setting)
 
 **Demonstrate your agent:**
-1. Show the agent name and purpose
+1. Show the agent name, purpose, and which tool(s) it targets
 2. Run a live demo with a test scenario
 3. Show the structured output
 4. Share one key design decision you made
@@ -337,7 +356,8 @@ At the end of this lab, you should have:
 ✅ **Test early and often** - Don't wait until it's "perfect"  
 ✅ **Iterate based on real usage** - Agents improve over time  
 ✅ **Document for others** - Agents are team assets, not personal tools  
-✅ **Keep scope focused** - Better to excel at one thing than be mediocre at many
+✅ **Keep scope focused** - Better to excel at one thing than be mediocre at many  
+✅ **Author once, adapt twice** - The seven-component model transfers directly between Copilot `.agent.md` files and Claude Code `.claude/agents/*.md` subagents
 
 ---
 
@@ -350,6 +370,7 @@ At the end of this lab, you should have:
 3. **Document edge cases** and limitations
 4. **Add to the team catalog** ([docs/guides/custom-agent-catalog.md](../guides/custom-agent-catalog.md))
 5. **Set up governance** (review process, versioning)
+6. **Decide which tool(s) to maintain it for** — a single team may standardize on Copilot, Claude Code, or keep both in sync
 
 ### Continuous Improvement
 
@@ -375,7 +396,7 @@ Create a **second agent** that complements your first one. For example:
 
 ## Workshop Conclusion (Module 6)
 
-Congratulations! You've completed the Advanced GitHub Copilot workshop.
+Congratulations! You've completed the Advanced GitHub Copilot / Claude Code workshop.
 
 ### What You've Learned
 
@@ -383,7 +404,7 @@ Congratulations! You've completed the Advanced GitHub Copilot workshop.
 - ✅ When and how to use custom agents
 - ✅ How to design reliable, role-based agents
 - ✅ Iteration and governance for agent maintenance
-- ✅ Hands-on experience building a production-ready agent
+- ✅ Hands-on experience building a production-ready agent for one or both tools
 
 ### Putting It Into Practice
 
@@ -398,6 +419,7 @@ Congratulations! You've completed the Advanced GitHub Copilot workshop.
 2. **What agents should be standardized across your team?**
 3. **How will you prevent "prompt sprawl" as agents proliferate?**
 4. **Who will own agent governance on your team?**
+5. **Will your team standardize on one AI coding tool, or maintain agents for both?**
 
 ---
 
@@ -407,9 +429,10 @@ Congratulations! You've completed the Advanced GitHub Copilot workshop.
 - [Agent Governance](../guides/agent-governance.md)
 - [Custom Agent Catalog](../guides/custom-agent-catalog.md)
 - [GitHub Documentation: Custom Agents](https://docs.github.com/copilot)
+- [Claude Code Documentation: Subagents](https://docs.claude.com/en/docs/claude-code/sub-agents)
 
 ---
 
-**Thank you for participating in Advanced GitHub Copilot!**
+**Thank you for participating in Advanced GitHub Copilot / Claude Code!**
 
 Questions or feedback? [Open an issue](../../CONTRIBUTING.md) or reach out to the workshop facilitators.
