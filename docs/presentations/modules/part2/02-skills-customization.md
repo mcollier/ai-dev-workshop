@@ -117,9 +117,9 @@ Shared across your projects - create `~/.agents/skills` in your local home direc
 
 ## Recommended Skills
 
-- Lots available on [skills.sh](https://skills.sh)
+- Lots available on [skills.sh](https://www.skills.sh)
 - Awesome Copilot at [https://awesome-copilot.github.com/](https://awesome-copilot.github.com/)
-- Matt Pocock's skills at [https://www.aihero.dev/skills](https://www.aihero.dev/skills/)
+- Matt Pocock's skills at [https://www.aihero.dev/skills](https://www.aihero.dev/skills)
 - Addy Osmani's skills at [https://skills.addy.ie/](https://skills.addy.ie/)
 - Microsoft's HVE Core at [https://microsoft.github.io/hve-core](https://microsoft.github.io/hve-core/)
 - .NET skills at [https://github.com/dotnet/skills/](https://github.com/dotnet/skills/)

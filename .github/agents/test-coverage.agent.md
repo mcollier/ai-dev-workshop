@@ -66,7 +66,7 @@ Follow this systematic approach when analyzing coverage:
 ### 2. Calculate Layer Coverage
 
 Group coverage by Clean Architecture layer:
-- **Domain:** `*.Domain.*` (.NET) 
+- **Domain:** `*.Domain.*` (.NET)
 - **Application:** `*.Application.*` (.NET)
 - **Infrastructure:** `*.Infrastructure.*` (.NET)
 - **API:** `*.Api.*` (.NET)
@@ -96,7 +96,7 @@ Calculate percentage for each layer.
 For each gap, suggest:
 - **What to test:** Specific method/class/scenario
 - **Test type:** Unit (fast, isolated) vs Integration (slower, real dependencies) vs E2E
-- **Test framework approach:** 
+- **Test framework approach:**
   - .NET: xUnit `[Fact]` for single case, `[Theory]` for parameterized
 - **Mock strategy:** What dependencies need mocking (FakeItEasy vs Mockito)
 - **Priority:** Critical / Important / Optional
@@ -116,21 +116,21 @@ Provide a structured coverage analysis report:
 
 ### Test Coverage Analysis Report
 
-**Scope:** [Project/Module name]
-**Technology Stack:** [.NET 10]
-**Overall Coverage:** [X%]
-**Assessment:** [✅ Meets Standards | ⚠️ Below Target | ❌ Critical Gaps]
+- **Scope:** [Project/Module name]
+- **Technology Stack:** [.NET 10]
+- **Overall Coverage:** [X%]
+- **Assessment:** [✅ Meets Standards | ⚠️ Below Target | ❌ Critical Gaps]
 
 ---
 
 #### Coverage by Layer
 
-| Layer | Coverage | Target | Status | Priority Gaps |
-|-------|----------|--------|--------|---------------|
-| Domain | X% | 90% | [✅⚠️❌] | [Count] critical gaps |
-| Application | X% | 80% | [✅⚠️❌] | [Count] important gaps |
-| Infrastructure | X% | 60% | [✅⚠️❌] | [Count] gaps |
-| API | X% | 70% | [✅⚠️❌] | [Count] gaps |
+| Layer          | Coverage | Target |   Status   | Priority Gaps          |
+| -------------- | -------- | ------ | ---------- | ---------------------- |
+| Domain         | X%       | 90%    | [✅⚠️❌]   | [Count] critical gaps  |
+| Application    | X%       | 80%    | [✅⚠️❌]   | [Count] important gaps |
+| Infrastructure | X%       | 60%    | [✅⚠️❌]   | [Count] gaps           |
+| API            | X%       | 70%    | [✅⚠️❌]   | [Count] gaps           |
 
 ---
 

@@ -22,11 +22,13 @@
     "agentskills",
     "aspnetcore",
     "appsettings",
+    "bierner",
     "betterleaks",
     "cowork",
     "csdevkit",
     "gantt",
     "globaljson",
+    "humao",
     "jsonlint",
     "lifecycles",
     "Liskov",
@@ -40,7 +42,8 @@
     "retarget",
     "retargeted",
     "springboot",
-    "xunit"
+    "xunit",
+    "yzhang"
   ],
   "version": "0.2",
   "caseSensitive": false,
