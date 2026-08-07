@@ -12,27 +12,23 @@ Use this checklist to verify your environment is ready **before** attending the 
 
 ## ✅ Required Setup (Complete Before Workshop)
 
-### 1. GitHub Account & Copilot Subscription
+### 1. GitHub Account and Copilot or Claude Code
 
 - [ ] **GitHub account created**
   - Visit [github.com](https://github.com) to sign up if needed
-  
-- [ ] **GitHub Copilot subscription active**
-  - Individual: $10/month or $100/year
-  - Business or Enterprise: Through your organization
-  
-- [ ] **Verify subscription status**
-  1. Go to [github.com/settings/copilot](https://github.com/settings/copilot)
-  2. Should show "GitHub Copilot is active"
-  3. Note your subscription type (Individual/Business/Free)
+- [ ] Install and verify either GitHub Copilot or Claude Code
 
-**Troubleshooting:**
-- If no subscription: Visit [github.com/features/copilot](https://github.com/features/copilot) to subscribe
-- If using Business/Organization: Contact your admin to be added
+|              | GitHub Copilot                                     | Claude Code                                   |
+| ------------ | -------------------------------------------------- | --------------------------------------------- |
+| Access       | GitHub Copilot license                             | Claude account / organizational access        |
+| Install      | VS Code extension and/or `copilot` CLI             | `claude` CLI and optionally VS Code extension |
+| Verify       | Sign-in -> run Copilot chat panel or `copilot` CLI | `claude` CLI                                  |
+| Troubleshoot | Verify login, license, and org policies            | `claude /doctor`                               |
 
-### Claude Account
-
-_TODO_
+#### Verify GitHub Copilot subscription status
+1. Go to [github.com/settings/copilot](https://github.com/settings/copilot)
+1. Should show "GitHub Copilot is active"
+1. Note your subscription type (Individual/Business/Free)
 
 ---
 
@@ -364,6 +360,7 @@ If you encounter issues completing this checklist:
 
 2. **Official documentation**:
    - [GitHub Copilot Docs](https://docs.github.com/en/copilot)
+   - [Claude Code Docs](https://code.claude.com/docs/en/overview)
    - [.NET Installation Guide](https://learn.microsoft.com/en-us/dotnet/core/install/)
    - [VS Code Setup](https://code.visualstudio.com/docs/setup/setup-overview)
 

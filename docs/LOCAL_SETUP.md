@@ -4,7 +4,9 @@ Use this guide if you **cannot run Dev Containers** (Docker not available, corpo
 
 ---
 
-## 📋 Required for Both Tracks
+## 📋 Required
+
+You will need Visual Studio Code, a GitHub account and either GitHub Copilot or Claude Code.
 
 ### 1. GitHub Account & Copilot Subscription
 
@@ -12,12 +14,18 @@ Use this guide if you **cannot run Dev Containers** (Docker not available, corpo
 - [ ] **GitHub Copilot subscription active**
   - Individual: $10/month or $100/year
   - Business: Assigned by your organization admin
-  - Students/Teachers: Free via [GitHub Education](https://education.github.com/)
 - [ ] **Verify subscription** at [github.com/settings/copilot](https://github.com/settings/copilot) — should show "GitHub Copilot is active"
 
 ---
 
-### 2. Git
+### 2. Claude Code (optional if using GitHub Copilot)
+
+- [ ] **Claude subscription** - [Claude subscription](https://claude.com/product/claude-code)
+- [ ] A Pro, Max, Team, or Enterprise account
+
+---
+
+### 3. Git
 
 - [ ] **Install Git**
   - **macOS**: `xcode-select --install` or via [Homebrew](https://brew.sh/): `brew install git`
@@ -32,31 +40,31 @@ Use this guide if you **cannot run Dev Containers** (Docker not available, corpo
 
 ---
 
-### 3. Visual Studio Code
+### 4. Visual Studio Code
 
-- [ ] **Install VS Code** (version 1.95 or later) — [code.visualstudio.com](https://code.visualstudio.com/)
+- [ ] **Install VS Code** (version 1.98 or later) — [code.visualstudio.com](https://code.visualstudio.com/)
 - [ ] **Verify**: `code --version`
 - [ ] **macOS extra step**: Open Command Palette (`Cmd+Shift+P`) → "Shell Command: Install 'code' command in PATH"
 
 ---
 
-### 4. Required VS Code Extensions (Both Tracks)
+### 5. VS Code Extensions
 
-Install these regardless of which technology track you choose:
-
-| Extension           | ID                           | Purpose                                |
-| ------------------- | ---------------------------- | -------------------------------------- |
-| GitHub Copilot      | `GitHub.copilot`             | Inline AI completions                  |
-| GitHub Copilot Chat | `GitHub.copilot-chat`        | Chat interface, agents, instructions   |
-| REST Client         | `humao.rest-client`          | Test HTTP endpoints from `.http` files |
-| Markdown Mermaid    | `bierner.markdown-mermaid`   | Diagram previews in Markdown           |
-| Marp for VS Code    | `marp-team.marp-vscode`      | Workshop slide previews                |
-| Markdown All in One | `yzhang.markdown-all-in-one` | Markdown editing helpers               |
+| Extension               | ID                           | Purpose                                  |
+| ----------------------- | ---------------------------- | ---------------------------------------- |
+| GitHub Copilot          | `GitHub.copilot`             | Inline AI completions                    |
+| GitHub Copilot Chat     | `GitHub.copilot-chat`        | Chat interface, agents, instructions     |
+| Claude Code for VS Code | `anthropic.claude-code`      | Provide Claude Code interface in VS Code |
+| REST Client             | `humao.rest-client`          | Test HTTP endpoints from `.http` files   |
+| Markdown Mermaid        | `bierner.markdown-mermaid`   | Diagram previews in Markdown             |
+| Marp for VS Code        | `marp-team.marp-vscode`      | Workshop slide previews                  |
+| Markdown All in One     | `yzhang.markdown-all-in-one` | Markdown editing helpers                 |
 
 **Install via command line** (copy/paste all at once):
 ```bash
 code --install-extension GitHub.copilot
 code --install-extension GitHub.copilot-chat
+code --install-extension anthropic.claude-code
 code --install-extension humao.rest-client
 code --install-extension bierner.markdown-mermaid
 code --install-extension marp-team.marp-vscode
@@ -67,7 +75,7 @@ After installing, sign in to GitHub when VS Code prompts you to activate Copilot
 
 ---
 
-### 5. Clone the Repository
+### 6. Clone the Repository
 
 ```bash
 git clone https://github.com/mcollier/ai-dev-workshop.git
@@ -156,7 +164,6 @@ After setup, confirm Copilot is active:
 
 1. Open a source file in VS Code:
    - **.NET**: `src/TaskManager.Domain/Tasks/Task.cs`
-   - **Java**: any file in `src-springboot/`
 2. Check the **status bar** (bottom-right of VS Code window) — the Copilot icon should be active (not red/crossed out)
 3. Add a new line and type a comment, e.g., `// Method to validate task title`
 4. Press Enter — you should see gray "ghost text" suggestions
@@ -165,7 +172,7 @@ After setup, confirm Copilot is active:
 
 **Copilot Chat test:**
 1. Open Copilot Chat: `Cmd/Ctrl+Shift+I` (or click the chat icon in the sidebar)
-2. Type: `@workspace What testing frameworks are used in this project?`
+2. Type: `What testing frameworks are used in this project?`
 3. You should get a relevant response — ✅ Copilot is working!
 
 **Not working?**
