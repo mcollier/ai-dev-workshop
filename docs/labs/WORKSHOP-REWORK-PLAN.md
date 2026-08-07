@@ -95,7 +95,7 @@ logos in `docs/images/` to make the columns visually scannable at a glance:
 | Lab 9 – Agent Design | Keep tool-agnostic (design principles apply to both); add a short "authoring for both tools" note | ✅ |
 | Lab 10 – Capstone | Update template so participants build one agent definition and adapt it for both tools | ✅ |
 | ~~Bonus – Test Planning~~ | Deleted per user decision — no longer part of the lab set | — |
-| README.md | Update tech stack section (mention both tools), fix/remove broken `../guides/` and `../presentations/` links. Timing table left as-is for now. | ⬜ |
+| README.md | Update tech stack section (mention both tools), fix/remove broken `../guides/` and `../presentations/` links. Timing table removed per user decision. | ✅ |
 
 ## Open Questions for User
 
