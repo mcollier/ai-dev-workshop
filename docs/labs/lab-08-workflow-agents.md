@@ -2,28 +2,38 @@
 
 **Module:** 3  
 **Duration:** 45 minutes  
-**Part:** Advanced GitHub Copilot (Part 2)
+**Part:** Advanced GitHub Copilot / Claude Code (Part 2)
 
 ## Objectives
 
 By the end of this lab, you will:
 - Apply custom agents to real development workflows
-- Compare agent outputs to standard Copilot Chat responses
+- Compare agent outputs to standard chat responses
 - Evaluate reliability and consistency differences
 - Understand when agents provide meaningful value over ad-hoc prompting
 
 ## Prerequisites
 
 - Completion of [Lab 07: Custom Agents Intro](lab-07-custom-agents-intro.md)
-- VS Code with GitHub Copilot extension
+- VS Code with the GitHub Copilot extension, and/or Claude Code installed
 - Access to the TaskManager workshop repository
 - Familiarity with the three custom agents (Architecture Reviewer, Backlog Generator, Test Strategist)
+
+> **Known gap:** as noted in [Lab 07](lab-07-custom-agents-intro.md#where-agents-live),
+> the `.github/agents/*.agent.md` files for these three agents are **not yet
+> scaffolded** in this repo (tracked as a bug in `todo.md`). The Claude Code
+> equivalents at `.claude/agents/architecture-reviewer.md`,
+> `.claude/agents/backlog-generator.md`, and `.claude/agents/test-strategist.md`
+> **do exist**, so Claude Code users can complete every scenario below as
+> written. Copilot users should read the linked `.claude/agents/*.md` file for
+> each scenario and paste its prompt body into standard Copilot Chat as a
+> stand-in until the `.agent.md` files are authored.
 
 ## Lab Structure
 
 You'll work through **3 workflow scenarios**, each testing a different agent. For each scenario, you'll:
 
-1. **First:** Use standard Copilot Chat (no agent)
+1. **First:** Use standard chat (no agent)
 2. **Second:** Use the appropriate custom agent
 3. **Compare:** Document differences in quality, structure, and consistency
 
@@ -42,11 +52,11 @@ You need to break this down into user stories with acceptance criteria.
 
 ---
 
-### Part A: Standard Copilot Chat
+### Part A: Standard Chat
 
 **Instructions:**
 
-1. Open Copilot Chat (no agent selected)
+1. Open standard chat (no agent selected)
 2. Use this prompt:
 
 ```
@@ -66,18 +76,20 @@ Include acceptance criteria.
 
 ### Part B: Backlog Generator Agent
 
+| <img src="../images/githubcopilot.svg" width="20" alt="GitHub Copilot" /> GitHub Copilot | <img src="../images/claude-color.svg" width="20" alt="Claude Code" /> Claude Code |
+|---|---|
+| 1. Switch to **Agent Mode**<br>2. Select **Backlog Generator** from the agent dropdown *(pending — see the gap callout above; use `.claude/agents/backlog-generator.md` as reference and paste its prompt body into standard Chat)* | 1. In the Claude Code REPL, mention `@backlog-generator` (defined at `.claude/agents/backlog-generator.md`) |
+
 **Instructions:**
 
-1. Switch to **Agent Mode**
-2. Select **Backlog Generator** from the agent dropdown
-3. Use the same (or similar) prompt:
+1. Use the same (or similar) prompt:
 
 ```
 Create user stories for a notification system in the TaskManager app.
 Users should get notifications when tasks are assigned, deadlines approach, or status changes.
 ```
 
-4. **Record the output**
+2. **Record the output**
 
 **Expected agent behavior:**
 - User stories in "As a... I want... So that..." format
@@ -146,11 +158,11 @@ public class NotificationService
 
 ---
 
-### Part A: Standard Copilot Chat
+### Part A: Standard Chat
 
 **Instructions:**
 
-1. Open Copilot Chat (no agent)
+1. Open standard chat (no agent)
 2. Open the `NotificationService.cs` file
 3. Prompt:
 
@@ -164,17 +176,19 @@ Review this NotificationService for Clean Architecture compliance and suggest im
 
 ### Part B: Architecture Reviewer Agent
 
+| <img src="../images/githubcopilot.svg" width="20" alt="GitHub Copilot" /> GitHub Copilot | <img src="../images/claude-color.svg" width="20" alt="Claude Code" /> Claude Code |
+|---|---|
+| 1. Switch to **Agent Mode**<br>2. Select **Architecture Reviewer** from dropdown *(pending — see the gap callout above; use `.claude/agents/architecture-reviewer.md` as reference and paste its prompt body into standard Chat)* | 1. In the Claude Code REPL, mention `@architecture-reviewer` (defined at `.claude/agents/architecture-reviewer.md`) |
+
 **Instructions:**
 
-1. Switch to **Agent Mode**
-2. Select **Architecture Reviewer** from dropdown
-3. Same prompt:
+1. Same prompt:
 
 ```
 Review this NotificationService for Clean Architecture compliance and suggest improvements.
 ```
 
-4. **Record the feedback**
+2. **Record the feedback**
 
 **Expected agent behavior:**
 - Structured review (Strengths, Concerns, Violations, Recommendations)
@@ -216,11 +230,11 @@ You need a test strategy.
 
 ---
 
-### Part A: Standard Copilot Chat
+### Part A: Standard Chat
 
 **Instructions:**
 
-1. Open Copilot Chat (no agent)
+1. Open standard chat (no agent)
 2. Prompt:
 
 ```
@@ -234,18 +248,20 @@ Validate user and task exist, record timestamp, emit domain event.
 
 ### Part B: Test Strategist Agent
 
+| <img src="../images/githubcopilot.svg" width="20" alt="GitHub Copilot" /> GitHub Copilot | <img src="../images/claude-color.svg" width="20" alt="Claude Code" /> Claude Code |
+|---|---|
+| 1. Switch to **Agent Mode**<br>2. Select **Test Strategist** from dropdown *(pending — see the gap callout above; use `.claude/agents/test-strategist.md` as reference and paste its prompt body into standard Chat)* | 1. In the Claude Code REPL, mention `@test-strategist` (defined at `.claude/agents/test-strategist.md`) |
+
 **Instructions:**
 
-1. Switch to **Agent Mode**
-2. Select **Test Strategist** from dropdown
-3. Same prompt:
+1. Same prompt:
 
 ```
 Propose test scenarios for a task assignment feature.
 Validate user and task exist, record timestamp, emit domain event.
 ```
 
-4. **Record the test scenarios**
+2. **Record the test scenarios**
 
 **Expected agent behavior:**
 - Categorized tests (unit, integration, edge cases)
@@ -332,3 +348,4 @@ In [Lab 09: Agent Design](lab-09-agent-design.md), you'll learn **how to design 
 - [Agent Scenario Examples](../../requirements/agent-scenarios/)
 - [Custom Agent Catalog](../guides/custom-agent-catalog.md)
 - [Agent Workflow Patterns Diagram](../design/diagrams/agent-workflow-patterns.md)
+- [Claude Code Documentation: Subagents](https://docs.claude.com/en/docs/claude-code/sub-agents)
