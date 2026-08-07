@@ -127,7 +127,7 @@ dotnet --version    # Should show 10.x.x
 ## Repository Structure
 
 ```bash
-TaskManager.sln
+TaskManager.slnx
 ├── src/
 │   ├── TaskManager.Domain/         # Business logic
 │   ├── TaskManager.Application/    # Use cases

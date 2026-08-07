@@ -118,7 +118,7 @@ code --install-extension ms-dotnettools.csdevkit
 ```bash
 # From the repository root
 dotnet restore
-dotnet build TaskManager.sln
+dotnet build TaskManager.slnx
 dotnet test
 ```
 
@@ -195,7 +195,7 @@ Run these commands the morning of the workshop to confirm everything is still se
 dotnet --version        # 10.0.x
 cd ai-dev-workshop
 git pull origin main
-dotnet build TaskManager.sln
+dotnet build TaskManager.slnx
 ```
 
 Then open VS Code (`code .`) and confirm the Copilot status bar icon is active.
