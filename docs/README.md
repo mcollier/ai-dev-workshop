@@ -163,7 +163,7 @@ Should display your name and email.
 
 ```bash
 git clone https://github.com/mcollier/ai-dev-workshop.git
-cd ai-coding-workshop
+cd ai-dev-workshop
 ```
 
 
@@ -389,7 +389,7 @@ Before the workshop, confirm:
 - [ ] Copilot inline suggestions work
 - [ ] Copilot Chat responds to queries
 - [ ] C# Dev Kit extension installed
-- [ ] .NET 10 SDK installed (`dotnet --version` shows 9.x.x)
+- [ ] .NET 10 SDK installed (`dotnet --version` shows 10.x.x)
 - [ ] Solution builds successfully (`dotnet build`)
 - [ ] Tests run and show 11 expected failures (`dotnet test`)
 

@@ -137,7 +137,7 @@ npx @marp-team/marp-cli modules/part2/*.md --pdf --pdf-notes --output part2-adva
 
 # Custom selection (specific modules only)
 npx @marp-team/marp-cli \
-  modules/part1/02-copilot-instructions-tdd.md \
+  modules/part1/02-instructions-tdd.md \
   modules/part1/03-requirements-to-code.md \
   modules/part2/02-skills-customization.md \
   --pdf --output custom-selection.pdf

@@ -52,7 +52,7 @@ backgroundColor: #fff
 
 ### Squad for GitHub Copilot
 - Human-led AI development team for GitHub Copilot.
-- Specialists agents (frontend, tester, designer, lead, scribe, lead.) in your repo.
+- Specialist agents (frontend, tester, designer, lead, scribe, lead) in your repo.
 - Parallel execution.
 - Persists decisions in markdown files; reference for the future.
 

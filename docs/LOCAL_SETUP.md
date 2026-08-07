@@ -71,7 +71,7 @@ After installing, sign in to GitHub when VS Code prompts you to activate Copilot
 
 ```bash
 git clone https://github.com/mcollier/ai-dev-workshop.git
-cd ai-coding-workshop
+cd ai-dev-workshop
 ```
 
 Create your personal branch:
@@ -193,7 +193,7 @@ Run these commands the morning of the workshop to confirm everything is still se
 **For .NET participants:**
 ```bash
 dotnet --version        # 10.0.x
-cd ai-coding-workshop
+cd ai-dev-workshop
 git pull origin main
 dotnet build TaskManager.sln
 ```

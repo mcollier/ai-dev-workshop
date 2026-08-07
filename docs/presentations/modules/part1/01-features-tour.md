@@ -128,7 +128,7 @@ _5 hour rolling usage limit window_
 
 `claude`
 
-- Powerfull, terminal-and-agent-first experience
+- Powerful, terminal-and-agent-first experience
 - Slash (`/`) commands to invoke direct the session or invoke skills
 - More features than IDE extension
 - Started here and added IDE support.

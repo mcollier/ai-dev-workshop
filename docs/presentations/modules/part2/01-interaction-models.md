@@ -66,7 +66,7 @@ section {
   font-size: 26px;
 }
 </style>
->
+
 ## Plan Mode: When to Use
 
 ✅ **Use when:**

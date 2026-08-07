@@ -450,7 +450,7 @@ After each test:
 **Solution:** Add context section
 ```markdown
 # Context
-This is a .NET 9 project using:
+This is a .NET 10 project using:
 - Clean Architecture
 - xUnit for testing
 - Entity Framework Core
