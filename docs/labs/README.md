@@ -381,26 +381,6 @@ Lab 10 (Build Your Own Agent)
 Apply to Real Projects! 🎉
 ```
 
-### Time Estimates
-
-| Lab | Minimum | Comfortable | With Extensions |
-| ----- | --------- | ------------- | ---------------- |
-| **Part 1** | | | |
-| Lab 1 | 20 min | 30 min | 40 min |
-| Lab 2 | 30 min | 45 min | 60 min |
-| Lab 3 | 30 min | 45 min | 60 min |
-| Lab 4 | 10 min | 15 min | 25 min |
-| **Part 1 Total** | **90 min** | **135 min** | **185 min** |
-| **Part 2** | | | |
-| Lab 6 | 20 min | 30 min | 40 min |
-| Lab 7 | 20 min | 30 min | 45 min |
-| Lab 8 | 15 min | 25 min | 35 min |
-| Lab 9 | 30 min | 45 min | 60 min |
-| **Part 2 Total** | **100 min** | **150 min** | **210 min** |
-| **Full Workshop** | **190 min** | **285 min** | **395 min** |
-
-> **Note**: Times include setup verification (~10 min) at workshop start.
-
 ---
 
 ## 🛠️ Workshop Technology Stack
