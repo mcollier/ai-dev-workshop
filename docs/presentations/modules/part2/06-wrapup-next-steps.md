@@ -44,7 +44,13 @@ backgroundColor: #fff
 
 ## Define Your Approach
 
-- Research -> Plan -> Implement -> Review
+Adopt a team-wide approach - everyone follows the same process (agents, skills, etc.)
+
+Org/Team plugin marketplace
+
+- Research -> Plan -> Implement -> Review (Microsoft HVE)
+- `/grill-me` and `/implement` (Matt Pocock)
+- `/spec` -> `/plan` -> `/build` -> `/test` -> `/review` -> `/ship` (Addy Osmani)
 - Spec-Driven Development ([GitHub Spec Kit](https://github.com/github/spec-kit))
 - BMad Method ([https://docs.bmad-method.org/](https://docs.bmad-method.org/))
 
