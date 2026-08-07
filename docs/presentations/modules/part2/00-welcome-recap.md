@@ -63,8 +63,7 @@ Module 2: Skills & Customization (30 min)
 Module 3: Custom Agents Intro (25 min)
 Module 4: Workflow Agents (30 min)
 Module 5: Agent Design (30 min)
-Module 6: Capstone Lab (35 min)
-Module 7: Wrap-Up & Governance (10 min)
+Module 6: Wrap-Up & Governance (10 min)
 ```
 
 ---
