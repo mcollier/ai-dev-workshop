@@ -41,7 +41,7 @@ Use this checklist to verify your environment is ready **before** attending the 
 Expected output:
 
 ``` bash
-1.95.0 (or later)
+1.98.0 (or later)
 ```
 
 **Platform-specific notes:**

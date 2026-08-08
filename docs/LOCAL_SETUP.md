@@ -189,7 +189,7 @@ After setup, confirm Copilot is active:
 | `dotnet: command not found`       | Restart terminal after install; check PATH                |
 | Copilot suggestions not appearing | Wait 1-2 seconds; check status bar icon; reload window    |
 | Build fails with "SDK not found"  | Confirm SDK version with `dotnet --list-sdks`             |
-| Extensions not loading            | Ensure VS Code 1.95+; reload window; reinstall extensions |
+| Extensions not loading            | Ensure VS Code 1.98+; reload window; reinstall extensions |
 
 ---
 
