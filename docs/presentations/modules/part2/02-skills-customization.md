@@ -60,7 +60,7 @@ mid-task as part of a larger workflow.
 | **Tool Access** | ❌ None | ✅ Read/write files |
 | **Invocation** | Slash command, or called by an agent | VS Code: `@agent-name`; Copilot CLI: `/agent`; Claude Code: auto-routed |
 | **Can invoke the other?** | ❌ No tool access, so a skill can't invoke an agent | ✅ Yes, an agent loads a skill for domain knowledge, then acts on it |
-| **Best For** | Patterns, examples | Multi-step tasks; codifying explicit context on how to carryout a process |
+| **Best For** | Patterns, examples | Multi-step tasks; codifying explicit context on how to carry out a process |
 
 ---
 
