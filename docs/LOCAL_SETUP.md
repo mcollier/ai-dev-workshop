@@ -31,7 +31,7 @@ You will need Visual Studio Code, a GitHub account and either GitHub Copilot or 
   - **macOS**: `xcode-select --install` or via [Homebrew](https://brew.sh/): `brew install git`
   - **Windows**: [git-scm.com/download/win](https://git-scm.com/download/win)
   - **Linux**: `sudo apt install git` / `sudo dnf install git`
-- [ ] **Verify**: `git --version` → `git version 2.30` or later
+- [ ] **Verify**: `git --version` → `git version 2.55` or later
 - [ ] **Configure identity**:
   ```bash
   git config --global user.name "Your Name"
