@@ -36,3 +36,7 @@
 - [ ] Scaffold real `.claude/` files (commands, skills, subagents) mirroring the existing `.github/` ones — deferred; for now the labs only describe Claude Code steps in comparison tables
 - [x] `@workspace` is no longer current (superseded by automatic workspace context / `#codebase`) — updated the labs, but presentations, guidebooks, and other materials still need the same fix once integrated
 - [ ] Fix or remove the stale `../guides/` and `../presentations/` links in docs/labs/README.md and lab files — being addressed later once that content is integrated
+- [ ] Update root README and docs/presentations/README to not reference GitHub Copilot; same for docs/labs/README
+- [ ] Remove ms-dotnettools.csharp from setup instructions
+- [ ] Add Claude Code check in lab setup instructions
+- [ ] Add Additional Resources - Claude Code docs links
