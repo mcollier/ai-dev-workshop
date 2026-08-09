@@ -45,16 +45,16 @@ about lab content and structure only.
 
 ## Copilot ↔ Claude Code Concept Mapping (to embed per-lab)
 
-| GitHub Copilot | Claude Code | Notes |
-|---|---|---|
-| Copilot Chat (Ask/Edit/Agent mode) | Claude Code interactive REPL | Both support conversational + agentic modes |
-| `/tests`, `/doc`, `/refactor`, `/check` slash commands | Custom slash commands in `.claude/commands/*.md` | Need to author equivalent commands |
-| `.github/copilot-instructions.md` | `CLAUDE.md` (repo root) | Both are always-loaded repo context |
-| `.github/instructions/*.instructions.md` (path-scoped) | No direct path-scoped equivalent — closest is `CLAUDE.md` sections or imported files | Needs guidance on how to approximate |
-| `.github/skills/*/SKILL.md` | Claude Code Skills (`.claude/skills/*/SKILL.md`) | Same shape, format is compatible |
-| `.github/agents/*.agent.md` (custom agents) | Claude Code subagents (`.claude/agents/*.md`) | Similar YAML frontmatter + prompt body pattern |
-| `@workspace` context | Automatic project context / `@file` mentions | Different context injection model |
-| Agent picker dropdown | `/agents` command or CLI flag | |
+| GitHub Copilot                                         | Claude Code                                                                          | Notes                                          |
+| ------------------------------------------------------ | ------------------------------------------------------------------------------------ | ---------------------------------------------- |
+| Copilot Chat (Ask/Edit/Agent mode)                     | Claude Code interactive REPL                                                         | Both support conversational + agentic modes    |
+| `/tests`, `/doc`, `/refactor`, `/check` slash commands | Custom slash commands in `.claude/commands/*.md`                                     | Need to author equivalent commands             |
+| `.github/copilot-instructions.md`                      | `CLAUDE.md` (repo root)                                                              | Both are always-loaded repo context            |
+| `.github/instructions/*.instructions.md` (path-scoped) | No direct path-scoped equivalent — closest is `CLAUDE.md` sections or imported files | Needs guidance on how to approximate           |
+| `.github/skills/*/SKILL.md`                            | Claude Code Skills (`.claude/skills/*/SKILL.md`)                                     | Same shape, format is compatible               |
+| `.github/agents/*.agent.md` (custom agents)            | Claude Code subagents (`.claude/agents/*.md`)                                        | Similar YAML frontmatter + prompt body pattern |
+| `@workspace` context                                   | Automatic project context / `@file` mentions                                         | Different context injection model              |
+| Agent picker dropdown                                  | `/agents` command or CLI flag                                                        |                                                |
 
 **Decided**: present Copilot and Claude Code side by side as a two-column table per
 step/prompt (one column per tool), not interleaved prose or separate tracks. See
@@ -67,8 +67,8 @@ logos in `docs/images/` to make the columns visually scannable at a glance:
 
 ```markdown
 | <img src="../images/githubcopilot.svg" width="20" alt="GitHub Copilot" /> GitHub Copilot | <img src="../images/claude-color.svg" width="20" alt="Claude Code" /> Claude Code |
-|---|---|
-| Prompt/step text for Copilot | Equivalent prompt/step text for Claude Code |
+| ---------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- |
+| Prompt/step text for Copilot                                                             | Equivalent prompt/step text for Claude Code                                       |
 ```
 
 - Use this for prompts, slash/custom commands, and any tool-specific instructions.
@@ -82,20 +82,20 @@ logos in `docs/images/` to make the columns visually scannable at a glance:
 > Mark **Reviewed** with ✅ (optionally add your initials, e.g. `✅ SW`) once you've
 > reviewed or completed a lab's rework, so the team can track progress at a glance.
 
-| Lab | Action | Reviewed |
-|---|---|---|
-| Lab 1 – TDD | Add Claude Code prompts alongside existing Copilot prompts for interface/test/impl generation | ✅ |
-| Lab 2 – Requirements to Code | Add Claude Code equivalents for backlog generation, full-stack TDD flow | ✅ |
-| Lab 3 – Generation & Refactoring | Add Claude Code equivalents for `@workspace`, `/refactor`, multi-file edits | ✅ |
-| Lab 4 – Testing/Docs/Workflow | Add Claude Code equivalents for `/tests`, `/doc`, commit workflow | ✅ |
-| ~~Lab 5 – Interaction Models~~ | Deleted per user decision — no longer part of the lab set | — |
-| Lab 6 – Skills & Customization | Add Claude Code Skills + `CLAUDE.md` sections; compare hierarchy across tools | ✅ |
-| Lab 7 – Custom Agents Intro | Add Claude Code subagents equivalent walkthrough | ✅ |
-| Lab 8 – Workflow Agents | Extend scenarios to invoke both Copilot agents and Claude Code subagents | ✅ |
-| Lab 9 – Agent Design | Keep tool-agnostic (design principles apply to both); add a short "authoring for both tools" note | ✅ |
-| Lab 10 – Capstone | Update template so participants build one agent definition and adapt it for both tools | ✅ |
-| ~~Bonus – Test Planning~~ | Deleted per user decision — no longer part of the lab set | — |
-| README.md | Update tech stack section (mention both tools), fix/remove broken `../guides/` and `../presentations/` links. Timing table removed per user decision. | ✅ |
+| Lab                              | Action                                                                                                                                                | Reviewed |
+| -------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------- | -------- |
+| Lab 1 – TDD                      | Add Claude Code prompts alongside existing Copilot prompts for interface/test/impl generation                                                         | ✅       |
+| Lab 2 – Requirements to Code     | Add Claude Code equivalents for backlog generation, full-stack TDD flow                                                                               | ✅       |
+| Lab 3 – Generation & Refactoring | Add Claude Code equivalents for `@workspace`, `/refactor`, multi-file edits                                                                           | ✅       |
+| Lab 4 – Testing/Docs/Workflow    | Add Claude Code equivalents for `/tests`, `/doc`, commit workflow                                                                                     | ✅       |
+| ~~Lab 5 – Interaction Models~~   | Deleted per user decision — no longer part of the lab set                                                                                             | —        |
+| Lab 6 – Skills & Customization   | Add Claude Code Skills + `CLAUDE.md` sections; compare hierarchy across tools                                                                         | ✅       |
+| Lab 7 – Custom Agents Intro      | Add Claude Code subagents equivalent walkthrough                                                                                                      | ✅       |
+| Lab 8 – Workflow Agents          | Extend scenarios to invoke both Copilot agents and Claude Code subagents                                                                              | ✅       |
+| Lab 9 – Agent Design             | Keep tool-agnostic (design principles apply to both); add a short "authoring for both tools" note                                                     | ✅       |
+| Lab 10 – Capstone                | Update template so participants build one agent definition and adapt it for both tools                                                                | ✅       |
+| ~~Bonus – Test Planning~~        | Deleted per user decision — no longer part of the lab set                                                                                             | —        |
+| README.md                        | Update tech stack section (mention both tools), fix/remove broken `../guides/` and `../presentations/` links. Timing table removed per user decision. | ✅       |
 
 ## Open Questions for User
 

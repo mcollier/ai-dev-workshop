@@ -139,9 +139,9 @@ Use this decision tree to choose the right customization type (applies to both t
 | ----------------------- | ------------------------------------------------------------------------ | ---------------------------------------- | ------------------- | ----------------------- |
 | **When Applied**        | Always                                                                   | On-demand                                | When selected       | On-demand               |
 | **Portability**         | Copilot: VS Code only. Claude Code: `CLAUDE.md` applies repo-wide        | Multi-tool (Copilot + Claude Code + CLI) | VS Code/CLI + cloud | Tool-specific           |
-| **Can Include Scripts** | ❌ No                                                                     | ✅ Yes                                    | ❌ No                | ❌ No                    |
-| **Tool Restrictions**   | ❌ No                                                                     | ❌ No                                     | ✅ Yes               | ✅ Yes (optional)        |
-| **Glob Patterns**       | ✅ Yes (Copilot `.instructions.md`); Claude Code has no direct equivalent | ❌ No                                     | ❌ No                | ❌ No                    |
+| **Can Include Scripts** | ❌ No                                                                    | ✅ Yes                                   | ❌ No               | ❌ No                   |
+| **Tool Restrictions**   | ❌ No                                                                    | ❌ No                                    | ✅ Yes              | ✅ Yes (optional)       |
+| **Glob Patterns**       | ✅ Yes (Copilot `.instructions.md`); Claude Code has no direct equivalent| ❌ No                                    | ❌ No               | ❌ No                   |
 | **Best For**            | Standards                                                                | Capabilities                             | Workflows           | Quick tasks             |
 
 ### Key Differences: Skills vs Agents
@@ -173,7 +173,7 @@ If your repository has skills in `.github/skills/` (Copilot) or `.claude/skills/
 1. **Navigate to** `.github/skills/` (if available, or follow along conceptually)
 
 2. **Examine the structure**:
-   ```
+   ```text
    .github/skills/integration-test-helper/
    ├── SKILL.md
    ├── test-template.cs
@@ -254,7 +254,7 @@ For each scenario below, decide which customization type to use and why. The rea
 
 ---
 
-#### Scenario 2: Always Use Sealed Classes in C#
+#### Scenario 2: Always Use Sealed Classes
 
 **Requirement**: All C# classes should be `sealed` by default unless inheritance is needed.
 

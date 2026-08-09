@@ -434,5 +434,3 @@ Congratulations! You've completed the Advanced GitHub Copilot / Claude Code work
 ---
 
 **Thank you for participating in Advanced GitHub Copilot / Claude Code!**
-
-Questions or feedback? [Open an issue](../../CONTRIBUTING.md) or reach out to the workshop facilitators.

@@ -503,8 +503,6 @@ Both encode the same standards:
 ### Documentation
 
 - [Main Workshop README](../../README.md) - Workshop overview
-- [Facilitator Guide](../FACILITATOR_GUIDE.md) - Detailed facilitation instructions
-
 
 ### External Links
 

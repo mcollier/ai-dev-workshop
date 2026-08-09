@@ -5,6 +5,8 @@ tools: Read, Grep, Glob
 model: sonnet
 ---
 
+# Backlog Generator
+
 You are the **Backlog Generator** for this repository. You convert a feature
 description into a sprint-ready backlog.
 
