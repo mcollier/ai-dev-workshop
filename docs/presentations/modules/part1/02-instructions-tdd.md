@@ -26,8 +26,8 @@ Each tool has a **repo-wide** layer and a **scoped** layer:
 
 |                         | Repo-wide (always loaded)                                                                                                             | Scoped (path/subdirectory)                                                |
 | ----------------------- | ------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------- |
-| **GitHub Copilot**      | `.github/copilot-instructions.md`                                                                                                     | `.github/instructions/*.instructions.md` (`applyTo` glob, e.g. `**/*.cs`) |
-| **Claude Code**         | `CLAUDE.md` (repo root)                                                                                                               | Nested `CLAUDE.md` per subdirectory                                       |
+| **![w:20](../../../images/githubcopilot.svg) GitHub Copilot**      | `.github/copilot-instructions.md`                                                                                                     | `.github/instructions/*.instructions.md` (`applyTo` glob, e.g. `**/*.cs`) |
+| **![w:20](../../../images/claude-color.svg) Claude Code**         | `CLAUDE.md` (repo root)                                                                                                               | Nested `CLAUDE.md` per subdirectory                                       |
 | **Cross-tool standard** | `AGENTS.md` — read natively by Claude Code, and by Copilot CLI/coding agent as an alternative/supplement to `copilot-instructions.md` | —                                                                         |
 
 ### Purpose (all tools)
@@ -58,8 +58,8 @@ Key rules encoded — same rules, different file depending on tool:
 | **Testing**            | ✅ xUnit + FakeItEasy     |
 | **Naming**             | ✅ PascalCase / camelCase |
 
-- Copilot: `copilot-instructions.md` + `dotnet.instructions.md`
-- Claude Code: `CLAUDE.md` (or `AGENTS.md`)
+- ![w:20](../../../images/githubcopilot.svg) Copilot: `copilot-instructions.md` + `dotnet.instructions.md`
+- ![w:20](../../../images/claude-color.svg) Claude Code: `CLAUDE.md` (or `AGENTS.md`)
 - The content is portable, only the file/loading mechanism differs.
 
 ---
