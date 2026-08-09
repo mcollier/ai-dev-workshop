@@ -218,7 +218,7 @@ The repository includes definitions for three custom agents. Briefly explore eac
 
 ## Key Insights
 
-### If Repo-wide Instructions Are Guardrails...
+### If Repo-wide Instructions Are Guardrails
 
 **Repo-wide Instructions** (`.github/copilot-instructions.md` / `CLAUDE.md`) = Background rules always enforced
 (e.g., "Use Clean Architecture, write tests first, follow DDD")

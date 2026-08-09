@@ -189,7 +189,7 @@ Why this item?
 ## Part 2: Implement Prerequisites (15 minutes)
 
 > **⚠️ TDD REMINDER**: In this section, we'll follow Red-Green-Refactor:
-
+>
 > 1. **RED**: Write tests FIRST that fail
 > 2. **GREEN**: Implement code to make tests pass
 > 3. **REFACTOR**: Improve code quality while keeping tests green
@@ -850,7 +850,7 @@ Move on to [**Lab 3: Code Generation & Refactoring**](lab-03-generation-and-refa
 ## Documenting Architectural Decisions (ADR)
 
 > **Why ADRs?**
-> 
+>
 > As you make key design or architectural choices (e.g., how to model priorities, validation, or API structure), it's best practice to capture your reasoning in an [Architecture Decision Record (ADR)](https://adr.github.io/). This helps your team understand why decisions were made and makes future changes easier to justify.
 
 **Sample Prompt:**

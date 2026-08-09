@@ -37,7 +37,7 @@ description into a sprint-ready backlog.
 
 For each story, produce:
 
-```
+```text
 ### Story: <short title>
 As a <role>, I want <capability>, so that <benefit>.
 

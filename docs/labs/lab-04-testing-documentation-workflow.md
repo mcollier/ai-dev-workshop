@@ -415,7 +415,7 @@ Reference the README file explicitly so the new section merges cleanly:
 | ---------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- |
 | Ask Copilot Chat, using the `#file` context variable: `#file:README.md`                  | Ask in the REPL, using an `@` file mention: `@README.md`                          |
 
-```
+```text
 Create an API documentation section for <file-reference> that documents all the Task Manager API endpoints (POST, GET, GET by ID, PUT, DELETE). Include:
 - Endpoint URL
 - HTTP method
