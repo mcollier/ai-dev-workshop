@@ -138,7 +138,7 @@ Complete the development lifecycle with AI-assisted testing, docs, and PR prepar
 
 ---
 
-## Part 2: Advanced GitHub Copilot
+## Part 2: Advanced GitHub Copilot / Claude Code
 
 ### [Lab 06: Skills & Customization Hierarchy](lab-06-skills-and-customization.md)
 
