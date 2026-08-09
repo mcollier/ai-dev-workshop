@@ -6,8 +6,8 @@ Hello and welcome to the AI Coding Workshop at Beer City Code! Shawn and I are e
 
 ### Before the workshop starts
 - Clone the workshop repository to your machine - https://github.com/mcollier/ai-dev-workshop
-- Review and complete the [Getting Started instructions](https://github.com/mcollier/ai-dev-workshop/docs/README) in the repository
-- Recommended setup path: open the repository in the provided Dev Container to quickly bootstrap the environment
+- Review and complete the [Getting Started instructions](https://github.com/mcollier/ai-dev-workshop/blob/main/docs/README.md) in the repository
+- Recommended path: open the repository in the provided Dev Container to quickly bootstrap the environment
 
 ### Required software and services
 - VS Code installed (**latest version recommended**)
