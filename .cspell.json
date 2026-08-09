@@ -11,27 +11,53 @@
     ".vscode",
     "megalinter-reports",
     "package-lock.json",
-    "report"
+    "report",
+    "lychee.toml"
   ],
   "language": "en",
   "noConfigSearch": true,
   "words": [
     "addyosmani",
+    "Addy",
+    "agentskills",
     "aspnetcore",
     "appsettings",
+    "bierner",
     "betterleaks",
+    "cowork",
+    "csdevkit",
+    "gantt",
     "globaljson",
+    "humao",
     "jsonlint",
+    "lifecycles",
+    "Liskov",
     "marp",
     "mattpocock",
     "megalinter",
+    "Microcks",
     "nologo",
     "oxsecurity",
+    "Osmani",
+    "Osmani's",
+    "Pocock",
+    "Pocock's",
     "retarget",
     "retargeted",
-    "xunit"
+    "slnx",
+    "springboot",
+    "xunit",
+    "yzhang"
   ],
   "version": "0.2",
   "caseSensitive": false,
-  "dictionaries": ["cpp-refined", "dotnet", "fullstack", "data-science"]
+  "dictionaries": [
+    "cpp",
+    "cpp-refined",
+    "cpp-compound-words",
+    "dotnet",
+    "fullstack",
+    "data-science",
+    "npm"
+  ]
 }
