@@ -4,7 +4,7 @@
 Accepted
 
 ## Context
-We need a solution structure that supports maintainability, testability, and clear separation of concerns for our .NET 9 workshop. The codebase should be easy to extend, refactor, and onboard new contributors, while supporting modern patterns like DDD and CQRS.
+We need a solution structure that supports maintainability, testability, and clear separation of concerns for our .NET 10 workshop. The codebase should be easy to extend, refactor, and onboard new contributors, while supporting modern patterns like DDD and CQRS.
 
 ## Decision
 We will use Clean Architecture as the foundation for our solution. This means:
