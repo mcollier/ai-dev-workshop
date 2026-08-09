@@ -166,7 +166,7 @@ handoffs:
 Create a custom agent of your own.  Test, iterate, & refine.
 
 
-<!-- **Lab Guide:** [Lab 09: Agent Design](../../../labs/lab-09-agent-design.md) -->
+**Lab Guide:** [Lab 09: Agent Design](../../../labs/lab-09-agent-design.md)
 
 **Next Module:** [Wrap-Up & Next Steps](06-wrapup-next-steps.md)
 

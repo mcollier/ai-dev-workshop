@@ -138,7 +138,7 @@ _Use GitHub Copilot or Claude Code — same lab steps._
 <!-- markdownlint-disable-next-line MD025 -->
 # Hands-On Time
 
-**Lab Guide:** [Lab 01: TDD with Copilot](../../../labs/lab-01-tdd-with-copilot.md)
+**Lab Guide:** [Lab 01: TDD with Copilot](../../../labs/lab-01-tdd.md)
 
 **Next Module:** [Requirements to Code](03-requirements-to-code.md)
 

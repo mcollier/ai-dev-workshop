@@ -254,7 +254,7 @@ A: Yes! Switch agents as needed for different workflow steps. Claude Code can al
 A: No. Instructions/`CLAUDE.md` are always-on guardrails; agents are on-demand specialists.
 
 **Q: Can I create my own agent?**
-A: Absolutely! That's covered in [Lab 09: Agent Design](lab-09-agent-design.md) and [Lab 10: Build Your Own](lab-10-capstone-build-agent.md).
+A: Absolutely! That's covered in [Lab 09: Agent Design](lab-09-agent-design.md).
 
 **Q: What if an agent gives incorrect advice?**
 A: Agents are assistants, not authorities. You're accountable for the final decision. Iterate on agent instructions to improve accuracy.
@@ -269,6 +269,6 @@ In [Lab 08: Workflow Agents in Action](lab-08-workflow-agents.md), you'll apply 
 
 ## Additional Resources
 
-- [Agent vs Instructions vs Prompts Diagram](../design/diagrams/agent-vs-instructions-vs-prompts.md)
+<!-- - [Agent vs Instructions vs Prompts Diagram](../design/diagrams/agent-vs-instructions-vs-prompts.md) -->
 - [GitHub Documentation: Custom Agents](https://docs.github.com/copilot)
 - [Claude Code Documentation: Subagents](https://docs.claude.com/en/docs/claude-code/sub-agents)

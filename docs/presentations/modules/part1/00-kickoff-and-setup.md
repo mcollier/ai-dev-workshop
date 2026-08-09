@@ -34,13 +34,13 @@ backgroundColor: #fff
 
 | Module | Topic                    | Duration |
 | ------ | ------------------------ | -------- |
-| 00     | Kickoff & Setup          | 15 min   |
-| 01     | Features Tour            | 15 min   |
-| 02     | Instructions & TDD       | 30 min   |
-| 03     | Requirements to Code     | 45 min   |
-| 04     | Generation & Refactoring | 45 min   |
-| 05     | Testing & Documentation  | 15 min   |
-| 06     | Wrap-Up & Discussion     | 15 min   |
+| 00     | Kickoff & Setup          | ~15 min  |
+| 01     | Features Tour            | ~15 min  |
+| 02     | Instructions & TDD       | ~30 min  |
+| 03     | Requirements to Code     | ~45 min  |
+| 04     | Generation & Refactoring | ~45 min  |
+| 05     | Testing & Documentation  | ~15 min  |
+| 06     | Wrap-Up & Discussion     | ~15 min  |
 
 ---
 
@@ -48,13 +48,13 @@ backgroundColor: #fff
 
 | Module | Topic                  | Duration |
 | ------ | ---------------------- | -------- |
-| 00     | Recap                  | 10 min   |
-| 01     | Interaction Models     | 25 min   |
-| 02     | Skills & Customization | 30 min   |
-| 03     | Custom Agents Intro    | 25 min   |
-| 04     | Workflow Agents        | 30 min   |
-| 05     | Agent Design           | 30 min   |
-| 06     | Wrap-Up & Next Steps   | 10 min   |
+| 00     | Recap                  | ~10 min  |
+| 01     | Interaction Models     | ~25 min  |
+| 02     | Skills & Customization | ~30 min  |
+| 03     | Custom Agents Intro    | ~25 min  |
+| 04     | Workflow Agents        | ~30 min  |
+| 05     | Agent Design           | ~30 min  |
+| 06     | Wrap-Up & Next Steps   | ~10 min  |
 
 ---
 
