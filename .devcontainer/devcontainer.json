@@ -19,7 +19,8 @@
     },
     "ghcr.io/devcontainers/features/copilot-cli:1": {
       "version": "latest"
-    }
+    },
+    "ghcr.io/stu-bell/devcontainer-features/claude-code:0": {}
   },
   "containerEnv": {
     "DOTNET_ENVIRONMENT": "Development",
@@ -28,6 +29,7 @@
   "customizations": {
     "vscode": {
       "extensions": [
+        "anthropic.claude-code",
         "azurite.azurite",
         "bierner.markdown-emoji",
         "codezombiech.gitignore",
