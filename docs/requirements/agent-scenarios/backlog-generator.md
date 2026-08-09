@@ -7,7 +7,7 @@ This document contains test scenarios for validating the Backlog Generator agent
 ### Input
 
 **Prompt:**
-```
+```text
 Generate user stories for a task notification system. Users should receive 
 notifications when tasks are assigned to them and when tasks are approaching 
 their due dates.

@@ -7,7 +7,7 @@ This document contains test scenarios for validating the Test Strategist agent.
 ### Input
 
 **Prompt:**
-```
+```text
 Propose a test strategy for the Task aggregate. Focus on unit tests for 
 business logic and invariant enforcement.
 ```
@@ -149,7 +149,7 @@ public sealed class Task
 ### Input
 
 **Prompt:**
-```
+```text
 What integration tests do we need for TaskRepository? We're using 
 Entity Framework Core with SQL Server.
 ```
