@@ -87,13 +87,13 @@ handoffs:
 
 #### Handoff Properties
 
-| Property | Required | Description |
-|----------|----------|-------------|
-| `label` | Yes | Button text shown to user (e.g., "Start Implementation") |
-| `agent` | Yes | Target agent identifier to switch to |
-| `prompt` | Yes | Pre-filled prompt sent to target agent |
-| `send` | No | Auto-submit prompt (default: false). If true, workflow continues automatically |
-| `model` | No | Override model for this handoff (optional) |
+| Property | Required | Description                                                                    |
+| -------- | -------- | ------------------------------------------------------------------------------ |
+| `label`  | Yes      | Button text shown to user (e.g., "Start Implementation")                       |
+| `agent`  | Yes      | Target agent identifier to switch to                                           |
+| `prompt` | Yes      | Pre-filled prompt sent to target agent                                         |
+| `send`   | No       | Auto-submit prompt (default: false). If true, workflow continues automatically |
+| `model`  | No       | Override model for this handoff (optional)                                     |
 
 ### Common Handoff Patterns
 
@@ -205,14 +205,14 @@ handoffs:
 
 ### Handoff Best Practices
 
-#### ✅ Do:
+#### ✅ Do
 - **Keep handoff chains short** (3-4 agents max)
 - **Use descriptive labels** ("Request Security Review" not just "Next")
 - **Pre-fill useful prompts** with specific context
 - **Design for human review** (prefer `send: false`)
 - **Document handoff paths** in agent descriptions
 
-#### ❌ Don't:
+#### ❌ Don't
 - Create circular handoffs (A → B → A)
 - Auto-send without clear justification
 - Skip human review for destructive operations

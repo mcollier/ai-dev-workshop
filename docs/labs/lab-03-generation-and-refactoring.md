@@ -38,12 +38,12 @@ For this lab, try using your AI coding tool's autonomous agent mode for at least
 
 **How to try it:**
 
-| <img src="../images/githubcopilot.svg" width="20" alt="GitHub Copilot" /> GitHub Copilot | <img src="../images/claude-color.svg" width="20" alt="Claude Code" /> Claude Code |
-|---|---|
-| Switch Copilot Chat to "Agent" mode (dropdown in chat panel) | Run `claude` in the integrated terminal — the CLI operates agentically by default |
-| Describe your goal in natural language (e.g., "Refactor LegacyTaskProcessor to use async/await, add logging, and follow Object Calisthenics") | Enter the same goal as a prompt in the REPL |
-| Review the plan and results, iterate as needed | Review the plan and results, iterate as needed |
-| For advanced users: reference MCP tools directly (e.g., "Evaluate my API endpoints using aitk-evaluation_planner") | For advanced users: reference any configured MCP tools directly in your prompt |
+| <img src="../images/githubcopilot.svg" width="20" alt="GitHub Copilot" /> GitHub Copilot                                                      | <img src="../images/claude-color.svg" width="20" alt="Claude Code" /> Claude Code |
+| --------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- |
+| Switch Copilot Chat to "Agent" mode (dropdown in chat panel)                                                                                  | Run `claude` in the integrated terminal — the CLI operates agentically by default |
+| Describe your goal in natural language (e.g., "Refactor LegacyTaskProcessor to use async/await, add logging, and follow Object Calisthenics") | Enter the same goal as a prompt in the REPL                                       |
+| Review the plan and results, iterate as needed                                                                                                | Review the plan and results, iterate as needed                                    |
+| For advanced users: reference MCP tools directly (e.g., "Evaluate my API endpoints using aitk-evaluation_planner")                            | For advanced users: reference any configured MCP tools directly in your prompt    |
 
 **Compare:**
 - What did agent mode do differently than a single-shot Ask/Plan prompt?
@@ -112,9 +112,9 @@ Include unit tests using xUnit and FakeItEasy
 
 Reference the existing endpoint file explicitly so the new code matches its style:
 
-| <img src="../images/githubcopilot.svg" width="20" alt="GitHub Copilot" /> GitHub Copilot | <img src="../images/claude-color.svg" width="20" alt="Claude Code" /> Claude Code |
-|---|---|
-| Use the `#file` context variable: `#file:src/TaskManager.Api/Extensions/EndpointExtensions.cs` | Use an `@` file mention: `@src/TaskManager.Api/Extensions/EndpointExtensions.cs` |
+| <img src="../images/githubcopilot.svg" width="20" alt="GitHub Copilot" /> GitHub Copilot       | <img src="../images/claude-color.svg" width="20" alt="Claude Code" /> Claude Code |
+| ---------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- |
+| Use the `#file` context variable: `#file:src/TaskManager.Api/Extensions/EndpointExtensions.cs` | Use an `@` file mention: `@src/TaskManager.Api/Extensions/EndpointExtensions.cs`  |
 
 ```text
 Add a GET /tasks endpoint in <file-reference> that:
@@ -199,8 +199,8 @@ Then add GET /tasks/{id} endpoint that returns 200 OK or 404 Not Found
 
 Make an inline, in-context edit request instead of a full chat conversation:
 
-| <img src="../images/githubcopilot.svg" width="20" alt="GitHub Copilot" /> GitHub Copilot | <img src="../images/claude-color.svg" width="20" alt="Claude Code" /> Claude Code |
-|---|---|
+| <img src="../images/githubcopilot.svg" width="20" alt="GitHub Copilot" /> GitHub Copilot                      | <img src="../images/claude-color.svg" width="20" alt="Claude Code" /> Claude Code                                                                                                  |
+| ------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Open `EndpointExtensions.cs`, position cursor after the GET endpoints, press `Ctrl+I` / `Cmd+I` (Inline Chat) | Open `EndpointExtensions.cs` in your editor, then in the Claude Code REPL reference the file and cursor location, e.g. `In EndpointExtensions.cs, after the GET endpoints, add...` |
 
 Enter:
@@ -286,9 +286,9 @@ Analyze the problematic method before changing it:
 1. Navigate to the `ProcessTask` method (not `ProcessTaskBatch` - that's a typo in earlier drafts)
 2. Select the entire method
 
-| <img src="../images/githubcopilot.svg" width="20" alt="GitHub Copilot" /> GitHub Copilot | <img src="../images/claude-color.svg" width="20" alt="Claude Code" /> Claude Code |
-|---|---|
-| Use Inline Chat (`Ctrl+I` or `Cmd+I`): `/explain` | Paste or reference the method in the REPL and ask: `Explain what this method does and identify any code quality issues` |
+| <img src="../images/githubcopilot.svg" width="20" alt="GitHub Copilot" /> GitHub Copilot | <img src="../images/claude-color.svg" width="20" alt="Claude Code" /> Claude Code                                       |
+| ---------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------- |
+| Use Inline Chat (`Ctrl+I` or `Cmd+I`): `/explain`                                        | Paste or reference the method in the REPL and ask: `Explain what this method does and identify any code quality issues` |
 
 Your AI coding tool should identify issues:
 
@@ -308,8 +308,8 @@ Your AI coding tool should identify issues:
 Select the entire `ProcessTask` method:
 
 | <img src="../images/githubcopilot.svg" width="20" alt="GitHub Copilot" /> GitHub Copilot | <img src="../images/claude-color.svg" width="20" alt="Claude Code" /> Claude Code |
-|---|---|
-| Use the `/refactor` slash command in Copilot Chat | Ask directly in the REPL (no `/refactor` command defined yet — see `todo.md`) |
+| ---------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- |
+| Use the `/refactor` slash command in Copilot Chat                                        | Ask directly in the REPL (no `/refactor` command defined yet — see `todo.md`)     |
 
 ```text
 Refactor this method to follow Clean Code principles:
@@ -433,9 +433,9 @@ private async Task ExecuteTaskProcessingAsync(
 
 Select the refactored method:
 
-| <img src="../images/githubcopilot.svg" width="20" alt="GitHub Copilot" /> GitHub Copilot | <img src="../images/claude-color.svg" width="20" alt="Claude Code" /> Claude Code |
-|---|---|
-| Use the `/tests` custom command | Ask directly in the REPL: `Generate xUnit tests for this method using FakeItEasy` (no `/tests` command defined yet — see `todo.md`) |
+| <img src="../images/githubcopilot.svg" width="20" alt="GitHub Copilot" /> GitHub Copilot | <img src="../images/claude-color.svg" width="20" alt="Claude Code" /> Claude Code                                                   |
+| ---------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------- |
+| Use the `/tests` custom command                                                          | Ask directly in the REPL: `Generate xUnit tests for this method using FakeItEasy` (no `/tests` command defined yet — see `todo.md`) |
 
 Verify generated tests cover:
 
@@ -567,9 +567,9 @@ Expand abbreviated names using a scoped, in-context request:
 1. Find abbreviated variable names (e.g., `var t`, `var res`, `int cnt`)
 2. Select the code
 
-| <img src="../images/githubcopilot.svg" width="20" alt="GitHub Copilot" /> GitHub Copilot | <img src="../images/claude-color.svg" width="20" alt="Claude Code" /> Claude Code |
-|---|---|
-| Inline Chat: "Expand all abbreviated variable names to be fully descriptive" | Paste the selection into the REPL and ask: "Expand all abbreviated variable names to be fully descriptive" |
+| <img src="../images/githubcopilot.svg" width="20" alt="GitHub Copilot" /> GitHub Copilot | <img src="../images/claude-color.svg" width="20" alt="Claude Code" /> Claude Code                          |
+| ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
+| Inline Chat: "Expand all abbreviated variable names to be fully descriptive"             | Paste the selection into the REPL and ask: "Expand all abbreviated variable names to be fully descriptive" |
 
 **Before**:
 
@@ -603,15 +603,15 @@ Use multi-file editing for cross-cutting changes.
 
 ### 4.1 Open Multi-File Editing
 
-| <img src="../images/githubcopilot.svg" width="20" alt="GitHub Copilot" /> GitHub Copilot | <img src="../images/claude-color.svg" width="20" alt="Claude Code" /> Claude Code |
-|---|---|
+| <img src="../images/githubcopilot.svg" width="20" alt="GitHub Copilot" /> GitHub Copilot                                                         | <img src="../images/claude-color.svg" width="20" alt="Claude Code" /> Claude Code                                              |
+| ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------ |
 | Open Command Palette (`Ctrl+Shift+P` / `Cmd+Shift+P`), search for "Copilot Edits: Open", or use the dedicated Copilot Edits panel in the sidebar | Run `claude` in the integrated terminal — the REPL already operates across multiple files by default, no separate panel needed |
 
 ### 4.2 Add Files to Working Set
 
 | <img src="../images/githubcopilot.svg" width="20" alt="GitHub Copilot" /> GitHub Copilot | <img src="../images/claude-color.svg" width="20" alt="Claude Code" /> Claude Code |
-|---|---|
-| Add related files to the Copilot Edits working set | Mention the related files in your prompt with `@` so Claude Code knows the scope |
+| ---------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- |
+| Add related files to the Copilot Edits working set                                       | Mention the related files in your prompt with `@` so Claude Code knows the scope  |
 
 Related files for this change:
 

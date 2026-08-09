@@ -69,10 +69,10 @@ block-beta
 #### Skill File Structure
 
 | <img src="../images/githubcopilot.svg" width="20" alt="GitHub Copilot" /> GitHub Copilot | <img src="../images/claude-color.svg" width="20" alt="Claude Code" /> Claude Code |
-|---|---|
-| `.github/skills/` | `.claude/skills/` (not yet scaffolded in this repo — see `todo.md`) |
+| ---------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- |
+| `.github/skills/`                                                                        | `.claude/skills/` (not yet scaffolded in this repo — see `todo.md`)               |
 
-```
+```text
 .github/skills/
 └── test-data-generator/
     ├── SKILL.md                 # Required: Instructions with frontmatter
@@ -115,7 +115,7 @@ Invoke with: `/test-data-generator User 10`
 
 Use this decision tree to choose the right customization type (applies to both tools):
 
-```
+```text
 ┌─ Need to enforce coding standards across all files?
 │  → Custom Instructions (.instructions.md in Copilot, CLAUDE.md in Claude Code)
 │     Example: "Always use sealed classes", "Follow Clean Architecture"
@@ -135,26 +135,26 @@ Use this decision tree to choose the right customization type (applies to both t
 
 ### Comparison Table
 
-| Feature | Instructions | Skills | Agents | Prompt Files / Commands |
-|---------|-------------|--------|--------|--------------|
-| **When Applied** | Always | On-demand | When selected | On-demand |
-| **Portability** | Copilot: VS Code only. Claude Code: `CLAUDE.md` applies repo-wide | Multi-tool (Copilot + Claude Code + CLI) | VS Code/CLI + cloud | Tool-specific |
-| **Can Include Scripts** | ❌ No | ✅ Yes | ❌ No | ❌ No |
-| **Tool Restrictions** | ❌ No | ❌ No | ✅ Yes | ✅ Yes (optional) |
-| **Glob Patterns** | ✅ Yes (Copilot `.instructions.md`); Claude Code has no direct equivalent | ❌ No | ❌ No | ❌ No |
-| **Best For** | Standards | Capabilities | Workflows | Quick tasks |
+| Feature                 | Instructions                                                             | Skills                                   | Agents              | Prompt Files / Commands |
+| ----------------------- | ------------------------------------------------------------------------ | ---------------------------------------- | ------------------- | ----------------------- |
+| **When Applied**        | Always                                                                   | On-demand                                | When selected       | On-demand               |
+| **Portability**         | Copilot: VS Code only. Claude Code: `CLAUDE.md` applies repo-wide        | Multi-tool (Copilot + Claude Code + CLI) | VS Code/CLI + cloud | Tool-specific           |
+| **Can Include Scripts** | ❌ No                                                                     | ✅ Yes                                    | ❌ No                | ❌ No                    |
+| **Tool Restrictions**   | ❌ No                                                                     | ❌ No                                     | ✅ Yes               | ✅ Yes (optional)        |
+| **Glob Patterns**       | ✅ Yes (Copilot `.instructions.md`); Claude Code has no direct equivalent | ❌ No                                     | ❌ No                | ❌ No                    |
+| **Best For**            | Standards                                                                | Capabilities                             | Workflows           | Quick tasks             |
 
 ### Key Differences: Skills vs Agents
 
 This is the most common confusion point. Here's how to differentiate:
 
-| Aspect | Agent Skills | Custom Agents |
-|--------|-------------|---------------|
-| **Purpose** | Teach specialized capabilities | Adopt specific personas |
-| **Contains** | Instructions + scripts + resources | Instructions + tool config |
-| **Usage** | Task-specific, loaded when needed | Role-specific, selected explicitly |
+| Aspect          | Agent Skills                                      | Custom Agents                                                     |
+| --------------- | ------------------------------------------------- | ----------------------------------------------------------------- |
+| **Purpose**     | Teach specialized capabilities                    | Adopt specific personas                                           |
+| **Contains**    | Instructions + scripts + resources                | Instructions + tool config                                        |
+| **Usage**       | Task-specific, loaded when needed                 | Role-specific, selected explicitly                                |
 | **Portability** | Works across VS Code, CLI, cloud, and Claude Code | Copilot: VS Code and cloud. Claude Code: subagents run in the CLI |
-| **Example** | "Database migration skill" | "Database architect agent" |
+| **Example**     | "Database migration skill"                        | "Database architect agent"                                        |
 
 **Mental Model:**
 - **Skill**: A specialized toolkit you hand to any agent
@@ -190,11 +190,11 @@ If your repository has skills in `.github/skills/` (Copilot) or `.claude/skills/
 
 **Scenario**: You want to understand how skills work in practice.
 
-| <img src="../images/githubcopilot.svg" width="20" alt="GitHub Copilot" /> GitHub Copilot | <img src="../images/claude-color.svg" width="20" alt="Claude Code" /> Claude Code |
-|---|---|
-| Open Copilot Chat (`Ctrl+Alt+I` / `Cmd+Shift+I`) | Run `claude` in the integrated terminal from the repo root |
-| Type `/` to see available commands — skills appear alongside other slash commands | Type `/` in the REPL to see available slash commands, including any user-invocable skills |
-| Try invoking a skill: `/test-data-generator User 5` | Try invoking a skill the same way: `/test-data-generator User 5` (once a matching skill exists — see `todo.md`) |
+| <img src="../images/githubcopilot.svg" width="20" alt="GitHub Copilot" /> GitHub Copilot                   | <img src="../images/claude-color.svg" width="20" alt="Claude Code" /> Claude Code                                       |
+| ---------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------- |
+| Open Copilot Chat (`Ctrl+Alt+I` / `Cmd+Shift+I`)                                                           | Run `claude` in the integrated terminal from the repo root                                                              |
+| Type `/` to see available commands — skills appear alongside other slash commands                          | Type `/` in the REPL to see available slash commands, including any user-invocable skills                               |
+| Try invoking a skill: `/test-data-generator User 5`                                                        | Try invoking a skill the same way: `/test-data-generator User 5` (once a matching skill exists — see `todo.md`)         |
 | If no skills are available, try `/create-skill` and describe: "A skill for generating realistic test data" | If no skills are available, describe the need directly in the REPL: "Create a skill for generating realistic test data" |
 
 **Observe the behavior**:
@@ -206,9 +206,9 @@ If your repository has skills in `.github/skills/` (Copilot) or `.claude/skills/
 
 **Scenario**: Skills can also be loaded automatically when relevant.
 
-| <img src="../images/githubcopilot.svg" width="20" alt="GitHub Copilot" /> GitHub Copilot | <img src="../images/claude-color.svg" width="20" alt="Claude Code" /> Claude Code |
-|---|---|
-| In Copilot Chat, ask: "I need to create test data for integration tests with User entities" | In the Claude Code REPL, ask the same question |
+| <img src="../images/githubcopilot.svg" width="20" alt="GitHub Copilot" /> GitHub Copilot    | <img src="../images/claude-color.svg" width="20" alt="Claude Code" /> Claude Code |
+| ------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- |
+| In Copilot Chat, ask: "I need to create test data for integration tests with User entities" | In the Claude Code REPL, ask the same question                                    |
 
 **Observe**:
 - Your AI coding tool may automatically detect and load relevant skills

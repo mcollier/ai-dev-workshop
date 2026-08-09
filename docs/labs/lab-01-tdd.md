@@ -40,8 +40,8 @@ In this lab, you'll create a `NotificationService` that sends task notifications
 
 ### 1.1 Open Your AI Coding Tool
 
-| <img src="../images/githubcopilot.svg" width="20" alt="GitHub Copilot" /> GitHub Copilot | <img src="../images/claude-color.svg" width="20" alt="Claude Code" /> Claude Code |
-|---|---|
+| <img src="../images/githubcopilot.svg" width="20" alt="GitHub Copilot" /> GitHub Copilot | <img src="../images/claude-color.svg" width="20" alt="Claude Code" /> Claude Code        |
+| ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
 | Press `Ctrl+Alt+I` (Windows/Linux) or `Cmd+Shift+I` (Mac) to open the Copilot Chat panel | Run `claude` in the integrated terminal from the repo root to start the interactive REPL |
 
 ### 1.2 Request Interface Generation
@@ -402,8 +402,8 @@ Ask yourself:
 
 ### 4.3 Ask for Improvements
 
-| <img src="../images/githubcopilot.svg" width="20" alt="GitHub Copilot" /> GitHub Copilot | <img src="../images/claude-color.svg" width="20" alt="Claude Code" /> Claude Code |
-|---|---|
+| <img src="../images/githubcopilot.svg" width="20" alt="GitHub Copilot" /> GitHub Copilot                                                                                                    | <img src="../images/claude-color.svg" width="20" alt="Claude Code" /> Claude Code                                                                              |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Use the `/check` slash command in Copilot Chat: `/check Review the NotificationService implementation and tests. Are there any improvements we could make while keeping the same behavior?` | Ask directly in the REPL: `Review the NotificationService implementation and tests. Are there any improvements we could make while keeping the same behavior?` |
 
 Your AI coding tool might suggest:

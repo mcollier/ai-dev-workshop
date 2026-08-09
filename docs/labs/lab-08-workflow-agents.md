@@ -59,7 +59,7 @@ You need to break this down into user stories with acceptance criteria.
 1. Open standard chat (no agent selected)
 2. Use this prompt:
 
-```
+```text
 Create user stories for a notification system in the TaskManager app.
 Users should get notifications when tasks are assigned, deadlines approach, or status changes.
 Include acceptance criteria.
@@ -76,15 +76,15 @@ Include acceptance criteria.
 
 ### Part B: Backlog Generator Agent
 
-| <img src="../images/githubcopilot.svg" width="20" alt="GitHub Copilot" /> GitHub Copilot | <img src="../images/claude-color.svg" width="20" alt="Claude Code" /> Claude Code |
-|---|---|
+| <img src="../images/githubcopilot.svg" width="20" alt="GitHub Copilot" /> GitHub Copilot                                                                                                                                            | <img src="../images/claude-color.svg" width="20" alt="Claude Code" /> Claude Code                           |
+| ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------- |
 | 1. Switch to **Agent Mode**<br>2. Select **Backlog Generator** from the agent dropdown *(pending — see the gap callout above; use `.claude/agents/backlog-generator.md` as reference and paste its prompt body into standard Chat)* | 1. In the Claude Code REPL, mention `@backlog-generator` (defined at `.claude/agents/backlog-generator.md`) |
 
 **Instructions:**
 
 1. Use the same (or similar) prompt:
 
-```
+```text
 Create user stories for a notification system in the TaskManager app.
 Users should get notifications when tasks are assigned, deadlines approach, or status changes.
 ```
@@ -102,13 +102,13 @@ Users should get notifications when tasks are assigned, deadlines approach, or s
 
 ### Comparison Questions
 
-| Aspect | Standard Chat | Backlog Generator Agent |
-|--------|---------------|------------------------|
-| **Story Format** | [Your observation] | [Your observation] |
-| **Acceptance Criteria Quality** | [Your observation] | [Your observation] |
-| **Completeness** | [Your observation] | [Your observation] |
-| **Consistency** | [Your observation] | [Your observation] |
-| **Ready for Sprint Planning?** | [Your observation] | [Your observation] |
+| Aspect                          | Standard Chat      | Backlog Generator Agent |
+| ------------------------------- | ------------------ | ----------------------- |
+| **Story Format**                | [Your observation] | [Your observation]      |
+| **Acceptance Criteria Quality** | [Your observation] | [Your observation]      |
+| **Completeness**                | [Your observation] | [Your observation]      |
+| **Consistency**                 | [Your observation] | [Your observation]      |
+| **Ready for Sprint Planning?**  | [Your observation] | [Your observation]      |
 
 **Reflection:**
 - Which output would you prefer to present to your product owner?
@@ -166,7 +166,7 @@ public class NotificationService
 2. Open the `NotificationService.cs` file
 3. Prompt:
 
-```
+```text
 Review this NotificationService for Clean Architecture compliance and suggest improvements.
 ```
 
@@ -176,15 +176,15 @@ Review this NotificationService for Clean Architecture compliance and suggest im
 
 ### Part B: Architecture Reviewer Agent
 
-| <img src="../images/githubcopilot.svg" width="20" alt="GitHub Copilot" /> GitHub Copilot | <img src="../images/claude-color.svg" width="20" alt="Claude Code" /> Claude Code |
-|---|---|
+| <img src="../images/githubcopilot.svg" width="20" alt="GitHub Copilot" /> GitHub Copilot                                                                                                                                          | <img src="../images/claude-color.svg" width="20" alt="Claude Code" /> Claude Code                                   |
+| --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------- |
 | 1. Switch to **Agent Mode**<br>2. Select **Architecture Reviewer** from dropdown *(pending — see the gap callout above; use `.claude/agents/architecture-reviewer.md` as reference and paste its prompt body into standard Chat)* | 1. In the Claude Code REPL, mention `@architecture-reviewer` (defined at `.claude/agents/architecture-reviewer.md`) |
 
 **Instructions:**
 
 1. Same prompt:
 
-```
+```text
 Review this NotificationService for Clean Architecture compliance and suggest improvements.
 ```
 
@@ -201,13 +201,13 @@ Review this NotificationService for Clean Architecture compliance and suggest im
 
 ### Comparison Questions
 
-| Aspect | Standard Chat | Architecture Reviewer Agent |
-|--------|---------------|----------------------------|
-| **Review Structure** | [Your observation] | [Your observation] |
-| **Depth of Analysis** | [Your observation] | [Your observation] |
-| **Actionable Recommendations** | [Your observation] | [Your observation] |
-| **Consistency with Standards** | [Your observation] | [Your observation] |
-| **Ready to Use in PR Review?** | [Your observation] | [Your observation] |
+| Aspect                         | Standard Chat      | Architecture Reviewer Agent |
+| ------------------------------ | ------------------ | --------------------------- |
+| **Review Structure**           | [Your observation] | [Your observation]          |
+| **Depth of Analysis**          | [Your observation] | [Your observation]          |
+| **Actionable Recommendations** | [Your observation] | [Your observation]          |
+| **Consistency with Standards** | [Your observation] | [Your observation]          |
+| **Ready to Use in PR Review?** | [Your observation] | [Your observation]          |
 
 **Reflection:**
 - Did the agent identify issues standard chat missed?
@@ -237,7 +237,7 @@ You need a test strategy.
 1. Open standard chat (no agent)
 2. Prompt:
 
-```
+```text
 Propose test scenarios for a task assignment feature.
 Validate user and task exist, record timestamp, emit domain event.
 ```
@@ -248,15 +248,15 @@ Validate user and task exist, record timestamp, emit domain event.
 
 ### Part B: Test Strategist Agent
 
-| <img src="../images/githubcopilot.svg" width="20" alt="GitHub Copilot" /> GitHub Copilot | <img src="../images/claude-color.svg" width="20" alt="Claude Code" /> Claude Code |
-|---|---|
+| <img src="../images/githubcopilot.svg" width="20" alt="GitHub Copilot" /> GitHub Copilot                                                                                                                              | <img src="../images/claude-color.svg" width="20" alt="Claude Code" /> Claude Code                       |
+| --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- |
 | 1. Switch to **Agent Mode**<br>2. Select **Test Strategist** from dropdown *(pending — see the gap callout above; use `.claude/agents/test-strategist.md` as reference and paste its prompt body into standard Chat)* | 1. In the Claude Code REPL, mention `@test-strategist` (defined at `.claude/agents/test-strategist.md`) |
 
 **Instructions:**
 
 1. Same prompt:
 
-```
+```text
 Propose test scenarios for a task assignment feature.
 Validate user and task exist, record timestamp, emit domain event.
 ```
@@ -275,13 +275,13 @@ Validate user and task exist, record timestamp, emit domain event.
 
 ### Comparison Questions
 
-| Aspect | Standard Chat | Test Strategist Agent |
-|--------|---------------|----------------------|
-| **Test Organization** | [Your observation] | [Your observation] |
-| **Coverage Completeness** | [Your observation] | [Your observation] |
-| **Edge Case Identification** | [Your observation] | [Your observation] |
-| **Test Naming Clarity** | [Your observation] | [Your observation] |
-| **Ready to Implement?** | [Your observation] | [Your observation] |
+| Aspect                       | Standard Chat      | Test Strategist Agent |
+| ---------------------------- | ------------------ | --------------------- |
+| **Test Organization**        | [Your observation] | [Your observation]    |
+| **Coverage Completeness**    | [Your observation] | [Your observation]    |
+| **Edge Case Identification** | [Your observation] | [Your observation]    |
+| **Test Naming Clarity**      | [Your observation] | [Your observation]    |
+| **Ready to Implement?**      | [Your observation] | [Your observation]    |
 
 **Reflection:**
 - Did the agent identify edge cases you hadn't considered?
@@ -303,18 +303,18 @@ Validate user and task exist, record timestamp, emit domain event.
 
 ## Key Takeaways
 
-### Agents Excel At:
+### Agents Excel At
 ✅ **Structured, repeatable workflows** (reviews, planning, analysis)  
 ✅ **Consistency across team members** (same agent = same format)  
 ✅ **Encoding domain expertise** (architecture, testing, product practices)  
 ✅ **First-pass automation** (reduce manual work)
 
-### Agents Are Not:
+### Agents Are Not
 ❌ **Always correct** - You're still accountable  
 ❌ **Replacements for human judgment** - They're assistants  
 ❌ **One-size-fits-all** - Use the right agent for the job
 
-### When Agents Shine:
+### When Agents Shine
 - **Code reviews** (automated first pass)
 - **Backlog grooming** (consistent story format)
 - **Test planning** (comprehensive coverage)

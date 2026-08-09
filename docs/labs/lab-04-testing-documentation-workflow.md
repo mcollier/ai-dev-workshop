@@ -50,8 +50,8 @@ Open `src/TaskManager.Application/Commands/CreateTaskCommandHandler.cs` and sele
 
 With the method selected:
 
-| <img src="../images/githubcopilot.svg" width="20" alt="GitHub Copilot" /> GitHub Copilot | <img src="../images/claude-color.svg" width="20" alt="Claude Code" /> Claude Code |
-|---|---|
+| <img src="../images/githubcopilot.svg" width="20" alt="GitHub Copilot" /> GitHub Copilot                | <img src="../images/claude-color.svg" width="20" alt="Claude Code" /> Claude Code                                                                            |
+| ------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | Open Copilot Chat (`Ctrl+Alt+I` / `Cmd+Shift+I`) or Inline Chat (`Ctrl+I` / `Cmd+I`) and enter `/tests` | Paste or reference the method in the REPL and ask: `Generate xUnit tests for this method using FakeItEasy` (no `/tests` command defined yet — see `todo.md`) |
 
 #### Step 3: Review Generated Tests
@@ -354,9 +354,9 @@ Open `src/TaskManager.Application/Commands/CreateTaskCommandHandler.cs` and sele
 
 With the class selected:
 
-| <img src="../images/githubcopilot.svg" width="20" alt="GitHub Copilot" /> GitHub Copilot | <img src="../images/claude-color.svg" width="20" alt="Claude Code" /> Claude Code |
-|---|---|
-| Use Inline Chat (`Ctrl+I`) and enter `/doc` | Paste or reference the class in the REPL and ask: `Add XML documentation comments to this class` (no `/doc` command defined yet — see `todo.md`) |
+| <img src="../images/githubcopilot.svg" width="20" alt="GitHub Copilot" /> GitHub Copilot | <img src="../images/claude-color.svg" width="20" alt="Claude Code" /> Claude Code                                                                |
+| ---------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Use Inline Chat (`Ctrl+I`) and enter `/doc`                                              | Paste or reference the class in the REPL and ask: `Add XML documentation comments to this class` (no `/doc` command defined yet — see `todo.md`) |
 
 **Expected Output**:
 
@@ -412,8 +412,8 @@ public sealed class CreateTaskCommandHandler
 Reference the README file explicitly so the new section merges cleanly:
 
 | <img src="../images/githubcopilot.svg" width="20" alt="GitHub Copilot" /> GitHub Copilot | <img src="../images/claude-color.svg" width="20" alt="Claude Code" /> Claude Code |
-|---|---|
-| Ask Copilot Chat, using the `#file` context variable: `#file:README.md` | Ask in the REPL, using an `@` file mention: `@README.md` |
+| ---------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- |
+| Ask Copilot Chat, using the `#file` context variable: `#file:README.md`                  | Ask in the REPL, using an `@` file mention: `@README.md`                          |
 
 ```
 Create an API documentation section for <file-reference> that documents all the Task Manager API endpoints (POST, GET, GET by ID, PUT, DELETE). Include:

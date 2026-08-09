@@ -28,8 +28,8 @@ Context, Constraints, Process/Approach, Output Format, Tone & Approach).
 ### Architecture Reviewer
 
 | <img src="../images/githubcopilot.svg" width="20" alt="GitHub Copilot" /> GitHub Copilot | <img src="../images/claude-color.svg" width="20" alt="Claude Code" /> Claude Code |
-|---|---|
-| `.github/agents/architecture-reviewer.agent.md` *(not yet scaffolded)* | `.claude/agents/architecture-reviewer.md` |
+| ---------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- |
+| `.github/agents/architecture-reviewer.agent.md` *(not yet scaffolded)*                   | `.claude/agents/architecture-reviewer.md`                                         |
 
 - **Role:** [Identify the role]
 - **Key Responsibilities:** [List 3]
@@ -39,8 +39,8 @@ Context, Constraints, Process/Approach, Output Format, Tone & Approach).
 ### Backlog Generator
 
 | <img src="../images/githubcopilot.svg" width="20" alt="GitHub Copilot" /> GitHub Copilot | <img src="../images/claude-color.svg" width="20" alt="Claude Code" /> Claude Code |
-|---|---|
-| `.github/agents/backlog-generator.agent.md` *(not yet scaffolded)* | `.claude/agents/backlog-generator.md` |
+| ---------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- |
+| `.github/agents/backlog-generator.agent.md` *(not yet scaffolded)*                       | `.claude/agents/backlog-generator.md`                                             |
 
 - **Role:** [Identify the role]
 - **Key Responsibilities:** [List 3]
@@ -50,8 +50,8 @@ Context, Constraints, Process/Approach, Output Format, Tone & Approach).
 ### Test Strategist
 
 | <img src="../images/githubcopilot.svg" width="20" alt="GitHub Copilot" /> GitHub Copilot | <img src="../images/claude-color.svg" width="20" alt="Claude Code" /> Claude Code |
-|---|---|
-| `.github/agents/test-strategist.agent.md` *(not yet scaffolded)* | `.claude/agents/test-strategist.md` |
+| ---------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- |
+| `.github/agents/test-strategist.agent.md` *(not yet scaffolded)*                         | `.claude/agents/test-strategist.md`                                               |
 
 - **Role:** [Identify the role]
 - **Key Responsibilities:** [List 3]

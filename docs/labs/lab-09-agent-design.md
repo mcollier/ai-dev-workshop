@@ -120,12 +120,12 @@ You can see all seven components applied together in the real
 
 ## Authoring for Both Tools
 
-| <img src="../images/githubcopilot.svg" width="20" alt="GitHub Copilot" /> GitHub Copilot | <img src="../images/claude-color.svg" width="20" alt="Claude Code" /> Claude Code |
-|---|---|
-| File: `.github/agents/<name>.agent.md` | File: `.claude/agents/<name>.md` |
-| Frontmatter: `name`, `description`, `tools` (array), `model`, plus advanced properties covered below | Frontmatter: `name`, `description`, `tools` (comma-separated list), `model` — a deliberately smaller surface area |
-| Selected from the **Agent Mode dropdown**, or auto-invoked as a subagent depending on `user-invocable`/`disable-model-invocation` | Invoked by `@name` mention, or auto-delegated by Claude when the task matches the subagent's `description` |
-| Body: identical seven-component structure (Identity, Responsibilities, Context, Constraints, Process, Output Format, Tone) | Body: same seven-component structure |
+| <img src="../images/githubcopilot.svg" width="20" alt="GitHub Copilot" /> GitHub Copilot                                          | <img src="../images/claude-color.svg" width="20" alt="Claude Code" /> Claude Code                                 |
+| --------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------- |
+| File: `.github/agents/<name>.agent.md`                                                                                            | File: `.claude/agents/<name>.md`                                                                                  |
+| Frontmatter: `name`, `description`, `tools` (array), `model`, plus advanced properties covered below                              | Frontmatter: `name`, `description`, `tools` (comma-separated list), `model` — a deliberately smaller surface area |
+| Selected from the **Agent Mode dropdown**, or auto-invoked as a subagent depending on `user-invocable`/`disable-model-invocation` | Invoked by `@name` mention, or auto-delegated by Claude when the task matches the subagent's `description`        |
+| Body: identical seven-component structure (Identity, Responsibilities, Context, Constraints, Process, Output Format, Tone)        | Body: same seven-component structure                                                                              |
 
 > **Known gap:** this repository's three workshop agents
 > (`architecture-reviewer`, `backlog-generator`, `test-strategist`) exist as
@@ -305,9 +305,9 @@ The **Test Strategist** agent sometimes provides too many tests, including low-v
 
 ### Part A: Baseline Behavior
 
-| <img src="../images/githubcopilot.svg" width="20" alt="GitHub Copilot" /> GitHub Copilot | <img src="../images/claude-color.svg" width="20" alt="Claude Code" /> Claude Code |
-|---|---|
-| Open Copilot Chat in Agent Mode and select **Test Strategist** *(pending — `.github/agents/test-strategist.agent.md` isn't scaffolded yet; see `todo.md`)* | In the Claude Code REPL, mention `@test-strategist` |
+| <img src="../images/githubcopilot.svg" width="20" alt="GitHub Copilot" /> GitHub Copilot                                                                   | <img src="../images/claude-color.svg" width="20" alt="Claude Code" /> Claude Code |
+| ---------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- |
+| Open Copilot Chat in Agent Mode and select **Test Strategist** *(pending — `.github/agents/test-strategist.agent.md` isn't scaffolded yet; see `todo.md`)* | In the Claude Code REPL, mention `@test-strategist`                               |
 
 Prompt: `Propose test scenarios for a simple getter method that returns a task's title`
 
@@ -317,9 +317,9 @@ Prompt: `Propose test scenarios for a simple getter method that returns a task's
 
 ### Part B: Refine the Agent
 
-| <img src="../images/githubcopilot.svg" width="20" alt="GitHub Copilot" /> GitHub Copilot | <img src="../images/claude-color.svg" width="20" alt="Claude Code" /> Claude Code |
-|---|---|
-| Open `.github/agents/test-strategist.agent.md` *(create it locally for this exercise if it doesn't exist yet)* | Open `.claude/agents/test-strategist.md` |
+| <img src="../images/githubcopilot.svg" width="20" alt="GitHub Copilot" /> GitHub Copilot                       | <img src="../images/claude-color.svg" width="20" alt="Claude Code" /> Claude Code |
+| -------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- |
+| Open `.github/agents/test-strategist.agent.md` *(create it locally for this exercise if it doesn't exist yet)* | Open `.claude/agents/test-strategist.md`                                          |
 
 Add this constraint to the **Constraints** section:
 

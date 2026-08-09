@@ -46,8 +46,8 @@ This is intentionally vague - typical of early requirements. Your job is to brea
 ### 1.1 Generate Backlog Items
 
 | <img src="../images/githubcopilot.svg" width="20" alt="GitHub Copilot" /> GitHub Copilot | <img src="../images/claude-color.svg" width="20" alt="Claude Code" /> Claude Code |
-|---|---|
-| Open Copilot Chat (`Ctrl+Alt+I` / `Cmd+Shift+I`) | Run `claude` in the integrated terminal from the repo root |
+| ---------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- |
+| Open Copilot Chat (`Ctrl+Alt+I` / `Cmd+Shift+I`)                                         | Run `claude` in the integrated terminal from the repo root                        |
 
 Then enter:
 
@@ -266,8 +266,8 @@ public sealed record Priority
 **Following TDD**: Write tests FIRST before implementing!
 
 | <img src="../images/githubcopilot.svg" width="20" alt="GitHub Copilot" /> GitHub Copilot | <img src="../images/claude-color.svg" width="20" alt="Claude Code" /> Claude Code |
-|---|---|
-| Use the `/tests` custom command, or ask directly in chat | Ask directly in the REPL (no `/tests` command defined yet — see `todo.md`) |
+| ---------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- |
+| Use the `/tests` custom command, or ask directly in chat                                 | Ask directly in the REPL (no `/tests` command defined yet — see `todo.md`)        |
 
 ```text
 Generate xUnit tests for the Task entity in tests/TaskManager.UnitTests/Domain/Entities/TaskTests.cs that verify:

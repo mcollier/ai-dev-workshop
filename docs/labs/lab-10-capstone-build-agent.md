@@ -98,10 +98,10 @@ Before writing instructions, define what "good" looks like for your agent.
 
 Choose your file location and frontmatter based on the tool(s) you're targeting:
 
-| <img src="../images/githubcopilot.svg" width="20" alt="GitHub Copilot" /> GitHub Copilot | <img src="../images/claude-color.svg" width="20" alt="Claude Code" /> Claude Code |
-|---|---|
-| Create `.github/agents/[your-agent-name].agent.md` | Create `.claude/agents/[your-agent-name].md` |
-| `tools:` is an array (e.g. `['read', 'search']`) | `tools:` is a comma-separated list (e.g. `Read, Grep, Glob`) |
+| <img src="../images/githubcopilot.svg" width="20" alt="GitHub Copilot" /> GitHub Copilot                           | <img src="../images/claude-color.svg" width="20" alt="Claude Code" /> Claude Code                            |
+| ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ |
+| Create `.github/agents/[your-agent-name].agent.md`                                                                 | Create `.claude/agents/[your-agent-name].md`                                                                 |
+| `tools:` is an array (e.g. `['read', 'search']`)                                                                   | `tools:` is a comma-separated list (e.g. `Read, Grep, Glob`)                                                 |
 | Optionally add `user-invocable`, `disable-model-invocation`, `agents`, `argument-hint`, or `handoffs` (see Lab 09) | These advanced properties aren't supported — keep the frontmatter to `name`, `description`, `tools`, `model` |
 
 The body — Identity, Responsibilities, Context, Constraints, Process, Output
@@ -206,9 +206,9 @@ review them before writing your own.
 
 ### Test Procedure
 
-| <img src="../images/githubcopilot.svg" width="20" alt="GitHub Copilot" /> GitHub Copilot | <img src="../images/claude-color.svg" width="20" alt="Claude Code" /> Claude Code |
-|---|---|
-| 1. Open Copilot Chat in Agent Mode<br>2. Select your custom agent from the dropdown | 1. Open the Claude Code REPL<br>2. Mention `@[your-agent-name]`, or let Claude auto-delegate based on the `description` |
+| <img src="../images/githubcopilot.svg" width="20" alt="GitHub Copilot" /> GitHub Copilot | <img src="../images/claude-color.svg" width="20" alt="Claude Code" /> Claude Code                                       |
+| ---------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------- |
+| 1. Open Copilot Chat in Agent Mode<br>2. Select your custom agent from the dropdown      | 1. Open the Claude Code REPL<br>2. Mention `@[your-agent-name]`, or let Claude auto-delegate based on the `description` |
 
 1. **Run each test scenario** you defined in Step 2
 2. **Record the results:**
@@ -263,13 +263,13 @@ Based on your test results, refine your agent:
 
 ### Common Issues and Fixes
 
-| Issue | Likely Cause | Fix |
-|-------|--------------|-----|
-| Output format inconsistent | Vague instructions | Add explicit structure with headings |
-| Agent goes out of scope | No constraints | Add "NEVER" constraints |
-| Too verbose | No guidance on brevity | Add tone guidance: "Be concise" |
-| Misses important checks | Missing from responsibilities | Add to responsibilities list |
-| False positives | Overly broad rules | Add examples of acceptable patterns |
+| Issue                      | Likely Cause                  | Fix                                  |
+| -------------------------- | ----------------------------- | ------------------------------------ |
+| Output format inconsistent | Vague instructions            | Add explicit structure with headings |
+| Agent goes out of scope    | No constraints                | Add "NEVER" constraints              |
+| Too verbose                | No guidance on brevity        | Add tone guidance: "Be concise"      |
+| Misses important checks    | Missing from responsibilities | Add to responsibilities list         |
+| False positives            | Overly broad rules            | Add examples of acceptable patterns  |
 
 ### Refinement Process
 
@@ -302,7 +302,7 @@ Create a brief usage guide for your agent:
 - [Anti-pattern 2]
 
 **Example Prompts:**
-```
+```text
 [Example prompt 1]
 [Example prompt 2]
 [Example prompt 3]
@@ -363,7 +363,7 @@ At the end of this lab, you should have:
 
 ## Next Steps: Taking Agents to Production
 
-### Before sharing your agent with the team:
+### Before sharing your agent with the team
 
 1. **Test with real scenarios** (not just examples)
 2. **Get peer review** (have a colleague test it)
