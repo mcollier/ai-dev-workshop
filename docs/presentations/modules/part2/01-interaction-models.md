@@ -129,8 +129,6 @@ Use the **right mode** for the **right job**
 <!-- markdownlint-disable-next-line MD025 -->
 # Hands-On Time
 
-**Lab Guide:** [Lab 05: Interaction Models](../../../labs/lab-05-interaction-models.md)
-
 **Next Module:** [Skills & Customization](02-skills-customization.md)
 
 **Previous Module:** [Welcome & Recap](00-welcome-recap.md)

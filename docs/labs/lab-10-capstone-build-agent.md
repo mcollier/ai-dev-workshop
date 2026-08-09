@@ -426,7 +426,6 @@ Congratulations! You've completed the Advanced GitHub Copilot / Claude Code work
 
 - [Agent Design Guide](../guides/agent-design-guide.md)
 - [Agent Governance](../guides/agent-governance.md)
-- [Custom Agent Catalog](../guides/custom-agent-catalog.md)
 - [GitHub Documentation: Custom Agents](https://docs.github.com/copilot)
 - [Claude Code Documentation: Subagents](https://docs.claude.com/en/docs/claude-code/sub-agents)
 
