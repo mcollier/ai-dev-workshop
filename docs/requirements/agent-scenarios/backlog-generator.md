@@ -419,5 +419,4 @@ When testing the Backlog Generator agent with these scenarios:
 ## See Also
 
 - [Backlog Generator Agent](../../../.github/agents/backlog-generator.agent.md)
-- [Custom Agent Catalog](../../guides/custom-agent-catalog.md)
 - [Lab 08: Workflow Agents](../../labs/lab-08-workflow-agents.md)

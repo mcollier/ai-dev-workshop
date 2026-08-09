@@ -48,4 +48,4 @@ This document describes the testing approach for the Task Manager application, e
 
 ---
 
-*See also: [Sample Solution Architecture](../design/architecture.md), [Feature Walkthrough](../guides/adding-a-new-task-feature.md)*
+*See also: [Sample Solution Architecture](../design/architecture.md)

@@ -153,12 +153,6 @@ sequenceDiagram
     - Keeps business logic cohesive and boundaries clear.
     - Reduces risk of circular dependencies and makes onboarding easier for new contributors.
 
-## 7. References
-
-- [Copilot Instructions](../WORKSHOP-COPILOT-INSTRUCTIONS.md)
-- [Architect Copilot Agent Guide](../../.github/agents/architect.agent.md)
-- [Presentation Outline](../presentations/workshop_slide_outline.md)
-
 ---
 
 *Edit this document as needed to expand on CQRS, Minimal API, or other architectural details.*
