@@ -143,7 +143,7 @@ chore: update dependencies
 
 - **Subagents:** `.claude/agents/*.md` — `architecture-reviewer`,
   `backlog-generator`, `test-strategist`, `planner`, `engineer`,
-  `modernization`, `quality-gate`, `test-coverage`.
+  `quality-gate`, `test-coverage`.
 - **Skills:** `.claude/skills/*/SKILL.md` — portable capabilities, same
   format as GitHub Copilot's `.github/skills/`.
 - **Commands:** `.claude/commands/*.md` — custom slash commands (e.g.
