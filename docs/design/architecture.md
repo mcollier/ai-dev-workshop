@@ -2,7 +2,7 @@
 
 ## 1. Overview
 
-This solution demonstrates Clean Architecture and Domain-Driven Design (DDD) for a .NET 9 workshop. It is organized to maximize maintainability, testability, and separation of concerns.
+This solution demonstrates Clean Architecture and Domain-Driven Design (DDD) for a .NET 10 workshop. It is organized to maximize maintainability, testability, and separation of concerns.
 
 ## 2. Solution Structure
 
