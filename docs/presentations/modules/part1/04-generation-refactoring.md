@@ -44,8 +44,8 @@ section {
 - `DELETE /tasks/{id}` - Delete task
 
 **Using:**
-- VS Code Copilot Chat: `#codebase`, `#file`
-- Copilot CLI or Claude Code CLI: `@file-or-directory` + agent auto-discovery
+- ![w:16](../../../images/githubcopilot.svg) VS Code Copilot Chat: `#codebase`, `#file`
+- ![w:16](../../../images/githubcopilot.svg) Copilot CLI or ![w:16](../../../images/claude-color.svg) Claude Code CLI: `@file-or-directory` + agent auto-discovery
 - Minimal API patterns
 - CQRS queries
 - Integration tests

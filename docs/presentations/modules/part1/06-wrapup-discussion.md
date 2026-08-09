@@ -33,8 +33,8 @@ backgroundColor: #fff
 - Documentation debt reduced
 
 ### 2. Context Matters
-- VS Code: `#codebase`, `#file`, `#selection`
-- Copilot CLI / Claude Code: `@file-or-directory` + agent auto-discovery
+- ![w:16](../../../images/githubcopilot.svg) VS Code: `#codebase`, `#file`, `#selection`
+- ![w:16](../../../images/githubcopilot.svg) Copilot CLI / ![w:16](../../../images/claude-color.svg) Claude Code: `@file-or-directory` + agent auto-discovery
 - Instructions files encode team knowledge (`copilot-instructions.md`/`.instructions.md` or `CLAUDE.md`/`AGENTS.md`)
 - Better prompts = better results
 
@@ -136,10 +136,10 @@ git checkout solutions
 📚 **Lab Guides:** `docs/labs/`  
 📝 **Copilot Instructions:** `.github/instructions/` (context-aware)  
 
-**GitHub Copilot Docs:**  
+**![w:16](../../../images/githubcopilot.svg) GitHub Copilot Docs:**  
 [https://docs.github.com/copilot](https://docs.github.com/copilot)
 
-**Claude Code Docs**
+**![w:16](../../../images/claude-color.svg) Claude Code Docs**
 [https://code.claude.com/docs](https://code.claude.com/docs)
 
 ---

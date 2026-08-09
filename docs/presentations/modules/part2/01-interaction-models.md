@@ -38,7 +38,7 @@ section {
 
 ## Same Concepts, Different Tools
 
-|           | VS Code Copilot            | Copilot CLI                                                                                           | Claude Code                                                                                           |
+|           | ![w:18](../../../images/githubcopilot.svg) VS Code Copilot            | ![w:18](../../../images/githubcopilot.svg) Copilot CLI                                                                                           | ![w:18](../../../images/claude-color.svg) Claude Code                                                                                           |
 | --------- | -------------------------- | ----------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- |
 | **Ask**   | Ask mode (explicit toggle) | No toggle — default session answers. (`/ask` or `/btw` for quick side question w/o adding to history) | No toggle — default session answers. (`/ask` or `/btw` for quick side question w/o adding to history) |
 | **Plan**  | Plan mode                  | `/plan` or `Shift+Tab` — explicit plan-first mode                                                     | Plan Mode (`Shift+Tab` twice) — explicit                                                              |

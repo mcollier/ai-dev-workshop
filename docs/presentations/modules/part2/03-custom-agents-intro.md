@@ -18,8 +18,8 @@ backgroundColor: #fff
 
 **Named chat participants** with specific roles
 
-- Selectable from agent dropdown (VS Code IDE) or `/agent` (Copilot CLI)
-- Claude Code: **subagents** are auto-routed by task description
+- ![w:16](../../../images/githubcopilot.svg) Selectable from agent dropdown (VS Code IDE) or `/agent` (Copilot CLI)
+- ![w:16](../../../images/claude-color.svg) Claude Code: **subagents** are auto-routed by task description
 - Role-based AI personas (e.g., Architecture Reviewer)
 - Defined scope and constraints
 - Structured, consistent outputs
@@ -49,7 +49,7 @@ You wouldn't ask a general assistant to:
 | Feature         | Prompts  | Instructions | Skills                         | Agents                                                               |
 | --------------- | -------- | ------------ | ------------------------------ | -------------------------------------------------------------------- |
 | **Scope**       | One-off  | Always-on    | On-demand                      | On-demand                                                            |
-| **Invocation**  | Chat     | Automatic    | Slash command (varies by tool) | VS Code `@agent-name`; Copilot CLI `/agent`; Claude Code auto-routed |
+| **Invocation**  | Chat     | Automatic    | Slash command (varies by tool) | ![w:14](../../../images/githubcopilot.svg) VS Code `@agent-name`; ![w:14](../../../images/githubcopilot.svg) Copilot CLI `/agent`; ![w:14](../../../images/claude-color.svg) Claude Code auto-routed |
 | **Tool Access** | ❌       | ❌           | ❌                             | ✅                                                                   |
 | **Purpose**     | Question | Guardrails   | Knowledge                      | Workflow                                                             |
 
