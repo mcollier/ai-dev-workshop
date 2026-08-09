@@ -1,30 +1,38 @@
 # To Do List
 
-- [ ] Support GitHub Copilot App
-- [ ] Add intro slide(s) on pricing?
-- [ ] Support for VS Code Agents window
-- [ ] Section on file locations for each tool (GitHub Copilot CLI, VS Code GitHub Copilot, Claude Code)
-- [ ] Section on using a plugin marketplace
-- [ ] Account for newer skills and patterns
-  - [ ] Recommended skills or plugins ([mattpocock/skills](https://github.com/mattpocock/skills), [skills.sh](https://skills.sh), [anthropics/skills](https://github.com/anthropics/skills), [addyosmani/agent-skills](https://github.com/addyosmani/agent-skills), [HVE](https://microsoft.github.io/hve-core/docs/))?
-  - [ ] Research --> Plan --> Implement
-  - [ ] Rubber Ducking
-- [ ] Account for Squad or similar? Advanced topic?
-- [ ] Add guidance for sharing assets (plugin marketplace, organizational settings (GitHub), personal vs. repo level skills, etc.)
+- [x] Support GitHub Copilot App
+- [x] Add intro slide(s) on pricing?
+- [x] Support for VS Code Agents window
+- [x] Section on file locations for each tool (GitHub Copilot CLI, VS Code GitHub Copilot, Claude Code)
+- [x] Section on using a plugin marketplace
+- [x] Account for newer skills and patterns
+  - [x] Recommended skills or plugins ([mattpocock/skills](https://github.com/mattpocock/skills), [skills.sh](https://skills.sh), [anthropics/skills](https://github.com/anthropics/skills), [addyosmani/agent-skills](https://github.com/addyosmani/agent-skills), [HVE](https://microsoft.github.io/hve-core/docs/))?
+  - [x] Research --> Plan --> Implement
+  - [x] Rubber Ducking
+- [x] Account for Squad or similar? Advanced topic?
+- [x] Add guidance for sharing assets (plugin marketplace, organizational settings (GitHub), personal vs. repo level skills, etc.)
 - [x] Update .NET code to .NET 10 (current LTS version; v9 end of support in November 2026)
-- [ ] Review workshop checklist to ensure guidance on using GitHub Copilot CLI
-- [ ] Seems that `@workspace` has been removed; use `#codebase` instead
-- [ ] When to use `AGENTS.md` vs. `copilot-instructions.md`
-  - [ ] Also `CLAUDE.md`
+- [x] Review workshop checklist to ensure guidance on using GitHub Copilot CLI
+- [x] Seems that `@workspace` has been removed; use `#codebase` instead
+- [x] When to use `AGENTS.md` vs. `copilot-instructions.md`
+  - [x] Also `CLAUDE.md`
 - [ ] Should we lean more towards CLI tools (GitHub Copilot CLI and Claude Code) instead of pure VS Code IDE?
-- [ ] Account for prompt cache details
-  - [ ] Add section on costs and optimization
-  - [ ] Account for model selection guidance
+- [x] Account for prompt cache details
+  - [x] Add section on costs and optimization
+  - [x] Account for model selection guidance
 - [ ] Add support for GitHub (remote) coding agent?
-- [ ] Add to prerequisites details on ensuring you have budget/credits to do the labs. This does cost real money!
-- [ ] Pull in docs/guides as a reference
+- [x] Add to prerequisites details on ensuring you have budget/credits to do the labs. This does cost real money!
+- [x] Pull in docs/guides as a reference
 - [ ] Add Claude Code (VS Code extension and CLI) to dev container
+- [ ] Review the setup guide to ensure Claude Code is accounted for.
+- [ ] ~~Add helpful GitHub Copilot CLI features~~
+  - [ ] ~~`/research`, `/chronicle`, `/after`, `/every`, `/context`~~
+  - [ ] ~~`/yolo` or `/autopilot`~~
+  - [ ] ~~`/experimental`, `/fleet`~~
+  - [ ] ~~`/pr`~~
+  - [ ] ~~`/review`, `/rubber-duck`, `/security-review`~~
+  - [ ] ~~`/sandbox`, `/voice`~~
 - [ ] Sample `src/` TaskManager app is being built by someone else in a separate PR — once merged, revisit labs to confirm file paths/structure referenced in prompts still match, and drop any "reference-only" caveats
 - [ ] Scaffold real `.claude/` files (commands, skills, subagents) mirroring the existing `.github/` ones — deferred; for now the labs only describe Claude Code steps in comparison tables
-- [ ] `@workspace` is no longer current (superseded by automatic workspace context / `#codebase`) — updated the labs, but presentations, guidebooks, and other materials still need the same fix once integrated
+- [x] `@workspace` is no longer current (superseded by automatic workspace context / `#codebase`) — updated the labs, but presentations, guidebooks, and other materials still need the same fix once integrated
 - [ ] Fix or remove the stale `../guides/` and `../presentations/` links in docs/labs/README.md and lab files — being addressed later once that content is integrated
