@@ -9,7 +9,7 @@
 > [Lab 09: Designing Effective Custom Agents](lab-09-agent-design.md) to keep
 > that lab's hands-on time focused on the core component model and iterating
 > on agent instructions.
-
+>
 > <img src="../images/githubcopilot.svg" width="16" alt="GitHub Copilot" /> **This demo is Copilot-specific.** The advanced frontmatter properties
 > (`user-invocable`, `disable-model-invocation`, `agents`, `argument-hint`) and
 > the handoffs feature shown below are part of GitHub Copilot's custom agent

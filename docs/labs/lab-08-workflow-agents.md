@@ -14,7 +14,6 @@ By the end of this lab, you will:
 
 ## Prerequisites
 
-- Completion of [Lab 07: Custom Agents Intro](lab-07-custom-agents-intro.md)
 - VS Code with the GitHub Copilot extension, and/or Claude Code installed
 - Access to the TaskManager workshop repository
 - Familiarity with the three custom agents (Architecture Reviewer, Backlog Generator, Test Strategist)
@@ -346,6 +345,5 @@ In [Lab 09: Agent Design](lab-09-agent-design.md), you'll learn **how to design 
 ## Additional Resources
 
 - [Agent Scenario Examples](../../requirements/agent-scenarios/)
-- [Custom Agent Catalog](../guides/custom-agent-catalog.md)
 - [Agent Workflow Patterns Diagram](../design/diagrams/agent-workflow-patterns.md)
 - [Claude Code Documentation: Subagents](https://docs.claude.com/en/docs/claude-code/sub-agents)

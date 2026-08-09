@@ -368,9 +368,8 @@ At the end of this lab, you should have:
 1. **Test with real scenarios** (not just examples)
 2. **Get peer review** (have a colleague test it)
 3. **Document edge cases** and limitations
-4. **Add to the team catalog** ([docs/guides/custom-agent-catalog.md](../guides/custom-agent-catalog.md))
-5. **Set up governance** (review process, versioning)
-6. **Decide which tool(s) to maintain it for** — a single team may standardize on Copilot, Claude Code, or keep both in sync
+4. **Set up governance** (review process, versioning)
+5. **Decide which tool(s) to maintain it for** — a single team may standardize on Copilot, Claude Code, or keep both in sync
 
 ### Continuous Improvement
 

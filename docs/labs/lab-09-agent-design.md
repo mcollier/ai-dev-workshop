@@ -396,7 +396,6 @@ Claude Code `.claude/agents/*.md` subagent.
 - Update agents as practices evolve
 
 ### Documentation
-- Maintain a **catalog of agents** ([docs/guides/custom-agent-catalog.md](../guides/custom-agent-catalog.md))
 - Document when to use each agent, and whether it exists for Copilot, Claude Code, or both
 - Provide examples of good vs bad usage
 
@@ -453,5 +452,4 @@ In [Lab 10: Capstone - Build Your Own Agent](lab-10-capstone-build-agent.md), yo
 
 - [Agent Design Guide](../guides/agent-design-guide.md)
 - [Agent Governance](../guides/agent-governance.md)
-- [Custom Agent Catalog](../guides/custom-agent-catalog.md)
 - [Claude Code Documentation: Subagents](https://docs.claude.com/en/docs/claude-code/sub-agents)
