@@ -1,6 +1,6 @@
 # Workshop Rework Plan: .NET + GitHub Copilot + Claude Code Labs
 
-> **Status**: Working document. Delete this file once the rework is complete and merged.
+> **Status**: Working document for maintainers. Update as needed (or remove in a follow-up PR once no longer useful).
 
 ## Goal
 
