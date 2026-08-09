@@ -344,5 +344,5 @@ In [Lab 09: Agent Design](lab-09-agent-design.md), you'll learn **how to design 
 
 ## Additional Resources
 
-- [Agent Scenario Examples](../../requirements/agent-scenarios/)
+- [Agent Scenario Examples](../requirements/agent-scenarios/)
 - [Claude Code Documentation: Subagents](https://docs.claude.com/en/docs/claude-code/sub-agents)
