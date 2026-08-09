@@ -435,7 +435,7 @@ Select the refactored method:
 
 | <img src="../images/githubcopilot.svg" width="20" alt="GitHub Copilot" /> GitHub Copilot | <img src="../images/claude-color.svg" width="20" alt="Claude Code" /> Claude Code                                                   |
 | ---------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------- |
-| Use the `/tests` custom command                                                          | Ask directly in the REPL: `Generate xUnit tests for this method using FakeItEasy` (no `/tests` command defined yet — see `todo.md`) |
+| Use the `/tests` custom command                                                          | Use the `/tests` custom command, or ask directly in the REPL: `Generate xUnit tests for this method using FakeItEasy` |
 
 Verify generated tests cover:
 
@@ -663,7 +663,7 @@ Your AI coding tool will show:
 
 1. **Explain first**: Understand code before changing it (`/explain` in Copilot, a direct prompt in Claude Code)
 2. **Refactor with intent**: Automated refactoring with specific goals (`/refactor` in Copilot, a direct prompt in Claude Code)
-3. **Generate tests**: Cover refactored code (`/tests` in Copilot, a direct prompt in Claude Code)
+3. **Generate tests**: Cover refactored code (`/tests` in Copilot or Claude Code)
 4. **Iterative**: Refactor in small steps, run tests frequently
 
 ### ✅ Code Quality Improvements
@@ -733,7 +733,7 @@ You've completed this lab successfully when:
 ### Refactoring Breaks Tests
 
 **Problem**: Tests fail after refactoring  
-**Solution**: This is OK! Update tests to match new behavior. Regenerate tests (`/tests` in Copilot, a direct prompt in Claude Code).
+**Solution**: This is OK! Update tests to match new behavior. Regenerate tests (`/tests` in Copilot or Claude Code).
 
 ### Too Many Changes at Once
 
@@ -751,8 +751,8 @@ You've completed this lab successfully when:
 
 Move on to [**Lab 4: Testing, Documentation & Workflow**](lab-04-testing-documentation-workflow.md) where you'll:
 
-- Generate comprehensive test suites (`/tests` in Copilot, a direct prompt in Claude Code)
-- Create documentation (`/doc` in Copilot, a direct prompt in Claude Code)
+- Generate comprehensive test suites (`/tests` in Copilot or Claude Code)
+- Create documentation (`/doc` in Copilot or Claude Code)
 - Write Conventional Commit messages
 - Draft PR descriptions using full workspace context
 

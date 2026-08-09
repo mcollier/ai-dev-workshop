@@ -70,15 +70,16 @@ block-beta
 
 | <img src="../images/githubcopilot.svg" width="20" alt="GitHub Copilot" /> GitHub Copilot | <img src="../images/claude-color.svg" width="20" alt="Claude Code" /> Claude Code |
 | ---------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- |
-| `.github/skills/`                                                                        | `.claude/skills/` (not yet scaffolded in this repo — see `todo.md`)               |
+| `.github/skills/` (Copilot side not yet scaffolded — see `todo.md`)                      | `.claude/skills/` — see the real `test-data-generator` skill below                |
 
 ```text
-.github/skills/
+.claude/skills/
 └── test-data-generator/
     ├── SKILL.md                 # Required: Instructions with frontmatter
-    ├── template.js              # Optional: Script resources
+    ├── templates/               # Optional: Script/code resources
+    │   └── TaskFactory.cs
     └── examples/                # Optional: Example files
-        └── sample-data.json
+        └── sample-tasks.json
 ```
 
 #### SKILL.md Format
@@ -100,12 +101,17 @@ This skill helps generate realistic test data for .NET integration tests...
 
 ## Usage
 
-Invoke with: `/test-data-generator User 10`
+Invoke with: `/test-data-generator Task 10`
 
 ## Examples
 
 ...
 ```
+
+This is the exact shape of the real
+`.claude/skills/test-data-generator/SKILL.md` in this repository — open it
+to see the full version, including its `templates/` and `examples/`
+resources.
 
 ---
 
@@ -166,25 +172,30 @@ This is the most common confusion point. Here's how to differentiate:
 
 ### Exercise 2.1: Locate and Examine a Skill
 
-If your repository has skills in `.github/skills/` (Copilot) or `.claude/skills/` (Claude Code — not yet scaffolded, see `todo.md`), explore one. For this exercise, we'll conceptually explore a common pattern.
+| <img src="../images/githubcopilot.svg" width="20" alt="GitHub Copilot" /> GitHub Copilot | <img src="../images/claude-color.svg" width="20" alt="Claude Code" /> Claude Code |
+| ------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------- |
+| `.github/skills/` isn't scaffolded in this repo yet (see `todo.md`) — follow along conceptually using the Claude Code column | `.claude/skills/test-data-generator/` is a real skill in this repository — open it directly |
 
-**Typical Skill: Integration Test Helper**
+**Real Skill: Test Data Generator**
 
-1. **Navigate to** `.github/skills/` (if available, or follow along conceptually)
+1. **Navigate to** `.claude/skills/test-data-generator/`
 
 2. **Examine the structure**:
    ```text
-   .github/skills/integration-test-helper/
+   .claude/skills/test-data-generator/
    ├── SKILL.md
-   ├── test-template.cs
+   ├── templates/
+   │   └── TaskFactory.cs
    └── examples/
-       └── api-test-example.cs
+       └── sample-tasks.json
    ```
 
 3. **Open the SKILL.md** and review:
-   - **Frontmatter**: name, description, argument-hint
-   - **Instructions**: Step-by-step procedures
-   - **References**: Links to templates and examples
+   - **Frontmatter**: `name`, `description`, `argument-hint`, `user-invocable`
+   - **Instructions**: Step-by-step procedure for generating realistic `Task`
+     test data through the aggregate's factory methods
+   - **References**: `templates/TaskFactory.cs` (an in-code builder) and
+     `examples/sample-tasks.json` (a fixture shape for integration tests)
 
 ### Exercise 2.2: Invoke a Skill as Slash Command
 
@@ -194,7 +205,7 @@ If your repository has skills in `.github/skills/` (Copilot) or `.claude/skills/
 | ---------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------- |
 | Open Copilot Chat (`Ctrl+Alt+I` / `Cmd+Shift+I`)                                                           | Run `claude` in the integrated terminal from the repo root                                                              |
 | Type `/` to see available commands — skills appear alongside other slash commands                          | Type `/` in the REPL to see available slash commands, including any user-invocable skills                               |
-| Try invoking a skill: `/test-data-generator User 5`                                                        | Try invoking a skill the same way: `/test-data-generator User 5` (once a matching skill exists — see `todo.md`)         |
+| Try invoking a skill: `/test-data-generator Task 5` *(once `.github/skills/` is scaffolded)*                | Try invoking the real skill: `/test-data-generator Task 5`                                                              |
 | If no skills are available, try `/create-skill` and describe: "A skill for generating realistic test data" | If no skills are available, describe the need directly in the REPL: "Create a skill for generating realistic test data" |
 
 **Observe the behavior**:
@@ -208,7 +219,7 @@ If your repository has skills in `.github/skills/` (Copilot) or `.claude/skills/
 
 | <img src="../images/githubcopilot.svg" width="20" alt="GitHub Copilot" /> GitHub Copilot    | <img src="../images/claude-color.svg" width="20" alt="Claude Code" /> Claude Code |
 | ------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- |
-| In Copilot Chat, ask: "I need to create test data for integration tests with User entities" | In the Claude Code REPL, ask the same question                                    |
+| In Copilot Chat, ask: "I need to create test data for integration tests with Task entities" | In the Claude Code REPL, ask the same question                                    |
 
 **Observe**:
 - Your AI coding tool may automatically detect and load relevant skills

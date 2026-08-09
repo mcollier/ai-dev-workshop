@@ -42,7 +42,7 @@ section {
 /tests for CreateTaskCommand
 ```
 
-**Copilot CLI or Claude Code CLI** (no `/tests` shortcut — just ask):
+**Copilot CLI** (no `/tests` shortcut — just ask) or **Claude Code CLI** (`/tests` is a custom command in this repo — see `.claude/commands/tests.md`):
 
 ```text
 Generate comprehensive tests for CreateTaskCommand
@@ -65,7 +65,7 @@ Generate comprehensive tests for CreateTaskCommand
 /doc for ITaskService
 ```
 
-**Copilot CLI or Claude Code CLI** (no `/doc` shortcut — just ask):
+**Copilot CLI** (no `/doc` shortcut — just ask) or **Claude Code CLI** (`/doc` is a custom command in this repo — see `.claude/commands/doc.md`):
 
 ```text
 Add XML documentation comments for ITaskService

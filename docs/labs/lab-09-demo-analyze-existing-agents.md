@@ -20,16 +20,16 @@ Open each of the three custom agents and map their components live, narrating
 each one against the seven components (Identity & Role, Responsibilities,
 Context, Constraints, Process/Approach, Output Format, Tone & Approach).
 
-> **Known gap:** the `.github/agents/*.agent.md` files below are **not yet
-> scaffolded** in this repo (tracked as a bug in `todo.md`). Use the real
-> `.claude/agents/*.md` files as the walkthrough source — their content is
-> designed to be portable to a future `.agent.md` version.
+> Both sides are scaffolded — use whichever file matches your tool. The
+> `.claude/agents/*.md` files and their `.github/agents/*.agent.md`
+> counterparts describe the same behavior, just in each tool's frontmatter
+> format.
 
 ### Architecture Reviewer
 
 | <img src="../images/githubcopilot.svg" width="20" alt="GitHub Copilot" /> GitHub Copilot | <img src="../images/claude-color.svg" width="20" alt="Claude Code" /> Claude Code |
 | ---------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- |
-| `.github/agents/architecture-reviewer.agent.md` *(not yet scaffolded)*                   | `.claude/agents/architecture-reviewer.md`                                         |
+| `.github/agents/architecture-reviewer.agent.md`                                           | `.claude/agents/architecture-reviewer.md`                                         |
 
 - **Role:** [Identify the role]
 - **Key Responsibilities:** [List 3]
@@ -40,7 +40,7 @@ Context, Constraints, Process/Approach, Output Format, Tone & Approach).
 
 | <img src="../images/githubcopilot.svg" width="20" alt="GitHub Copilot" /> GitHub Copilot | <img src="../images/claude-color.svg" width="20" alt="Claude Code" /> Claude Code |
 | ---------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- |
-| `.github/agents/backlog-generator.agent.md` *(not yet scaffolded)*                       | `.claude/agents/backlog-generator.md`                                             |
+| `.github/agents/backlog-generator.agent.md`                                               | `.claude/agents/backlog-generator.md`                                             |
 
 - **Role:** [Identify the role]
 - **Key Responsibilities:** [List 3]
@@ -51,7 +51,7 @@ Context, Constraints, Process/Approach, Output Format, Tone & Approach).
 
 | <img src="../images/githubcopilot.svg" width="20" alt="GitHub Copilot" /> GitHub Copilot | <img src="../images/claude-color.svg" width="20" alt="Claude Code" /> Claude Code |
 | ---------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- |
-| `.github/agents/test-strategist.agent.md` *(not yet scaffolded)*                         | `.claude/agents/test-strategist.md`                                               |
+| `.github/agents/test-strategist.agent.md`                                                 | `.claude/agents/test-strategist.md`                                               |
 
 - **Role:** [Identify the role]
 - **Key Responsibilities:** [List 3]
