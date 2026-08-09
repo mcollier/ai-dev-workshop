@@ -681,6 +681,5 @@ When testing the Test Strategist agent with these scenarios:
 ## See Also
 
 - [Test Strategist Agent](../../../.github/agents/test-strategist.agent.md)
-- [Custom Agent Catalog](../../guides/custom-agent-catalog.md)
 - [Testing Strategy](../../design/testing-strategy.md)
 - [Lab 08: Workflow Agents](../../labs/lab-08-workflow-agents.md)
