@@ -49,8 +49,7 @@ Learn to follow the Red-Green-Refactor TDD cycle with AI assistance.
 
 - Repository cloned and personal branch created from `main`
 - VS Code with GitHub Copilot enabled
-- .NET 9 SDK installed
-
+- .NET 10 SDK installed
 ---
 
 ### [Lab 2: From Requirements to Code](lab-02-requirements-to-code.md)
