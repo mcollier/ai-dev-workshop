@@ -69,8 +69,8 @@ Include acceptance criteria.
 
 ### Part B: Backlog Generator Agent
 
-| <img src="../images/githubcopilot.svg" width="20" alt="GitHub Copilot" /> GitHub Copilot                                                                                                                                            | <img src="../images/claude-color.svg" width="20" alt="Claude Code" /> Claude Code                           |
-| ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------- |
+| <img src="../images/githubcopilot.svg" width="20" alt="GitHub Copilot" /> GitHub Copilot                                                        | <img src="../images/claude-color.svg" width="20" alt="Claude Code" /> Claude Code                           |
+| ----------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------- |
 | 1. Switch to **Agent Mode**<br>2. Select **Backlog Generator** from the agent dropdown (defined at `.github/agents/backlog-generator.agent.md`) | 1. In the Claude Code REPL, mention `@backlog-generator` (defined at `.claude/agents/backlog-generator.md`) |
 
 **Instructions:**
@@ -169,8 +169,8 @@ Review this NotificationService for Clean Architecture compliance and suggest im
 
 ### Part B: Architecture Reviewer Agent
 
-| <img src="../images/githubcopilot.svg" width="20" alt="GitHub Copilot" /> GitHub Copilot                                                                                                                                          | <img src="../images/claude-color.svg" width="20" alt="Claude Code" /> Claude Code                                   |
-| --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------- |
+| <img src="../images/githubcopilot.svg" width="20" alt="GitHub Copilot" /> GitHub Copilot                                                      | <img src="../images/claude-color.svg" width="20" alt="Claude Code" /> Claude Code                                   |
+| --------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------- |
 | 1. Switch to **Agent Mode**<br>2. Select **Architecture Reviewer** from dropdown (defined at `.github/agents/architecture-reviewer.agent.md`) | 1. In the Claude Code REPL, mention `@architecture-reviewer` (defined at `.claude/agents/architecture-reviewer.md`) |
 
 **Instructions:**
@@ -241,8 +241,8 @@ Validate user and task exist, record timestamp, emit domain event.
 
 ### Part B: Test Strategist Agent
 
-| <img src="../images/githubcopilot.svg" width="20" alt="GitHub Copilot" /> GitHub Copilot                                                                                                                              | <img src="../images/claude-color.svg" width="20" alt="Claude Code" /> Claude Code                       |
-| --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- |
+| <img src="../images/githubcopilot.svg" width="20" alt="GitHub Copilot" /> GitHub Copilot                                          | <img src="../images/claude-color.svg" width="20" alt="Claude Code" /> Claude Code                       |
+| --------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- |
 | 1. Switch to **Agent Mode**<br>2. Select **Test Strategist** from dropdown (defined at `.github/agents/test-strategist.agent.md`) | 1. In the Claude Code REPL, mention `@test-strategist` (defined at `.claude/agents/test-strategist.md`) |
 
 **Instructions:**
@@ -338,6 +338,4 @@ In [Lab 09: Agent Design](lab-09-agent-design.md), you'll learn **how to design 
 
 ## Additional Resources
 
-- [Agent Scenario Examples](../../requirements/agent-scenarios/)
-- [Agent Workflow Patterns Diagram](../design/diagrams/agent-workflow-patterns.md)
 - [Claude Code Documentation: Subagents](https://docs.claude.com/en/docs/claude-code/sub-agents)
