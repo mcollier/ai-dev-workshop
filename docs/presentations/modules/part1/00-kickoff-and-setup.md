@@ -73,8 +73,8 @@ backgroundColor: #fff
 
 ## The only constant is change
 
-- GitHub Copilot is available in multiple IDEs, [github.com/copilot](https://github.com/copilot) , CLI, Copilot App, and mobile
-- Claude Code is available in VS Code and JetBrains, CLI, Claude desktop, or [claude.ai/code](https://claude.ai/code)
+- ![w:20](../../../images/githubcopilot.svg) GitHub Copilot is available in multiple IDEs, [github.com/copilot](https://github.com/copilot) , CLI, Copilot App, and mobile
+- ![w:20](../../../images/claude-color.svg) Claude Code is available in VS Code and JetBrains, CLI, Claude desktop, or [claude.ai/code](https://claude.ai/code)
 - Features may vary by IDE or tooling
   - See [Copilot feature matrix](https://docs.github.com/en/copilot/reference/copilot-feature-matrix) for version details
 - AI-assisted software engineering tools and practices are evolving quickly — expect changes and differences
@@ -102,7 +102,7 @@ backgroundColor: #fff
 
 ## Prerequisites Check
 
-✅ **GitHub Copilot** _or_ ✅ **Claude Code** - Active subscription  
+✅ **![w:20](../../../images/githubcopilot.svg) GitHub Copilot** _or_ ✅ **![w:20](../../../images/claude-color.svg) Claude Code** - Active subscription  
 ✅ **VS Code** - Latest stable version  
 ✅ **Git** - Basic familiarity  
 ✅ **.NET 10 SDK** - `dotnet --version`  
