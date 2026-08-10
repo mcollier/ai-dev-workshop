@@ -16,10 +16,7 @@ Each lab is designed as a standalone guide with:
 
 ## 🎥 Workshop Presentations
 
-> **Note:** Slide-deck presentation modules referenced in earlier drafts of
-> this workshop (`docs/presentations/`) are not part of this repository yet.
-> This directory's lab walkthroughs are self-contained and don't require the
-> presentation modules to complete.
+Please refer to [presentations](../presentations/README.md) for the full list of workshop presentations.
 
 ---
 
@@ -368,7 +365,7 @@ Lab 3 (Generation & Refactoring)
 Lab 4 (Documentation & Workflow)
 ```
 
-#### Part 2: Advanced Topics
+#### Part 2: Customizing your Agentic Engineering Workflow
 
 ```text
 Lab 6 (Skills & Customization)
