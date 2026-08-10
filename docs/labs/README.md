@@ -320,7 +320,7 @@ Design, build, test, and document your own custom agent.
    - Signed in to GitHub
    - Instructions automatically load from `.github/instructions/` based on file context
 
-6. **Verify Claude Code**
+6. **Verify Claude Code**:
    - Claude Code CLI and/or VS Code extension installed
    - Signed into Claude Code account
    - Skills load from `.claude/skills` via `/skills` command
