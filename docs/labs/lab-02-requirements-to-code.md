@@ -267,7 +267,7 @@ public sealed record Priority
 
 | <img src="../images/githubcopilot.svg" width="20" alt="GitHub Copilot" /> GitHub Copilot | <img src="../images/claude-color.svg" width="20" alt="Claude Code" /> Claude Code |
 | ---------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- |
-| Use the `/tests` custom command, or ask directly in chat                                 | Ask directly in the REPL (no `/tests` command defined yet — see `todo.md`)        |
+| Use the `/tests` custom command, or ask directly in chat                                 | Use the `/tests` custom command, or ask directly in the REPL                      |
 
 ```text
 Generate xUnit tests for the Task entity in tests/TaskManager.UnitTests/Domain/Entities/TaskTests.cs that verify:

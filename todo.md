@@ -33,6 +33,7 @@
   - [ ] ~~`/review`, `/rubber-duck`, `/security-review`~~
   - [ ] ~~`/sandbox`, `/voice`~~
 - [ ] Sample `src/` TaskManager app is being built by someone else in a separate PR — once merged, revisit labs to confirm file paths/structure referenced in prompts still match, and drop any "reference-only" caveats
-- [ ] Scaffold real `.claude/` files (commands, skills, subagents) mirroring the existing `.github/` ones — deferred; for now the labs only describe Claude Code steps in comparison tables
+- [x] Scaffold real `.claude/` files (commands, skills, subagents) mirroring the existing `.github/` ones — added root `CLAUDE.md`, `.claude/commands/tests.md` + `doc.md`, `.claude/skills/test-data-generator/`, and `.claude/agents/quality-gate.md` + `test-coverage.md`. Labs updated to point at the real files instead of `todo.md` callouts.
+  - Note: skipped a Claude equivalent of `.github/agents/modernization.agent.md` — it's a Mule ESB → Spring Boot/Java migration agent that doesn't match this .NET workshop repo (references a nonexistent `.github/instructions/springboot.instructions.md`); worth removing or replacing on the Copilot side too.
 - [x] `@workspace` is no longer current (superseded by automatic workspace context / `#codebase`) — updated the labs, but presentations, guidebooks, and other materials still need the same fix once integrated
 - [ ] Fix or remove the stale `../guides/` and `../presentations/` links in docs/labs/README.md and lab files — being addressed later once that content is integrated

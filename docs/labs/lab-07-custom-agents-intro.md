@@ -53,17 +53,11 @@ Custom agents ARE those specialists.
 | ---------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `.github/agents/*.agent.md` — selected from the Agent Mode dropdown                      | `.claude/agents/*.md` — invoked by name (e.g. `@architecture-reviewer`) or auto-delegated by Claude when the task matches the agent's `description` |
 
-> **Known gap:** this repository's `.github/agents/` directory currently only
-> contains a `.gitkeep` placeholder — the three `.agent.md` files described
-> below (`architecture-reviewer`, `backlog-generator`, `test-strategist`)
-> **do not exist yet** on the Copilot side. This is tracked as a bug in
-> `todo.md`. The Claude Code equivalents **do exist** at
-> `.claude/agents/architecture-reviewer.md`, `.claude/agents/backlog-generator.md`,
-> and `.claude/agents/test-strategist.md`, so Claude Code users can complete
-> every exercise in this lab today. Copilot users should read the agent
-> descriptions below and, until the `.agent.md` files land, paste the
-> equivalent `.claude/agents/*.md` prompt body into standard Copilot Chat to
-> approximate the same behavior.
+> **Both sides are scaffolded:** the three agents used in this lab
+> (`architecture-reviewer`, `backlog-generator`, `test-strategist`) exist on
+> both sides — `.github/agents/*.agent.md` for Copilot and
+> `.claude/agents/*.md` for Claude Code — so every exercise below works with
+> either tool's real agent selector, no approximation needed.
 
 ### How Agents Differ From
 
@@ -94,9 +88,9 @@ Custom agents ARE those specialists.
 
 ### Setup
 
-| <img src="../images/githubcopilot.svg" width="20" alt="GitHub Copilot" /> GitHub Copilot                                                                                                                                                                               | <img src="../images/claude-color.svg" width="20" alt="Claude Code" /> Claude Code                  |
-| ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
-| Would use a pre-built **Architecture Reviewer** agent at `.github/agents/architecture-reviewer.agent.md` — **not yet scaffolded, see the callout above**. Read the equivalent Claude Code file to preview the intended behavior, then approximate it in standard Chat. | Uses the pre-built **Architecture Reviewer** subagent at `.claude/agents/architecture-reviewer.md` |
+| <img src="../images/githubcopilot.svg" width="20" alt="GitHub Copilot" /> GitHub Copilot              | <img src="../images/claude-color.svg" width="20" alt="Claude Code" /> Claude Code                  |
+| ----------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
+| Uses the pre-built **Architecture Reviewer** agent at `.github/agents/architecture-reviewer.agent.md` | Uses the pre-built **Architecture Reviewer** subagent at `.claude/agents/architecture-reviewer.md` |
 
 ### Scenario
 
@@ -105,7 +99,7 @@ You suspect there might be architectural issues in the Task entity or the reposi
 ### Instructions
 
 1. **Locate the agent:**
-   - Claude Code: open `.claude/agents/architecture-reviewer.md`. Copilot: open `.claude/agents/architecture-reviewer.md` as a stand-in reference until `.github/agents/architecture-reviewer.agent.md` is authored.
+   - Claude Code: open `.claude/agents/architecture-reviewer.md`. Copilot: open `.github/agents/architecture-reviewer.agent.md`.
    - Read the agent's responsibilities and constraints
    - Note the structured output format
 
@@ -117,9 +111,9 @@ You suspect there might be architectural issues in the Task entity or the reposi
 
 3. **Select the Architecture Reviewer agent:**
 
-   | <img src="../images/githubcopilot.svg" width="20" alt="GitHub Copilot" /> GitHub Copilot                                                                                                                  | <img src="../images/claude-color.svg" width="20" alt="Claude Code" /> Claude Code                   |
-   | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- |
-   | Select **Architecture Reviewer** from the agent dropdown *(unavailable until `.github/agents/architecture-reviewer.agent.md` is created — use standard Chat with the copied prompt body in the meantime)* | Mention `@architecture-reviewer` explicitly, or let Claude auto-delegate based on its `description` |
+   | <img src="../images/githubcopilot.svg" width="20" alt="GitHub Copilot" /> GitHub Copilot | <img src="../images/claude-color.svg" width="20" alt="Claude Code" /> Claude Code                   |
+   | ---------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- |
+   | Select **Architecture Reviewer** from the agent dropdown                                 | Mention `@architecture-reviewer` explicitly, or let Claude auto-delegate based on its `description` |
 
 4. **Use this prompt:**
    ```text
@@ -166,9 +160,9 @@ Perform the same task twice:
 
 #### Round 2: Architecture Reviewer Agent
 
-| <img src="../images/githubcopilot.svg" width="20" alt="GitHub Copilot" /> GitHub Copilot              | <img src="../images/claude-color.svg" width="20" alt="Claude Code" /> Claude Code |
-| ----------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- |
-| Switch to Agent Mode and select **Architecture Reviewer** *(pending scaffolding — see callout above)* | Mention `@architecture-reviewer`                                                  |
+| <img src="../images/githubcopilot.svg" width="20" alt="GitHub Copilot" /> GitHub Copilot | <img src="../images/claude-color.svg" width="20" alt="Claude Code" /> Claude Code |
+| ---------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- |
+| Switch to Agent Mode and select **Architecture Reviewer**                                | Mention `@architecture-reviewer`                                                  |
 
 3. Same prompt: `Review the Task domain model for DDD compliance`
 4. Record the response structure and depth
@@ -193,18 +187,18 @@ The repository includes definitions for three custom agents. Briefly explore eac
 
 ### 1. Backlog Generator
 
-| <img src="../images/githubcopilot.svg" width="20" alt="GitHub Copilot" /> GitHub Copilot             | <img src="../images/claude-color.svg" width="20" alt="Claude Code" /> Claude Code |
-| ---------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- |
-| **Location:** `.github/agents/backlog-generator.agent.md` *(not yet scaffolded — see callout above)* | **Location:** `.claude/agents/backlog-generator.md`                               |
+| <img src="../images/githubcopilot.svg" width="20" alt="GitHub Copilot" /> GitHub Copilot | <img src="../images/claude-color.svg" width="20" alt="Claude Code" /> Claude Code |
+| ---------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- |
+| **Location:** `.github/agents/backlog-generator.agent.md`                                | **Location:** `.claude/agents/backlog-generator.md`                               |
 
 - **Try:** "Generate user stories for adding task comments feature"
 - **Observe:** Structured user stories with acceptance criteria
 
 ### 2. Test Strategist
 
-| <img src="../images/githubcopilot.svg" width="20" alt="GitHub Copilot" /> GitHub Copilot           | <img src="../images/claude-color.svg" width="20" alt="Claude Code" /> Claude Code |
-| -------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- |
-| **Location:** `.github/agents/test-strategist.agent.md` *(not yet scaffolded — see callout above)* | **Location:** `.claude/agents/test-strategist.md`                                 |
+| <img src="../images/githubcopilot.svg" width="20" alt="GitHub Copilot" /> GitHub Copilot | <img src="../images/claude-color.svg" width="20" alt="Claude Code" /> Claude Code |
+| ---------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- |
+| **Location:** `.github/agents/test-strategist.agent.md`                                  | **Location:** `.claude/agents/test-strategist.md`                                 |
 
 - **Try:** "Propose test scenarios for Task creation"
 - **Observe:** Categorized test scenarios (unit, integration, edge cases)
