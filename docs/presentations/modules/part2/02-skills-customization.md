@@ -58,7 +58,7 @@ mid-task as part of a larger workflow.
 | -------- | -------- | -------- |
 | **Purpose** | Knowledge & templates | Workflows & actions |
 | **Tool Access** | ❌ None | ✅ Read/write files |
-| **Invocation** | Slash command, or called by an agent | ![w:14](../../../images/githubcopilot.svg) VS Code: `@agent-name`; ![w:14](../../../images/githubcopilot.svg) Copilot CLI: `/agent`; ![w:14](../../../images/claude-color.svg) Claude Code: auto-routed |
+| **Invocation** | Slash command, or called by an agent | ![w:14](../../../images/githubcopilot.svg) VS Code: `@agent-name`<br/>![w:14](../../../images/githubcopilot.svg) Copilot CLI: `/agent`<br/>![w:14](../../../images/claude-color.svg) Claude Code: auto-routed |
 | **Can invoke the other?** | ❌ No tool access, so a skill can't invoke an agent | ✅ Yes, an agent loads a skill for domain knowledge, then acts on it |
 | **Best For** | Patterns, examples | Multi-step tasks; codifying explicit context on how to carry out a process |
 
@@ -86,7 +86,7 @@ Every tool has slash (`/`) commands
 ### Availability varies
 - By installed extensions or plugins
 - By how you access the tool (CLI vs. IDE)
-- By tool - Copilot and Claude Code don't expose identical command names
+- By tool - ![w:16](../../../images/githubcopilot.svg) Copilot and ![w:16](../../../images/claude-color.svg) Claude Code don't expose identical command names
 
 **Try it:** Type `/` or `/help` in whichever tool you're using; discover what's
 actually available in your session

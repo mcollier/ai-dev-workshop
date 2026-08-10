@@ -49,7 +49,7 @@ You wouldn't ask a general assistant to:
 | Feature         | Prompts  | Instructions | Skills                         | Agents                                                               |
 | --------------- | -------- | ------------ | ------------------------------ | -------------------------------------------------------------------- |
 | **Scope**       | One-off  | Always-on    | On-demand                      | On-demand                                                            |
-| **Invocation**  | Chat     | Automatic    | Slash command (varies by tool) | ![w:14](../../../images/githubcopilot.svg) VS Code `@agent-name`; ![w:14](../../../images/githubcopilot.svg) Copilot CLI `/agent`; ![w:14](../../../images/claude-color.svg) Claude Code auto-routed |
+| **Invocation**  | Chat     | Automatic    | Slash command (varies by tool) | ![w:14](../../../images/githubcopilot.svg) VS Code `@agent-name`<br/>![w:14](../../../images/githubcopilot.svg) Copilot CLI `/agent`<br/>![w:14](../../../images/claude-color.svg) Claude Code auto-routed |
 | **Tool Access** | ❌       | ❌           | ❌                             | ✅                                                                   |
 | **Purpose**     | Question | Guardrails   | Knowledge                      | Workflow                                                             |
 
@@ -88,7 +88,7 @@ Proposes comprehensive test strategies
 
 **Try the Architecture Reviewer agent:**
 
-1. Open Copilot or Claude Code
+1. Open ![w:16](../../../images/githubcopilot.svg) Copilot or ![w:16](../../../images/claude-color.svg) Claude Code
 2. Select "Architecture Reviewer" (dropdown or `/agent` in Copilot, or ask Claude Code to use it)
 3. Prompt: "Review the Task domain model"
 4. Compare to the default agent's output

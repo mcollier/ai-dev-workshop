@@ -129,7 +129,7 @@ Learn more at [https://bradygaster.github.io/squad/](https://bradygaster.github.
 
 🔗 **Labs**
 - All labs in `docs/labs/`
-- Agent definitions in `.github/agents/`
+- Agent definitions in ![w:14](../../../images/githubcopilot.svg) `.github/agents/` and ![w:14](../../../images/claude-color.svg) `.claude/agents/`
 
 ---
 

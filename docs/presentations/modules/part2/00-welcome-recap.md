@@ -33,38 +33,29 @@ backgroundColor: #fff
 ## Prerequisites
 
 ✅ Completion of Part 1
-✅ GitHub Copilot or Claude Code
+✅ ![w:16](../../../images/githubcopilot.svg) GitHub Copilot or ![w:16](../../../images/claude-color.svg) Claude Code
 ✅ Access to workshop repository  
 ✅ Familiarity with code generation and refactoring workflows
 
 ---
 
-## Part 1 Recap (5 minutes)
-
-**In Part 1, you learned:**
-
-- Using Copilot / Claude Code for TDD and refactoring
-- Instructions for guardrails
-- Documentation automation
-- Requirements-to-code workflows
-
-**In Part 2, we'll focus on:**
-
-Shaping **how teams work** using AI
-
----
-
-## Today's Journey
+## This Afternoon's Journey
 
 ```text
-Module 0: Kickoff & Context Reset (10 min)
-Module 1: Interaction Models (25 min)
-Module 2: Skills & Customization (30 min)
-Module 3: Custom Agents Intro (25 min)
-Module 4: Workflow Agents (30 min)
-Module 5: Agent Design (30 min)
-Module 6: Wrap-Up & Governance (10 min)
+0:00–0:10  Module 0: Kickoff & Context Reset
+0:10–0:35  Module 1: Interaction Models
+0:35–1:05  Module 2: Skills & Customization
+1:05–1:30  Module 3: Custom Agents Intro
+1:30–2:00  Module 4: Workflow Agents
+2:00–2:30  Module 5: Agent Design
+2:30–2:40  Module 6: Wrap-Up & Governance
 ```
+
+**This morning, you learned:** Using ![w:16](../../../images/githubcopilot.svg) Copilot / ![w:16](../../../images/claude-color.svg) Claude Code for TDD and refactoring, instructions for guardrails, documentation automation, and requirements-to-code workflows.
+
+**This afternoon, we'll focus on:**
+
+Shaping **how teams work** using AI
 
 ---
 
