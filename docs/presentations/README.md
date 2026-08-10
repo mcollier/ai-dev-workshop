@@ -20,7 +20,7 @@ This directory contains modular Marp presentations for the workshop.
 
 ---
 
-### Part 2: Advanced Copilot (3 hours)
+### Part 2: Customizing your Agentic Engineering Workflow (3 hours)
 
 | Module | Topic | Duration | File |
 | -------- | ------- | ---------- | ------ |
