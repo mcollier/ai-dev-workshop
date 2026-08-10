@@ -303,9 +303,9 @@ The **Test Strategist** agent sometimes provides too many tests, including low-v
 
 ### Part A: Baseline Behavior
 
-| <img src="../images/githubcopilot.svg" width="20" alt="GitHub Copilot" /> GitHub Copilot                                                                   | <img src="../images/claude-color.svg" width="20" alt="Claude Code" /> Claude Code |
-| ---------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- |
-| Open Copilot Chat in Agent Mode and select **Test Strategist**                                                                                             | In the Claude Code REPL, mention `@test-strategist`                               |
+| <img src="../images/githubcopilot.svg" width="20" alt="GitHub Copilot" /> GitHub Copilot | <img src="../images/claude-color.svg" width="20" alt="Claude Code" /> Claude Code |
+| ---------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- |
+| Open Copilot Chat in Agent Mode and select **Test Strategist**                           | In the Claude Code REPL, mention `@test-strategist`                               |
 
 Prompt: `Propose test scenarios for a simple getter method that returns a task's title`
 
@@ -315,9 +315,9 @@ Prompt: `Propose test scenarios for a simple getter method that returns a task's
 
 ### Part B: Refine the Agent
 
-| <img src="../images/githubcopilot.svg" width="20" alt="GitHub Copilot" /> GitHub Copilot                       | <img src="../images/claude-color.svg" width="20" alt="Claude Code" /> Claude Code |
-| -------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- |
-| Open `.github/agents/test-strategist.agent.md`                                                                  | Open `.claude/agents/test-strategist.md`                                          |
+| <img src="../images/githubcopilot.svg" width="20" alt="GitHub Copilot" /> GitHub Copilot | <img src="../images/claude-color.svg" width="20" alt="Claude Code" /> Claude Code |
+| ---------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- |
+| Open `.github/agents/test-strategist.agent.md`                                           | Open `.claude/agents/test-strategist.md`                                          |
 
 Add this constraint to the **Constraints** section:
 
