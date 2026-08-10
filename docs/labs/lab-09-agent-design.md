@@ -127,12 +127,10 @@ You can see all seven components applied together in the real
 | Selected from the **Agent Mode dropdown**, or auto-invoked as a subagent depending on `user-invocable`/`disable-model-invocation` | Invoked by `@name` mention, or auto-delegated by Claude when the task matches the subagent's `description`        |
 | Body: identical seven-component structure (Identity, Responsibilities, Context, Constraints, Process, Output Format, Tone)        | Body: same seven-component structure                                                                              |
 
-> **Known gap:** this repository's three workshop agents
-> (`architecture-reviewer`, `backlog-generator`, `test-strategist`) exist as
-> real files under `.claude/agents/`, but the corresponding
-> `.github/agents/*.agent.md` files are **not yet scaffolded** (tracked as a
-> bug in `todo.md`). Copilot users can still study the component model using
-> the `.claude/agents/*.md` files as reference.
+This repository's three workshop agents (`architecture-reviewer`,
+`backlog-generator`, `test-strategist`) exist as real files on both sides —
+`.claude/agents/*.md` and `.github/agents/*.agent.md` — so you can study the
+component model from either tool's actual files.
 
 ---
 
@@ -307,7 +305,7 @@ The **Test Strategist** agent sometimes provides too many tests, including low-v
 
 | <img src="../images/githubcopilot.svg" width="20" alt="GitHub Copilot" /> GitHub Copilot                                                                   | <img src="../images/claude-color.svg" width="20" alt="Claude Code" /> Claude Code |
 | ---------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- |
-| Open Copilot Chat in Agent Mode and select **Test Strategist** *(pending — `.github/agents/test-strategist.agent.md` isn't scaffolded yet; see `todo.md`)* | In the Claude Code REPL, mention `@test-strategist`                               |
+| Open Copilot Chat in Agent Mode and select **Test Strategist**                                                                                             | In the Claude Code REPL, mention `@test-strategist`                               |
 
 Prompt: `Propose test scenarios for a simple getter method that returns a task's title`
 
@@ -319,7 +317,7 @@ Prompt: `Propose test scenarios for a simple getter method that returns a task's
 
 | <img src="../images/githubcopilot.svg" width="20" alt="GitHub Copilot" /> GitHub Copilot                       | <img src="../images/claude-color.svg" width="20" alt="Claude Code" /> Claude Code |
 | -------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- |
-| Open `.github/agents/test-strategist.agent.md` *(create it locally for this exercise if it doesn't exist yet)* | Open `.claude/agents/test-strategist.md`                                          |
+| Open `.github/agents/test-strategist.agent.md`                                                                  | Open `.claude/agents/test-strategist.md`                                          |
 
 Add this constraint to the **Constraints** section:
 
@@ -336,7 +334,7 @@ Add this constraint to the **Constraints** section:
 ### Part C: Re-test Behavior
 
 Return to the same tool and re-invoke **Test Strategist** (`@test-strategist` in
-Claude Code, or the Agent Mode dropdown in Copilot once scaffolded) with the
+Claude Code, or the Agent Mode dropdown in Copilot) with the
 same prompt: `Propose test scenarios for a simple getter method that returns a task's title`
 
 **Observe:** Did the agent's behavior change? Did it decline or simplify the recommendation?

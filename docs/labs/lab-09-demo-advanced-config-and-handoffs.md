@@ -276,9 +276,9 @@ at each step" pattern:
   `.claude/agents/planner.md`'s Output Format end with a line like
   "Suggested Next Step: ask `@engineer` to implement step 1" (this repo's
   `planner.md` already does this).
-- **Use `.claude/commands/*.md` custom slash commands** (not yet scaffolded
-  in this repo — see `todo.md`) if you want a single command that always
-  chains the same sequence of subagents.
+- **Use `.claude/commands/*.md` custom slash commands** (see the real
+  `/tests` and `/doc` commands in this repo) if you want a single command
+  that always chains the same sequence of subagents.
 
 This keeps the same human-in-the-loop principle as Copilot's `send: false`
 handoffs, just without a dedicated UI affordance.

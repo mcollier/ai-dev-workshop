@@ -52,7 +52,7 @@ With the method selected:
 
 | <img src="../images/githubcopilot.svg" width="20" alt="GitHub Copilot" /> GitHub Copilot                | <img src="../images/claude-color.svg" width="20" alt="Claude Code" /> Claude Code                                                                            |
 | ------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| Open Copilot Chat (`Ctrl+Alt+I` / `Cmd+Shift+I`) or Inline Chat (`Ctrl+I` / `Cmd+I`) and enter `/tests` | Paste or reference the method in the REPL and ask: `Generate xUnit tests for this method using FakeItEasy` (no `/tests` command defined yet — see `todo.md`) |
+| Open Copilot Chat (`Ctrl+Alt+I` / `Cmd+Shift+I`) or Inline Chat (`Ctrl+I` / `Cmd+I`) and enter `/tests` | Enter `/tests`, or paste/reference the method in the REPL and ask: `Generate xUnit tests for this method using FakeItEasy` |
 
 #### Step 3: Review Generated Tests
 
@@ -356,7 +356,7 @@ With the class selected:
 
 | <img src="../images/githubcopilot.svg" width="20" alt="GitHub Copilot" /> GitHub Copilot | <img src="../images/claude-color.svg" width="20" alt="Claude Code" /> Claude Code                                                                |
 | ---------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
-| Use Inline Chat (`Ctrl+I`) and enter `/doc`                                              | Paste or reference the class in the REPL and ask: `Add XML documentation comments to this class` (no `/doc` command defined yet — see `todo.md`) |
+| Use Inline Chat (`Ctrl+I`) and enter `/doc`                                              | Enter `/doc`, or paste/reference the class in the REPL and ask: `Add XML documentation comments to this class` |
 
 **Expected Output**:
 
@@ -898,14 +898,14 @@ Review the generated PR description and adjust:
 
 ### ✅ Testing Best Practices
 
-1. **Test Generation**: `/tests` in Copilot, a direct prompt in Claude Code — generates comprehensive test suites instantly
+1. **Test Generation**: `/tests` in Copilot or Claude Code — generates comprehensive test suites instantly
 2. **Test Coverage**: Happy path, edge cases, error conditions, cancellation
 3. **Test Organization**: Feature-based folders, class-per-method files
 4. **Integration Tests**: WebApplicationFactory for full API testing
 
 ### ✅ Documentation Efficiency
 
-1. **Doc Generation**: `/doc` in Copilot, a direct prompt in Claude Code — XML documentation generated from code context
+1. **Doc Generation**: `/doc` in Copilot or Claude Code — XML documentation generated from code context
 2. **API Docs**: Clear examples with request/response formats
 3. **Architecture Docs**: ADRs document important decisions
 4. **Consistency**: AI ensures consistent documentation style
@@ -963,8 +963,8 @@ Create a quick start guide in docs/guides/api-quickstart.md for developers consu
 
 You've completed this lab successfully when:
 
-- ✅ Comprehensive test suite generated (unit + integration) via `/tests` in Copilot or a direct prompt in Claude Code
-- ✅ All public APIs have XML documentation via `/doc` in Copilot or a direct prompt in Claude Code
+- ✅ Comprehensive test suite generated (unit + integration) via `/tests` in Copilot or Claude Code
+- ✅ All public APIs have XML documentation via `/doc` in Copilot or Claude Code
 - ✅ API documentation in README.md with examples
 - ✅ Conventional Commit messages written for all changes
 - ✅ Complete PR description drafted using full workspace context
@@ -1037,8 +1037,8 @@ Congratulations! You've completed all four labs. You now know how to:
 
 1. Add always-loaded repo instructions (`.github/copilot-instructions.md` for Copilot, `CLAUDE.md` for Claude Code) to your team's repositories
 2. Establish Conventional Commits standard
-3. Use `/tests` (Copilot) or a direct prompt (Claude Code) for all new code
-4. Use `/doc` (Copilot) or a direct prompt (Claude Code) for public APIs
+3. Use `/tests` (Copilot or Claude Code) for all new code
+4. Use `/doc` (Copilot or Claude Code) for public APIs
 5. Trust your AI coding tool's automatic workspace context in daily work
 
 ### Advanced Usage
