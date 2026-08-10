@@ -50,7 +50,7 @@ section {
 Key rules encoded — same rules, different file depending on tool:
 
 | Rule                   | 🔷 .NET                   |
-| ---------------------- | ------------------------ |
+| ---------------------- | ------------------------- |
 | **TDD first**          | ✅ Tests before code      |
 | **Clean Architecture** | ✅ Domain has no deps     |
 | **DDD patterns**       | ✅ Aggregates, VOs        |
