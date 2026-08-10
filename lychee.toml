@@ -73,7 +73,7 @@ exclude_path = [
   "package-lock.json",
   "requirements.txt",
   "mkdocs.yml",
-  ".*\\.lock"
+  ".*\\.lock",
 ]
 
 #############################  Requests  ############################
@@ -158,12 +158,13 @@ glob_ignore_case = false
 
 # Exclude URLs and mail addresses from checking. The values are treated as regular expressions
 exclude = [
-    # '^https://example\.com/home$',                    # specific URL
-    # '^https?://example\.com',                         # match both HTTP and HTTPS
-    # '^https://(www\.)?linkedin\.com',                 # optional subdomains
-    # '^https://(.*\.)?github(usercontent)?\.(com|io)', # exclude common GitHub URLs
+  # '^https://example\.com/home$',                    # specific URL
+  # '^https?://example\.com',                         # match both HTTP and HTTPS
+  # '^https://(www\.)?linkedin\.com',                 # optional subdomains
+  # '^https://(.*\.)?github(usercontent)?\.(com|io)', # exclude common GitHub URLs
 
-    '^https://claude\.ai/code$' # exclude claude code links
+  '^https://claude\.ai/code$',   # exclude claude code links
+  '^https?://localhost([:/]|$)', # exclude localhost links
 ]
 
 # Exclude paths from getting checked. The values are treated as regular expressions

@@ -83,7 +83,7 @@ Add XML documentation comments for ITaskService
 
 <style scoped>
 section {
-  font-size: 24px;
+  font-size: 20px;
 }
 </style>
 
@@ -91,7 +91,7 @@ section {
 
 **Format:** `<type>(<scope>): <description>`
 
-**Types:**
+### Types
 - `feat` - New feature
 - `fix` - Bug fix
 - `docs` - Documentation
@@ -101,9 +101,11 @@ section {
 
 **Example:** `feat(domain): add Priority value object`
 
-**Enforced via instructions, not memory:** This repo already encodes the convention in
-`.github/instructions/.copilot-commit-message-instructions.md` for Copilot. Document
-the same convention in Claude Code using `CLAUDE.md`/`AGENTS.md` instead.
+### Enforced via instructions, not memory
+- **Copilot (VS Code)**: Encodes the convention in
+`.github/instructions/.copilot-commit-message-instructions.md`.
+- **Claude Code**: Document the same convention using `CLAUDE.md`/`AGENTS.md`.
+- Can also have a `git-commit` skill.
 
 ---
 
