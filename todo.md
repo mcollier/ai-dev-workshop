@@ -23,7 +23,7 @@
 - [ ] Add support for GitHub (remote) coding agent?
 - [x] Add to prerequisites details on ensuring you have budget/credits to do the labs. This does cost real money!
 - [x] Pull in docs/guides as a reference
-- [ ] Add Claude Code (VS Code extension and CLI) to dev container
+- [x] Add Claude Code (VS Code extension and CLI) to dev container
 - [ ] Review the setup guide to ensure Claude Code is accounted for.
 - [ ] ~~Add helpful GitHub Copilot CLI features~~
   - [ ] ~~`/research`, `/chronicle`, `/after`, `/every`, `/context`~~
@@ -37,3 +37,7 @@
   - Note: skipped a Claude equivalent of `.github/agents/modernization.agent.md` — it's a Mule ESB → Spring Boot/Java migration agent that doesn't match this .NET workshop repo (references a nonexistent `.github/instructions/springboot.instructions.md`); worth removing or replacing on the Copilot side too.
 - [x] `@workspace` is no longer current (superseded by automatic workspace context / `#codebase`) — updated the labs, but presentations, guidebooks, and other materials still need the same fix once integrated
 - [ ] Fix or remove the stale `../guides/` and `../presentations/` links in docs/labs/README.md and lab files — being addressed later once that content is integrated
+- [ ] Update root README and docs/presentations/README to not reference GitHub Copilot; same for docs/labs/README
+- [ ] Remove ms-dotnettools.csharp from setup instructions
+- [ ] Add Claude Code check in lab setup instructions
+- [ ] Add Additional Resources - Claude Code docs links
