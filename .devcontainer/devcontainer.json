@@ -19,7 +19,8 @@
     },
     "ghcr.io/devcontainers/features/copilot-cli:1": {
       "version": "latest"
-    }
+    },
+    "ghcr.io/stu-bell/devcontainer-features/claude-code:0": {}
   },
   "containerEnv": {
     "DOTNET_ENVIRONMENT": "Development",
@@ -28,16 +29,13 @@
   "customizations": {
     "vscode": {
       "extensions": [
-        "azurite.azurite",
-        "bierner.markdown-emoji",
-        "codezombiech.gitignore",
+        "anthropic.claude-code",
         "davidanson.vscode-markdownlint",
         "esbenp.prettier-vscode",
         "github.vscode-github-actions",
         "humao.rest-client",
         "marp-team.marp-vscode",
         "ms-azuretools.vscode-azure-github-copilot",
-        "ms-azuretools.vscode-bicep",
         "ms-dotnettools.csdevkit",
         "ms-windows-ai-studio.windows-ai-studio",
         "streetsidesoftware.code-spell-checker",
