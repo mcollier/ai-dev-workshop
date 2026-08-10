@@ -101,7 +101,7 @@ backgroundColor: #fff
 
 ## Next Steps: Part 2
 
-**Customizing your Agentic Engineering Workflow (Part 2):**
+**Customizing your Agentic Engineering Workflow:**
 - Interaction models (Ask, Plan, Agent)
 - Skills & Customization Hierarchy
 - Custom Agents
@@ -134,7 +134,8 @@ git checkout solutions
 ## Resources
 
 📚 **Lab Guides:** `docs/labs/`  
-📝 **Copilot Instructions:** `.github/instructions/` (context-aware)  
+📝 **Copilot Instructions:** `.github/instructions/` (context-aware)
+📝 **Claude Code:** `CLAUDE.md`
 
 **GitHub Copilot Docs:**  
 [https://docs.github.com/copilot](https://docs.github.com/copilot)
