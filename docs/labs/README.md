@@ -43,12 +43,12 @@ Learn to follow the Red-Green-Refactor TDD cycle with AI assistance.
 - Writing tests before implementation
 - Using Copilot Instructions for consistent code quality
 - Understanding TDD benefits and common mistakes
-- Generating tests with Copilot
+- Generating tests with Copilot or Claude Code
 
 **Prerequisites**:
 
 - Repository cloned and personal branch created from `main`
-- VS Code with GitHub Copilot enabled
+- VS Code with GitHub Copilot or Claude Code enabled
 - .NET 10 SDK installed
 ---
 
@@ -68,7 +68,7 @@ Transform vague user stories into working, tested features.
 
 **Key Skills**:
 
-- Decomposing user stories with Copilot
+- Decomposing user stories with Copilot or Claude Code
 - Generating acceptance criteria
 - Implementing features across all layers (Domain → Application → API)
 - Maintaining Clean Architecture principles
@@ -105,7 +105,7 @@ Generate complete API endpoints and modernize legacy code.
 **Prerequisites**:
 
 - Completed Labs 1 and 2
-- Familiar with Copilot Chat and Inline Chat
+- Familiar with GitHub Copilot and Claude Code fundamentals
 
 ---
 
@@ -138,7 +138,7 @@ Complete the development lifecycle with AI-assisted testing, docs, and PR prepar
 
 ---
 
-## Part 2: Advanced GitHub Copilot / Claude Code
+## Part 2: [Customizing your Agentic Engineering Workflow](../presentations/modules/part2/00-welcome-recap.md)
 
 ### [Lab 06: Skills & Customization Hierarchy](lab-06-skills-and-customization.md)
 
@@ -148,7 +148,7 @@ Understand the complete customization hierarchy and the new Skills system.
 
 **What You'll Learn**:
 
-- Four types of Copilot customization (Prompts, Instructions, Skills, Agents)
+- Four types of customization (Prompts, Instructions, Skills, Agents)
 - When to use each customization type
 - How Skills differ from Agents
 - Hands-on exploration of the test-data-generator skill
@@ -169,7 +169,7 @@ Understand the complete customization hierarchy and the new Skills system.
 
 **Prerequisites**:
 
-- Completed Part 1 (Labs 1-4) or familiar with basic Copilot usage
+- Completed Part 1 (Labs 1-4) or familiar with basic GitHub Copilot or Claude Code usage
 - Access to workshop repository with skills configured
 
 ---
@@ -178,7 +178,7 @@ Understand the complete customization hierarchy and the new Skills system.
 
 **Duration**: 30 minutes
 
-Learn about custom agents and how they differ from standard Copilot interactions.
+Learn about custom agents and how they differ from standard GitHub Copilot and Claude Code interactions.
 
 **What You'll Explore**:
 
@@ -316,10 +316,14 @@ Design, build, test, and document your own custom agent.
    ```
 
 5. **Verify Copilot**:
-   - GitHub Copilot extension installed
+   - GitHub Copilot extension or CLI installed
    - Signed in to GitHub
    - Instructions automatically load from `.github/instructions/` based on file context
 
+6. **Verify Claude Code**
+   - Claude Code CLI and/or VS Code extension installed
+   - Signed into Claude Code account
+   - Skills load from `.claude/skills` via `/skills` command
 ---
 
 ## 📖 How to Use These Walkthroughs
@@ -435,7 +439,6 @@ Both encode the same standards:
 
 - [ ] **GitHub Copilot** (GitHub.copilot)
 - [ ] **C# Dev Kit** (ms-dotnettools.csdevkit)
-- [ ] **C#** (ms-dotnettools.csharp)
 
 ### GitHub Copilot
 
@@ -443,6 +446,10 @@ Both encode the same standards:
 - [ ] Signed in to GitHub in VS Code
 - [ ] Copilot enabled (check status bar)
 - [ ] Tested inline suggestions (try typing a comment)
+
+### Claude Code
+- [ ] Active subscription (Pro, Max, Team, or Enterprise)
+- [ ] Signed into Claude Code CLI
 
 ### Repository
 
@@ -464,7 +471,7 @@ Both encode the same standards:
 1. Check Copilot status bar icon (should not show error)
 2. Sign out and back in to GitHub
 3. Restart VS Code
-4. Check subscription status at github.com/settings/copilot
+4. Check subscription status at [https://github.com/settings/copilot](https://github.com/settings/copilot)
 
 ### "Build fails with SDK errors"
 
@@ -507,6 +514,7 @@ Both encode the same standards:
 ### External Links
 
 - [GitHub Copilot Docs](https://docs.github.com/en/copilot)
+- [Claude Code Docs](https://code.claude.com/docs/en/overview)
 - [Clean Architecture](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html)
 - [Domain-Driven Design](https://martinfowler.com/bliki/DomainDrivenDesign.html)
 - [xUnit Documentation](https://xunit.net/)
@@ -518,6 +526,11 @@ Both encode the same standards:
 - [Slash Commands](https://docs.github.com/en/copilot/using-github-copilot/getting-code-suggestions-in-your-ide-with-github-copilot#using-code-snippets-in-chat)
 - [Context Variables](https://docs.github.com/en/copilot/using-github-copilot/asking-github-copilot-questions-in-your-ide#using-symbols)
 - [Copilot Instructions](https://docs.github.com/en/copilot/customizing-copilot/adding-custom-instructions-for-github-copilot)
+
+### Claude Code Features
+- [How Claude Code Works](https://code.claude.com/docs/en/how-claude-code-works)
+- [Use Claude Code - Instructions and Memories](https://code.claude.com/docs/en/memory)
+- [Platforms and Integrations](https://code.claude.com/docs/en/platforms)
 
 ---
 
@@ -535,7 +548,7 @@ By completing Part 1 labs, you will:
 ✅ **Document Thoroughly** - Generate comprehensive documentation quickly  
 ✅ **Follow Best Practices** - Conventional commits, proper testing, code review preparation
 
-### Part 2: Advanced Topics
+### Part 2: Customizing your Agentic Engineering Workflow
 
 By completing Part 2 labs, you will:
 

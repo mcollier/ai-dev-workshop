@@ -15,7 +15,7 @@ This repository contains a hands-on AI development workshop built around a serie
 The workshop is organized into multiple sessions that move from fundamentals to more advanced topics:
 
 1. **Part 1: Fundamentals** — setup, instructions, requirements-to-code, generation/refactoring, testing, and documentation
-2. **Part 2: Advanced Copilot** — interaction models, skills/customization, custom agents, workflow agents, and agent design
+2. **Part 2: Customizing your Agentic Engineering Workflow** — interaction models, skills/customization, custom agents, workflow agents, and agent design
 
 Each section includes presentation material and lab-oriented exercises you can follow along with.
 
