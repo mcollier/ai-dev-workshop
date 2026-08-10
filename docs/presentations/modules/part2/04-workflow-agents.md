@@ -39,7 +39,7 @@ section {
 
 | Asset | ![w:18](../../../images/githubcopilot.svg) GitHub Copilot | ![w:18](../../../images/claude-color.svg) Claude Code |
 | --- | --- | --- |
-| **Instructions** | `copilot-instructions.md`<br/>`instructions/*.instructions.md` | `CLAUDE.md` (root + nested) |
+| **Instructions** | `.github/copilot-instructions.md`<br/>`.github/instructions/*.instructions.md` | `CLAUDE.md` (root + nested) |
 | **Agents** | `.github/agents/*.agent.md` | `.claude/agents/*.md` |
 | **Skills** | `.github/skills/*/SKILL.md` | `.claude/skills/*/SKILL.md` |
 | **Commands** | Built-in slash commands | `.claude/commands/*.md` |
