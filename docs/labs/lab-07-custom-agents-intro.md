@@ -262,5 +262,6 @@ In [Lab 08: Workflow Agents in Action](lab-08-workflow-agents.md), you'll apply 
 ---
 
 ## Additional Resources
+
 - [GitHub Documentation: Custom Agents](https://docs.github.com/copilot)
 - [Claude Code Documentation: Subagents](https://docs.claude.com/en/docs/claude-code/sub-agents)
