@@ -303,9 +303,9 @@ The **Test Strategist** agent sometimes provides too many tests, including low-v
 
 ### Part A: Baseline Behavior
 
-| <img src="../images/githubcopilot.svg" width="20" alt="GitHub Copilot" /> GitHub Copilot                                                                   | <img src="../images/claude-color.svg" width="20" alt="Claude Code" /> Claude Code |
-| ---------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- |
-| Open Copilot Chat in Agent Mode and select **Test Strategist**                                                                                             | In the Claude Code REPL, mention `@test-strategist`                               |
+| <img src="../images/githubcopilot.svg" width="20" alt="GitHub Copilot" /> GitHub Copilot | <img src="../images/claude-color.svg" width="20" alt="Claude Code" /> Claude Code |
+| ---------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- |
+| Open Copilot Chat in Agent Mode and select **Test Strategist**                           | In the Claude Code REPL, mention `@test-strategist`                               |
 
 Prompt: `Propose test scenarios for a simple getter method that returns a task's title`
 
@@ -315,9 +315,9 @@ Prompt: `Propose test scenarios for a simple getter method that returns a task's
 
 ### Part B: Refine the Agent
 
-| <img src="../images/githubcopilot.svg" width="20" alt="GitHub Copilot" /> GitHub Copilot                       | <img src="../images/claude-color.svg" width="20" alt="Claude Code" /> Claude Code |
-| -------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- |
-| Open `.github/agents/test-strategist.agent.md`                                                                  | Open `.claude/agents/test-strategist.md`                                          |
+| <img src="../images/githubcopilot.svg" width="20" alt="GitHub Copilot" /> GitHub Copilot | <img src="../images/claude-color.svg" width="20" alt="Claude Code" /> Claude Code |
+| ---------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- |
+| Open `.github/agents/test-strategist.agent.md`                                           | Open `.claude/agents/test-strategist.md`                                          |
 
 Add this constraint to the **Constraints** section:
 
@@ -442,7 +442,7 @@ Treating agents as "set and forget."
 
 ## Next Steps
 
-In [Lab 10: Capstone - Build Your Own Agent](lab-10-capstone-build-agent.md), you'll **create a production-ready custom agent** from scratch, applying everything you've learned.
+Apply everything you've learned by building and iterating on your own custom agent for a real workflow in your team.
 
 ---
 

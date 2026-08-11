@@ -46,12 +46,12 @@ You wouldn't ask a general assistant to:
 
 ## The Complete Hierarchy
 
-| Feature         | Prompts  | Instructions | Skills                         | Agents                                                               |
-| --------------- | -------- | ------------ | ------------------------------ | -------------------------------------------------------------------- |
-| **Scope**       | One-off  | Always-on    | On-demand                      | On-demand                                                            |
-| **Invocation**  | Chat     | Automatic    | Slash command (varies by tool) | VS Code `@agent-name`; Copilot CLI `/agent`; Claude Code auto-routed |
-| **Tool Access** | ❌       | ❌           | ❌                             | ✅                                                                   |
-| **Purpose**     | Question | Guardrails   | Knowledge                      | Workflow                                                             |
+| Feature         | Prompts  | Instructions | Skills                         | Agents                                                                                                                                                                                                     |
+| --------------- | -------- | ------------ | ------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Scope**       | One-off  | Always-on    | On-demand                      | On-demand                                                                                                                                                                                                  |
+| **Invocation**  | Chat     | Automatic    | Slash command (varies by tool) | ![w:14](../../../images/githubcopilot.svg) VS Code `@agent-name`<br/>![w:14](../../../images/githubcopilot.svg) Copilot CLI `/agent`<br/>![w:14](../../../images/claude-color.svg) Claude Code auto-routed |
+| **Tool Access** | ❌       | ❌           | ❌                             | ✅                                                                                                                                                                                                         |
+| **Purpose**     | Question | Guardrails   | Knowledge                      | Workflow                                                                                                                                                                                                   |
 
 ---
 

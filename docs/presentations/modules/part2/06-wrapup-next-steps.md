@@ -126,11 +126,10 @@ Learn more at [https://bradygaster.github.io/squad/](https://bradygaster.github.
 - [Customization Decision Guide](../../../guides/customization-decision-guide.md)
 - [Agent Design Guide](../../../guides/agent-design-guide.md)
 - [Agent Governance](../../../guides/agent-governance.md)
-<!-- - [Custom Agent Catalog](../../../guides/custom-agent-catalog.md) -->
 
 🔗 **Labs**
 - All labs in `docs/labs/`
-- Agent definitions in `.github/agents/`
+- Agent definitions in `.github/agents/` and `.claude/agents/`
 
 ---
 
@@ -149,11 +148,4 @@ Learn more at [https://bradygaster.github.io/squad/](https://bradygaster.github.
 
 **Remember:** Agents are products, not prompts
 
-<!-- --- -->
-
-<!-- markdownlint-disable-next-line MD025 -->
-<!-- # Part 2 Complete -->
-
-<!-- **Previous Module:** [Capstone Lab](06-capstone-lab.md) -->
-
-<!-- **Return to Part 1:** [Fundamentals](../part1/00-kickoff-and-setup.md) -->
+**Return to Part 1:** [Fundamentals](../part1/00-kickoff-and-setup.md)

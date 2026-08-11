@@ -37,8 +37,11 @@ Design, test, and maintain them **like code**
 7. **Tone** - Communication style
 
 ## YAML Frontmatter
+_Copilot-specific properties:_
 - `user-invocable`, `disable-model-invocation`
 - `agents`, `argument-hint`, `handoffs`
+
+💡_Claude Code subagents use simpler frontmatter and have no built-in handoffs equivalent._
 
 ---
 
@@ -100,6 +103,8 @@ Define → Test → Observe → Refine → Repeat
 
 ## Advanced Agent Properties
 
+_Copilot-specific — Claude Code subagents use simpler frontmatter._
+
 ### user-invocable
 - `true`: Visible in dropdown (default)
 - `false`: Hidden, only for subagents
@@ -116,6 +121,8 @@ Define → Test → Observe → Refine → Repeat
 ---
 
 ## Handoffs: Orchestrated Workflows
+
+_Copilot-specific feature — Claude Code has no built-in handoffs equivalent._
 
 ```yaml
 handoffs:
@@ -153,6 +160,9 @@ handoffs:
 ## Common Pitfalls
 
 ❌ **Task-based agents** → Use role-based  
+&nbsp;&nbsp;&nbsp;_(named for a single instruction, e.g. "Generate code for feature X" —
+narrow, hard to reuse, and encourages vague/one-off prompting instead of a
+persistent specialist)_  
 ❌ **Vague instructions** → Be explicit  
 ❌ **Over-scoping** → Keep focused  
 ❌ **No testing** → Validate before sharing  
@@ -166,7 +176,7 @@ handoffs:
 Create a custom agent of your own.  Test, iterate, & refine.
 
 
-<!-- **Lab Guide:** [Lab 09: Agent Design](../../../labs/lab-09-agent-design.md) -->
+**Lab Guide:** [Lab 09: Agent Design](../../../labs/lab-09-agent-design.md)
 
 **Next Module:** [Wrap-Up & Next Steps](06-wrapup-next-steps.md)
 

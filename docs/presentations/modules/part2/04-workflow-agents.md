@@ -29,6 +29,25 @@ You'll apply agents to **3 real workflows:**
 
 ---
 
+<style scoped>
+section {
+  font-size: 22px;
+}
+</style>
+
+## Where AI Assets Live in This Repo
+
+| Asset | ![w:18](../../../images/githubcopilot.svg) GitHub Copilot | ![w:18](../../../images/claude-color.svg) Claude Code |
+| --- | --- | --- |
+| **Instructions** | `.github/copilot-instructions.md`<br/>`.github/instructions/*.instructions.md` | `CLAUDE.md` (root + nested) |
+| **Agents** | `.github/agents/*.agent.md` | `.claude/agents/*.md` |
+| **Skills** | `.github/skills/*/SKILL.md` | `.claude/skills/*/SKILL.md` |
+| **Commands** | Built-in slash commands | `.claude/commands/*.md` |
+
+💡_The three workshop agents you'll use today exist in both locations._
+
+---
+
 ## Workflow 1: Backlog Generation
 
 **Scenario:** Add notification system to TaskManager

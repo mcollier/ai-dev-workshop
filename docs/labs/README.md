@@ -251,33 +251,6 @@ Learn how custom agents are designed and structured.
 
 ---
 
-### [Lab 10: Build Your Own Agent (Capstone)](lab-10-capstone-build-agent.md)
-
-**Duration**: 45 minutes
-
-Design, build, test, and document your own custom agent.
-
-**What You'll Build**:
-
-- A custom agent for your chosen role
-- Test scenarios validating agent behavior
-- Documentation for team usage
-- Iteration plan for improvements
-
-**Key Skills**:
-
-- End-to-end agent development
-- Writing effective agent instructions
-- Testing with real scenarios
-- Documenting agent usage
-
-**Prerequisites**:
-
-- Completed Labs 06-09
-- Understanding of agent design guide
-
----
-
 ## 🚀 Getting Started
 
 ### First Time Setup
@@ -375,8 +348,6 @@ Lab 7 (Custom Agents Intro)
 Lab 8 (Workflow Agents)
     ↓
 Lab 9 (Agent Design)
-    ↓
-Lab 10 (Build Your Own Agent)
     ↓
 Apply to Real Projects! 🎉
 ```

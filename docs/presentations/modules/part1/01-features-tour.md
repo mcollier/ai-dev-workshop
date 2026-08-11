@@ -15,7 +15,7 @@ backgroundColor: #fff
 
 ---
 
-## GitHub Copilot Pricing
+## ![w:24](../../../images/githubcopilot.svg) GitHub Copilot Pricing
 
 <style scoped>
 section {
@@ -43,7 +43,7 @@ _Credit usage varies by model (1 AI credit = $0.01 USD)._
 
 ---
 
-## Claude Code Pricing
+## ![w:24](../../../images/claude-color.svg) Claude Code Pricing
 
 <style scoped>
 section {
@@ -75,7 +75,7 @@ _5 hour rolling usage limit window_
 
 ## Five AI-assisted development experiences
 
-### GitHub Copilot in the IDE: AI layer throughout the editor
+### ![w:20](../../../images/githubcopilot.svg) GitHub Copilot in the IDE: AI layer throughout the editor
 
 - **Inline completions**: ghost-text suggestions as you type
 - **Next-edit suggestions**: predicts where and what you may edit next
@@ -88,7 +88,7 @@ _5 hour rolling usage limit window_
 
 ---
 
-### GitHub Copilot CLI: terminal native coding agent
+### ![w:20](../../../images/githubcopilot.svg) GitHub Copilot CLI: terminal native coding agent
 
 `copilot`
 
@@ -101,7 +101,7 @@ _5 hour rolling usage limit window_
 
 ---
 
-### GitHub Copilot App: agent-driven development with strong GitHub integration
+### ![w:20](../../../images/githubcopilot.svg) GitHub Copilot App: agent-driven development with strong GitHub integration
 
 - Parallel agent workstreams (each session in its own git worktree)
 - End-to-end GitHub integration (issues, PRs, repo search, CI results) without switching tools
@@ -112,7 +112,7 @@ _5 hour rolling usage limit window_
 
 ---
 
-### Claude Code in the IDE: Claude Code with a graphical editor interface
+### ![w:20](../../../images/claude-color.svg) Claude Code in the IDE: Claude Code with a graphical editor interface
 
 - Chat panel with editor selection context
 - Primarily agent-first workflows
@@ -124,7 +124,7 @@ _5 hour rolling usage limit window_
 
 ---
 
-### Claude Code CLI: a terminal-first coding agent
+### ![w:20](../../../images/claude-color.svg) Claude Code CLI: a terminal-first coding agent
 
 `claude`
 
@@ -184,12 +184,12 @@ _Extensions may add additional chat participants._
 
 Reference specific context:
 
-### GitHub Copilot IDE
+### ![w:20](../../../images/githubcopilot.svg) GitHub Copilot IDE
 
 - `@participant`, `/command`, #context (`#file`, `#codebase`, `#selection`)
 - Attach screenshots or VS Code integrated browser
 
-### GitHub Copilot CLI or Claude Code
+### ![w:20](../../../images/githubcopilot.svg) GitHub Copilot CLI or ![w:20](../../../images/claude-color.svg) Claude Code
 
 - `/skill`, `@file-or-directory` plus agent discovered context
 

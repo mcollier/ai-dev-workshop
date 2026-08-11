@@ -58,7 +58,7 @@ mid-task as part of a larger workflow.
 | -------- | -------- | -------- |
 | **Purpose** | Knowledge & templates | Workflows & actions |
 | **Tool Access** | ❌ None | ✅ Read/write files |
-| **Invocation** | Slash command, or called by an agent | VS Code: `@agent-name`; Copilot CLI: `/agent`; Claude Code: auto-routed |
+| **Invocation** | Slash command, or called by an agent | ![w:14](../../../images/githubcopilot.svg) VS Code: `@agent-name`<br/>![w:14](../../../images/githubcopilot.svg) Copilot CLI: `/agent`<br/>![w:14](../../../images/claude-color.svg) Claude Code: auto-routed |
 | **Can invoke the other?** | ❌ No tool access, so a skill can't invoke an agent | ✅ Yes, an agent loads a skill for domain knowledge, then acts on it |
 | **Best For** | Patterns, examples | Multi-step tasks; codifying explicit context on how to carry out a process |
 

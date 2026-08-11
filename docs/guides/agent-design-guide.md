@@ -776,5 +776,4 @@ Use this checklist before finalizing your agent:
 <!-- - [Custom Agent Catalog](./custom-agent-catalog.md) - All available agents -->
 - [Agent Governance](./agent-governance.md) - Review and versioning process
 - [Lab 09: Agent Design](../labs/lab-09-agent-design.md) - Hands-on practice
-- [Lab 10: Build Your Own Agent](../labs/lab-10-capstone-build-agent.md) - Capstone exercise
 <!-- - [Agent Architecture Diagram](../design/diagrams/agent-architecture.md) -->
