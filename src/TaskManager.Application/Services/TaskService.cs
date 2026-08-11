@@ -27,37 +27,53 @@ public sealed class TaskService
 
     /// <summary>
     /// Add a new task to the system
-    /// TODO: This method will be implemented during Lab 2 with Copilot assistance
     /// 
     /// Note: Includes OpenTelemetry activity for observability demonstration
     /// </summary>
-    public System.Threading.Tasks.Task<TaskId> AddTaskAsync(string title, string description, CancellationToken cancellationToken = default)
+    public async System.Threading.Tasks.Task<TaskId> AddTaskAsync(string title, string description, Priority priority = Priority.Medium, CancellationToken cancellationToken = default)
     {
         using var activity = ActivitySource.StartActivity("TaskService.AddTask");
         activity?.SetTag("task.title", title);
         activity?.SetTag("operation", "create");
-        
-        // TODO: Participants will implement this during the workshop
-        // Expected implementation:
-        // 1. Log the operation
-        // 2. Create task using domain factory
-        // 3. Add to repository
-        // 4. Return task ID
-        // 5. Handle validation errors appropriately
-        // 6. Add activity tags for observability
-        
+
+        if (string.IsNullOrWhiteSpace(title))
+            throw new ArgumentException("Title cannot be null or empty", nameof(title));
+
+        if (string.IsNullOrWhiteSpace(description))
+            throw new ArgumentException("Description cannot be null or empty", nameof(description));
+
         _logger.LogInformation("AddTaskAsync called with title: {Title}", title);
-        throw new NotImplementedException("This will be implemented during Lab 2");
+
+        var task = DomainTask.Create(title, description, priority);
+        await _taskRepository.AddTaskAsync(task, cancellationToken);
+
+        activity?.SetTag("task.id", task.Id.Value);
+
+        return task.Id;
     }
 
     /// <summary>
     /// Get a task by its ID
-    /// TODO: This method will be implemented during the workshop
     /// </summary>
     public System.Threading.Tasks.Task<DomainTask?> GetTaskAsync(TaskId taskId, CancellationToken cancellationToken = default)
     {
-        // TODO: Participants will implement this during the workshop
-        throw new NotImplementedException("This will be implemented during the workshop");
+        return _taskRepository.FindByIdAsync(taskId, cancellationToken);
+    }
+
+    /// <summary>
+    /// Change the priority of an existing task
+    /// </summary>
+    /// <returns>true if the task was found and updated; false if no task exists with the given id</returns>
+    public async System.Threading.Tasks.Task<bool> UpdatePriorityAsync(TaskId taskId, Priority priority, CancellationToken cancellationToken = default)
+    {
+        var task = await _taskRepository.FindByIdAsync(taskId, cancellationToken);
+        if (task is null)
+            return false;
+
+        task.UpdatePriority(priority);
+        await _taskRepository.SaveChangesAsync(task, cancellationToken);
+
+        return true;
     }
 
     /// <summary>
@@ -72,11 +88,17 @@ public sealed class TaskService
 
     /// <summary>
     /// Get all active tasks
-    /// TODO: This method will be implemented during the workshop
     /// </summary>
     public System.Threading.Tasks.Task<IEnumerable<DomainTask>> GetActiveTasksAsync(CancellationToken cancellationToken = default)
     {
-        // TODO: Participants will implement this during the workshop
-        throw new NotImplementedException("This will be implemented during the workshop");
+        return _taskRepository.GetActiveTasksAsync(cancellationToken);
+    }
+
+    /// <summary>
+    /// Get active tasks matching any of the given priorities
+    /// </summary>
+    public System.Threading.Tasks.Task<IEnumerable<DomainTask>> GetTasksByPriorityAsync(IEnumerable<Priority> priorities, CancellationToken cancellationToken = default)
+    {
+        return _taskRepository.FindTasksByPriorityAsync(priorities, cancellationToken);
     }
 }

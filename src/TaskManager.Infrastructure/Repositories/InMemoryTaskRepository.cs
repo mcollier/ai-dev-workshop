@@ -25,6 +25,14 @@ public sealed class InMemoryTaskRepository : ITaskRepository
         return System.Threading.Tasks.Task.FromResult(activeTasks);
     }
 
+    public System.Threading.Tasks.Task<IEnumerable<DomainTask>> FindTasksByPriorityAsync(IEnumerable<Priority> priorities, CancellationToken cancellationToken = default)
+    {
+        var prioritySet = priorities.ToHashSet();
+        var matchingTasks = _tasks.Values.Where(t =>
+            t.Status != TaskStatus.Done && t.Status != TaskStatus.Cancelled && prioritySet.Contains(t.Priority));
+        return System.Threading.Tasks.Task.FromResult(matchingTasks);
+    }
+
     public System.Threading.Tasks.Task AddTaskAsync(DomainTask task, CancellationToken cancellationToken = default)
     {
         _tasks[task.Id] = task;

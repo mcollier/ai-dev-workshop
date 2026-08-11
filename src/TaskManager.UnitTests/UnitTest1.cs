@@ -3,6 +3,8 @@ using Microsoft.Extensions.Logging;
 using TaskManager.Application.Services;
 using TaskManager.Domain.Repositories;
 using TaskManager.Domain.Tasks;
+using DomainTask = TaskManager.Domain.Tasks.Task;
+using Priority = TaskManager.Domain.Tasks.Priority;
 
 namespace TaskManager.UnitTests;
 
@@ -34,51 +36,59 @@ public class TaskServiceTests
         _taskService = new TaskService(_mockRepository, _mockLogger);
     }
 
-    // TODO: Lab 2 - Participants will implement this test with Copilot
     [Fact]
-    public System.Threading.Tasks.Task AddTaskAsync_WithValidData_ShouldReturnTaskId()
+    public async System.Threading.Tasks.Task AddTaskAsync_WithValidData_ShouldReturnTaskId()
     {
-        // Arrange
-        // TODO: Set up test data and mock expectations
-        
-        // Act
-        // TODO: Call TaskService.AddTaskAsync
-        
-        // Assert
-        // TODO: Verify the result and mock interactions
-        
-        throw new NotImplementedException("Lab 2: Implement this test with Copilot assistance");
+        const string title = "Finish report";
+        const string description = "Complete the quarterly report";
+
+        var taskId = await _taskService.AddTaskAsync(title, description);
+
+        Assert.NotNull(taskId);
+        A.CallTo(() => _mockRepository.AddTaskAsync(
+                A<DomainTask>.That.Matches(t => t.Title == title && t.Description == description && t.Priority == Priority.Medium),
+                A<CancellationToken>._))
+            .MustHaveHappenedOnceExactly();
     }
 
-    // TODO: Lab 2 - Participants will implement this test with Copilot
-    [Fact]
-    public System.Threading.Tasks.Task AddTaskAsync_WithNullTitle_ShouldThrowArgumentException()
+    [Theory]
+    [InlineData(null)]
+    [InlineData("")]
+    [InlineData("   ")]
+    public async System.Threading.Tasks.Task AddTaskAsync_WithInvalidTitle_ShouldThrowArgumentException(string invalidTitle)
     {
-        // TODO: Test validation for null title
-        throw new NotImplementedException("Lab 2: Implement this test with Copilot assistance");
+        await Assert.ThrowsAsync<ArgumentException>(() => _taskService.AddTaskAsync(invalidTitle, "description"));
     }
 
-    // TODO: Lab 4 - Participants will generate additional tests with Copilot
-    [Fact]
-    public System.Threading.Tasks.Task AddTaskAsync_WithEmptyDescription_ShouldThrowArgumentException()
+    [Theory]
+    [InlineData(null)]
+    [InlineData("")]
+    [InlineData("   ")]
+    public async System.Threading.Tasks.Task AddTaskAsync_WithInvalidDescription_ShouldThrowArgumentException(string invalidDescription)
     {
-        // TODO: Lab 4 - Generate this test with Copilot
-        throw new NotImplementedException("Lab 4: Generate this test with Copilot assistance");
-    }
-
-    // TODO: Lab 4 - Participants will generate more comprehensive tests
-    [Fact]
-    public System.Threading.Tasks.Task GetTaskAsync_WithExistingId_ShouldReturnTask()
-    {
-        // TODO: Lab 4 - Generate this test with Copilot
-        throw new NotImplementedException("Lab 4: Generate this test with Copilot assistance");
+        await Assert.ThrowsAsync<ArgumentException>(() => _taskService.AddTaskAsync("title", invalidDescription));
     }
 
     [Fact]
-    public System.Threading.Tasks.Task GetTaskAsync_WithNonExistentId_ShouldReturnNull()
+    public async System.Threading.Tasks.Task GetTaskAsync_WithExistingId_ShouldReturnTask()
     {
-        // TODO: Lab 4 - Generate this test with Copilot
-        throw new NotImplementedException("Lab 4: Generate this test with Copilot assistance");
+        var task = DomainTask.Create("title", "description");
+        A.CallTo(() => _mockRepository.FindByIdAsync(task.Id, A<CancellationToken>._)).Returns(task);
+
+        var result = await _taskService.GetTaskAsync(task.Id);
+
+        Assert.Equal(task, result);
+    }
+
+    [Fact]
+    public async System.Threading.Tasks.Task GetTaskAsync_WithNonExistentId_ShouldReturnNull()
+    {
+        var taskId = TaskId.New();
+        A.CallTo(() => _mockRepository.FindByIdAsync(taskId, A<CancellationToken>._)).Returns((DomainTask?)null);
+
+        var result = await _taskService.GetTaskAsync(taskId);
+
+        Assert.Null(result);
     }
 
     [Fact]

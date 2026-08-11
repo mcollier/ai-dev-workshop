@@ -5,12 +5,13 @@ namespace TaskManager.Domain.Tasks;
 /// </summary>
 public sealed class Task
 {
-    private Task(TaskId id, string title, string description, TaskStatus status, DateTime createdAt)
+    private Task(TaskId id, string title, string description, TaskStatus status, Priority priority, DateTime createdAt)
     {
         Id = id;
         Title = title;
         Description = description;
         Status = status;
+        Priority = priority;
         CreatedAt = createdAt;
         UpdatedAt = createdAt;
     }
@@ -19,13 +20,14 @@ public sealed class Task
     public string Title { get; private set; }
     public string Description { get; private set; }
     public TaskStatus Status { get; private set; }
+    public Priority Priority { get; private set; }
     public DateTime CreatedAt { get; }
     public DateTime UpdatedAt { get; private set; }
 
     /// <summary>
     /// Factory method to create a new task
     /// </summary>
-    public static Task Create(string title, string description)
+    public static Task Create(string title, string description, Priority priority = Priority.Medium)
     {
         // TODO: Add validation (title not null/empty, description not null)
         // This is where Copilot will help participants implement validation
@@ -35,6 +37,7 @@ public sealed class Task
             title,
             description,
             TaskStatus.Todo,
+            priority,
             DateTime.UtcNow);
     }
 
@@ -60,6 +63,15 @@ public sealed class Task
         
         Title = title;
         Description = description;
+        UpdatedAt = DateTime.UtcNow;
+    }
+
+    /// <summary>
+    /// Business method to change task priority
+    /// </summary>
+    public void UpdatePriority(Priority priority)
+    {
+        Priority = priority;
         UpdatedAt = DateTime.UtcNow;
     }
 }
