@@ -54,6 +54,8 @@ block-beta
     style H fill:#f5f5f5,stroke:#333,stroke-width:2px,color:#333
 ```
 
+> NOTE: suggest moving prompt files / commands to skills for greater flexibility
+
 ### Deep Dive: Agent Skills
 
 **Agent Skills** are a shared, open-standard customization mechanism — the `SKILL.md` format is compatible between GitHub Copilot and Claude Code. They represent **portable, reusable capabilities** that work across multiple environments and tools.
@@ -178,7 +180,7 @@ This is the most common confusion point. Here's how to differentiate:
 
 **Real Skill: Test Data Generator**
 
-1. **Navigate to** `.claude/skills/test-data-generator/`
+1. **Navigate to** the `test-data-generator` skill
 
 2. **Examine the structure**:
    ```text
