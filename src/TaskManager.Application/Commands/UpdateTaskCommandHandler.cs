@@ -11,12 +11,22 @@ public sealed class UpdateTaskCommandHandler
 {
     private readonly ITaskRepository _taskRepository;
 
+    /// <summary>
+    /// Initializes a new instance of the <see cref="UpdateTaskCommandHandler"/> class.
+    /// </summary>
+    /// <param name="taskRepository">The repository used to retrieve and persist tasks.</param>
     public UpdateTaskCommandHandler(ITaskRepository taskRepository)
     {
         _taskRepository = taskRepository;
     }
 
+    /// <summary>
+    /// Handles the command by applying the requested changes to an existing task.
+    /// </summary>
+    /// <param name="command">The command containing the task id and updated values.</param>
+    /// <param name="cancellationToken">Token to cancel the asynchronous operation.</param>
     /// <returns>the updated task, or null if no task exists with the given id</returns>
+    /// <exception cref="ArgumentException">Thrown when the title or description is null, empty, or whitespace, or when the due date is not in the future.</exception>
     public async System.Threading.Tasks.Task<DomainTask?> HandleAsync(UpdateTaskCommand command, CancellationToken cancellationToken = default)
     {
         if (string.IsNullOrWhiteSpace(command.Title))

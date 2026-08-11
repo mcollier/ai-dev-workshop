@@ -5,6 +5,7 @@ using TaskManager.Domain.Repositories;
 using TaskManager.Domain.Tasks;
 using DomainTask = TaskManager.Domain.Tasks.Task;
 using Priority = TaskManager.Domain.Tasks.Priority;
+using TaskStatus = TaskManager.Domain.Tasks.TaskStatus;
 
 namespace TaskManager.UnitTests;
 
@@ -69,6 +70,53 @@ public class TaskServiceTests
         await Assert.ThrowsAsync<ArgumentException>(() => _taskService.AddTaskAsync("title", invalidDescription));
     }
 
+    [Theory]
+    [InlineData(Priority.Low)]
+    [InlineData(Priority.Medium)]
+    [InlineData(Priority.High)]
+    public async System.Threading.Tasks.Task AddTaskAsync_WithExplicitPriority_ShouldPersistThatPriority(Priority priority)
+    {
+        await _taskService.AddTaskAsync("Finish report", "Complete the quarterly report", priority);
+
+        A.CallTo(() => _mockRepository.AddTaskAsync(
+                A<DomainTask>.That.Matches(t => t.Priority == priority),
+                A<CancellationToken>._))
+            .MustHaveHappenedOnceExactly();
+    }
+
+    [Fact]
+    public async System.Threading.Tasks.Task AddTaskAsync_ReturnsIdOfPersistedTask()
+    {
+        DomainTask? persistedTask = null;
+        A.CallTo(() => _mockRepository.AddTaskAsync(A<DomainTask>._, A<CancellationToken>._))
+            .Invokes((DomainTask task, CancellationToken _) => persistedTask = task);
+
+        var taskId = await _taskService.AddTaskAsync("Finish report", "Complete the quarterly report");
+
+        Assert.Equal(persistedTask!.Id, taskId);
+    }
+
+    [Fact]
+    public async System.Threading.Tasks.Task AddTaskAsync_WhenCalled_LogsInformationMessage()
+    {
+        await _taskService.AddTaskAsync("Finish report", "Complete the quarterly report");
+
+        A.CallTo(_mockLogger)
+            .Where(call => call.Method.Name == "Log" && call.GetArgument<LogLevel>(0) == LogLevel.Information)
+            .MustHaveHappened();
+    }
+
+    [Fact]
+    public async System.Threading.Tasks.Task AddTaskAsync_PassesCancellationTokenToRepository()
+    {
+        using var cancellationTokenSource = new CancellationTokenSource();
+
+        await _taskService.AddTaskAsync("Finish report", "Complete the quarterly report", cancellationToken: cancellationTokenSource.Token);
+
+        A.CallTo(() => _mockRepository.AddTaskAsync(A<DomainTask>._, cancellationTokenSource.Token))
+            .MustHaveHappenedOnceExactly();
+    }
+
     [Fact]
     public async System.Threading.Tasks.Task GetTaskAsync_WithExistingId_ShouldReturnTask()
     {
@@ -92,9 +140,26 @@ public class TaskServiceTests
     }
 
     [Fact]
-    public System.Threading.Tasks.Task UpdateTaskStatusAsync_WithValidData_ShouldUpdateSuccessfully()
+    public async System.Threading.Tasks.Task UpdateTaskStatusAsync_WithValidData_ShouldUpdateSuccessfully()
     {
-        // TODO: Lab 4 - Generate this test with Copilot
-        throw new NotImplementedException("Lab 4: Generate this test with Copilot assistance");
+        var task = DomainTask.Create("Finish report", "Complete the quarterly report");
+        A.CallTo(() => _mockRepository.FindByIdAsync(task.Id, A<CancellationToken>._)).Returns(task);
+
+        var updated = await _taskService.UpdateTaskStatusAsync(task.Id, TaskStatus.InProgress);
+
+        Assert.True(updated);
+        Assert.Equal(TaskStatus.InProgress, task.Status);
+        A.CallTo(() => _mockRepository.SaveChangesAsync(task, A<CancellationToken>._)).MustHaveHappenedOnceExactly();
+    }
+
+    [Fact]
+    public async System.Threading.Tasks.Task UpdateTaskStatusAsync_WithNonExistentTask_ShouldReturnFalse()
+    {
+        var taskId = TaskId.New();
+        A.CallTo(() => _mockRepository.FindByIdAsync(taskId, A<CancellationToken>._)).Returns((DomainTask?)null);
+
+        var updated = await _taskService.UpdateTaskStatusAsync(taskId, TaskStatus.InProgress);
+
+        Assert.False(updated);
     }
 }

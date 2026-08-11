@@ -1,57 +1,78 @@
-﻿namespace TaskManager.IntegrationTests;
+﻿using System.Net;
+using System.Net.Http.Json;
+using Microsoft.AspNetCore.Mvc.Testing;
+using TaskManager.Api;
+using TaskManager.IntegrationTests.Tasks;
+using TaskStatus = TaskManager.Domain.Tasks.TaskStatus;
+
+namespace TaskManager.IntegrationTests;
 
 /// <summary>
 /// Integration tests for Task Manager API - Lab 4
-/// 
-/// LAB 4 INSTRUCTIONS:
-/// Use Copilot to generate integration tests for the API endpoints.
-/// 
-/// Example prompts:
-/// - "Generate integration tests for POST /tasks endpoint"
-/// - "Create integration test for GET /tasks/{id} endpoint"
-/// - "Add integration tests with proper HTTP status codes"
 /// </summary>
-public class TaskApiIntegrationTests
+public sealed class TaskApiIntegrationTests : IClassFixture<WebApplicationFactory<Program>>
 {
-    // TODO: Lab 4 - Participants will use Copilot to generate integration tests
-    // These will test the full API endpoints after they're implemented in Lab 3
-    
-    [Fact]
-    public System.Threading.Tasks.Task CreateTask_WithValidData_ShouldReturn201()
+    private readonly HttpClient _client;
+
+    public TaskApiIntegrationTests(WebApplicationFactory<Program> factory)
     {
-        // TODO: Lab 4 - Generate this integration test with Copilot
-        // Test the POST /tasks endpoint
-        throw new NotImplementedException("Lab 4: Generate this integration test with Copilot assistance");
+        _client = factory.CreateClient();
     }
 
     [Fact]
-    public System.Threading.Tasks.Task GetTask_WithExistingId_ShouldReturn200()
+    public async System.Threading.Tasks.Task CreateTask_WithValidData_ShouldReturn201()
     {
-        // TODO: Lab 4 - Generate this integration test with Copilot
-        // Test the GET /tasks/{id} endpoint
-        throw new NotImplementedException("Lab 4: Generate this integration test with Copilot assistance");
+        var response = await _client.PostAsJsonAsync("/tasks", new { Title = "Finish report", Description = "Complete the quarterly report" });
+
+        Assert.Equal(HttpStatusCode.Created, response.StatusCode);
+        var body = await response.Content.ReadFromJsonAsync<TaskResponseDto>();
+        Assert.NotNull(body);
+        Assert.Equal("Finish report", body!.Title);
     }
 
     [Fact]
-    public System.Threading.Tasks.Task GetTask_WithNonExistentId_ShouldReturn404()
+    public async System.Threading.Tasks.Task GetTask_WithExistingId_ShouldReturn200()
     {
-        // TODO: Lab 4 - Generate this integration test with Copilot
-        throw new NotImplementedException("Lab 4: Generate this integration test with Copilot assistance");
+        var created = await _client.PostAsJsonAsync("/tasks", new { Title = "Finish report", Description = "Complete the quarterly report" });
+        var createdTask = await created.Content.ReadFromJsonAsync<TaskResponseDto>();
+
+        var response = await _client.GetAsync($"/tasks/{createdTask!.Id}");
+
+        Assert.Equal(HttpStatusCode.OK, response.StatusCode);
     }
 
     [Fact]
-    public System.Threading.Tasks.Task UpdateTaskStatus_WithValidData_ShouldReturn200()
+    public async System.Threading.Tasks.Task GetTask_WithNonExistentId_ShouldReturn404()
     {
-        // TODO: Lab 4 - Generate this integration test with Copilot
-        // Test the PUT /tasks/{id}/status endpoint
-        throw new NotImplementedException("Lab 4: Generate this integration test with Copilot assistance");
+        var response = await _client.GetAsync($"/tasks/{Guid.NewGuid()}");
+
+        Assert.Equal(HttpStatusCode.NotFound, response.StatusCode);
     }
 
     [Fact]
-    public System.Threading.Tasks.Task GetActiveTasks_ShouldReturn200WithTaskList()
+    public async System.Threading.Tasks.Task UpdateTaskStatus_WithValidData_ShouldReturn200()
     {
-        // TODO: Lab 4 - Generate this integration test with Copilot
-        // Test the GET /tasks endpoint
-        throw new NotImplementedException("Lab 4: Generate this integration test with Copilot assistance");
+        var created = await _client.PostAsJsonAsync("/tasks", new { Title = "Finish report", Description = "Complete the quarterly report" });
+        var createdTask = await created.Content.ReadFromJsonAsync<TaskResponseDto>();
+
+        var response = await _client.PutAsJsonAsync($"/tasks/{createdTask!.Id}/status", new { Status = (int)TaskStatus.InProgress });
+
+        Assert.Equal(HttpStatusCode.OK, response.StatusCode);
+        var body = await response.Content.ReadFromJsonAsync<TaskResponseDto>();
+        Assert.Equal((int)TaskStatus.InProgress, body!.Status);
+    }
+
+    [Fact]
+    public async System.Threading.Tasks.Task GetActiveTasks_ShouldReturn200WithTaskList()
+    {
+        await _client.PostAsJsonAsync("/tasks", new { Title = "Finish report", Description = "Complete the quarterly report" });
+
+        var response = await _client.GetAsync("/tasks");
+
+        Assert.Equal(HttpStatusCode.OK, response.StatusCode);
+        var tasks = await response.Content.ReadFromJsonAsync<List<TaskResponseDto>>();
+        Assert.NotNull(tasks);
+        Assert.NotEmpty(tasks!);
     }
 }
+

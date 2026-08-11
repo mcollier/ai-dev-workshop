@@ -36,4 +36,39 @@ public sealed class CreateTaskEndpointTests : IClassFixture<WebApplicationFactor
         Assert.NotNull(body);
         Assert.Equal((int)Priority.High, body!.Priority);
     }
+
+    [Fact]
+    public async Task PostTasks_WithInvalidPriority_ReturnsBadRequest()
+    {
+        var response = await _client.PostAsJsonAsync("/tasks", new { Title = "Finish report", Description = "Complete the quarterly report", Priority = 999 });
+
+        Assert.Equal(HttpStatusCode.BadRequest, response.StatusCode);
+    }
+
+    [Theory]
+    [InlineData("")]
+    [InlineData("   ")]
+    public async Task PostTasks_WithEmptyTitle_ReturnsBadRequest(string emptyTitle)
+    {
+        var response = await _client.PostAsJsonAsync("/tasks", new { Title = emptyTitle, Description = "Complete the quarterly report" });
+
+        Assert.Equal(HttpStatusCode.BadRequest, response.StatusCode);
+    }
+
+    [Fact]
+    public async Task PostTasks_WithValidData_ReturnsBodyWithAllExpectedFields()
+    {
+        var response = await _client.PostAsJsonAsync("/tasks", new { Title = "Finish report", Description = "Complete the quarterly report", Priority = (int)Priority.Low });
+
+        var body = await response.Content.ReadFromJsonAsync<TaskResponseDto>();
+
+        Assert.NotNull(body);
+        Assert.NotEqual(Guid.Empty, body!.Id);
+        Assert.Equal("Finish report", body.Title);
+        Assert.Equal("Complete the quarterly report", body.Description);
+        Assert.Equal((int)Priority.Low, body.Priority);
+        Assert.NotEqual(default, body.CreatedAt);
+        Assert.NotEqual(default, body.UpdatedAt);
+        Assert.Null(body.DueDate);
+    }
 }

@@ -5,5 +5,8 @@ namespace TaskManager.Application.Queries;
 /// </summary>
 public sealed class GetTaskByIdQuery
 {
+    /// <summary>
+    /// The id of the task to retrieve.
+    /// </summary>
     public required Guid TaskId { get; init; }
 }

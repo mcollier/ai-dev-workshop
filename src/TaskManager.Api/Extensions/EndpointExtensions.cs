@@ -34,6 +34,10 @@ public static class EndpointExtensions
             .WithName("UpdateTaskPriority")
             .WithOpenApi();
 
+        app.MapPut("/tasks/{id:guid}/status", UpdateTaskStatusAsync)
+            .WithName("UpdateTaskStatus")
+            .WithOpenApi();
+
         app.MapPut("/tasks/{id:guid}", UpdateTaskAsync)
             .WithName("UpdateTask")
             .WithOpenApi();
@@ -84,6 +88,20 @@ public static class EndpointExtensions
 
         var taskId = TaskId.From(id);
         var updated = await taskService.UpdatePriorityAsync(taskId, (Priority)request.Priority, cancellationToken);
+        if (!updated)
+            return Results.NotFound();
+
+        var task = await taskService.GetTaskAsync(taskId, cancellationToken);
+        return Results.Ok(ToResponse(task!));
+    }
+
+    private static async Task<IResult> UpdateTaskStatusAsync(Guid id, UpdateStatusRequest request, TaskService taskService, CancellationToken cancellationToken)
+    {
+        if (!Enum.IsDefined(typeof(TaskStatus), request.Status))
+            return Results.BadRequest(new { error = "Invalid status value" });
+
+        var taskId = TaskId.From(id);
+        var updated = await taskService.UpdateTaskStatusAsync(taskId, (TaskStatus)request.Status, cancellationToken);
         if (!updated)
             return Results.NotFound();
 
