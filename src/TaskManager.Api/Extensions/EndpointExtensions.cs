@@ -1,7 +1,10 @@
 using TaskManager.Api.Tasks;
+using TaskManager.Application.Commands;
+using TaskManager.Application.Queries;
 using TaskManager.Application.Services;
 using TaskManager.Domain.Tasks;
 using DomainTask = TaskManager.Domain.Tasks.Task;
+using TaskStatus = TaskManager.Domain.Tasks.TaskStatus;
 
 namespace TaskManager.Api.Extensions;
 
@@ -31,6 +34,10 @@ public static class EndpointExtensions
             .WithName("UpdateTaskPriority")
             .WithOpenApi();
 
+        app.MapPut("/tasks/{id:guid}", UpdateTaskAsync)
+            .WithName("UpdateTask")
+            .WithOpenApi();
+
         app.MapGet("/tasks", GetTasksAsync)
             .WithName("GetTasks")
             .WithOpenApi();
@@ -38,10 +45,17 @@ public static class EndpointExtensions
         return app;
     }
 
-    private static async Task<IResult> GetTaskByIdAsync(Guid id, TaskService taskService, CancellationToken cancellationToken)
+    private static async Task<IResult> GetTaskByIdAsync(Guid id, GetTaskByIdQueryHandler getTaskByIdQueryHandler, CancellationToken cancellationToken)
     {
-        var task = await taskService.GetTaskAsync(TaskId.From(id), cancellationToken);
-        return task is null ? Results.NotFound() : Results.Ok(ToResponse(task));
+        try
+        {
+            var task = await getTaskByIdQueryHandler.HandleAsync(new GetTaskByIdQuery { TaskId = id }, cancellationToken);
+            return task is null ? Results.NotFound() : Results.Ok(ToResponse(task));
+        }
+        catch (ArgumentException ex)
+        {
+            return Results.BadRequest(new { error = ex.Message });
+        }
     }
 
     private static async Task<IResult> CreateTaskAsync(CreateTaskRequest request, TaskService taskService, CancellationToken cancellationToken)
@@ -77,8 +91,42 @@ public static class EndpointExtensions
         return Results.Ok(ToResponse(task!));
     }
 
-    private static async Task<IResult> GetTasksAsync(TaskService taskService, string? priority, string? sortBy, string? sortOrder, CancellationToken cancellationToken)
+    private static async Task<IResult> UpdateTaskAsync(Guid id, UpdateTaskRequest request, UpdateTaskCommandHandler updateTaskCommandHandler, CancellationToken cancellationToken)
     {
+        if (!Enum.IsDefined(typeof(Priority), request.Priority))
+            return Results.BadRequest(new { error = "Invalid priority value" });
+
+        try
+        {
+            var command = new UpdateTaskCommand
+            {
+                TaskId = id,
+                Title = request.Title,
+                Description = request.Description,
+                Priority = (Priority)request.Priority,
+                DueDate = request.DueDate
+            };
+
+            var task = await updateTaskCommandHandler.HandleAsync(command, cancellationToken);
+            return task is null ? Results.NotFound() : Results.Ok(ToResponse(task));
+        }
+        catch (ArgumentException ex)
+        {
+            return Results.BadRequest(new { error = ex.Message });
+        }
+    }
+
+    private static async Task<IResult> GetTasksAsync(TaskService taskService, GetTasksQueryHandler getTasksQueryHandler, string? status, string? priority, string? sortBy, string? sortOrder, CancellationToken cancellationToken)
+    {
+        if (!string.IsNullOrWhiteSpace(status))
+        {
+            if (!Enum.TryParse<TaskStatus>(status, ignoreCase: true, out var parsedStatus))
+                return Results.BadRequest(new { error = $"Invalid status value: {status}" });
+
+            var statusFilteredTasks = await getTasksQueryHandler.HandleAsync(new GetTasksQuery { Status = parsedStatus }, cancellationToken);
+            return Results.Ok(statusFilteredTasks.Select(ToResponse));
+        }
+
         IEnumerable<DomainTask> tasks;
 
         if (!string.IsNullOrWhiteSpace(priority))
@@ -116,6 +164,7 @@ public static class EndpointExtensions
         (int)task.Status,
         (int)task.Priority,
         task.CreatedAt,
-        task.UpdatedAt);
+        task.UpdatedAt,
+        task.DueDate);
 }
 

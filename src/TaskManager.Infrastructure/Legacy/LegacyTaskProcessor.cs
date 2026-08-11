@@ -1,103 +1,103 @@
+using System.Text;
+using Microsoft.Extensions.Logging;
+
 namespace TaskManager.Infrastructure.Legacy;
 
 /// <summary>
-/// LEGACY CODE - This is intentionally bad code for refactoring exercise in Lab 3
-/// Anti-patterns included:
-/// - Long method with nested conditionals
-/// - Poor naming
-/// - No logging
-/// - Synchronous code
-/// - No error handling
-/// - Mixed concerns
-/// - Magic numbers and strings
+/// Refactored during Lab 3: async, guard clauses, structured logging, and single-responsibility methods
 /// </summary>
-public class LegacyTaskProcessor
+public sealed class LegacyTaskProcessor
 {
-    public string ProcessTask(int id, string data, int type, bool flag)
+    private const int MaxResultLength = 50;
+    private const int SimulatedProcessingDelayMilliseconds = 100;
+
+    private readonly ILogger<LegacyTaskProcessor> _logger;
+    private readonly ITaskOutputWriter? _outputWriter;
+
+    public LegacyTaskProcessor(ILogger<LegacyTaskProcessor> logger, ITaskOutputWriter? outputWriter = null)
     {
-        var result = "";
-        
-        if (data != null)
+        _logger = logger;
+        _outputWriter = outputWriter;
+    }
+
+    public async Task<string> ProcessTaskAsync(int taskId, string? inputText, ProcessingType processingType, bool shouldInvertCase, CancellationToken cancellationToken = default)
+    {
+        if (string.IsNullOrEmpty(inputText))
         {
-            if (data.Length > 0)
-            {
-                if (type == 1)
-                {
-                    if (flag)
-                    {
-                        for (int i = 0; i < data.Length; i++)
-                        {
-                            if (data[i] == ' ')
-                            {
-                                result += "_";
-                            }
-                            else
-                            {
-                                if (char.IsUpper(data[i]))
-                                {
-                                    result += char.ToLower(data[i]);
-                                }
-                                else
-                                {
-                                    result += char.ToUpper(data[i]);
-                                }
-                            }
-                        }
-                        
-                        if (result.Length > 50)
-                        {
-                            result = result.Substring(0, 50);
-                        }
-                        
-                        // Simulate some processing
-                        System.Threading.Thread.Sleep(100);
-                        
-                        // Write to file (bad practice - mixed concerns)
-                        try
-                        {
-                            System.IO.File.WriteAllText($"task_{id}.txt", result);
-                        }
-                        catch
-                        {
-                            // Swallow exception (bad practice)
-                        }
-                    }
-                    else
-                    {
-                        result = data.ToUpper();
-                    }
-                }
-                else if (type == 2)
-                {
-                    var words = data.Split(' ');
-                    for (int i = 0; i < words.Length; i++)
-                    {
-                        if (i == 0)
-                        {
-                            result = words[i];
-                        }
-                        else
-                        {
-                            result += " " + words[i].ToLower();
-                        }
-                    }
-                }
-                else
-                {
-                    result = data;
-                }
-            }
+            _logger.LogWarning("Task {TaskId} skipped: input text is null or empty", taskId);
+            return string.Empty;
         }
-        
-        return result;
+
+        _logger.LogInformation("Processing task {TaskId} with {ProcessingType}", taskId, processingType);
+
+        return processingType switch
+        {
+            ProcessingType.CaseInversion when shouldInvertCase => await InvertCaseAndPersistAsync(taskId, inputText, cancellationToken),
+            ProcessingType.CaseInversion => inputText.ToUpperInvariant(),
+            ProcessingType.SentenceCase => ToSentenceCase(inputText),
+            _ => inputText
+        };
+    }
+
+    private async Task<string> InvertCaseAndPersistAsync(int taskId, string inputText, CancellationToken cancellationToken)
+    {
+        var inverted = InvertCaseAndReplaceSpaces(inputText);
+        var truncated = TruncateIfNeeded(inverted, MaxResultLength);
+
+        await Task.Delay(SimulatedProcessingDelayMilliseconds, cancellationToken);
+        await PersistResultAsync(taskId, truncated, cancellationToken);
+
+        return truncated;
+    }
+
+    private static string InvertCaseAndReplaceSpaces(string inputText)
+    {
+        var builder = new StringBuilder(inputText.Length);
+
+        foreach (var character in inputText)
+            builder.Append(ToInvertedCaseOrUnderscore(character));
+
+        return builder.ToString();
+    }
+
+    private static char ToInvertedCaseOrUnderscore(char character)
+    {
+        if (character == ' ')
+            return '_';
+
+        return char.IsUpper(character) ? char.ToLowerInvariant(character) : char.ToUpperInvariant(character);
+    }
+
+    private static string TruncateIfNeeded(string inputText, int maxLength) =>
+        inputText.Length > maxLength ? inputText[..maxLength] : inputText;
+
+    private static string ToSentenceCase(string inputText)
+    {
+        var words = inputText.Split(' ');
+        var builder = new StringBuilder(words[0]);
+
+        for (var wordIndex = 1; wordIndex < words.Length; wordIndex++)
+            builder.Append(' ').Append(words[wordIndex].ToLowerInvariant());
+
+        return builder.ToString();
+    }
+
+    private async Task PersistResultAsync(int taskId, string content, CancellationToken cancellationToken)
+    {
+        if (_outputWriter is null)
+        {
+            _logger.LogDebug("No output writer configured; skipping persistence for task {TaskId}", taskId);
+            return;
+        }
+
+        try
+        {
+            await _outputWriter.WriteAsync($"task_{taskId}.txt", content, cancellationToken);
+        }
+        catch (IOException exception)
+        {
+            _logger.LogError(exception, "Failed to persist output for task {TaskId}", taskId);
+        }
     }
 }
 
-// TODO: During Lab 3, participants will use Copilot to refactor this into:
-// - Multiple focused methods
-// - Async implementation
-// - Proper logging with ILogger
-// - Guard clauses instead of nested ifs
-// - Meaningful parameter and variable names
-// - Proper error handling
-// - Separation of concerns

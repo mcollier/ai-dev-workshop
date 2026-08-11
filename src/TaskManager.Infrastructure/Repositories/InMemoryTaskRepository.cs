@@ -19,6 +19,11 @@ public sealed class InMemoryTaskRepository : ITaskRepository
         return System.Threading.Tasks.Task.FromResult(task);
     }
 
+    public System.Threading.Tasks.Task<IEnumerable<DomainTask>> GetAllTasksAsync(CancellationToken cancellationToken = default)
+    {
+        return System.Threading.Tasks.Task.FromResult<IEnumerable<DomainTask>>(_tasks.Values);
+    }
+
     public System.Threading.Tasks.Task<IEnumerable<DomainTask>> GetActiveTasksAsync(CancellationToken cancellationToken = default)
     {
         var activeTasks = _tasks.Values.Where(t => t.Status != TaskStatus.Done && t.Status != TaskStatus.Cancelled);

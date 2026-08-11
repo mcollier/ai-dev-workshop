@@ -1,3 +1,5 @@
+using TaskManager.Application.Commands;
+using TaskManager.Application.Queries;
 using TaskManager.Application.Services;
 using TaskManager.Domain.Repositories;
 using TaskManager.Infrastructure.Repositories;
@@ -19,6 +21,9 @@ public static class ServiceExtensions
         
         // Register application services
         services.AddScoped<TaskService>();
+        services.AddScoped<GetTasksQueryHandler>();
+        services.AddScoped<GetTaskByIdQueryHandler>();
+        services.AddScoped<UpdateTaskCommandHandler>();
         
         // TODO: Lab 3 - Add any additional services Copilot generates
         

@@ -14,6 +14,8 @@ public interface ITaskRepository
     
     System.Threading.Tasks.Task<DomainTask?> FindByIdAsync(TaskId taskId, CancellationToken cancellationToken = default);
     
+    System.Threading.Tasks.Task<IEnumerable<DomainTask>> GetAllTasksAsync(CancellationToken cancellationToken = default);
+    
     System.Threading.Tasks.Task<IEnumerable<DomainTask>> GetActiveTasksAsync(CancellationToken cancellationToken = default);
     
     System.Threading.Tasks.Task<IEnumerable<DomainTask>> FindTasksByPriorityAsync(IEnumerable<Priority> priorities, CancellationToken cancellationToken = default);
