@@ -18,10 +18,10 @@ public sealed class CreateTaskEndpointTests : IClassFixture<WebApplicationFactor
     [Fact]
     public async Task PostTasks_WithoutPriority_ReturnsCreatedWithMediumPriority()
     {
-        var response = await _client.PostAsJsonAsync("/tasks", new { Title = "Finish report", Description = "Complete the quarterly report" });
+        var response = await _client.PostAsJsonAsync("/tasks", new { Title = "Finish report", Description = "Complete the quarterly report" }, TestContext.Current.CancellationToken);
 
         Assert.Equal(HttpStatusCode.Created, response.StatusCode);
-        var body = await response.Content.ReadFromJsonAsync<TaskResponseDto>();
+        var body = await response.Content.ReadFromJsonAsync<TaskResponseDto>(TestContext.Current.CancellationToken);
         Assert.NotNull(body);
         Assert.Equal((int)Priority.Medium, body!.Priority);
     }
@@ -29,10 +29,10 @@ public sealed class CreateTaskEndpointTests : IClassFixture<WebApplicationFactor
     [Fact]
     public async Task PostTasks_WithExplicitPriority_ReturnsCreatedWithThatPriority()
     {
-        var response = await _client.PostAsJsonAsync("/tasks", new { Title = "Finish report", Description = "Complete the quarterly report", Priority = (int)Priority.High });
+        var response = await _client.PostAsJsonAsync("/tasks", new { Title = "Finish report", Description = "Complete the quarterly report", Priority = (int)Priority.High }, TestContext.Current.CancellationToken);
 
         Assert.Equal(HttpStatusCode.Created, response.StatusCode);
-        var body = await response.Content.ReadFromJsonAsync<TaskResponseDto>();
+        var body = await response.Content.ReadFromJsonAsync<TaskResponseDto>(TestContext.Current.CancellationToken);
         Assert.NotNull(body);
         Assert.Equal((int)Priority.High, body!.Priority);
     }
@@ -40,7 +40,7 @@ public sealed class CreateTaskEndpointTests : IClassFixture<WebApplicationFactor
     [Fact]
     public async Task PostTasks_WithInvalidPriority_ReturnsBadRequest()
     {
-        var response = await _client.PostAsJsonAsync("/tasks", new { Title = "Finish report", Description = "Complete the quarterly report", Priority = 999 });
+        var response = await _client.PostAsJsonAsync("/tasks", new { Title = "Finish report", Description = "Complete the quarterly report", Priority = 999 }, TestContext.Current.CancellationToken);
 
         Assert.Equal(HttpStatusCode.BadRequest, response.StatusCode);
     }
@@ -50,7 +50,7 @@ public sealed class CreateTaskEndpointTests : IClassFixture<WebApplicationFactor
     [InlineData("   ")]
     public async Task PostTasks_WithEmptyTitle_ReturnsBadRequest(string emptyTitle)
     {
-        var response = await _client.PostAsJsonAsync("/tasks", new { Title = emptyTitle, Description = "Complete the quarterly report" });
+        var response = await _client.PostAsJsonAsync("/tasks", new { Title = emptyTitle, Description = "Complete the quarterly report" }, TestContext.Current.CancellationToken);
 
         Assert.Equal(HttpStatusCode.BadRequest, response.StatusCode);
     }
@@ -58,9 +58,9 @@ public sealed class CreateTaskEndpointTests : IClassFixture<WebApplicationFactor
     [Fact]
     public async Task PostTasks_WithValidData_ReturnsBodyWithAllExpectedFields()
     {
-        var response = await _client.PostAsJsonAsync("/tasks", new { Title = "Finish report", Description = "Complete the quarterly report", Priority = (int)Priority.Low });
+        var response = await _client.PostAsJsonAsync("/tasks", new { Title = "Finish report", Description = "Complete the quarterly report", Priority = (int)Priority.Low }, TestContext.Current.CancellationToken);
 
-        var body = await response.Content.ReadFromJsonAsync<TaskResponseDto>();
+        var body = await response.Content.ReadFromJsonAsync<TaskResponseDto>(TestContext.Current.CancellationToken);
 
         Assert.NotNull(body);
         Assert.NotEqual(Guid.Empty, body!.Id);

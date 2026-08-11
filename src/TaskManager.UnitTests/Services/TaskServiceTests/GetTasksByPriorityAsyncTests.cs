@@ -28,7 +28,7 @@ public sealed class GetTasksByPriorityAsyncTests
         var tasks = new[] { DomainTask.Create("Ship release", "Deploy the release", Priority.High) };
         A.CallTo(() => _mockRepository.FindTasksByPriorityAsync(priorities, A<CancellationToken>._)).Returns(tasks);
 
-        var result = await _taskService.GetTasksByPriorityAsync(priorities);
+        var result = await _taskService.GetTasksByPriorityAsync(priorities, TestContext.Current.CancellationToken);
 
         Assert.Equal(tasks, result);
     }

@@ -22,7 +22,7 @@ public sealed class SendEmailNotificationAsyncTests
         const string taskTitle = "Finish report";
         const string taskDescription = "Complete the quarterly report";
 
-        await _sut.SendEmailNotificationAsync(email, taskTitle, taskDescription);
+        await _sut.SendEmailNotificationAsync(email, taskTitle, taskDescription, TestContext.Current.CancellationToken);
 
         A.CallTo(_logger).Where(call =>
             call.Method.Name == "Log" &&
@@ -34,38 +34,38 @@ public sealed class SendEmailNotificationAsyncTests
     [InlineData(null)]
     [InlineData("")]
     [InlineData("   ")]
-    public async Task SendEmailNotificationAsync_WithInvalidEmail_ThrowsArgumentException(string invalidEmail)
+    public async Task SendEmailNotificationAsync_WithInvalidEmail_ThrowsArgumentException(string? invalidEmail)
     {
         const string taskTitle = "Finish report";
         const string taskDescription = "Complete the quarterly report";
 
         await Assert.ThrowsAsync<ArgumentException>(() =>
-            _sut.SendEmailNotificationAsync(invalidEmail, taskTitle, taskDescription));
+            _sut.SendEmailNotificationAsync(invalidEmail!, taskTitle, taskDescription, TestContext.Current.CancellationToken));
     }
 
     [Theory]
     [InlineData(null)]
     [InlineData("")]
     [InlineData("   ")]
-    public async Task SendEmailNotificationAsync_WithInvalidTaskTitle_ThrowsArgumentException(string invalidTaskTitle)
+    public async Task SendEmailNotificationAsync_WithInvalidTaskTitle_ThrowsArgumentException(string? invalidTaskTitle)
     {
         const string email = "user@example.com";
         const string taskDescription = "Complete the quarterly report";
 
         await Assert.ThrowsAsync<ArgumentException>(() =>
-            _sut.SendEmailNotificationAsync(email, invalidTaskTitle, taskDescription));
+            _sut.SendEmailNotificationAsync(email, invalidTaskTitle!, taskDescription, TestContext.Current.CancellationToken));
     }
 
     [Theory]
     [InlineData(null)]
     [InlineData("")]
     [InlineData("   ")]
-    public async Task SendEmailNotificationAsync_WithInvalidTaskDescription_ThrowsArgumentException(string invalidTaskDescription)
+    public async Task SendEmailNotificationAsync_WithInvalidTaskDescription_ThrowsArgumentException(string? invalidTaskDescription)
     {
         const string email = "user@example.com";
         const string taskTitle = "Finish report";
 
         await Assert.ThrowsAsync<ArgumentException>(() =>
-            _sut.SendEmailNotificationAsync(email, taskTitle, invalidTaskDescription));
+            _sut.SendEmailNotificationAsync(email, taskTitle, invalidTaskDescription!, TestContext.Current.CancellationToken));
     }
 }

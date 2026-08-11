@@ -27,7 +27,7 @@ public sealed class GetActiveTasksAsyncTests
         var tasks = new[] { DomainTask.Create("Finish report", "Complete the quarterly report") };
         A.CallTo(() => _mockRepository.GetActiveTasksAsync(A<CancellationToken>._)).Returns(tasks);
 
-        var result = await _taskService.GetActiveTasksAsync();
+        var result = await _taskService.GetActiveTasksAsync(TestContext.Current.CancellationToken);
 
         Assert.Equal(tasks, result);
     }

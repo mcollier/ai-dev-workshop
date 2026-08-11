@@ -43,7 +43,7 @@ public class TaskServiceTests
         const string title = "Finish report";
         const string description = "Complete the quarterly report";
 
-        var taskId = await _taskService.AddTaskAsync(title, description);
+        var taskId = await _taskService.AddTaskAsync(title, description, cancellationToken: TestContext.Current.CancellationToken);
 
         Assert.NotNull(taskId);
         A.CallTo(() => _mockRepository.AddTaskAsync(
@@ -56,18 +56,18 @@ public class TaskServiceTests
     [InlineData(null)]
     [InlineData("")]
     [InlineData("   ")]
-    public async System.Threading.Tasks.Task AddTaskAsync_WithInvalidTitle_ShouldThrowArgumentException(string invalidTitle)
+    public async System.Threading.Tasks.Task AddTaskAsync_WithInvalidTitle_ShouldThrowArgumentException(string? invalidTitle)
     {
-        await Assert.ThrowsAsync<ArgumentException>(() => _taskService.AddTaskAsync(invalidTitle, "description"));
+        await Assert.ThrowsAsync<ArgumentException>(() => _taskService.AddTaskAsync(invalidTitle!, "description", cancellationToken: TestContext.Current.CancellationToken));
     }
 
     [Theory]
     [InlineData(null)]
     [InlineData("")]
     [InlineData("   ")]
-    public async System.Threading.Tasks.Task AddTaskAsync_WithInvalidDescription_ShouldThrowArgumentException(string invalidDescription)
+    public async System.Threading.Tasks.Task AddTaskAsync_WithInvalidDescription_ShouldThrowArgumentException(string? invalidDescription)
     {
-        await Assert.ThrowsAsync<ArgumentException>(() => _taskService.AddTaskAsync("title", invalidDescription));
+        await Assert.ThrowsAsync<ArgumentException>(() => _taskService.AddTaskAsync("title", invalidDescription!, cancellationToken: TestContext.Current.CancellationToken));
     }
 
     [Theory]
@@ -76,7 +76,7 @@ public class TaskServiceTests
     [InlineData(Priority.High)]
     public async System.Threading.Tasks.Task AddTaskAsync_WithExplicitPriority_ShouldPersistThatPriority(Priority priority)
     {
-        await _taskService.AddTaskAsync("Finish report", "Complete the quarterly report", priority);
+        await _taskService.AddTaskAsync("Finish report", "Complete the quarterly report", priority, TestContext.Current.CancellationToken);
 
         A.CallTo(() => _mockRepository.AddTaskAsync(
                 A<DomainTask>.That.Matches(t => t.Priority == priority),
@@ -91,7 +91,7 @@ public class TaskServiceTests
         A.CallTo(() => _mockRepository.AddTaskAsync(A<DomainTask>._, A<CancellationToken>._))
             .Invokes((DomainTask task, CancellationToken _) => persistedTask = task);
 
-        var taskId = await _taskService.AddTaskAsync("Finish report", "Complete the quarterly report");
+        var taskId = await _taskService.AddTaskAsync("Finish report", "Complete the quarterly report", cancellationToken: TestContext.Current.CancellationToken);
 
         Assert.Equal(persistedTask!.Id, taskId);
     }
@@ -99,7 +99,7 @@ public class TaskServiceTests
     [Fact]
     public async System.Threading.Tasks.Task AddTaskAsync_WhenCalled_LogsInformationMessage()
     {
-        await _taskService.AddTaskAsync("Finish report", "Complete the quarterly report");
+        await _taskService.AddTaskAsync("Finish report", "Complete the quarterly report", cancellationToken: TestContext.Current.CancellationToken);
 
         A.CallTo(_mockLogger)
             .Where(call => call.Method.Name == "Log" && call.GetArgument<LogLevel>(0) == LogLevel.Information)
@@ -123,7 +123,7 @@ public class TaskServiceTests
         var task = DomainTask.Create("title", "description");
         A.CallTo(() => _mockRepository.FindByIdAsync(task.Id, A<CancellationToken>._)).Returns(task);
 
-        var result = await _taskService.GetTaskAsync(task.Id);
+        var result = await _taskService.GetTaskAsync(task.Id, TestContext.Current.CancellationToken);
 
         Assert.Equal(task, result);
     }
@@ -134,7 +134,7 @@ public class TaskServiceTests
         var taskId = TaskId.New();
         A.CallTo(() => _mockRepository.FindByIdAsync(taskId, A<CancellationToken>._)).Returns((DomainTask?)null);
 
-        var result = await _taskService.GetTaskAsync(taskId);
+        var result = await _taskService.GetTaskAsync(taskId, TestContext.Current.CancellationToken);
 
         Assert.Null(result);
     }
@@ -145,7 +145,7 @@ public class TaskServiceTests
         var task = DomainTask.Create("Finish report", "Complete the quarterly report");
         A.CallTo(() => _mockRepository.FindByIdAsync(task.Id, A<CancellationToken>._)).Returns(task);
 
-        var updated = await _taskService.UpdateTaskStatusAsync(task.Id, TaskStatus.InProgress);
+        var updated = await _taskService.UpdateTaskStatusAsync(task.Id, TaskStatus.InProgress, TestContext.Current.CancellationToken);
 
         Assert.True(updated);
         Assert.Equal(TaskStatus.InProgress, task.Status);
@@ -158,7 +158,7 @@ public class TaskServiceTests
         var taskId = TaskId.New();
         A.CallTo(() => _mockRepository.FindByIdAsync(taskId, A<CancellationToken>._)).Returns((DomainTask?)null);
 
-        var updated = await _taskService.UpdateTaskStatusAsync(taskId, TaskStatus.InProgress);
+        var updated = await _taskService.UpdateTaskStatusAsync(taskId, TaskStatus.InProgress, TestContext.Current.CancellationToken);
 
         Assert.False(updated);
     }

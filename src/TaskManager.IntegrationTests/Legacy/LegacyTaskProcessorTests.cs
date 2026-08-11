@@ -16,7 +16,7 @@ public sealed class LegacyTaskProcessorTests
     [Fact]
     public async Task ProcessTaskAsync_WithNullOrEmptyInput_ReturnsEmptyString()
     {
-        var result = await _processor.ProcessTaskAsync(1, string.Empty, ProcessingType.CaseInversion, shouldInvertCase: true);
+        var result = await _processor.ProcessTaskAsync(1, string.Empty, ProcessingType.CaseInversion, shouldInvertCase: true, cancellationToken: TestContext.Current.CancellationToken);
 
         Assert.Equal(string.Empty, result);
     }
@@ -24,7 +24,7 @@ public sealed class LegacyTaskProcessorTests
     [Fact]
     public async Task ProcessTaskAsync_CaseInversionWithInvert_InvertsCaseReplacesSpacesAndPersists()
     {
-        var result = await _processor.ProcessTaskAsync(42, "Hello World", ProcessingType.CaseInversion, shouldInvertCase: true);
+        var result = await _processor.ProcessTaskAsync(42, "Hello World", ProcessingType.CaseInversion, shouldInvertCase: true, cancellationToken: TestContext.Current.CancellationToken);
 
         Assert.Equal("hELLO_wORLD", result);
         Assert.Equal(("task_42.txt", "hELLO_wORLD"), _outputWriter.LastWrite);
@@ -35,7 +35,7 @@ public sealed class LegacyTaskProcessorTests
     {
         var longInput = new string('a', 60);
 
-        var result = await _processor.ProcessTaskAsync(1, longInput, ProcessingType.CaseInversion, shouldInvertCase: true);
+        var result = await _processor.ProcessTaskAsync(1, longInput, ProcessingType.CaseInversion, shouldInvertCase: true, cancellationToken: TestContext.Current.CancellationToken);
 
         Assert.Equal(50, result.Length);
     }
@@ -43,7 +43,7 @@ public sealed class LegacyTaskProcessorTests
     [Fact]
     public async Task ProcessTaskAsync_CaseInversionWithoutInvert_ReturnsUpperCaseWithoutPersisting()
     {
-        var result = await _processor.ProcessTaskAsync(1, "Hello World", ProcessingType.CaseInversion, shouldInvertCase: false);
+        var result = await _processor.ProcessTaskAsync(1, "Hello World", ProcessingType.CaseInversion, shouldInvertCase: false, cancellationToken: TestContext.Current.CancellationToken);
 
         Assert.Equal("HELLO WORLD", result);
         Assert.Null(_outputWriter.LastWrite);
@@ -52,7 +52,7 @@ public sealed class LegacyTaskProcessorTests
     [Fact]
     public async Task ProcessTaskAsync_SentenceCase_KeepsFirstWordAndLowersTheRest()
     {
-        var result = await _processor.ProcessTaskAsync(1, "HELLO WORLD AGAIN", ProcessingType.SentenceCase, shouldInvertCase: false);
+        var result = await _processor.ProcessTaskAsync(1, "HELLO WORLD AGAIN", ProcessingType.SentenceCase, shouldInvertCase: false, cancellationToken: TestContext.Current.CancellationToken);
 
         Assert.Equal("HELLO world again", result);
     }
@@ -60,7 +60,7 @@ public sealed class LegacyTaskProcessorTests
     [Fact]
     public async Task ProcessTaskAsync_WithUnknownProcessingType_ReturnsInputUnchanged()
     {
-        var result = await _processor.ProcessTaskAsync(1, "Untouched", (ProcessingType)99, shouldInvertCase: false);
+        var result = await _processor.ProcessTaskAsync(1, "Untouched", (ProcessingType)99, shouldInvertCase: false, cancellationToken: TestContext.Current.CancellationToken);
 
         Assert.Equal("Untouched", result);
     }
@@ -70,7 +70,7 @@ public sealed class LegacyTaskProcessorTests
     {
         var processor = new LegacyTaskProcessor(NullLogger<LegacyTaskProcessor>.Instance, new ThrowingTaskOutputWriter());
 
-        var result = await processor.ProcessTaskAsync(1, "Hello World", ProcessingType.CaseInversion, shouldInvertCase: true);
+        var result = await processor.ProcessTaskAsync(1, "Hello World", ProcessingType.CaseInversion, shouldInvertCase: true, cancellationToken: TestContext.Current.CancellationToken);
 
         Assert.Equal("hELLO_wORLD", result);
     }
@@ -80,7 +80,7 @@ public sealed class LegacyTaskProcessorTests
     {
         var processor = new LegacyTaskProcessor(NullLogger<LegacyTaskProcessor>.Instance);
 
-        var result = await processor.ProcessTaskAsync(1, "Hello World", ProcessingType.CaseInversion, shouldInvertCase: true);
+        var result = await processor.ProcessTaskAsync(1, "Hello World", ProcessingType.CaseInversion, shouldInvertCase: true, cancellationToken: TestContext.Current.CancellationToken);
 
         Assert.Equal("hELLO_wORLD", result);
     }

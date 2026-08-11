@@ -27,7 +27,7 @@ public sealed class UpdatePriorityAsyncTests
         var task = DomainTask.Create("Finish report", "Complete the quarterly report");
         A.CallTo(() => _mockRepository.FindByIdAsync(task.Id, A<CancellationToken>._)).Returns(task);
 
-        var result = await _taskService.UpdatePriorityAsync(task.Id, Priority.High);
+        var result = await _taskService.UpdatePriorityAsync(task.Id, Priority.High, TestContext.Current.CancellationToken);
 
         Assert.True(result);
         Assert.Equal(Priority.High, task.Priority);
@@ -40,7 +40,7 @@ public sealed class UpdatePriorityAsyncTests
         var taskId = TaskId.New();
         A.CallTo(() => _mockRepository.FindByIdAsync(taskId, A<CancellationToken>._)).Returns((DomainTask?)null);
 
-        var result = await _taskService.UpdatePriorityAsync(taskId, Priority.High);
+        var result = await _taskService.UpdatePriorityAsync(taskId, Priority.High, TestContext.Current.CancellationToken);
 
         Assert.False(result);
         A.CallTo(() => _mockRepository.SaveChangesAsync(A<DomainTask>._, A<CancellationToken>._)).MustNotHaveHappened();

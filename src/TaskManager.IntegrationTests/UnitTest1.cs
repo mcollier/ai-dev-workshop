@@ -22,10 +22,10 @@ public sealed class TaskApiIntegrationTests : IClassFixture<WebApplicationFactor
     [Fact]
     public async System.Threading.Tasks.Task CreateTask_WithValidData_ShouldReturn201()
     {
-        var response = await _client.PostAsJsonAsync("/tasks", new { Title = "Finish report", Description = "Complete the quarterly report" });
+        var response = await _client.PostAsJsonAsync("/tasks", new { Title = "Finish report", Description = "Complete the quarterly report" }, TestContext.Current.CancellationToken);
 
         Assert.Equal(HttpStatusCode.Created, response.StatusCode);
-        var body = await response.Content.ReadFromJsonAsync<TaskResponseDto>();
+        var body = await response.Content.ReadFromJsonAsync<TaskResponseDto>(TestContext.Current.CancellationToken);
         Assert.NotNull(body);
         Assert.Equal("Finish report", body!.Title);
     }
@@ -33,10 +33,10 @@ public sealed class TaskApiIntegrationTests : IClassFixture<WebApplicationFactor
     [Fact]
     public async System.Threading.Tasks.Task GetTask_WithExistingId_ShouldReturn200()
     {
-        var created = await _client.PostAsJsonAsync("/tasks", new { Title = "Finish report", Description = "Complete the quarterly report" });
-        var createdTask = await created.Content.ReadFromJsonAsync<TaskResponseDto>();
+        var created = await _client.PostAsJsonAsync("/tasks", new { Title = "Finish report", Description = "Complete the quarterly report" }, TestContext.Current.CancellationToken);
+        var createdTask = await created.Content.ReadFromJsonAsync<TaskResponseDto>(TestContext.Current.CancellationToken);
 
-        var response = await _client.GetAsync($"/tasks/{createdTask!.Id}");
+        var response = await _client.GetAsync($"/tasks/{createdTask!.Id}", TestContext.Current.CancellationToken);
 
         Assert.Equal(HttpStatusCode.OK, response.StatusCode);
     }
@@ -44,7 +44,7 @@ public sealed class TaskApiIntegrationTests : IClassFixture<WebApplicationFactor
     [Fact]
     public async System.Threading.Tasks.Task GetTask_WithNonExistentId_ShouldReturn404()
     {
-        var response = await _client.GetAsync($"/tasks/{Guid.NewGuid()}");
+        var response = await _client.GetAsync($"/tasks/{Guid.NewGuid()}", TestContext.Current.CancellationToken);
 
         Assert.Equal(HttpStatusCode.NotFound, response.StatusCode);
     }
@@ -52,25 +52,25 @@ public sealed class TaskApiIntegrationTests : IClassFixture<WebApplicationFactor
     [Fact]
     public async System.Threading.Tasks.Task UpdateTaskStatus_WithValidData_ShouldReturn200()
     {
-        var created = await _client.PostAsJsonAsync("/tasks", new { Title = "Finish report", Description = "Complete the quarterly report" });
-        var createdTask = await created.Content.ReadFromJsonAsync<TaskResponseDto>();
+        var created = await _client.PostAsJsonAsync("/tasks", new { Title = "Finish report", Description = "Complete the quarterly report" }, TestContext.Current.CancellationToken);
+        var createdTask = await created.Content.ReadFromJsonAsync<TaskResponseDto>(TestContext.Current.CancellationToken);
 
-        var response = await _client.PutAsJsonAsync($"/tasks/{createdTask!.Id}/status", new { Status = (int)TaskStatus.InProgress });
+        var response = await _client.PutAsJsonAsync($"/tasks/{createdTask!.Id}/status", new { Status = (int)TaskStatus.InProgress }, TestContext.Current.CancellationToken);
 
         Assert.Equal(HttpStatusCode.OK, response.StatusCode);
-        var body = await response.Content.ReadFromJsonAsync<TaskResponseDto>();
+        var body = await response.Content.ReadFromJsonAsync<TaskResponseDto>(TestContext.Current.CancellationToken);
         Assert.Equal((int)TaskStatus.InProgress, body!.Status);
     }
 
     [Fact]
     public async System.Threading.Tasks.Task GetActiveTasks_ShouldReturn200WithTaskList()
     {
-        await _client.PostAsJsonAsync("/tasks", new { Title = "Finish report", Description = "Complete the quarterly report" });
+        await _client.PostAsJsonAsync("/tasks", new { Title = "Finish report", Description = "Complete the quarterly report" }, TestContext.Current.CancellationToken);
 
-        var response = await _client.GetAsync("/tasks");
+        var response = await _client.GetAsync("/tasks", TestContext.Current.CancellationToken);
 
         Assert.Equal(HttpStatusCode.OK, response.StatusCode);
-        var tasks = await response.Content.ReadFromJsonAsync<List<TaskResponseDto>>();
+        var tasks = await response.Content.ReadFromJsonAsync<List<TaskResponseDto>>(TestContext.Current.CancellationToken);
         Assert.NotNull(tasks);
         Assert.NotEmpty(tasks!);
     }

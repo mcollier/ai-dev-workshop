@@ -23,28 +23,22 @@ public static class EndpointExtensions
             .WithName("HealthCheck");
 
         app.MapGet("/tasks/{id:guid}", GetTaskByIdAsync)
-            .WithName("GetTask")
-            .WithOpenApi();
+            .WithName("GetTask");
 
         app.MapPost("/tasks", CreateTaskAsync)
-            .WithName("CreateTask")
-            .WithOpenApi();
+            .WithName("CreateTask");
 
         app.MapPut("/tasks/{id:guid}/priority", UpdateTaskPriorityAsync)
-            .WithName("UpdateTaskPriority")
-            .WithOpenApi();
+            .WithName("UpdateTaskPriority");
 
         app.MapPut("/tasks/{id:guid}/status", UpdateTaskStatusAsync)
-            .WithName("UpdateTaskStatus")
-            .WithOpenApi();
+            .WithName("UpdateTaskStatus");
 
         app.MapPut("/tasks/{id:guid}", UpdateTaskAsync)
-            .WithName("UpdateTask")
-            .WithOpenApi();
+            .WithName("UpdateTask");
 
         app.MapGet("/tasks", GetTasksAsync)
-            .WithName("GetTasks")
-            .WithOpenApi();
+            .WithName("GetTasks");
 
         return app;
     }

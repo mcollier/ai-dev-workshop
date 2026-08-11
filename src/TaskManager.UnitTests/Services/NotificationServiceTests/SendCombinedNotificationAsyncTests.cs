@@ -23,7 +23,7 @@ public sealed class SendCombinedNotificationAsyncTests
         const string taskTitle = "Finish report";
         const string taskDescription = "Complete the quarterly report";
 
-        await _sut.SendCombinedNotificationAsync(email, phoneNumber, taskTitle, taskDescription);
+        await _sut.SendCombinedNotificationAsync(email, phoneNumber, taskTitle, taskDescription, TestContext.Current.CancellationToken);
 
         A.CallTo(_logger).Where(call =>
             call.Method.Name == "Log" &&
@@ -35,55 +35,55 @@ public sealed class SendCombinedNotificationAsyncTests
     [InlineData(null)]
     [InlineData("")]
     [InlineData("   ")]
-    public async Task SendCombinedNotificationAsync_WithInvalidEmail_ThrowsArgumentException(string invalidEmail)
+    public async Task SendCombinedNotificationAsync_WithInvalidEmail_ThrowsArgumentException(string? invalidEmail)
     {
         const string phoneNumber = "+15551234567";
         const string taskTitle = "Finish report";
         const string taskDescription = "Complete the quarterly report";
 
         await Assert.ThrowsAsync<ArgumentException>(() =>
-            _sut.SendCombinedNotificationAsync(invalidEmail, phoneNumber, taskTitle, taskDescription));
+            _sut.SendCombinedNotificationAsync(invalidEmail!, phoneNumber, taskTitle, taskDescription, TestContext.Current.CancellationToken));
     }
 
     [Theory]
     [InlineData(null)]
     [InlineData("")]
     [InlineData("   ")]
-    public async Task SendCombinedNotificationAsync_WithInvalidPhoneNumber_ThrowsArgumentException(string invalidPhoneNumber)
+    public async Task SendCombinedNotificationAsync_WithInvalidPhoneNumber_ThrowsArgumentException(string? invalidPhoneNumber)
     {
         const string email = "user@example.com";
         const string taskTitle = "Finish report";
         const string taskDescription = "Complete the quarterly report";
 
         await Assert.ThrowsAsync<ArgumentException>(() =>
-            _sut.SendCombinedNotificationAsync(email, invalidPhoneNumber, taskTitle, taskDescription));
+            _sut.SendCombinedNotificationAsync(email, invalidPhoneNumber!, taskTitle, taskDescription, TestContext.Current.CancellationToken));
     }
 
     [Theory]
     [InlineData(null)]
     [InlineData("")]
     [InlineData("   ")]
-    public async Task SendCombinedNotificationAsync_WithInvalidTaskTitle_ThrowsArgumentException(string invalidTaskTitle)
+    public async Task SendCombinedNotificationAsync_WithInvalidTaskTitle_ThrowsArgumentException(string? invalidTaskTitle)
     {
         const string email = "user@example.com";
         const string phoneNumber = "+15551234567";
         const string taskDescription = "Complete the quarterly report";
 
         await Assert.ThrowsAsync<ArgumentException>(() =>
-            _sut.SendCombinedNotificationAsync(email, phoneNumber, invalidTaskTitle, taskDescription));
+            _sut.SendCombinedNotificationAsync(email, phoneNumber, invalidTaskTitle!, taskDescription, TestContext.Current.CancellationToken));
     }
 
     [Theory]
     [InlineData(null)]
     [InlineData("")]
     [InlineData("   ")]
-    public async Task SendCombinedNotificationAsync_WithInvalidTaskDescription_ThrowsArgumentException(string invalidTaskDescription)
+    public async Task SendCombinedNotificationAsync_WithInvalidTaskDescription_ThrowsArgumentException(string? invalidTaskDescription)
     {
         const string email = "user@example.com";
         const string phoneNumber = "+15551234567";
         const string taskTitle = "Finish report";
 
         await Assert.ThrowsAsync<ArgumentException>(() =>
-            _sut.SendCombinedNotificationAsync(email, phoneNumber, taskTitle, invalidTaskDescription));
+            _sut.SendCombinedNotificationAsync(email, phoneNumber, taskTitle, invalidTaskDescription!, TestContext.Current.CancellationToken));
     }
 }

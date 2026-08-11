@@ -34,7 +34,7 @@ public sealed class UpdateTaskCommandHandlerTests
             DueDate = dueDate
         };
 
-        var result = await _handler.HandleAsync(command);
+        var result = await _handler.HandleAsync(command, TestContext.Current.CancellationToken);
 
         Assert.NotNull(result);
         Assert.Equal("Updated title", result!.Title);
@@ -58,7 +58,7 @@ public sealed class UpdateTaskCommandHandlerTests
             Priority = Priority.High
         };
 
-        var result = await _handler.HandleAsync(command);
+        var result = await _handler.HandleAsync(command, TestContext.Current.CancellationToken);
 
         Assert.Null(result);
     }
@@ -76,6 +76,6 @@ public sealed class UpdateTaskCommandHandlerTests
             Priority = Priority.Medium
         };
 
-        await Assert.ThrowsAsync<ArgumentException>(() => _handler.HandleAsync(command));
+        await Assert.ThrowsAsync<ArgumentException>(() => _handler.HandleAsync(command, TestContext.Current.CancellationToken));
     }
 }

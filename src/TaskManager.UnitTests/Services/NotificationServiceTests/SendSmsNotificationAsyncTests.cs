@@ -22,7 +22,7 @@ public sealed class SendSmsNotificationAsyncTests
         const string taskTitle = "Finish report";
         const string taskDescription = "Complete the quarterly report";
 
-        await _sut.SendSmsNotificationAsync(phoneNumber, taskTitle, taskDescription);
+        await _sut.SendSmsNotificationAsync(phoneNumber, taskTitle, taskDescription, TestContext.Current.CancellationToken);
 
         A.CallTo(_logger).Where(call =>
             call.Method.Name == "Log" &&
@@ -34,38 +34,38 @@ public sealed class SendSmsNotificationAsyncTests
     [InlineData(null)]
     [InlineData("")]
     [InlineData("   ")]
-    public async Task SendSmsNotificationAsync_WithInvalidPhoneNumber_ThrowsArgumentException(string invalidPhoneNumber)
+    public async Task SendSmsNotificationAsync_WithInvalidPhoneNumber_ThrowsArgumentException(string? invalidPhoneNumber)
     {
         const string taskTitle = "Finish report";
         const string taskDescription = "Complete the quarterly report";
 
         await Assert.ThrowsAsync<ArgumentException>(() =>
-            _sut.SendSmsNotificationAsync(invalidPhoneNumber, taskTitle, taskDescription));
+            _sut.SendSmsNotificationAsync(invalidPhoneNumber!, taskTitle, taskDescription, TestContext.Current.CancellationToken));
     }
 
     [Theory]
     [InlineData(null)]
     [InlineData("")]
     [InlineData("   ")]
-    public async Task SendSmsNotificationAsync_WithInvalidTaskTitle_ThrowsArgumentException(string invalidTaskTitle)
+    public async Task SendSmsNotificationAsync_WithInvalidTaskTitle_ThrowsArgumentException(string? invalidTaskTitle)
     {
         const string phoneNumber = "+15551234567";
         const string taskDescription = "Complete the quarterly report";
 
         await Assert.ThrowsAsync<ArgumentException>(() =>
-            _sut.SendSmsNotificationAsync(phoneNumber, invalidTaskTitle, taskDescription));
+            _sut.SendSmsNotificationAsync(phoneNumber, invalidTaskTitle!, taskDescription, TestContext.Current.CancellationToken));
     }
 
     [Theory]
     [InlineData(null)]
     [InlineData("")]
     [InlineData("   ")]
-    public async Task SendSmsNotificationAsync_WithInvalidTaskDescription_ThrowsArgumentException(string invalidTaskDescription)
+    public async Task SendSmsNotificationAsync_WithInvalidTaskDescription_ThrowsArgumentException(string? invalidTaskDescription)
     {
         const string phoneNumber = "+15551234567";
         const string taskTitle = "Finish report";
 
         await Assert.ThrowsAsync<ArgumentException>(() =>
-            _sut.SendSmsNotificationAsync(phoneNumber, taskTitle, invalidTaskDescription));
+            _sut.SendSmsNotificationAsync(phoneNumber, taskTitle, invalidTaskDescription!, TestContext.Current.CancellationToken));
     }
 }
