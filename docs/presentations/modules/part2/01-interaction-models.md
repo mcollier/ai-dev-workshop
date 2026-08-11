@@ -79,8 +79,8 @@ section {
 - You need a quick direct answer
 - You're ready to execute immediately
 
-💡_Try `/research` (![w:16](../../../images/githubcopilot.svg) Copilot CLI) or `/deep-research` (![w:16](../../../images/claude-color.svg) Claude Code) to execute a fan-out web search and create a report._
-💡_Review the plan with another model family via `/rubber-duck` (![w:16](../../../images/githubcopilot.svg) Copilot)._
+💡_Try `/research` (Copilot CLI) or `/deep-research` (Claude Code) to execute a fan-out web search and create a report._
+💡_Review the plan with another model family via `/rubber-duck` (Copilot)._
 
 ---
 

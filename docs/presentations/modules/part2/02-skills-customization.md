@@ -86,7 +86,7 @@ Every tool has slash (`/`) commands
 ### Availability varies
 - By installed extensions or plugins
 - By how you access the tool (CLI vs. IDE)
-- By tool - ![w:16](../../../images/githubcopilot.svg) Copilot and ![w:16](../../../images/claude-color.svg) Claude Code don't expose identical command names
+- By tool - Copilot and Claude Code don't expose identical command names
 
 **Try it:** Type `/` or `/help` in whichever tool you're using; discover what's
 actually available in your session

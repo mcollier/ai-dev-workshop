@@ -42,7 +42,7 @@ section {
 /tests for CreateTaskCommand
 ```
 
-**![w:16](../../../images/githubcopilot.svg) Copilot CLI** (no `/tests` shortcut — just ask) or **![w:16](../../../images/claude-color.svg) Claude Code CLI** (`/tests` is a custom command in this repo — see `.claude/commands/tests.md`):
+**Copilot CLI** (no `/tests` shortcut — just ask) or **Claude Code CLI** (`/tests` is a custom command in this repo — see `.claude/commands/tests.md`):
 
 ```text
 Generate comprehensive tests for CreateTaskCommand
@@ -65,7 +65,7 @@ Generate comprehensive tests for CreateTaskCommand
 /doc for ITaskService
 ```
 
-**![w:16](../../../images/githubcopilot.svg) Copilot CLI** (no `/doc` shortcut — just ask) or **![w:16](../../../images/claude-color.svg) Claude Code CLI** (`/doc` is a custom command in this repo — see `.claude/commands/doc.md`):
+**Copilot CLI** (no `/doc` shortcut — just ask) or **Claude Code CLI** (`/doc` is a custom command in this repo — see `.claude/commands/doc.md`):
 
 ```text
 Add XML documentation comments for ITaskService
@@ -124,9 +124,9 @@ GitHub MCP) can create the PR itself:
 #codebase Generate a PR description for my changes and open the PR
 ```
 
-**![w:16](../../../images/githubcopilot.svg) Copilot CLI** (`/pr` — drafts *and* opens the PR via GitHub integration):
+**Copilot CLI** (`/pr` — drafts *and* opens the PR via GitHub integration):
 
-**![w:16](../../../images/claude-color.svg) Claude Code CLI** (drafts a description, then runs the GitHub CLI itself):
+**Claude Code CLI** (drafts a description, then runs the GitHub CLI itself):
 
 ```text
 Draft a PR description for my changes, then create the PR with gh pr create

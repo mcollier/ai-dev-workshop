@@ -33,8 +33,8 @@ backgroundColor: #fff
 - Documentation debt reduced
 
 ### 2. Context Matters
-- ![w:16](../../../images/githubcopilot.svg) VS Code: `#codebase`, `#file`, `#selection`
-- ![w:16](../../../images/githubcopilot.svg) Copilot CLI / ![w:16](../../../images/claude-color.svg) Claude Code: `@file-or-directory` + agent auto-discovery
+- VS Code: `#codebase`, `#file`, `#selection`
+- Copilot CLI / Claude Code: `@file-or-directory` + agent auto-discovery
 - Instructions files encode team knowledge (`copilot-instructions.md`/`.instructions.md` or `CLAUDE.md`/`AGENTS.md`)
 - Better prompts = better results
 
@@ -70,7 +70,7 @@ backgroundColor: #fff
 - Understand what code does
 
 ## Under-leveraging
-- Use ![w:16](../../../images/githubcopilot.svg) Copilot / ![w:16](../../../images/claude-color.svg) Claude Code for repetitive tasks
+- Use Copilot / Claude Code for repetitive tasks
 - Don't type boilerplate manually
 
 ## Inconsistent standards
@@ -92,7 +92,7 @@ backgroundColor: #fff
 ## Discussion Questions
 
 1. **What surprised you most** about AI-assisted development?
-2. **Where did ![w:16](../../../images/githubcopilot.svg) GitHub Copilot / ![w:16](../../../images/claude-color.svg) Claude Code excel?** Where did it struggle?
+2. **Where did GitHub Copilot / Claude Code excel?** Where did it struggle?
 3. **How would you use this** in your daily work?
 4. **What team standards** should you encode in instructions?
 5. **What concerns** do you still have?
@@ -137,10 +137,10 @@ git checkout solutions
 📝 **Copilot Instructions:** `.github/instructions/` (context-aware)
 📝 **Claude Code:** `CLAUDE.md`
 
-**![w:16](../../../images/githubcopilot.svg) GitHub Copilot Docs:**  
+**GitHub Copilot Docs:**  
 [https://docs.github.com/copilot](https://docs.github.com/copilot)
 
-**![w:16](../../../images/claude-color.svg) Claude Code Docs**
+**Claude Code Docs**
 [https://code.claude.com/docs](https://code.claude.com/docs)
 
 ---
@@ -148,7 +148,7 @@ git checkout solutions
 ## Immediate Actions
 
 **This week:**
-1. Try ![w:16](../../../images/githubcopilot.svg) Copilot or ![w:16](../../../images/claude-color.svg) Claude Code for **one TDD task**
+1. Try Copilot or Claude Code for **one TDD task**
 2. Create **instructions** for your repo (Copilot: `copilot-instructions.md`; Claude Code: `CLAUDE.md`/`AGENTS.md`)
 3. Use `/tests` and `/doc` (VS Code) or the natural-language equivalent (Copilot CLI / Claude Code) in daily work
 
@@ -169,7 +169,7 @@ Customizing your Agentic Engineering Workflow
 ## Remember
 
 > AI is a force multiplier  
-> Good practices + ![w:16](../../../images/githubcopilot.svg) Copilot/![w:16](../../../images/claude-color.svg) Claude Code = Great results  
+> Good practices + Copilot/Claude Code = Great results  
 > You are accountable for the code
 
 **Keep learning, keep improving!**

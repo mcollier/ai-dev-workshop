@@ -18,8 +18,8 @@ backgroundColor: #fff
 
 **Named chat participants** with specific roles
 
-- ![w:16](../../../images/githubcopilot.svg) Selectable from agent dropdown (VS Code IDE) or `/agent` (Copilot CLI)
-- ![w:16](../../../images/claude-color.svg) Claude Code: **subagents** are auto-routed by task description
+- Selectable from agent dropdown (VS Code IDE) or `/agent` (Copilot CLI)
+- Claude Code: **subagents** are auto-routed by task description
 - Role-based AI personas (e.g., Architecture Reviewer)
 - Defined scope and constraints
 - Structured, consistent outputs
@@ -88,7 +88,7 @@ Proposes comprehensive test strategies
 
 **Try the Architecture Reviewer agent:**
 
-1. Open ![w:16](../../../images/githubcopilot.svg) Copilot or ![w:16](../../../images/claude-color.svg) Claude Code
+1. Open Copilot or Claude Code
 2. Select "Architecture Reviewer" (dropdown or `/agent` in Copilot, or ask Claude Code to use it)
 3. Prompt: "Review the Task domain model"
 4. Compare to the default agent's output

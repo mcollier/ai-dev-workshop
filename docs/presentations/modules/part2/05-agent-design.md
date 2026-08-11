@@ -37,7 +37,7 @@ Design, test, and maintain them **like code**
 7. **Tone** - Communication style
 
 ## YAML Frontmatter
-![w:16](../../../images/githubcopilot.svg) _Copilot-specific properties:_
+_Copilot-specific properties:_
 - `user-invocable`, `disable-model-invocation`
 - `agents`, `argument-hint`, `handoffs`
 
@@ -103,7 +103,7 @@ Define → Test → Observe → Refine → Repeat
 
 ## Advanced Agent Properties
 
-![w:16](../../../images/githubcopilot.svg) _Copilot-specific — Claude Code subagents use simpler frontmatter._
+_Copilot-specific — Claude Code subagents use simpler frontmatter._
 
 ### user-invocable
 - `true`: Visible in dropdown (default)
@@ -122,7 +122,7 @@ Define → Test → Observe → Refine → Repeat
 
 ## Handoffs: Orchestrated Workflows
 
-![w:16](../../../images/githubcopilot.svg) _Copilot-specific feature — Claude Code has no built-in handoffs equivalent._
+_Copilot-specific feature — Claude Code has no built-in handoffs equivalent._
 
 ```yaml
 handoffs:

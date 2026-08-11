@@ -158,10 +158,10 @@ _5 hour rolling usage limit window_
 
 GitHub Copilot and Claude Code make extensive use of slash (`/`) commands
 
-- **![w:16](../../../images/githubcopilot.svg) Copilot IDE**: primarily prompt shortcuts (`/tests`, `/explain`)
-- **![w:16](../../../images/githubcopilot.svg) Copilot CLI**: agent-control and development-workflow commands (`/research`, `/pr`, `/review`)
-- **![w:16](../../../images/githubcopilot.svg) Copilot App**: agent, session and workflow management (`/af`, `/create-canvas`, `/orchestrate`)
-- **![w:16](../../../images/claude-color.svg) Claude Code**: mixture of agent controls and reusable skills (`/compact`, `/model`, `/skill-name`)
+- **Copilot IDE**: primarily prompt shortcuts (`/tests`, `/explain`)
+- **Copilot CLI**: agent-control and development-workflow commands (`/research`, `/pr`, `/review`)
+- **Copilot App**: agent, session and workflow management (`/af`, `/create-canvas`, `/orchestrate`)
+- **Claude Code**: mixture of agent controls and reusable skills (`/compact`, `/model`, `/skill-name`)
 
 _Note: slash commands vary by tool and available extensions_
 

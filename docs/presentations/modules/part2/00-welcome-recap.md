@@ -33,7 +33,7 @@ backgroundColor: #fff
 ## Prerequisites
 
 ✅ Completion of Part 1
-✅ ![w:16](../../../images/githubcopilot.svg) GitHub Copilot or ![w:16](../../../images/claude-color.svg) Claude Code
+✅ GitHub Copilot or Claude Code
 ✅ Access to workshop repository  
 ✅ Familiarity with code generation and refactoring workflows
 
@@ -51,7 +51,7 @@ backgroundColor: #fff
 2:30–2:40  Module 6: Wrap-Up & Governance
 ```
 
-**This morning, you learned:** Using ![w:16](../../../images/githubcopilot.svg) Copilot / ![w:16](../../../images/claude-color.svg) Claude Code for TDD and refactoring, instructions for guardrails, documentation automation, and requirements-to-code workflows.
+**This morning, you learned:** Using Copilot / Claude Code for TDD and refactoring, instructions for guardrails, documentation automation, and requirements-to-code workflows.
 
 **This afternoon, we'll focus on:**
 

@@ -58,8 +58,8 @@ Key rules encoded — same rules, different file depending on tool:
 | **Testing**            | ✅ xUnit + FakeItEasy     |
 | **Naming**             | ✅ PascalCase / camelCase |
 
-- ![w:20](../../../images/githubcopilot.svg) Copilot: `copilot-instructions.md` + `dotnet.instructions.md`
-- ![w:20](../../../images/claude-color.svg) Claude Code: `CLAUDE.md` (or `AGENTS.md`)
+- Copilot: `copilot-instructions.md` + `dotnet.instructions.md`
+- Claude Code: `CLAUDE.md` (or `AGENTS.md`)
 - The content is portable, only the file/loading mechanism differs.
 
 ---
