@@ -54,7 +54,7 @@ block-beta
     style H fill:#f5f5f5,stroke:#333,stroke-width:2px,color:#333
 ```
 
-> NOTE: suggest moving prompt files / commands to skills for greater flexibility
+> NOTE: Consider moving prompt files and custom commands into skills for greater flexibility.
 
 ### Deep Dive: Agent Skills
 
