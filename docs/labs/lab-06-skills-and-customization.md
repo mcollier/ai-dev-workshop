@@ -172,8 +172,8 @@ This is the most common confusion point. Here's how to differentiate:
 
 ### Exercise 2.1: Locate and Examine a Skill
 
-| <img src="../images/githubcopilot.svg" width="20" alt="GitHub Copilot" /> GitHub Copilot | <img src="../images/claude-color.svg" width="20" alt="Claude Code" /> Claude Code |
-| ------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------- |
+| <img src="../images/githubcopilot.svg" width="20" alt="GitHub Copilot" /> GitHub Copilot                                     | <img src="../images/claude-color.svg" width="20" alt="Claude Code" /> Claude Code           |
+| ---------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- |
 | `.github/skills/` isn't scaffolded in this repo yet (see `todo.md`) — follow along conceptually using the Claude Code column | `.claude/skills/test-data-generator/` is a real skill in this repository — open it directly |
 
 **Real Skill: Test Data Generator**
@@ -205,7 +205,7 @@ This is the most common confusion point. Here's how to differentiate:
 | ---------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------- |
 | Open Copilot Chat (`Ctrl+Alt+I` / `Cmd+Shift+I`)                                                           | Run `claude` in the integrated terminal from the repo root                                                              |
 | Type `/` to see available commands — skills appear alongside other slash commands                          | Type `/` in the REPL to see available slash commands, including any user-invocable skills                               |
-| Try invoking a skill: `/test-data-generator Task 5` *(once `.github/skills/` is scaffolded)*                | Try invoking the real skill: `/test-data-generator Task 5`                                                              |
+| Try invoking a skill: `/test-data-generator Task 5` *(once `.github/skills/` is scaffolded)*               | Try invoking the real skill: `/test-data-generator Task 5`                                                              |
 | If no skills are available, try `/create-skill` and describe: "A skill for generating realistic test data" | If no skills are available, describe the need directly in the REPL: "Create a skill for generating realistic test data" |
 
 **Observe the behavior**:
