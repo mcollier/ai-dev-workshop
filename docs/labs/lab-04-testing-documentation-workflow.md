@@ -50,9 +50,9 @@ Open `src/TaskManager.Application/Commands/CreateTaskCommandHandler.cs` and sele
 
 With the method selected:
 
-| <img src="../images/githubcopilot.svg" width="20" alt="GitHub Copilot" /> GitHub Copilot                | <img src="../images/claude-color.svg" width="20" alt="Claude Code" /> Claude Code                                                                            |
-| ------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| Open Copilot Chat (`Ctrl+Alt+I` / `Cmd+Shift+I`) or Inline Chat (`Ctrl+I` / `Cmd+I`) and enter `/tests` | Enter `/tests`, or paste/reference the method in the REPL and ask: `Generate xUnit tests for this method using FakeItEasy` |
+| <img src="../images/githubcopilot.svg" width="20" alt="GitHub Copilot" /> GitHub Copilot                | <img src="../images/claude-color.svg" width="20" alt="Claude Code" /> Claude Code                                    |
+| ------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- |
+| Open Copilot Chat (`Ctrl+Alt+I` / `Cmd+Shift+I`) or Inline Chat (`Ctrl+I` / `Cmd+I`) and enter `/tests` | Enter `/tests`, or reference the method in the REPL and ask: `Generate xUnit tests for this method using FakeItEasy` |
 
 #### Step 3: Review Generated Tests
 
@@ -354,9 +354,9 @@ Open `src/TaskManager.Application/Commands/CreateTaskCommandHandler.cs` and sele
 
 With the class selected:
 
-| <img src="../images/githubcopilot.svg" width="20" alt="GitHub Copilot" /> GitHub Copilot | <img src="../images/claude-color.svg" width="20" alt="Claude Code" /> Claude Code                                                                |
-| ---------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
-| Use Inline Chat (`Ctrl+I`) and enter `/doc`                                              | Enter `/doc`, or paste/reference the class in the REPL and ask: `Add XML documentation comments to this class` |
+| <img src="../images/githubcopilot.svg" width="20" alt="GitHub Copilot" /> GitHub Copilot | <img src="../images/claude-color.svg" width="20" alt="Claude Code" /> Claude Code                              |
+| ---------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- |
+| Use Inline Chat (`Ctrl+I`) and enter `/doc`                                              | Enter `/doc`, or reference the class in the REPL and ask: `Add XML documentation comments to this class`       |
 
 **Expected Output**:
 
@@ -618,7 +618,7 @@ All error responses follow [RFC 7807 Problem Details](https://datatracker.ietf.o
     "status": 400,
     "detail": "Invalid priority name: SuperUrgent"
 }
-```
+````
 
 ### 2.3 Generate Architecture Documentation (ADR)
 
@@ -870,7 +870,7 @@ Closes #3 - Add comprehensive test coverage
 N/A - API only, no UI
 
 ## Deployment Notes
-- Requires .NET 9.0 SDK or higher
+- Requires .NET 10.0 SDK or higher
 - Uses in-memory data store (no database configuration needed)
 - Default port: 5000 (HTTP)
 

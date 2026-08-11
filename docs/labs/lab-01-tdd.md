@@ -30,7 +30,6 @@ In this lab, you'll create a `NotificationService` that sends task notifications
 - ✅ VS Code open with GitHub Copilot enabled, **or** the Claude Code CLI installed and authenticated
 - ✅ `.github/instructions/dotnet.instructions.md` and `.github/instructions/csharp.instructions.md` exist
 - ✅ Initial build successful: `dotnet build && dotnet test`
-- ✅ DevContainer: Use `.devcontainer/dotnet-participant` or `.devcontainer/maintainer`
 
 ---
 

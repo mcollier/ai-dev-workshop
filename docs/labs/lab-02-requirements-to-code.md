@@ -648,7 +648,7 @@ All tests should pass! ✅
 
 ```bash
 cd src/TaskManager.Api
-dotnet run --launch-profile http
+dotnet run
 ```
 
 The API will start on `http://localhost:5215` (configured in `Properties/launchSettings.json`).

@@ -242,23 +242,23 @@ Test the full API:
 
 ```bash
 # Create a task
-curl -X POST http://localhost:5000/tasks \
+curl -X POST http://localhost:5215/tasks \
   -H "Content-Type: application/json" \
   -d '{"title": "Test Task", "priority": "Medium", "dueDate": "2025-10-30T12:00:00Z"}'
 
 # List all tasks
-curl http://localhost:5000/tasks
+curl http://localhost:5215/tasks
 
 # Get specific task (use ID from create response)
-curl http://localhost:5000/tasks/{id}
+curl http://localhost:5215/tasks/{id}
 
 # Update task
-curl -X PUT http://localhost:5000/tasks/{id} \
+curl -X PUT http://localhost:5215/tasks/{id} \
   -H "Content-Type: application/json" \
   -d '{"title": "Updated Task", "priority": "High", "dueDate": "2025-11-01T12:00:00Z"}'
 
 # Delete task
-curl -X DELETE http://localhost:5000/tasks/{id}
+curl -X DELETE http://localhost:5215/tasks/{id}
 ```
 
 ---
@@ -283,12 +283,12 @@ Find the LegacyTaskProcessor class
 
 Analyze the problematic method before changing it:
 
-1. Navigate to the `ProcessTask` method (not `ProcessTaskBatch` - that's a typo in earlier drafts)
+1. Navigate to the `ProcessTask` method
 2. Select the entire method
 
-| <img src="../images/githubcopilot.svg" width="20" alt="GitHub Copilot" /> GitHub Copilot | <img src="../images/claude-color.svg" width="20" alt="Claude Code" /> Claude Code                                       |
-| ---------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------- |
-| Use Inline Chat (`Ctrl+I` or `Cmd+I`): `/explain`                                        | Paste or reference the method in the REPL and ask: `Explain what this method does and identify any code quality issues` |
+| <img src="../images/githubcopilot.svg" width="20" alt="GitHub Copilot" /> GitHub Copilot | <img src="../images/claude-color.svg" width="20" alt="Claude Code" /> Claude Code                              |
+| ---------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- |
+| Use Inline Chat (`Ctrl+I` or `Cmd+I`): `/explain`                                        | Reference the method in the REPL and ask: `Explain what this method does and identify any code quality issues` |
 
 Your AI coding tool should identify issues:
 
@@ -433,8 +433,8 @@ private async Task ExecuteTaskProcessingAsync(
 
 Select the refactored method:
 
-| <img src="../images/githubcopilot.svg" width="20" alt="GitHub Copilot" /> GitHub Copilot | <img src="../images/claude-color.svg" width="20" alt="Claude Code" /> Claude Code                                                   |
-| ---------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------- |
+| <img src="../images/githubcopilot.svg" width="20" alt="GitHub Copilot" /> GitHub Copilot | <img src="../images/claude-color.svg" width="20" alt="Claude Code" /> Claude Code                                     |
+| ---------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------- |
 | Use the `/tests` custom command                                                          | Use the `/tests` custom command, or ask directly in the REPL: `Generate xUnit tests for this method using FakeItEasy` |
 
 Verify generated tests cover:

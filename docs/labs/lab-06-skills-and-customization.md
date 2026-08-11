@@ -54,6 +54,8 @@ block-beta
     style H fill:#f5f5f5,stroke:#333,stroke-width:2px,color:#333
 ```
 
+> NOTE: Consider moving prompt files and custom commands into skills for greater flexibility.
+
 ### Deep Dive: Agent Skills
 
 **Agent Skills** are a shared, open-standard customization mechanism — the `SKILL.md` format is compatible between GitHub Copilot and Claude Code. They represent **portable, reusable capabilities** that work across multiple environments and tools.
@@ -172,13 +174,13 @@ This is the most common confusion point. Here's how to differentiate:
 
 ### Exercise 2.1: Locate and Examine a Skill
 
-| <img src="../images/githubcopilot.svg" width="20" alt="GitHub Copilot" /> GitHub Copilot | <img src="../images/claude-color.svg" width="20" alt="Claude Code" /> Claude Code |
-| ------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------- |
+| <img src="../images/githubcopilot.svg" width="20" alt="GitHub Copilot" /> GitHub Copilot                                     | <img src="../images/claude-color.svg" width="20" alt="Claude Code" /> Claude Code           |
+| ---------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- |
 | `.github/skills/` isn't scaffolded in this repo yet (see `todo.md`) — follow along conceptually using the Claude Code column | `.claude/skills/test-data-generator/` is a real skill in this repository — open it directly |
 
 **Real Skill: Test Data Generator**
 
-1. **Navigate to** `.claude/skills/test-data-generator/`
+1. **Navigate to** the `test-data-generator` skill
 
 2. **Examine the structure**:
    ```text
@@ -205,7 +207,7 @@ This is the most common confusion point. Here's how to differentiate:
 | ---------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------- |
 | Open Copilot Chat (`Ctrl+Alt+I` / `Cmd+Shift+I`)                                                           | Run `claude` in the integrated terminal from the repo root                                                              |
 | Type `/` to see available commands — skills appear alongside other slash commands                          | Type `/` in the REPL to see available slash commands, including any user-invocable skills                               |
-| Try invoking a skill: `/test-data-generator Task 5` *(once `.github/skills/` is scaffolded)*                | Try invoking the real skill: `/test-data-generator Task 5`                                                              |
+| Try invoking a skill: `/test-data-generator Task 5` *(once `.github/skills/` is scaffolded)*               | Try invoking the real skill: `/test-data-generator Task 5`                                                              |
 | If no skills are available, try `/create-skill` and describe: "A skill for generating realistic test data" | If no skills are available, describe the need directly in the REPL: "Create a skill for generating realistic test data" |
 
 **Observe the behavior**:

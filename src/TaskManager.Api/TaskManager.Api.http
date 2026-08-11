@@ -1,5 +1,5 @@
-@hostname = https://localhost
-@port = 7208
+@hostname = http://localhost
+@port = 5215
 
 ### Get all tasks
 GET {{hostname}}:{{port}}/tasks/
