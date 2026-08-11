@@ -356,7 +356,7 @@ With the class selected:
 
 | <img src="../images/githubcopilot.svg" width="20" alt="GitHub Copilot" /> GitHub Copilot | <img src="../images/claude-color.svg" width="20" alt="Claude Code" /> Claude Code                              |
 | ---------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- |
-| Use Inline Chat (`Ctrl+I`) and enter `/doc`                                              | Enter `/doc`, or paste/reference the class in the REPL and ask: `Add XML documentation comments to this class` |
+| Use Inline Chat (`Ctrl+I`) and enter `/doc`                                              | Enter `/doc`, or reference the class in the REPL and ask: `Add XML documentation comments to this class`       |
 
 **Expected Output**:
 
