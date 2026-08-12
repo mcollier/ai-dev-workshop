@@ -16,7 +16,7 @@ Use this checklist to verify your environment is ready **before** attending the 
 
 - [ ] **GitHub account created**
   - Visit [github.com](https://github.com) to sign up if needed
-- [ ] Install and verify either [GitHub Copilot](https://github.com/features/copilot) or [Claude subscription](https://claude.com/product/claude-code)
+- [ ] Install and verify either [GitHub Copilot](https://github.com/features/copilot) or [Claude Code](https://claude.com/product/claude-code)
   - For Claude Code, you will need either a Pro, Max, Team, or Enterprise subscription.
 
 |              | GitHub Copilot                                     | Claude Code                                   |
