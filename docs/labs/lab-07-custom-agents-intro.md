@@ -231,18 +231,18 @@ The repository includes definitions for three custom agents. Briefly explore eac
 
 ## Key Takeaways
 
-✅ **Custom agents provide role-based expertise** on demand
-✅ **Agents ensure consistency** across team members
-✅ **Agents are reusable** - define once, use repeatedly
-✅ **Agents complement Instructions** - not a replacement
-⚠️ **Agents require maintenance** - treat them as team assets
+- ✅ **Custom agents provide role-based expertise** on demand
+- ✅ **Agents ensure consistency** across team members
+- ✅ **Agents are reusable** - define once, use repeatedly
+- ✅ **Agents complement Instructions** - not a replacement
+- ⚠️ **Agents require maintenance** - treat them as team assets
 
 ---
 
 ## Common Questions
 
-**Q: Can I use multiple agents in one session?**
-A: Yes! Switch agents as needed for different workflow steps. Claude Code can also auto-delegate to the right subagent based on its `description`.
+- **Q: Can I use multiple agents in one session?**
+- A: Yes! Switch agents as needed for different workflow steps. Claude Code can also auto-delegate to the right subagent based on its `description`.
 
 **Q: Do agents replace repo-wide Instructions?**
 A: No. Instructions/`CLAUDE.md` are always-on guardrails; agents are on-demand specialists.
