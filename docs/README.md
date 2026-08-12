@@ -16,7 +16,8 @@ Use this checklist to verify your environment is ready **before** attending the 
 
 - [ ] **GitHub account created**
   - Visit [github.com](https://github.com) to sign up if needed
-- [ ] Install and verify either GitHub Copilot or Claude Code
+- [ ] Install and verify either [GitHub Copilot](https://github.com/features/copilot) or [Claude Code](https://claude.com/product/claude-code)
+  - For Claude Code, you will need either a Pro, Max, Team, or Enterprise subscription.
 
 |              | GitHub Copilot                                     | Claude Code                                   |
 | ------------ | -------------------------------------------------- | --------------------------------------------- |
@@ -76,14 +77,12 @@ Install these required extensions:
 2. Type "Extensions: Show Installed Extensions"
 3. Confirm all three are listed
 
-**Verify Copilot is working:**
-
 ---
 
-### (Optional) Use the Dev Container
+### Use the Dev Container (Recommended)
 
 - [ ] **Use the Dev Container:**  
-  Open the project in VS Code and select `Dev Containers: Reopen in Container` from the Command Palette. This will automatically set up all required tools and extensions for the workshop. See the main README for details.
+  Open the project in VS Code and select `Dev Containers: Reopen in Container` from the Command Palette. This will automatically set up all required tools and extensions for the workshop.
 1. Create a new file: `test.cs`
 2. Type: `// Function to calculate fibonacci`
 3. Press Enter - you should see gray "ghost text" suggestions

@@ -231,11 +231,11 @@ The repository includes definitions for three custom agents. Briefly explore eac
 
 ## Key Takeaways
 
-✅ **Custom agents provide role-based expertise** on demand
-✅ **Agents ensure consistency** across team members
-✅ **Agents are reusable** - define once, use repeatedly
-✅ **Agents complement Instructions** - not a replacement
-⚠️ **Agents require maintenance** - treat them as team assets
+- ✅ **Custom agents provide role-based expertise** on demand
+- ✅ **Agents ensure consistency** across team members
+- ✅ **Agents are reusable** - define once, use repeatedly
+- ✅ **Agents complement Instructions** - not a replacement
+- ⚠️ **Agents require maintenance** - treat them as team assets
 
 ---
 
@@ -248,7 +248,7 @@ A: Yes! Switch agents as needed for different workflow steps. Claude Code can al
 A: No. Instructions/`CLAUDE.md` are always-on guardrails; agents are on-demand specialists.
 
 **Q: Can I create my own agent?**
-A: Absolutely! That's covered in [Lab 09: Agent Design](lab-09-agent-design.md) and [Lab 10: Build Your Own](lab-10-capstone-build-agent.md).
+A: Absolutely! That's covered in [Lab 09: Agent Design](lab-09-agent-design.md).
 
 **Q: What if an agent gives incorrect advice?**
 A: Agents are assistants, not authorities. You're accountable for the final decision. Iterate on agent instructions to improve accuracy.

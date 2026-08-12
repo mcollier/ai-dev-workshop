@@ -283,7 +283,7 @@ Validate user and task exist, record timestamp, emit domain event.
 
 ---
 
-## Group Discussion (If in Workshop Setting)
+## Group Discussion
 
 **Share your findings:**
 

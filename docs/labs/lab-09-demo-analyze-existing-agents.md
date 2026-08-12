@@ -29,7 +29,7 @@ Context, Constraints, Process/Approach, Output Format, Tone & Approach).
 
 | <img src="../images/githubcopilot.svg" width="20" alt="GitHub Copilot" /> GitHub Copilot | <img src="../images/claude-color.svg" width="20" alt="Claude Code" /> Claude Code |
 | ---------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- |
-| `.github/agents/architecture-reviewer.agent.md`                                           | `.claude/agents/architecture-reviewer.md`                                         |
+| `.github/agents/architecture-reviewer.agent.md`                                          | `.claude/agents/architecture-reviewer.md`                                         |
 
 - **Role:** [Identify the role]
 - **Key Responsibilities:** [List 3]
@@ -40,7 +40,7 @@ Context, Constraints, Process/Approach, Output Format, Tone & Approach).
 
 | <img src="../images/githubcopilot.svg" width="20" alt="GitHub Copilot" /> GitHub Copilot | <img src="../images/claude-color.svg" width="20" alt="Claude Code" /> Claude Code |
 | ---------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- |
-| `.github/agents/backlog-generator.agent.md`                                               | `.claude/agents/backlog-generator.md`                                             |
+| `.github/agents/backlog-generator.agent.md`                                              | `.claude/agents/backlog-generator.md`                                             |
 
 - **Role:** [Identify the role]
 - **Key Responsibilities:** [List 3]
@@ -51,7 +51,7 @@ Context, Constraints, Process/Approach, Output Format, Tone & Approach).
 
 | <img src="../images/githubcopilot.svg" width="20" alt="GitHub Copilot" /> GitHub Copilot | <img src="../images/claude-color.svg" width="20" alt="Claude Code" /> Claude Code |
 | ---------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- |
-| `.github/agents/test-strategist.agent.md`                                                 | `.claude/agents/test-strategist.md`                                               |
+| `.github/agents/test-strategist.agent.md`                                                | `.claude/agents/test-strategist.md`                                               |
 
 - **Role:** [Identify the role]
 - **Key Responsibilities:** [List 3]
