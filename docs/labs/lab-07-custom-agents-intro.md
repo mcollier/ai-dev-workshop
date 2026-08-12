@@ -241,14 +241,14 @@ The repository includes definitions for three custom agents. Briefly explore eac
 
 ## Common Questions
 
-- **Q: Can I use multiple agents in one session?**
-- A: Yes! Switch agents as needed for different workflow steps. Claude Code can also auto-delegate to the right subagent based on its `description`.
+**Q: Can I use multiple agents in one session?**
+A: Yes! Switch agents as needed for different workflow steps. Claude Code can also auto-delegate to the right subagent based on its `description`.
 
 **Q: Do agents replace repo-wide Instructions?**
 A: No. Instructions/`CLAUDE.md` are always-on guardrails; agents are on-demand specialists.
 
 **Q: Can I create my own agent?**
-A: Absolutely! That's covered in [Lab 09: Agent Design](lab-09-agent-design.md) and [Lab 10: Build Your Own](lab-10-capstone-build-agent.md).
+A: Absolutely! That's covered in [Lab 09: Agent Design](lab-09-agent-design.md).
 
 **Q: What if an agent gives incorrect advice?**
 A: Agents are assistants, not authorities. You're accountable for the final decision. Iterate on agent instructions to improve accuracy.
