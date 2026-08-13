@@ -41,3 +41,5 @@
 - [x] Remove ms-dotnettools.csharp from setup instructions
 - [x] Add Claude Code check in lab setup instructions
 - [x] Add Additional Resources - Claude Code docs links
+- [x] Extract Conventional Commits guidance out of `CLAUDE.md`, `dotnet.instructions.md`, and `csharp.instructions.md` into a `git-commit` skill (`.claude/skills/git-commit/`, `.github/skills/git-commit/`), retiring `.github/instructions/.copilot-commit-message-instructions.md`. Demonstrates progressive/on-demand skill loading vs. baking format rules into every prompt. Updated lab-04 and the related presentation slide to just say "commit the files" instead of spelling out the format.
+  - Note: lab-06-skills-and-customization.md still says `.github/skills/` "not yet scaffolded" — that was already stale before this change (`.github/skills/test-data-generator/` already existed); worth a follow-up pass.

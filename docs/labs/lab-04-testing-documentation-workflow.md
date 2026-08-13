@@ -635,11 +635,15 @@ Follow the ADR template format
 
 ---
 
-## Part 3: Write Conventional Commit Messages (3 minutes)
+## Part 3: Commit Your Changes (3 minutes)
 
 ### Scenario: Commit Your Changes
 
-You've made significant changes across multiple files. Write meaningful commit messages following Conventional Commits format.
+You've made significant changes across multiple files. Rather than dictating
+a commit message format, just ask your AI coding tool to commit — the
+`git-commit` skill (`.github/skills/git-commit/SKILL.md` or
+`.claude/skills/git-commit/SKILL.md`) supplies the Conventional Commits
+format on demand, so it doesn't need to live in every prompt.
 
 ### 3.1 Stage Changes
 
@@ -654,8 +658,11 @@ git add tests/TaskManager.IntegrationTests/
 In your AI coding tool's chat/REPL:
 
 ```text
-Write a Conventional Commit message for the staged changes. Include a concise subject line (<=72 chars) and a detailed body explaining what was added.
+Commit the staged changes.
 ```
+
+The `git-commit` skill analyzes the diff and produces a Conventional Commits
+subject line and body — no need to spell out the format yourself.
 
 **Expected Output**:
 
@@ -701,7 +708,7 @@ git add tests/TaskManager.UnitTests/Legacy/
 Ask your AI coding tool:
 
 ```text
-Write a Conventional Commit message for refactoring LegacyTaskProcessor. Include details about what was improved (async/await, guard clauses, logging, extracted methods).
+Commit these staged changes.
 ```
 
 **Expected Output**:

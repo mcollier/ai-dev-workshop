@@ -117,18 +117,12 @@ adapters.
 - Keep labs realistic, with prerequisites, expected outcomes, and runnable
   commands, and aligned with the repository's actual code and workflows.
 
-## 8. Conventional Commits
+## 8. Committing Changes
 
-Use `<type>([optional scope]): <description>`, 72-character subject limit.
-Types: `feat|fix|docs|style|refactor|perf|test|build|ci|chore|revert`. One
-logical change per commit; use scope to denote layer/feature.
-
-```text
-feat(api): add order endpoint
-fix(domain): correct order validation logic
-test(order): add unit tests for order creation
-chore: update dependencies
-```
+When asked to commit changes, just commit — commit message formatting
+(Conventional Commits) is handled by the `git-commit` skill
+(`.claude/skills/git-commit/SKILL.md`), loaded on demand rather than kept in
+every prompt's context.
 
 ## 9. Working Style
 

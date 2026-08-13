@@ -68,18 +68,11 @@ See [csharp.instructions.md](csharp.instructions.md) for full C#/.NET coding sta
 
 ---
 
-## 6) Conventional Commits
-- Use `<type>([optional scope]): <description>` with 72-char subject limit.  
-- Types: `feat|fix|docs|style|refactor|perf|test|build|ci|chore|revert`.  
-- Keep one logical change per commit; use scope to denote layer/feature.
-
-**Examples**
-```text
-feat(api): add order endpoint
-fix(domain): correct order validation logic
-test(order): add unit tests for order creation
-chore: update dependencies
-```
+## 6) Committing Changes
+- When asked to commit changes, just commit — commit message format
+  (Conventional Commits) is handled by the `git-commit` skill
+  (`.github/skills/git-commit/SKILL.md`), loaded on demand instead of kept
+  in every prompt's context.
 
 ---
 
@@ -138,14 +131,12 @@ Create tests in tests/[project].UnitTests/OrdersTests/:
 - Use descriptive test names and cover invalid scenarios (guard clauses)
 ```
 
-### 9.4 Conventional commit + PR helper
+### 9.4 Commit helper
 ```text
-Write a Conventional Commit subject (<=72 chars) and a PR description with:
-- Intent
-- Scope (layer/feature)
-- Risk/impact
-- Linked issue(s)
+Commit the staged changes.
 ```
+The `git-commit` skill produces the Conventional Commit message and a PR
+description with intent, scope, risk/impact, and linked issue(s).
 
 ---
 
