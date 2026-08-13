@@ -183,6 +183,8 @@ VS Code should open with the workshop repository.
 
 ### 7. Verify Solution Builds
 
+Navigate to the `src/` directory and execute the following commands:
+
 - [ ] **Restore dependencies**
 
 ```bash
