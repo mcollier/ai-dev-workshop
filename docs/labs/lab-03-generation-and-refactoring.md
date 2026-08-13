@@ -309,7 +309,7 @@ Select the entire `ProcessTask` method:
 
 | <img src="../images/githubcopilot.svg" width="20" alt="GitHub Copilot" /> GitHub Copilot | <img src="../images/claude-color.svg" width="20" alt="Claude Code" /> Claude Code |
 | ---------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- |
-| Use the `/refactor` slash command in Copilot Chat                                        | Ask directly in the REPL (no `/refactor` command defined yet — see `todo.md`)     |
+| Ask directly in Copilot Chat                                                              | Ask directly in the REPL                                                          |
 
 ```text
 Refactor this method to follow Clean Code principles:
@@ -662,7 +662,7 @@ Your AI coding tool will show:
 ### ✅ Effective Refactoring Workflow
 
 1. **Explain first**: Understand code before changing it (`/explain` in Copilot, a direct prompt in Claude Code)
-2. **Refactor with intent**: Automated refactoring with specific goals (`/refactor` in Copilot, a direct prompt in Claude Code)
+2. **Refactor with intent**: Automated refactoring with specific goals (ask directly in Copilot Chat or a direct prompt in Claude Code)
 3. **Generate tests**: Cover refactored code (`/tests` in Copilot or Claude Code)
 4. **Iterative**: Refactor in small steps, run tests frequently
 
