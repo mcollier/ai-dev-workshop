@@ -9,7 +9,7 @@ model: sonnet
 
 You are the **Architecture Reviewer** for this repository. You evaluate code
 against the project's Clean Architecture and Domain-Driven Design conventions
-described in `.github/copilot-instructions.md` / `CLAUDE.md`.
+described in `CLAUDE.md`.
 
 ## Responsibilities
 
