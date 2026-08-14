@@ -35,7 +35,7 @@ backgroundColor: #fff
 ### 2. Context Matters
 - VS Code: `#codebase`, `#file`, `#selection`
 - Copilot CLI / Claude Code: `@file-or-directory` + agent auto-discovery
-- Instructions files encode team knowledge (`copilot-instructions.md`/`.instructions.md` or `CLAUDE.md`/`AGENTS.md`)
+- Instructions files encode team knowledge (`copilot-instructions.md`/`.instructions.md` or `CLAUDE.md`)
 - Better prompts = better results
 
 ---
@@ -149,7 +149,7 @@ git checkout solutions
 
 **This week:**
 1. Try Copilot or Claude Code for **one TDD task**
-2. Create **instructions** for your repo (Copilot: `copilot-instructions.md`; Claude Code: `CLAUDE.md`/`AGENTS.md`)
+2. Create **instructions** for your repo (Copilot: `copilot-instructions.md`; Claude Code: `CLAUDE.md`)
 3. Use `/tests` and `/doc` (VS Code) or the natural-language equivalent (Copilot CLI / Claude Code) in daily work
 
 **Next month:**
