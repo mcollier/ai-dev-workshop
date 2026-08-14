@@ -24,11 +24,11 @@ section {
 
 Each tool has a **repo-wide** layer and a **scoped** layer:
 
-|                                                               | Repo-wide (always loaded)                                                                                                             | Scoped (path/subdirectory)                                                |
-| ------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------- |
-| **![w:20](../../../images/githubcopilot.svg) GitHub Copilot** | `.github/copilot-instructions.md`                                                                                                     | `.github/instructions/*.instructions.md` (`applyTo` glob, e.g. `**/*.cs`) |
-| **![w:20](../../../images/claude-color.svg) Claude Code**     | `CLAUDE.md` (repo root)                                                                                                               | Nested `CLAUDE.md` per subdirectory                                       |
-| **Cross-tool standard**                                       | `AGENTS.md` — read natively by Claude Code, and by Copilot CLI/coding agent as an alternative/supplement to `copilot-instructions.md` | —                                                                         |
+|                                                               | Repo-wide (always loaded)                                                                                                                     | Scoped (path/subdirectory)                                                |
+| ------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------- |
+| **![w:20](../../../images/githubcopilot.svg) GitHub Copilot** | `.github/copilot-instructions.md`                                                                                                             | `.github/instructions/*.instructions.md` (`applyTo` glob, e.g. `**/*.cs`) |
+| **![w:20](../../../images/claude-color.svg) Claude Code**     | `CLAUDE.md` (repo root)                                                                                                                       | Nested `CLAUDE.md` per subdirectory                                       |
+| **Cross-tool standard**                                       | `AGENTS.md` — read natively by Copilot CLI/coding agent as an alternative/supplement to `copilot-instructions.md`; reference from `CLAUDE.md` | —                                                                         |
 
 ### Purpose (all tools)
 - Repository-wide AI behavior
