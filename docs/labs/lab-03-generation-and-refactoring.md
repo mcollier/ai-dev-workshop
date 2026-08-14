@@ -309,7 +309,7 @@ Select the entire `ProcessTask` method:
 
 | <img src="../images/githubcopilot.svg" width="20" alt="GitHub Copilot" /> GitHub Copilot | <img src="../images/claude-color.svg" width="20" alt="Claude Code" /> Claude Code |
 | ---------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- |
-| Ask directly in Copilot Chat                                                              | Ask directly in the REPL                                                          |
+| Ask directly in Copilot Chat                                                             | Ask directly in the REPL                                                          |
 
 ```text
 Refactor this method to follow Clean Code principles:

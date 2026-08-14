@@ -155,14 +155,14 @@ Use this decision tree to choose the right customization type (applies to both t
 
 ### Comparison Table
 
-| Feature                 | Instructions                                                             | Skills                                   | Agents              | Prompt Files / Commands |
-| ----------------------- | ------------------------------------------------------------------------ | ---------------------------------------- | ------------------- | ----------------------- |
-| **When Applied**        | Always                                                                   | On-demand                                | When selected       | On-demand               |
-| **Portability**         | Copilot: VS Code only. Claude Code: `CLAUDE.md` applies repo-wide        | Multi-tool (Copilot + Claude Code + CLI) | VS Code/CLI + cloud | Tool-specific           |
-| **Can Include Scripts** | ❌ No                                                                    | ✅ Yes                                   | ❌ No               | ❌ No                   |
-| **Tool Restrictions**   | ❌ No                                                                    | Claude Code: ✅ Yes (`allowed-tools`). Copilot: ❌ No | ✅ Yes               | ✅ Yes (optional)       |
-| **Glob Patterns**       | ✅ Yes (Copilot `.instructions.md`); Claude Code has no direct equivalent| ❌ No                                    | ❌ No               | ❌ No                   |
-| **Best For**            | Standards                                                                | Capabilities                             | Workflows           | Quick tasks             |
+| Feature                 | Instructions                                                             | Skills                                              | Agents              | Prompt Files / Commands |
+| ----------------------- | ------------------------------------------------------------------------ | --------------------------------------------------- | ------------------- | ----------------------- |
+| **When Applied**        | Always                                                                   | On-demand                                           | When selected       | On-demand               |
+| **Portability**         | Copilot: VS Code only. Claude Code: `CLAUDE.md` applies repo-wide        | Multi-tool (Copilot + Claude Code + CLI)            | VS Code/CLI + cloud | Tool-specific           |
+| **Can Include Scripts** | ❌ No                                                                    | ✅ Yes                                              | ❌ No               | ❌ No                   |
+| **Tool Restrictions**   | ❌ No                                                                    | Claude Code: ✅ Yes (`allowed-tools`). Copilot: ❌No| ✅ Yes              | ✅ Yes (optional)       |
+| **Glob Patterns**       | ✅ Yes (Copilot `.instructions.md`); Claude Code has no direct equivalent| ❌ No                                               | ❌ No               | ❌ No                   |
+| **Best For**            | Standards                                                                | Capabilities                                        | Workflows           | Quick tasks             |
 
 ### Key Differences: Skills vs Agents
 
@@ -186,8 +186,8 @@ This is the most common confusion point. Here's how to differentiate:
 
 ### Exercise 2.1: Locate and Examine a Skill
 
-| <img src="../images/githubcopilot.svg" width="20" alt="GitHub Copilot" /> GitHub Copilot                                     | <img src="../images/claude-color.svg" width="20" alt="Claude Code" /> Claude Code           |
-| ---------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- |
+| <img src="../images/githubcopilot.svg" width="20" alt="GitHub Copilot" /> GitHub Copilot    | <img src="../images/claude-color.svg" width="20" alt="Claude Code" /> Claude Code           |
+| ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- |
 | `.github/skills/test-data-generator/` is a real skill in this repository — open it directly | `.claude/skills/test-data-generator/` is a real skill in this repository — open it directly |
 
 **Real Skill: Test Data Generator**
@@ -219,7 +219,7 @@ This is the most common confusion point. Here's how to differentiate:
 | ---------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------- |
 | Open Copilot Chat (`Ctrl+Alt+I` / `Cmd+Shift+I`)                                                           | Run `claude` in the integrated terminal from the repo root                                                              |
 | Type `/` to see available commands — skills appear alongside other slash commands                          | Type `/` in the REPL to see available slash commands, including any user-invocable skills                               |
-| Try invoking the real skill: `/test-data-generator Task 5`                                                  | Try invoking the real skill: `/test-data-generator Task 5`                                                              |
+| Try invoking the real skill: `/test-data-generator Task 5`                                                 | Try invoking the real skill: `/test-data-generator Task 5`                                                              |
 | If no skills are available, try `/create-skill` and describe: "A skill for generating realistic test data" | If no skills are available, describe the need directly in the REPL: "Create a skill for generating realistic test data" |
 
 **Observe the behavior**:
