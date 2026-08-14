@@ -840,7 +840,7 @@ You've completed this lab successfully when:
 Move on to [**Lab 3: Code Generation & Refactoring**](lab-03-generation-and-refactoring.md) where you'll:
 
 - Scaffold complete API endpoints with AI assistance
-- Refactor legacy code using the `/refactor` command
+- Refactor legacy code by asking directly in chat/REPL
 - Apply Object Calisthenics principles
 - Rely on your AI coding tool's automatic workspace context for cross-file understanding
 

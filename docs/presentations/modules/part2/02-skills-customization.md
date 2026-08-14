@@ -29,13 +29,16 @@ backgroundColor: #fff
 
 ## What Are Skills?
 
-**Skills = Domain Expertise Without Tool Access**
+**Skills = Domain Expertise, Loaded On-Demand**
 
 - Portable knowledge modules
 - Invoked with a slash command (e.g. `/skill-name`)
 - Provide templates, patterns, workflows, conventions, reference material
-- **No file access** - pure knowledge
-- Executable helper scripts (e.g., `.sh`, `.py`)
+- Run inline in the invoking agent's context, so they inherit its tool
+  access — Claude Code can narrow this with `allowed-tools`; Copilot has
+  no equivalent restriction
+- Can include executable helper scripts (e.g., `.sh`, `.py`) alongside
+  instructions
 
 **Example:** `/test-data-generator`
 
@@ -57,9 +60,9 @@ mid-task as part of a larger workflow.
 | Aspect | Skills | Agents |
 | -------- | -------- | -------- |
 | **Purpose** | Knowledge & templates | Workflows & actions |
-| **Tool Access** | ❌ None | ✅ Read/write files |
+| **Tool Access** | Inherits invoking agent's tools (Claude Code: can restrict via `allowed-tools`) | ✅ Read/write files (as configured) |
 | **Invocation** | Slash command, or called by an agent | ![w:14](../../../images/githubcopilot.svg) VS Code: `@agent-name`<br/>![w:14](../../../images/githubcopilot.svg) Copilot CLI: `/agent`<br/>![w:14](../../../images/claude-color.svg) Claude Code: auto-routed |
-| **Can invoke the other?** | ❌ No tool access, so a skill can't invoke an agent | ✅ Yes, an agent loads a skill for domain knowledge, then acts on it |
+| **Can invoke the other?** | ❌ No direct invocation — a skill runs inline, it doesn't call out to an agent | ✅ Yes, an agent loads a skill for domain knowledge, then acts on it |
 | **Best For** | Patterns, examples | Multi-step tasks; codifying explicit context on how to carry out a process |
 
 ---

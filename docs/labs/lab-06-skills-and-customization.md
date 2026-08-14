@@ -63,6 +63,7 @@ block-beta
 #### What Makes Skills Special?
 
 - **Portable**: Work in VS Code, GitHub Copilot CLI, GitHub Copilot coding agent, and Claude Code
+  (portability applies to the core fields below; Claude Code adds its own extensions — see note)
 - **Structured**: Directory-based with SKILL.md + optional scripts/resources
 - **Progressive Loading**: Only loads content when relevant (efficient context usage)
 - **Open Standard**: Based on the [agentskills.io](https://agentskills.io/) specification
@@ -72,7 +73,7 @@ block-beta
 
 | <img src="../images/githubcopilot.svg" width="20" alt="GitHub Copilot" /> GitHub Copilot | <img src="../images/claude-color.svg" width="20" alt="Claude Code" /> Claude Code |
 | ---------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- |
-| `.github/skills/` (Copilot side not yet scaffolded — see `todo.md`)                      | `.claude/skills/` — see the real `test-data-generator` skill below                |
+| `.github/skills/` — see the real `test-data-generator` skill below                       | `.claude/skills/` — see the real `test-data-generator` skill below                |
 
 ```text
 .claude/skills/
@@ -86,7 +87,10 @@ block-beta
 
 #### SKILL.md Format
 
-The frontmatter and body format is the same regardless of which tool loads it:
+The core frontmatter fields (`name`, `description`, `argument-hint`,
+`user-invocable`, `disable-model-invocation`) and the body format are the
+same regardless of which tool loads it — this is what keeps a skill
+portable:
 
 ```markdown
 ---
@@ -114,6 +118,14 @@ This is the exact shape of the real
 `.claude/skills/test-data-generator/SKILL.md` in this repository — open it
 to see the full version, including its `templates/` and `examples/`
 resources.
+
+> **Portability caveat**: Claude Code extends the open standard with
+> additional frontmatter fields — e.g. `allowed-tools` (restrict which
+> tools the skill can use), `when_to_use`, and `context: fork` (run in a
+> subagent) — plus dynamic context injection (`!command`, `@file`). A skill
+> that relies on these Claude-specific fields won't behave the same way (or
+> may be ignored) when loaded by GitHub Copilot, which only recognizes the
+> core fields above.
 
 ---
 
@@ -143,14 +155,14 @@ Use this decision tree to choose the right customization type (applies to both t
 
 ### Comparison Table
 
-| Feature                 | Instructions                                                             | Skills                                   | Agents              | Prompt Files / Commands |
-| ----------------------- | ------------------------------------------------------------------------ | ---------------------------------------- | ------------------- | ----------------------- |
-| **When Applied**        | Always                                                                   | On-demand                                | When selected       | On-demand               |
-| **Portability**         | Copilot: VS Code only. Claude Code: `CLAUDE.md` applies repo-wide        | Multi-tool (Copilot + Claude Code + CLI) | VS Code/CLI + cloud | Tool-specific           |
-| **Can Include Scripts** | ❌ No                                                                    | ✅ Yes                                   | ❌ No               | ❌ No                   |
-| **Tool Restrictions**   | ❌ No                                                                    | ❌ No                                    | ✅ Yes              | ✅ Yes (optional)       |
-| **Glob Patterns**       | ✅ Yes (Copilot `.instructions.md`); Claude Code has no direct equivalent| ❌ No                                    | ❌ No               | ❌ No                   |
-| **Best For**            | Standards                                                                | Capabilities                             | Workflows           | Quick tasks             |
+| Feature                 | Instructions                                                             | Skills                                              | Agents              | Prompt Files / Commands |
+| ----------------------- | ------------------------------------------------------------------------ | --------------------------------------------------- | ------------------- | ----------------------- |
+| **When Applied**        | Always                                                                   | On-demand                                           | When selected       | On-demand               |
+| **Portability**         | Copilot: VS Code only. Claude Code: `CLAUDE.md` applies repo-wide        | Multi-tool (Copilot + Claude Code + CLI)            | VS Code/CLI + cloud | Tool-specific           |
+| **Can Include Scripts** | ❌ No                                                                    | ✅ Yes                                              | ❌ No               | ❌ No                   |
+| **Tool Restrictions**   | ❌ No                                                                    | Claude Code: ✅ Yes (`allowed-tools`). Copilot: ❌No| ✅ Yes              | ✅ Yes (optional)       |
+| **Glob Patterns**       | ✅ Yes (Copilot `.instructions.md`); Claude Code has no direct equivalent| ❌ No                                               | ❌ No               | ❌ No                   |
+| **Best For**            | Standards                                                                | Capabilities                                        | Workflows           | Quick tasks             |
 
 ### Key Differences: Skills vs Agents
 
@@ -174,9 +186,9 @@ This is the most common confusion point. Here's how to differentiate:
 
 ### Exercise 2.1: Locate and Examine a Skill
 
-| <img src="../images/githubcopilot.svg" width="20" alt="GitHub Copilot" /> GitHub Copilot                                     | <img src="../images/claude-color.svg" width="20" alt="Claude Code" /> Claude Code           |
-| ---------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- |
-| `.github/skills/` isn't scaffolded in this repo yet (see `todo.md`) — follow along conceptually using the Claude Code column | `.claude/skills/test-data-generator/` is a real skill in this repository — open it directly |
+| <img src="../images/githubcopilot.svg" width="20" alt="GitHub Copilot" /> GitHub Copilot    | <img src="../images/claude-color.svg" width="20" alt="Claude Code" /> Claude Code           |
+| ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- |
+| `.github/skills/test-data-generator/` is a real skill in this repository — open it directly | `.claude/skills/test-data-generator/` is a real skill in this repository — open it directly |
 
 **Real Skill: Test Data Generator**
 
@@ -207,7 +219,7 @@ This is the most common confusion point. Here's how to differentiate:
 | ---------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------- |
 | Open Copilot Chat (`Ctrl+Alt+I` / `Cmd+Shift+I`)                                                           | Run `claude` in the integrated terminal from the repo root                                                              |
 | Type `/` to see available commands — skills appear alongside other slash commands                          | Type `/` in the REPL to see available slash commands, including any user-invocable skills                               |
-| Try invoking a skill: `/test-data-generator Task 5` *(once `.github/skills/` is scaffolded)*               | Try invoking the real skill: `/test-data-generator Task 5`                                                              |
+| Try invoking the real skill: `/test-data-generator Task 5`                                                 | Try invoking the real skill: `/test-data-generator Task 5`                                                              |
 | If no skills are available, try `/create-skill` and describe: "A skill for generating realistic test data" | If no skills are available, describe the need directly in the REPL: "Create a skill for generating realistic test data" |
 
 **Observe the behavior**:
@@ -288,7 +300,7 @@ For each scenario below, decide which customization type to use and why. The rea
 - Can use **glob pattern** to target only C# files
 - Simple rule, doesn't need scripts or special workflows
 
-**Example**: `*.cs.instructions.md` with rule: "Make classes sealed by default"
+**Example**: `dotnet.instructions.md` (with `applyTo: '**/*.cs'` in its frontmatter) with rule: "Make classes sealed by default"
 
 </details>
 

@@ -15,7 +15,7 @@ handoffs:
       Include priority and risk assessment for each story.
     send: false
   - label: Implement Changes
-    agent: default
+    agent: agent
     prompt: |-
       Implement the architectural changes recommended in the review above. Follow these guidelines:
       - Apply the specific architectural patterns mentioned
@@ -33,7 +33,7 @@ handoffs:
       - Coverage for integration points
     send: false
   - label: Plan Refactoring
-    agent: plan
+    agent: planner
     prompt: |-
       Create a detailed refactoring plan for the architectural issues identified above. Consider:
       - Architectural problems and violations found

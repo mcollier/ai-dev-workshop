@@ -21,7 +21,7 @@ backgroundColor: #fff
 1. Generate comprehensive tests
 2. Add XML documentation
 3. Update API documentation
-4. Write conventional commit messages
+4. Commit changes
 5. Generate PR description
 
 **Time:** 15 minutes  
@@ -101,11 +101,12 @@ section {
 
 **Example:** `feat(domain): add Priority value object`
 
-### Enforced via instructions, not memory
-- **Copilot (VS Code)**: Encodes the convention in
-`.github/instructions/.copilot-commit-message-instructions.md`.
-- **Claude Code**: Document the same convention using `CLAUDE.md`/`AGENTS.md`.
-- Can also have a `git-commit` skill.
+### Enforced via a skill, not memory
+- Both tools load the **`git-commit` skill** on demand — the format
+  guidance isn't kept in every prompt's context.
+- **Copilot**: `.github/skills/git-commit/SKILL.md`
+- **Claude Code**: `.claude/skills/git-commit/SKILL.md`
+- Just ask to "commit the files" — the skill supplies the format.
 
 ---
 

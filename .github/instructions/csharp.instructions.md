@@ -45,7 +45,8 @@ This document defines the C# and .NET conventions, patterns, and best practices 
 - Keep method/class summaries clear and concise.
 
 ## 7. Commits & PRs
-- Use Conventional Commits.
+- When asked to commit, just commit — the `git-commit` skill handles
+  Conventional Commits formatting.
 - One logical change per commit.
 
 ---

@@ -109,7 +109,7 @@ graph TD
 - **Dependency Injection:** All services registered via DI.
 - **Async/Await:** Used throughout for scalability.
 - **Testing:** xUnit for unit/integration tests, FakeItEasy for mocks, Testcontainers for integration.
-- **Conventional Commits:** Standardized commit messages for traceability.
+- **Conventional Commits:** Standardized commit messages for traceability, generated via the `git-commit` skill.
 
 ## 5. Request Lifecycle Example
 
