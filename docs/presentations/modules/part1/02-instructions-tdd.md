@@ -59,7 +59,7 @@ Key rules encoded — same rules, different file depending on tool:
 | **Naming**             | ✅ PascalCase / camelCase |
 
 - Copilot: `copilot-instructions.md` + `dotnet.instructions.md`
-- Claude Code: `CLAUDE.md` (or `AGENTS.md`)
+- Claude Code: `CLAUDE.md`
 - The content is portable, only the file/loading mechanism differs.
 
 ---
