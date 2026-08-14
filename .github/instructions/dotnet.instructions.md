@@ -135,8 +135,7 @@ Create tests in tests/[project].UnitTests/OrdersTests/:
 ```text
 Commit the staged changes.
 ```
-The `git-commit` skill produces the Conventional Commit message and a PR
-description with intent, scope, risk/impact, and linked issue(s).
+The `git-commit` skill produces the Conventional Commit message based on the staged diff.
 
 ---
 
