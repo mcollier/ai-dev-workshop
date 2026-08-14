@@ -24,7 +24,7 @@
 - [x] Add to prerequisites details on ensuring you have budget/credits to do the labs. This does cost real money!
 - [x] Pull in docs/guides as a reference
 - [x] Add Claude Code (VS Code extension and CLI) to dev container
-- [ ] Review the setup guide to ensure Claude Code is accounted for.
+- [x] Review the setup guide to ensure Claude Code is accounted for.
 - [ ] ~~Add helpful GitHub Copilot CLI features~~
   - [ ] ~~`/research`, `/chronicle`, `/after`, `/every`, `/context`~~
   - [ ] ~~`/yolo` or `/autopilot`~~
@@ -36,10 +36,10 @@
 - [x] Scaffold real `.claude/` files (commands, skills, subagents) mirroring the existing `.github/` ones — added root `CLAUDE.md`, `.claude/commands/tests.md` + `doc.md`, `.claude/skills/test-data-generator/`, and `.claude/agents/quality-gate.md` + `test-coverage.md`. Labs updated to point at the real files instead of `todo.md` callouts.
   - Note: skipped a Claude equivalent of `.github/agents/modernization.agent.md` — it's a Mule ESB → Spring Boot/Java migration agent that doesn't match this .NET workshop repo (references a nonexistent `.github/instructions/springboot.instructions.md`); worth removing or replacing on the Copilot side too.
 - [x] `@workspace` is no longer current (superseded by automatic workspace context / `#codebase`) — updated the labs, but presentations, guidebooks, and other materials still need the same fix once integrated
-- [ ] Fix or remove the stale `../guides/` and `../presentations/` links in docs/labs/README.md and lab files — being addressed later once that content is integrated
+- [x] Fix or remove the stale `../guides/` and `../presentations/` links in docs/labs/README.md and lab files — being addressed later once that content is integrated
 - [x] Update root README and docs/presentations/README to not reference GitHub Copilot; same for docs/labs/README
 - [x] Remove ms-dotnettools.csharp from setup instructions
 - [x] Add Claude Code check in lab setup instructions
 - [x] Add Additional Resources - Claude Code docs links
 - [x] Extract Conventional Commits guidance out of `CLAUDE.md`, `dotnet.instructions.md`, and `csharp.instructions.md` into a `git-commit` skill (`.claude/skills/git-commit/`, `.github/skills/git-commit/`), retiring `.github/instructions/.copilot-commit-message-instructions.md`. Demonstrates progressive/on-demand skill loading vs. baking format rules into every prompt. Updated lab-04 and the related presentation slide to just say "commit the files" instead of spelling out the format.
-  - Note: lab-06-skills-and-customization.md still says `.github/skills/` "not yet scaffolded" — that was already stale before this change (`.github/skills/test-data-generator/` already existed); worth a follow-up pass.
+
